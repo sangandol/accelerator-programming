@@ -27,8 +27,9 @@
   --w-node: #2f6db5;
   --w-soft: #e8eef7;
 }
+/* Dark palette: follows the system unless the page root says data-theme="light"; data-theme="dark" forces it. */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --fg: #e6e6e6;
     --bg: #18191b;
     --bg-elev: #222428;
@@ -54,7 +55,36 @@
     --w-on: #ff7b6b;
     --w-node: #7fb0ff;
     --w-soft: #263042;
+    color-scheme: dark;
   }
+}
+:root[data-theme="dark"] {
+  --fg: #e6e6e6;
+  --bg: #18191b;
+  --bg-elev: #222428;
+  --muted: #9a9a9a;
+  --rule: #3a3a3a;
+  --code-bg: #24262a;
+  --box-bg: #202328;
+  --link: #8ab4f8;
+  --def: #6cc3df;
+  --def-bg: #16252c;
+  --thm: #f0b552;
+  --thm-bg: #2a2317;
+  --ex: #8fcf8f;
+  --ex-bg: #19261a;
+  --rem: #a0a0a0;
+  --sec-bg: #1f2026;
+  --sec-line: #34353f;
+  --status: #e6c35c;
+  --status-bg: #29251a;
+  --term: #777;
+  --hit: #5a4d10;
+  --shadow: rgba(0, 0, 0, 0.5);
+  --w-on: #ff7b6b;
+  --w-node: #7fb0ff;
+  --w-soft: #263042;
+  color-scheme: dark;
 }
 
 html { background: var(--bg); color: var(--fg); }
@@ -82,7 +112,7 @@ img { max-width: 100%; }
 
 /* ---- top bar and bottom navigation ---- */
 .topbar {
-  position: sticky; top: 0; z-index: 30;
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 30;
   display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.3rem 0.8rem;
   padding: 0.35rem 16px;
   background: var(--bg); border-bottom: 1px solid var(--rule);

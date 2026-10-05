@@ -4,7 +4,8 @@
 (() => {
   const main = document.querySelector('main');
   if (!main) return;
-  const file = decodeURIComponent(location.pathname.split('/').pop() || 'README.md');
+  // This page's chapter file (as in data-ref="01-x.md#…"), also when the page is an exported copy.
+  const file = main.dataset.file || decodeURIComponent(location.pathname.split('/').pop() || 'README.md');
   const store = {
     get: (k) => { try { return localStorage.getItem(k); } catch { return null; } },
     set: (k, v) => { try { localStorage.setItem(k, v); } catch { /* private mode */ } },

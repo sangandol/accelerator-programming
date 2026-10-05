@@ -408,7 +408,7 @@ async function chapterOrder() {
   return [...new Set([...index.matchAll(/\]\(([^)#\s]+\.md)\)/g)].map((m) => m[1]))];
 }
 
-function page(title, body, nav) {
+function page(title, body, nav, file = '') {
   return `<!doctype html>
 <html lang="zh-CN">
 <head>
@@ -421,7 +421,7 @@ function page(title, body, nav) {
 </head>
 <body>
 <header class="topbar"><nav>${nav}</nav></header>
-<main>
+<main data-file="${escapeHtml(file)}">
 ${body}
 </main>
 <nav class="bottom">${nav}</nav>
@@ -445,7 +445,7 @@ async function renderChapter(name) {
   if (at > 0) links.push(`<a href="/book/${order[at - 1]}" rel="prev">上一章</a>`);
   if (at >= 0 && at + 1 < order.length) links.push(`<a href="/book/${order[at + 1]}" rel="next">下一章</a>`);
   const title = (source.match(/^#\s+(.+)$/m)?.[1] ?? name).replace(/[*`$]/g, '');
-  return { title, html: page(title, md.render(source, { book, file: name }), links.join(' · ')) };
+  return { title, html: page(title, md.render(source, { book, file: name }), links.join(' · '), name) };
 }
 
 async function serveFile(res, file) {
