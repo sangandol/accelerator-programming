@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="298" viewBox="13 -14 500 298" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="13" y="-14" width="500" height="298" rx="8" fill="#ffffff"/>
+<polyline points="60,250 432,250" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="60,250 60,18" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="60,250 60,254" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="150,250 150,254" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="240,250 240,254" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="330,250 330,254" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="420,250 420,254" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="56,250 60,250" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="56,183.4 60,183.4" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="56,116.7 60,116.7" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="56,50.1 60,50.1" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="60,208.7 274.2,50.1 420,50.1" fill="none" stroke="#3a5a8c" stroke-width="2.2" stroke-linejoin="round"/>
+<circle cx="274.2" cy="50.1" r="4" fill="#c0392b"/>
+<text x="60" y="268.2" text-anchor="middle" font-size="12" fill="#666">1</text>
+<text x="150" y="268.2" text-anchor="middle" font-size="12" fill="#666">10</text>
+<text x="240" y="268.2" text-anchor="middle" font-size="12" fill="#666">100</text>
+<text x="330" y="268.2" text-anchor="middle" font-size="12" fill="#666">1000</text>
+<text x="420" y="268.2" text-anchor="middle" font-size="12" fill="#666">10000</text>
+<text x="52" y="254.2" text-anchor="end" font-size="12" fill="#666">1</text>
+<text x="52" y="187.6" text-anchor="end" font-size="12" fill="#666">10</text>
+<text x="52" y="120.9" text-anchor="end" font-size="12" fill="#666">100</text>
+<text x="52" y="54.3" text-anchor="end" font-size="12" fill="#666">1000</text>
+<text x="436" y="254.2" text-anchor="start" font-size="12" fill="#222">FLOP/字节</text>
+<text x="60" y="10.2" text-anchor="middle" font-size="12" fill="#222">TFLOP/s</text>
+<text x="370" y="44.3" text-anchor="start" font-size="12" fill="#3a5a8c">屋顶线</text>
+<text x="280.2" y="44.3" text-anchor="start" font-size="12" fill="#c0392b">拐点 <tspan font-style="italic">I</tspan><tspan dy="-5" font-size="8.6">*</tspan><tspan dy="5"> = </tspan><tspan font-style="italic">P</tspan>/<tspan font-style="italic">B</tspan></text>
+</svg>

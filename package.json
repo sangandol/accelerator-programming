@@ -6,7 +6,8 @@
   "description": "加速器编程：TPU、GPU、CUDA 与 JAX",
   "scripts": {
     "start": "node server.mjs",
-    "check": "node server.mjs --check"
+    "check": "node server.mjs --check",
+    "fig": "node tools/figures.mjs"
   },
   "engines": {
     "node": ">=20"

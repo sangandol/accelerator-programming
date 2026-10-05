@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="274" height="210" viewBox="-1 -1 274 210" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<rect x="-1" y="-1" width="274" height="210" rx="8" fill="#ffffff"/>
+<circle cx="40" cy="40" r="15" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="104" cy="40" r="15" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="168" cy="40" r="15" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="232" cy="40" r="15" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="40" cy="104" r="15" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="104" cy="104" r="15" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="168" cy="104" r="15" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="232" cy="104" r="15" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="40" cy="168" r="15" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="104" cy="168" r="15" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="168" cy="168" r="15" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="232" cy="168" r="15" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<polyline points="55,40 89,40" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="40,55 40,89" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="119,40 153,40" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="104,55 104,89" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="183,40 217,40" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="168,55 168,89" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="232,55 232,89" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="55,104 89,104" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="40,119 40,153" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="119,104 153,104" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="104,119 104,153" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="183,104 217,104" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="168,119 168,153" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="232,119 232,153" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="55,168 89,168" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="119,168 153,168" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="183,168 217,168" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="25,40 11.2,40" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<polyline points="247,40 260.8,40" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<polyline points="25,104 11.2,104" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<polyline points="247,104 260.8,104" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<polyline points="25,168 11.2,168" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<polyline points="247,168 260.8,168" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<polyline points="40,25 40,11.2" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<polyline points="40,183 40,196.8" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<polyline points="104,25 104,11.2" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<polyline points="104,183 104,196.8" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<polyline points="168,25 168,11.2" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<polyline points="168,183 168,196.8" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<polyline points="232,25 232,11.2" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<polyline points="232,183 232,196.8" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<text x="40" y="43.9" text-anchor="middle" font-size="11" fill="#3a5a8c">0,0</text>
+<text x="104" y="43.9" text-anchor="middle" font-size="11" fill="#3a5a8c">0,1</text>
+<text x="168" y="43.9" text-anchor="middle" font-size="11" fill="#3a5a8c">0,2</text>
+<text x="232" y="43.9" text-anchor="middle" font-size="11" fill="#3a5a8c">0,3</text>
+<text x="40" y="107.9" text-anchor="middle" font-size="11" fill="#3a5a8c">1,0</text>
+<text x="104" y="107.9" text-anchor="middle" font-size="11" fill="#3a5a8c">1,1</text>
+<text x="168" y="107.9" text-anchor="middle" font-size="11" fill="#3a5a8c">1,2</text>
+<text x="232" y="107.9" text-anchor="middle" font-size="11" fill="#3a5a8c">1,3</text>
+<text x="40" y="171.9" text-anchor="middle" font-size="11" fill="#3a5a8c">2,0</text>
+<text x="104" y="171.9" text-anchor="middle" font-size="11" fill="#3a5a8c">2,1</text>
+<text x="168" y="171.9" text-anchor="middle" font-size="11" fill="#3a5a8c">2,2</text>
+<text x="232" y="171.9" text-anchor="middle" font-size="11" fill="#3a5a8c">2,3</text>
+</svg>

@@ -1,80 +1,80 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="740" height="370" viewBox="0 0 740 370" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
-<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker><marker id="arrow-carry" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c0392b"/></marker></defs>
-<rect width="740" height="370" rx="8" fill="#ffffff"/>
-<text x="40" y="22" text-anchor="middle" font-size="15" fill="#222" font-style="italic">x<tspan dy="4" font-size="11">0</tspan></text>
-<text x="78" y="22" text-anchor="middle" font-size="15" fill="#222" font-style="italic">x<tspan dy="4" font-size="11">1</tspan></text>
-<text x="116" y="22" text-anchor="middle" font-size="15" fill="#222" font-style="italic">x<tspan dy="4" font-size="11">2</tspan></text>
-<text x="154" y="22" text-anchor="middle" font-size="15" fill="#222" font-style="italic">x<tspan dy="4" font-size="11">3</tspan></text>
-<text x="192" y="22" text-anchor="middle" font-size="15" fill="#222" font-style="italic">x<tspan dy="4" font-size="11">4</tspan></text>
-<text x="230" y="22" text-anchor="middle" font-size="15" fill="#222" font-style="italic">x<tspan dy="4" font-size="11">5</tspan></text>
-<text x="268" y="22" text-anchor="middle" font-size="15" fill="#222" font-style="italic">x<tspan dy="4" font-size="11">6</tspan></text>
-<text x="306" y="22" text-anchor="middle" font-size="15" fill="#222" font-style="italic">x<tspan dy="4" font-size="11">7</tspan></text>
-<polyline points="78,36 78,70" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
-<polyline points="40,36 78,70" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
-<polyline points="116,36 116,106" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
-<polyline points="78,70 116,106" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
-<polyline points="154,36 154,142" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
-<polyline points="116,106 154,142" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
-<polyline points="192,36 192,178" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
-<polyline points="154,142 192,178" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
-<polyline points="230,36 230,214" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
-<polyline points="192,178 230,214" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
-<polyline points="268,36 268,250" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
-<polyline points="230,214 268,250" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
-<polyline points="306,36 306,286" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
-<polyline points="268,250 306,286" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
-<polyline points="306,286 306,320" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#arrow)"/>
-<text x="173" y="352" text-anchor="middle" font-size="13" fill="#222">逐个相与：7 个门，深度 7</text>
-<text x="410" y="22" text-anchor="middle" font-size="15" fill="#222" font-style="italic">x<tspan dy="4" font-size="11">0</tspan></text>
-<text x="448" y="22" text-anchor="middle" font-size="15" fill="#222" font-style="italic">x<tspan dy="4" font-size="11">1</tspan></text>
-<text x="486" y="22" text-anchor="middle" font-size="15" fill="#222" font-style="italic">x<tspan dy="4" font-size="11">2</tspan></text>
-<text x="524" y="22" text-anchor="middle" font-size="15" fill="#222" font-style="italic">x<tspan dy="4" font-size="11">3</tspan></text>
-<text x="562" y="22" text-anchor="middle" font-size="15" fill="#222" font-style="italic">x<tspan dy="4" font-size="11">4</tspan></text>
-<text x="600" y="22" text-anchor="middle" font-size="15" fill="#222" font-style="italic">x<tspan dy="4" font-size="11">5</tspan></text>
-<text x="638" y="22" text-anchor="middle" font-size="15" fill="#222" font-style="italic">x<tspan dy="4" font-size="11">6</tspan></text>
-<text x="676" y="22" text-anchor="middle" font-size="15" fill="#222" font-style="italic">x<tspan dy="4" font-size="11">7</tspan></text>
-<polyline points="410,36 429,94" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
-<polyline points="448,36 429,94" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
-<polyline points="486,36 505,94" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
-<polyline points="524,36 505,94" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
-<polyline points="562,36 581,94" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
-<polyline points="600,36 581,94" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
-<polyline points="638,36 657,94" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
-<polyline points="676,36 657,94" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
-<polyline points="429,94 467,154" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
-<polyline points="505,94 467,154" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
-<polyline points="581,94 619,154" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
-<polyline points="657,94 619,154" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
-<polyline points="467,154 543,214" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
-<polyline points="619,154 543,214" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
-<polyline points="543,214 543,264" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#arrow)"/>
-<text x="543" y="352" text-anchor="middle" font-size="13" fill="#222">二叉树：7 个门，深度 3</text>
-<circle cx="78" cy="70" r="13" fill="#eef3fb" stroke="#3a5a8c" stroke-width="1.6"/>
-<text x="78" y="76" text-anchor="middle" font-size="16" fill="#3a5a8c">∧</text>
-<circle cx="116" cy="106" r="13" fill="#eef3fb" stroke="#3a5a8c" stroke-width="1.6"/>
-<text x="116" y="112" text-anchor="middle" font-size="16" fill="#3a5a8c">∧</text>
-<circle cx="154" cy="142" r="13" fill="#eef3fb" stroke="#3a5a8c" stroke-width="1.6"/>
-<text x="154" y="148" text-anchor="middle" font-size="16" fill="#3a5a8c">∧</text>
-<circle cx="192" cy="178" r="13" fill="#eef3fb" stroke="#3a5a8c" stroke-width="1.6"/>
-<text x="192" y="184" text-anchor="middle" font-size="16" fill="#3a5a8c">∧</text>
-<circle cx="230" cy="214" r="13" fill="#eef3fb" stroke="#3a5a8c" stroke-width="1.6"/>
-<text x="230" y="220" text-anchor="middle" font-size="16" fill="#3a5a8c">∧</text>
-<circle cx="268" cy="250" r="13" fill="#eef3fb" stroke="#3a5a8c" stroke-width="1.6"/>
-<text x="268" y="256" text-anchor="middle" font-size="16" fill="#3a5a8c">∧</text>
-<circle cx="306" cy="286" r="13" fill="#eef3fb" stroke="#3a5a8c" stroke-width="1.6"/>
-<text x="306" y="292" text-anchor="middle" font-size="16" fill="#3a5a8c">∧</text>
-<circle cx="429" cy="94" r="13" fill="#eef3fb" stroke="#3a5a8c" stroke-width="1.6"/>
-<text x="429" y="100" text-anchor="middle" font-size="16" fill="#3a5a8c">∧</text>
-<circle cx="505" cy="94" r="13" fill="#eef3fb" stroke="#3a5a8c" stroke-width="1.6"/>
-<text x="505" y="100" text-anchor="middle" font-size="16" fill="#3a5a8c">∧</text>
-<circle cx="581" cy="94" r="13" fill="#eef3fb" stroke="#3a5a8c" stroke-width="1.6"/>
-<text x="581" y="100" text-anchor="middle" font-size="16" fill="#3a5a8c">∧</text>
-<circle cx="657" cy="94" r="13" fill="#eef3fb" stroke="#3a5a8c" stroke-width="1.6"/>
-<text x="657" y="100" text-anchor="middle" font-size="16" fill="#3a5a8c">∧</text>
-<circle cx="467" cy="154" r="13" fill="#eef3fb" stroke="#3a5a8c" stroke-width="1.6"/>
-<text x="467" y="160" text-anchor="middle" font-size="16" fill="#3a5a8c">∧</text>
-<circle cx="619" cy="154" r="13" fill="#eef3fb" stroke="#3a5a8c" stroke-width="1.6"/>
-<text x="619" y="160" text-anchor="middle" font-size="16" fill="#3a5a8c">∧</text>
-<circle cx="543" cy="214" r="13" fill="#eef3fb" stroke="#3a5a8c" stroke-width="1.6"/>
-<text x="543" y="220" text-anchor="middle" font-size="16" fill="#3a5a8c">∧</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="676" height="371" viewBox="-20 0 676 371" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="-20" y="0" width="676" height="371" rx="8" fill="#ffffff"/>
+<circle cx="38" cy="70" r="13" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="76" cy="106" r="13" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="114" cy="142" r="13" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="152" cy="178" r="13" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="190" cy="214" r="13" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="228" cy="250" r="13" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="266" cy="286" r="13" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="389" cy="94" r="13" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="465" cy="94" r="13" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="541" cy="94" r="13" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="617" cy="94" r="13" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="427" cy="154" r="13" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="579" cy="154" r="13" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="503" cy="214" r="13" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<polyline points="38,34 38,57" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="0,34 28.6,61.1" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="76,34 76,93" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="47.4,78.9 66.6,97.1" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="114,34 114,129" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="85.4,114.9 104.6,133.1" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="152,34 152,165" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="123.4,150.9 142.6,169.1" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="190,34 190,201" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="161.4,186.9 180.6,205.1" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="228,34 228,237" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="199.4,222.9 218.6,241.1" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="266,34 266,273" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="237.4,258.9 256.6,277.1" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="266,299 266,332" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="370,34 385.1,81.6" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="408,34 392.9,81.6" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="446,34 461.1,81.6" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="484,34 468.9,81.6" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="522,34 537.1,81.6" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="560,34 544.9,81.6" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="598,34 613.1,81.6" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="636,34 620.9,81.6" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="396,105 420,143" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="458,105 434,143" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="548,105 572,143" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="610,105 586,143" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="437.2,162.1 492.8,205.9" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="568.8,162.1 513.2,205.9" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="503,227 503,264" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<text x="0" y="27.3" text-anchor="middle" font-size="15" fill="#222"><tspan font-style="italic">x</tspan><tspan dy="4.5" font-size="10.8">0</tspan></text>
+<text x="38" y="27.3" text-anchor="middle" font-size="15" fill="#222"><tspan font-style="italic">x</tspan><tspan dy="4.5" font-size="10.8">1</tspan></text>
+<text x="76" y="27.3" text-anchor="middle" font-size="15" fill="#222"><tspan font-style="italic">x</tspan><tspan dy="4.5" font-size="10.8">2</tspan></text>
+<text x="114" y="27.3" text-anchor="middle" font-size="15" fill="#222"><tspan font-style="italic">x</tspan><tspan dy="4.5" font-size="10.8">3</tspan></text>
+<text x="152" y="27.3" text-anchor="middle" font-size="15" fill="#222"><tspan font-style="italic">x</tspan><tspan dy="4.5" font-size="10.8">4</tspan></text>
+<text x="190" y="27.3" text-anchor="middle" font-size="15" fill="#222"><tspan font-style="italic">x</tspan><tspan dy="4.5" font-size="10.8">5</tspan></text>
+<text x="228" y="27.3" text-anchor="middle" font-size="15" fill="#222"><tspan font-style="italic">x</tspan><tspan dy="4.5" font-size="10.8">6</tspan></text>
+<text x="266" y="27.3" text-anchor="middle" font-size="15" fill="#222"><tspan font-style="italic">x</tspan><tspan dy="4.5" font-size="10.8">7</tspan></text>
+<text x="38" y="75.6" text-anchor="middle" font-size="16" fill="#3a5a8c">∧</text>
+<text x="76" y="111.6" text-anchor="middle" font-size="16" fill="#3a5a8c">∧</text>
+<text x="114" y="147.6" text-anchor="middle" font-size="16" fill="#3a5a8c">∧</text>
+<text x="152" y="183.6" text-anchor="middle" font-size="16" fill="#3a5a8c">∧</text>
+<text x="190" y="219.6" text-anchor="middle" font-size="16" fill="#3a5a8c">∧</text>
+<text x="228" y="255.6" text-anchor="middle" font-size="16" fill="#3a5a8c">∧</text>
+<text x="266" y="291.6" text-anchor="middle" font-size="16" fill="#3a5a8c">∧</text>
+<text x="133" y="354.6" text-anchor="middle" font-size="13" fill="#222">逐个相与：7 个门，深度 7</text>
+<text x="370" y="27.3" text-anchor="middle" font-size="15" fill="#222"><tspan font-style="italic">x</tspan><tspan dy="4.5" font-size="10.8">0</tspan></text>
+<text x="408" y="27.3" text-anchor="middle" font-size="15" fill="#222"><tspan font-style="italic">x</tspan><tspan dy="4.5" font-size="10.8">1</tspan></text>
+<text x="446" y="27.3" text-anchor="middle" font-size="15" fill="#222"><tspan font-style="italic">x</tspan><tspan dy="4.5" font-size="10.8">2</tspan></text>
+<text x="484" y="27.3" text-anchor="middle" font-size="15" fill="#222"><tspan font-style="italic">x</tspan><tspan dy="4.5" font-size="10.8">3</tspan></text>
+<text x="522" y="27.3" text-anchor="middle" font-size="15" fill="#222"><tspan font-style="italic">x</tspan><tspan dy="4.5" font-size="10.8">4</tspan></text>
+<text x="560" y="27.3" text-anchor="middle" font-size="15" fill="#222"><tspan font-style="italic">x</tspan><tspan dy="4.5" font-size="10.8">5</tspan></text>
+<text x="598" y="27.3" text-anchor="middle" font-size="15" fill="#222"><tspan font-style="italic">x</tspan><tspan dy="4.5" font-size="10.8">6</tspan></text>
+<text x="636" y="27.3" text-anchor="middle" font-size="15" fill="#222"><tspan font-style="italic">x</tspan><tspan dy="4.5" font-size="10.8">7</tspan></text>
+<text x="389" y="99.6" text-anchor="middle" font-size="16" fill="#3a5a8c">∧</text>
+<text x="465" y="99.6" text-anchor="middle" font-size="16" fill="#3a5a8c">∧</text>
+<text x="541" y="99.6" text-anchor="middle" font-size="16" fill="#3a5a8c">∧</text>
+<text x="617" y="99.6" text-anchor="middle" font-size="16" fill="#3a5a8c">∧</text>
+<text x="427" y="159.6" text-anchor="middle" font-size="16" fill="#3a5a8c">∧</text>
+<text x="579" y="159.6" text-anchor="middle" font-size="16" fill="#3a5a8c">∧</text>
+<text x="503" y="219.6" text-anchor="middle" font-size="16" fill="#3a5a8c">∧</text>
+<text x="503" y="354.6" text-anchor="middle" font-size="13" fill="#222">二叉树：7 个门，深度 3</text>
 </svg>

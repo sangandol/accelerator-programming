@@ -119,6 +119,15 @@ async function handle(req, res) {
   }
   if (path.startsWith('/assets/katex/')) return serveFile(res, inside(KATEX, path.slice('/assets/katex/'.length)) ?? '');
   if (path.startsWith('/assets/')) return serveFile(res, inside(WEB, path.slice('/assets/'.length)) ?? '');
+  if (path === '/book/fig/' || path === '/book/fig') {
+    // Gallery of all figures; ?f=09 shows only names starting with 09.
+    const prefix = url.searchParams.get('f') ?? '';
+    const svgs = (await readdir(join(BOOK, 'fig'))).filter((f) => f.endsWith('.svg') && f.startsWith(prefix)).sort();
+    const body = `<h1>插图</h1>\n` + svgs.map((f) => `<h3>${f}</h3>\n<p><img src="/book/fig/${f}" alt="${f}"></p>`).join('\n');
+    res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+    res.end(page('插图', body, '<a href="/book/">目录</a>'));
+    return;
+  }
   if (path.startsWith('/book/')) {
     const name = path.slice('/book/'.length) || 'README.md';
     if (name.endsWith('.md')) {

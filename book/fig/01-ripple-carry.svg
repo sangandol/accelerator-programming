@@ -1,47 +1,46 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="580" height="192" viewBox="0 0 580 192" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
-<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker><marker id="arrow-carry" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c0392b"/></marker></defs>
-<rect width="580" height="192" rx="8" fill="#ffffff"/>
-<rect x="430" y="70" width="72" height="56" rx="6" fill="#eef3fb" stroke="#3a5a8c" stroke-width="1.6"/>
-<text x="466" y="103" text-anchor="middle" font-size="13" fill="#3a5a8c">全加器</text>
-<rect x="310" y="70" width="72" height="56" rx="6" fill="#eef3fb" stroke="#3a5a8c" stroke-width="1.6"/>
-<text x="346" y="103" text-anchor="middle" font-size="13" fill="#3a5a8c">全加器</text>
-<rect x="190" y="70" width="72" height="56" rx="6" fill="#eef3fb" stroke="#3a5a8c" stroke-width="1.6"/>
-<text x="226" y="103" text-anchor="middle" font-size="13" fill="#3a5a8c">全加器</text>
-<rect x="70" y="70" width="72" height="56" rx="6" fill="#eef3fb" stroke="#3a5a8c" stroke-width="1.6"/>
-<text x="106" y="103" text-anchor="middle" font-size="13" fill="#3a5a8c">全加器</text>
-<polyline points="452,34 452,70" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#arrow)"/>
-<polyline points="480,34 480,70" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#arrow)"/>
-<text x="452" y="26" text-anchor="middle" font-size="15" fill="#222" font-style="italic">a<tspan dy="4" font-size="11">0</tspan></text>
-<text x="480" y="26" text-anchor="middle" font-size="15" fill="#222" font-style="italic">b<tspan dy="4" font-size="11">0</tspan></text>
-<polyline points="466,126 466,158" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#arrow)"/>
-<text x="466" y="178" text-anchor="middle" font-size="15" fill="#222" font-style="italic">s<tspan dy="4" font-size="11">0</tspan></text>
-<polyline points="430,98 382,98" fill="none" stroke="#c0392b" stroke-width="3" stroke-linejoin="round" marker-end="url(#arrow-carry)"/>
-<text x="406" y="90" text-anchor="middle" font-size="15" fill="#c0392b" font-style="italic">c<tspan dy="4" font-size="11">1</tspan></text>
-<polyline points="332,34 332,70" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#arrow)"/>
-<polyline points="360,34 360,70" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#arrow)"/>
-<text x="332" y="26" text-anchor="middle" font-size="15" fill="#222" font-style="italic">a<tspan dy="4" font-size="11">1</tspan></text>
-<text x="360" y="26" text-anchor="middle" font-size="15" fill="#222" font-style="italic">b<tspan dy="4" font-size="11">1</tspan></text>
-<polyline points="346,126 346,158" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#arrow)"/>
-<text x="346" y="178" text-anchor="middle" font-size="15" fill="#222" font-style="italic">s<tspan dy="4" font-size="11">1</tspan></text>
-<polyline points="310,98 262,98" fill="none" stroke="#c0392b" stroke-width="3" stroke-linejoin="round" marker-end="url(#arrow-carry)"/>
-<text x="286" y="90" text-anchor="middle" font-size="15" fill="#c0392b" font-style="italic">c<tspan dy="4" font-size="11">2</tspan></text>
-<polyline points="212,34 212,70" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#arrow)"/>
-<polyline points="240,34 240,70" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#arrow)"/>
-<text x="212" y="26" text-anchor="middle" font-size="15" fill="#222" font-style="italic">a<tspan dy="4" font-size="11">2</tspan></text>
-<text x="240" y="26" text-anchor="middle" font-size="15" fill="#222" font-style="italic">b<tspan dy="4" font-size="11">2</tspan></text>
-<polyline points="226,126 226,158" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#arrow)"/>
-<text x="226" y="178" text-anchor="middle" font-size="15" fill="#222" font-style="italic">s<tspan dy="4" font-size="11">2</tspan></text>
-<polyline points="190,98 142,98" fill="none" stroke="#c0392b" stroke-width="3" stroke-linejoin="round" marker-end="url(#arrow-carry)"/>
-<text x="166" y="90" text-anchor="middle" font-size="15" fill="#c0392b" font-style="italic">c<tspan dy="4" font-size="11">3</tspan></text>
-<polyline points="92,34 92,70" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#arrow)"/>
-<polyline points="120,34 120,70" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#arrow)"/>
-<text x="92" y="26" text-anchor="middle" font-size="15" fill="#222" font-style="italic">a<tspan dy="4" font-size="11">3</tspan></text>
-<text x="120" y="26" text-anchor="middle" font-size="15" fill="#222" font-style="italic">b<tspan dy="4" font-size="11">3</tspan></text>
-<polyline points="106,126 106,158" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#arrow)"/>
-<text x="106" y="178" text-anchor="middle" font-size="15" fill="#222" font-style="italic">s<tspan dy="4" font-size="11">3</tspan></text>
-<polyline points="70,98 24,98" fill="none" stroke="#c0392b" stroke-width="3" stroke-linejoin="round" marker-end="url(#arrow-carry)"/>
-<text x="30" y="90" text-anchor="middle" font-size="15" fill="#c0392b" font-style="italic">c<tspan dy="4" font-size="11">4</tspan></text>
-<polyline points="548,98 502,98" fill="none" stroke="#c0392b" stroke-width="3" stroke-linejoin="round" marker-end="url(#arrow-carry)"/>
-<text x="536" y="90" text-anchor="middle" font-size="15" fill="#c0392b" font-style="italic">c<tspan dy="4" font-size="11">0</tspan></text>
-<text x="536" y="118" text-anchor="middle" font-size="13" fill="#c0392b">= 0</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="194" viewBox="12 0 560 194" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker><marker id="ah-c0392b-12" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c0392b"/></marker></defs>
+<rect x="12" y="0" width="560" height="194" rx="8" fill="#ffffff"/>
+<rect x="430" y="70" width="72" height="56" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="310" y="70" width="72" height="56" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="190" y="70" width="72" height="56" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="70" y="70" width="72" height="56" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<polyline points="452,34 452,70" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="480,34 480,70" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="466,126 466,158" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="430,98 382,98" fill="none" stroke="#c0392b" stroke-width="3" stroke-linejoin="round" marker-end="url(#ah-c0392b-12)"/>
+<polyline points="332,34 332,70" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="360,34 360,70" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="346,126 346,158" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="310,98 262,98" fill="none" stroke="#c0392b" stroke-width="3" stroke-linejoin="round" marker-end="url(#ah-c0392b-12)"/>
+<polyline points="212,34 212,70" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="240,34 240,70" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="226,126 226,158" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="190,98 142,98" fill="none" stroke="#c0392b" stroke-width="3" stroke-linejoin="round" marker-end="url(#ah-c0392b-12)"/>
+<polyline points="92,34 92,70" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="120,34 120,70" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="106,126 106,158" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="70,98 24,98" fill="none" stroke="#c0392b" stroke-width="3" stroke-linejoin="round" marker-end="url(#ah-c0392b-12)"/>
+<polyline points="560,98 502,98" fill="none" stroke="#c0392b" stroke-width="3" stroke-linejoin="round" marker-end="url(#ah-c0392b-12)"/>
+<text x="466" y="102.6" text-anchor="middle" font-size="13" fill="#3a5a8c">全加器</text>
+<text x="452" y="27.3" text-anchor="middle" font-size="15" fill="#222"><tspan font-style="italic">a</tspan><tspan dy="4.5" font-size="10.8">0</tspan></text>
+<text x="480" y="27.3" text-anchor="middle" font-size="15" fill="#222"><tspan font-style="italic">b</tspan><tspan dy="4.5" font-size="10.8">0</tspan></text>
+<text x="466" y="177.3" text-anchor="middle" font-size="15" fill="#222"><tspan font-style="italic">s</tspan><tspan dy="4.5" font-size="10.8">0</tspan></text>
+<text x="406" y="90.3" text-anchor="middle" font-size="15" fill="#c0392b"><tspan font-style="italic">c</tspan><tspan dy="4.5" font-size="10.8">1</tspan></text>
+<text x="346" y="102.6" text-anchor="middle" font-size="13" fill="#3a5a8c">全加器</text>
+<text x="332" y="27.3" text-anchor="middle" font-size="15" fill="#222"><tspan font-style="italic">a</tspan><tspan dy="4.5" font-size="10.8">1</tspan></text>
+<text x="360" y="27.3" text-anchor="middle" font-size="15" fill="#222"><tspan font-style="italic">b</tspan><tspan dy="4.5" font-size="10.8">1</tspan></text>
+<text x="346" y="177.3" text-anchor="middle" font-size="15" fill="#222"><tspan font-style="italic">s</tspan><tspan dy="4.5" font-size="10.8">1</tspan></text>
+<text x="286" y="90.3" text-anchor="middle" font-size="15" fill="#c0392b"><tspan font-style="italic">c</tspan><tspan dy="4.5" font-size="10.8">2</tspan></text>
+<text x="226" y="102.6" text-anchor="middle" font-size="13" fill="#3a5a8c">全加器</text>
+<text x="212" y="27.3" text-anchor="middle" font-size="15" fill="#222"><tspan font-style="italic">a</tspan><tspan dy="4.5" font-size="10.8">2</tspan></text>
+<text x="240" y="27.3" text-anchor="middle" font-size="15" fill="#222"><tspan font-style="italic">b</tspan><tspan dy="4.5" font-size="10.8">2</tspan></text>
+<text x="226" y="177.3" text-anchor="middle" font-size="15" fill="#222"><tspan font-style="italic">s</tspan><tspan dy="4.5" font-size="10.8">2</tspan></text>
+<text x="166" y="90.3" text-anchor="middle" font-size="15" fill="#c0392b"><tspan font-style="italic">c</tspan><tspan dy="4.5" font-size="10.8">3</tspan></text>
+<text x="106" y="102.6" text-anchor="middle" font-size="13" fill="#3a5a8c">全加器</text>
+<text x="92" y="27.3" text-anchor="middle" font-size="15" fill="#222"><tspan font-style="italic">a</tspan><tspan dy="4.5" font-size="10.8">3</tspan></text>
+<text x="120" y="27.3" text-anchor="middle" font-size="15" fill="#222"><tspan font-style="italic">b</tspan><tspan dy="4.5" font-size="10.8">3</tspan></text>
+<text x="106" y="177.3" text-anchor="middle" font-size="15" fill="#222"><tspan font-style="italic">s</tspan><tspan dy="4.5" font-size="10.8">3</tspan></text>
+<text x="34" y="90.3" text-anchor="middle" font-size="15" fill="#c0392b"><tspan font-style="italic">c</tspan><tspan dy="4.5" font-size="10.8">4</tspan></text>
+<text x="538" y="90.3" text-anchor="middle" font-size="15" fill="#c0392b"><tspan font-style="italic">c</tspan><tspan dy="4.5" font-size="10.8">0</tspan><tspan dy="-4.5"> = 0</tspan></text>
 </svg>

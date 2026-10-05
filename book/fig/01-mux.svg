@@ -1,30 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="560" height="240" viewBox="0 0 560 240" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
-<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker><marker id="arrow-carry" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c0392b"/></marker></defs>
-<rect width="560" height="240" rx="8" fill="#ffffff"/>
-<text x="32" y="49" text-anchor="end" font-size="15" fill="#222" font-style="italic">a</text>
-<text x="32" y="125" text-anchor="end" font-size="15" fill="#222" font-style="italic">s</text>
-<text x="32" y="185" text-anchor="end" font-size="15" fill="#222" font-style="italic">b</text>
-<polyline points="40,44 230,44" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="517" height="224" viewBox="11 18 517 224" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<rect x="11" y="18" width="517" height="224" rx="8" fill="#ffffff"/>
+<rect x="110" y="68" width="44" height="44" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="230" y="30" width="44" height="44" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="230" y="150" width="44" height="44" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="340" y="90" width="44" height="44" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<polyline points="40,44 135,44" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="135,44 230,44" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
 <polyline points="40,120 80,120" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
-<polyline points="80,120 80,90 110,90" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
-<polyline points="80,120 80,164 230,164" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="80,90 80,164" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="80,90 110,90" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="80,164 230,164" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="154,90 195,90" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="195,60 195,90" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="195,60 230,60" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="40,180 135,180" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="135,180 230,180" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="274,52 305,52" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="305,52 305,104" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="305,104 340,104" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="274,172 315,172" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="315,120 315,172" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="315,120 340,120" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="384,112 407,112" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="407,112 430,112" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
 <circle cx="80" cy="120" r="3.2" fill="#222"/>
-<polyline points="154,90 195,90 195,60 230,60" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
-<text x="174" y="83" text-anchor="middle" font-size="13" fill="#222">¬s</text>
-<polyline points="40,180 230,180" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
-<polyline points="274,52 305,52 305,104 340,104" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
-<polyline points="274,172 315,172 315,120 340,120" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
-<polyline points="384,112 430,112" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
-<text x="438" y="117" font-size="15" fill="#222">mux(<tspan font-style="italic">s</tspan>, <tspan font-style="italic">a</tspan>, <tspan font-style="italic">b</tspan>)</text>
-<rect x="110" y="68" width="44" height="44" rx="6" fill="#eef3fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<text x="32" y="49.3" text-anchor="end" font-size="15" fill="#222"><tspan font-style="italic">a</tspan></text>
+<text x="32" y="125.3" text-anchor="end" font-size="15" fill="#222"><tspan font-style="italic">s</tspan></text>
+<text x="32" y="185.3" text-anchor="end" font-size="15" fill="#222"><tspan font-style="italic">b</tspan></text>
 <text x="132" y="97" text-anchor="middle" font-size="20" fill="#3a5a8c">¬</text>
-<rect x="230" y="30" width="44" height="44" rx="6" fill="#eef3fb" stroke="#3a5a8c" stroke-width="1.6"/>
 <text x="252" y="59" text-anchor="middle" font-size="20" fill="#3a5a8c">∧</text>
-<rect x="230" y="150" width="44" height="44" rx="6" fill="#eef3fb" stroke="#3a5a8c" stroke-width="1.6"/>
 <text x="252" y="179" text-anchor="middle" font-size="20" fill="#3a5a8c">∧</text>
-<rect x="340" y="90" width="44" height="44" rx="6" fill="#eef3fb" stroke="#3a5a8c" stroke-width="1.6"/>
 <text x="362" y="119" text-anchor="middle" font-size="20" fill="#3a5a8c">∨</text>
-<text x="132" y="226" text-anchor="middle" font-size="12" fill="#666">第 1 级</text>
-<text x="252" y="226" text-anchor="middle" font-size="12" fill="#666">第 2 级</text>
-<text x="362" y="226" text-anchor="middle" font-size="12" fill="#666">第 3 级</text>
+<text x="438" y="117.3" text-anchor="start" font-size="15" fill="#222">mux(<tspan font-style="italic">s</tspan>, <tspan font-style="italic">a</tspan>, <tspan font-style="italic">b</tspan>)</text>
+<text x="174" y="85.6" text-anchor="middle" font-size="13" fill="#222">¬ <tspan font-style="italic">s</tspan></text>
+<text x="132" y="226.2" text-anchor="middle" font-size="12" fill="#666">第 1 级</text>
+<text x="252" y="226.2" text-anchor="middle" font-size="12" fill="#666">第 2 级</text>
+<text x="362" y="226.2" text-anchor="middle" font-size="12" fill="#666">第 3 级</text>
 </svg>

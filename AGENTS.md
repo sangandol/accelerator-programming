@@ -22,7 +22,7 @@
 - `book/README.md`：目录。阅读器按其中 `.md` 链接的出现顺序生成"上一章/下一章"。
 - `book/00-preface.md`：前言（读法、路线、记号、习题体例）。
 - `book/NN-slug.md`：第 NN 章；`book/A-*.md` 起为附录。
-- `book/fig/`：插图（SVG），全部由 `tools/figures.mjs` 生成。改图时改脚本里的坐标，再运行 `node tools/figures.mjs`，不要手改 SVG。图带白色底板，深色页面上也能看清。
+- `book/fig/`：插图（SVG），全部由画图库生成，不要手改 SVG。画图库在 `tools/fig/`：`lib.mjs` 是库，`chNN.mjs` 是各章的插图，`tools/figures.mjs` 负责生成和检查。**画图前读 `tools/fig/README.md`（API 与流程），不必读 lib.mjs。** 阅读器的 `/book/fig/?f=前缀` 页面列出插图。
 - `server.mjs`：本地阅读器（Node 内置 http + markdown-it + @vscode/markdown-it-katex），`--check` 模式检查全书。
 - `web/style.css`：阅读器样式。`start.ps1`：Windows 启动脚本。
 - `.project-console.json`：Project Bridge 注册清单（端口在此登记）。
@@ -32,6 +32,7 @@
 ```powershell
 .\start.ps1              # 启动阅读器并打开浏览器；-NoBrowser 不打开，-Port 指定端口，-Setup 重装依赖
 npm run check            # 渲染全书，报告 KaTeX 错误、缺失章节、失效链接和锚点、缺失的图
+npm run fig -- 09        # 生成名字以 09 开头的插图（不带参数则全部生成），报告文字重叠、线穿过文字、未被引用的图
 ```
 
 ## 写作约定
