@@ -2,40 +2,44 @@
 
 XLA 自动完成融合、分块和流水线，大多数程序不必关心这些。但第 11 章算出的那些关键计算（注意力、分组矩阵乘法、量化矩阵乘法、带特殊通信的矩阵乘法），常常需要按第 6–10 章的理论专门安排数据流，而 XLA 的通用策略做不到。**Pallas** 是 JAX 中写这种 kernel 的语言：程序员描述块的划分与每块的计算，编译器（Mosaic）生成 DMA、流水线和 TensorCore 的指令。
 
-本章先把一个 Pallas kernel 写成数学对象，给出它正确的条件和数据量的公式；再讲 BlockSpec 与自动流水线、kernel 体的写法、内存空间、维度语义、手动 DMA、标量预取，最后是形状与布局的约束。本章的 kernel 都在 Pallas 的 TPU 解释器中运行过（2026-10，JAX 0.11）。
+16.1 节先把一个 Pallas kernel 写成数学对象，给出它正确的条件和数据量的公式；16.2–16.5 节讲 BlockSpec 与自动流水线、kernel 体的写法、内存空间和维度语义；16.6、16.7 节讲手动 DMA 与标量预取；16.8 节是形状与布局的约束。本章的 kernel 都在 Pallas 的 TPU 解释器中运行过（2026-10，JAX 0.11）。
 
 > **在体系中的位置**：下层是第 13 章的 jaxpr 与 `jit`、第 15 章的 TensorCore、第 8 章的布局、第 9 章的流水线。本章给出 Pallas kernel 的语义、正确性条件、数据量公式和各种编程手段。第 17–19 章的 kernel 都用本章的手段写成；第 20 章分析它们编译出的指令。
 
 ## 16.1 kernel 的数学描述
 
-**定义 16.1（Pallas kernel）** 一个 Pallas kernel 由以下几部分组成：
+本节先不看语法，把一个 Pallas kernel 写成数学对象（定义 16.1），由此推出它正确的条件（命题 16.2）和 HBM 数据量的公式（命题 16.3）。后面各节的写法，都可以对照这两条来检查。
 
-- **grid**：一个整数格 $\mathcal{G} = [g_0] \times \dots \times [g_{r-1}]$，称为迭代空间；
-- 对每个输入和输出 $X_m$：一个**块形状** $b_m$ 和一个**下标映射** $\varphi_m: \mathcal{G} \to$ 块坐标；
-- **kernel 体** $\kappa$：一个以若干块为参数的函数。
-
-它的语义是：按字典序遍历 $\gamma \in \mathcal{G}$，对每个 $\gamma$，取出每个输入的第 $\varphi_m(\gamma)$ 块，执行 $\kappa$，把结果写入每个输出的第 $\varphi_m(\gamma)$ 块。块坐标是块的编号而不是元素的偏移：形状为 $(b_0, b_1)$ 的块，坐标 $(i, k)$ 对应元素 $[i b_0, (i+1) b_0) \times [k b_1, (k+1) b_1)$。
+> **定义 16.1（Pallas kernel）** 一个 Pallas kernel 由以下几部分组成：
+>
+> - **grid**：一个整数格 $\mathcal{G} = [g_0] \times \dots \times [g_{r-1}]$，称为迭代空间；
+> - 对每个输入和输出 $X_m$：一个**块形状** $b_m$ 和一个**下标映射** $\varphi_m: \mathcal{G} \to$ 块坐标；
+> - **kernel 体** $\kappa$：一个以若干块为参数的函数。
+>
+> 它的语义是：按字典序遍历 $\gamma \in \mathcal{G}$，对每个 $\gamma$，取出每个输入的第 $\varphi_m(\gamma)$ 块，执行 $\kappa$，把结果写入每个输出的第 $\varphi_m(\gamma)$ 块。块坐标是块的编号而不是元素的偏移：形状为 $(b_0, b_1)$ 的块，坐标 $(i, k)$ 对应元素 $[i b_0, (i+1) b_0) \times [k b_1, (k+1) b_1)$。
 
 这就是第 6 章的分块，写成了程序：grid 是分块后的循环，下标映射说明每一步用到哪些块。
 
-**命题 16.2（输出的正确性条件）** 设输出 $Y$ 的下标映射为 $\varphi_Y$。
-
-1. 若 $\varphi_Y$ 不是单射，则映到同一个输出块的那些 grid 点，在遍历次序中必须**连续**，并且对应的 grid 维必须按顺序执行（16.5 节的 `"arbitrary"`）。此时这个输出块在这些步之间留在 VMEM 中，可以被累加；当下标改变时才写回 HBM。
-2. 若 $\varphi_Y$ 不是满射，未被覆盖的输出块的内容未定义。
+> **命题 16.2（输出的正确性条件）** 设输出 $Y$ 的下标映射为 $\varphi_Y$。
+>
+> 1. 若 $\varphi_Y$ 不是单射，则映到同一个输出块的那些 grid 点，在遍历次序中必须**连续**，并且对应的 grid 维必须按顺序执行（16.5 节的 `"arbitrary"`）。此时这个输出块在这些步之间留在 VMEM 中，可以被累加；当下标改变时才写回 HBM。
+> 2. 若 $\varphi_Y$ 不是满射，未被覆盖的输出块的内容未定义。
 
 *证明* 自动流水线只在输出块的下标改变时写回（16.2 节）。若映到同一块的步不连续，这个块会被写回、之后又以未初始化的缓冲重新开始，先前的结果被覆盖；若这些步被分给不同的核心并行执行，就是对同一块的数据竞争（定义 9.2）。未被映到的块从未被写。∎
 
-**命题 16.3（数据量）** 自动流水线只在相邻两步的块下标不同时重新读入一个输入块。所以输入 $X_m$ 的 HBM 读取量为
-
-$$
-(\text{遍历中 } \varphi_m(\gamma) \text{ 改变的次数} + 1) \times (\text{块的字节数}),
-$$
-
-输出同理。
+> **命题 16.3（数据量）** 自动流水线只在相邻两步的块下标不同时重新读入一个输入块。所以输入 $X_m$ 的 HBM 读取量为
+>
+> $$
+> (\text{遍历中 } \varphi_m(\gamma) \text{ 改变的次数} + 1) \times (\text{块的字节数}),
+> $$
+>
+> 输出同理。
 
 所以 grid 维的**次序**决定了数据量：把一个输入的下标不依赖的维放在最内层，这个输入就不会被重复读取。第 6 章的分块分析（命题 6.9）在 Pallas 中就是数一数各个下标映射改变了几次（习题 16.1）。
 
 ## 16.2 BlockSpec 与自动流水线
+
+定义 16.1 中的块形状和下标映射，在程序中由 BlockSpec 给出。本节用一个最简单的例子说明它的写法，以及编译器据此生成的自动流水线。
 
 `pl.BlockSpec(block_shape, index_map)` 描述一个操作数的块形状与下标映射。最简单的例子是逐行分块的加法：
 
@@ -66,6 +70,8 @@ def add(x, y, bm=256):
 
 ## 16.3 kernel 体：ref 与值
 
+下面看 kernel 体 $\kappa$ 怎样写。本节说明 ref 与值的区别、值上的运算由哪些单元执行，并写出分块矩阵乘法的完整 kernel（例 16.4）。
+
 kernel 体的参数是 **ref**：指向 VMEM（或 SMEM、HBM）中一块存储的引用，可读可写。
 
 - `x_ref[...]` 把整块读成一个**值**（一个 JAX 数组，编译后在向量寄存器中）；`x_ref[pl.ds(start, size), :]` 读动态的一段；`o_ref[...] = v` 写回。
@@ -73,44 +79,46 @@ kernel 体的参数是 **ref**：指向 VMEM（或 SMEM、HBM）中一块存储�
 - `pl.program_id(d)` 是当前 grid 点的第 $d$ 个坐标，`pl.num_programs(d)` 是第 $d$ 维的大小。
 - `pl.when(cond)` 包装只在条件成立时执行的代码（标量单元上的分支）；kernel 体内的循环用 `jax.lax.fori_loop`。
 
-**例 16.4（分块矩阵乘法）**
-
-```python
-def mm_kernel(a_ref, b_ref, o_ref, acc_ref):
-    k = pl.program_id(2)
-
-    @pl.when(k == 0)
-    def _():
-        acc_ref[...] = jnp.zeros_like(acc_ref)
-
-    acc_ref[...] += jnp.dot(a_ref[...], b_ref[...], preferred_element_type=jnp.float32)
-
-    @pl.when(k == pl.num_programs(2) - 1)
-    def _():
-        o_ref[...] = acc_ref[...].astype(o_ref.dtype)
-
-def matmul(a, b, bm=128, bn=128, bk=128):
-    M, K = a.shape
-    _, N = b.shape
-    return pl.pallas_call(
-        mm_kernel,
-        out_shape=jax.ShapeDtypeStruct((M, N), a.dtype),
-        grid=(M // bm, N // bn, K // bk),
-        in_specs=[pl.BlockSpec((bm, bk), lambda i, j, k: (i, k)),
-                  pl.BlockSpec((bk, bn), lambda i, j, k: (k, j))],
-        out_specs=pl.BlockSpec((bm, bn), lambda i, j, k: (i, j)),
-        scratch_shapes=[pltpu.VMEM((bm, bn), jnp.float32)],
-        compiler_params=pltpu.CompilerParams(
-            dimension_semantics=("parallel", "parallel", "arbitrary")),
-    )(a, b)
-```
-
-用本章的工具检查它：
-
-- **正确性**（命题 16.2）：输出的下标 $(i, j)$ 在 $k$ 维上不变，映到同一块的步是连续的（$k$ 在最内层），且 $k$ 维标为 `"arbitrary"`。累加器是 f32 的 scratch，在 $k = 0$ 时清零，在最后一步写出一次（避免了习题 2.6 与习题 6.7 的两个错误）。
-- **数据量**（命题 16.3）：$A$ 的块 $(i, k)$ 每步都变，读 $\frac{M}{b_M}\frac{N}{b_N}\frac{K}{b_K}$ 次，每次 $s b_M b_K$ 字节，共 $s MK \cdot \frac{N}{b_N}$；$B$ 共 $s KN \cdot \frac{M}{b_M}$；$C$ 写 $MN$ 个元素一次。与命题 6.9 相同。
+> **例 16.4（分块矩阵乘法）**
+>
+> ```python
+> def mm_kernel(a_ref, b_ref, o_ref, acc_ref):
+>     k = pl.program_id(2)
+>
+>     @pl.when(k == 0)
+>     def _():
+>         acc_ref[...] = jnp.zeros_like(acc_ref)
+>
+>     acc_ref[...] += jnp.dot(a_ref[...], b_ref[...], preferred_element_type=jnp.float32)
+>
+>     @pl.when(k == pl.num_programs(2) - 1)
+>     def _():
+>         o_ref[...] = acc_ref[...].astype(o_ref.dtype)
+>
+> def matmul(a, b, bm=128, bn=128, bk=128):
+>     M, K = a.shape
+>     _, N = b.shape
+>     return pl.pallas_call(
+>         mm_kernel,
+>         out_shape=jax.ShapeDtypeStruct((M, N), a.dtype),
+>         grid=(M // bm, N // bn, K // bk),
+>         in_specs=[pl.BlockSpec((bm, bk), lambda i, j, k: (i, k)),
+>                   pl.BlockSpec((bk, bn), lambda i, j, k: (k, j))],
+>         out_specs=pl.BlockSpec((bm, bn), lambda i, j, k: (i, j)),
+>         scratch_shapes=[pltpu.VMEM((bm, bn), jnp.float32)],
+>         compiler_params=pltpu.CompilerParams(
+>             dimension_semantics=("parallel", "parallel", "arbitrary")),
+>     )(a, b)
+> ```
+>
+> 用本章的工具检查它：
+>
+> - **正确性**（命题 16.2）：输出的下标 $(i, j)$ 在 $k$ 维上不变，映到同一块的步是连续的（$k$ 在最内层），且 $k$ 维标为 `"arbitrary"`。累加器是 f32 的 scratch，在 $k = 0$ 时清零，在最后一步写出一次（避免了习题 2.6 与习题 6.7 的两个错误）。
+> - **数据量**（命题 16.3）：$A$ 的块 $(i, k)$ 每步都变，读 $\frac{M}{b_M}\frac{N}{b_N}\frac{K}{b_K}$ 次，每次 $s b_M b_K$ 字节，共 $s MK \cdot \frac{N}{b_N}$；$B$ 共 $s KN \cdot \frac{M}{b_M}$；$C$ 写 $MN$ 个元素一次。与命题 6.9 相同。
 
 ## 16.4 内存空间与 scratch
+
+例 16.4 用一块 scratch 作累加器。本节说明操作数和 kernel 内部的存储可以放在哪里。
 
 每个操作数可以指定**内存空间**：
 
@@ -128,18 +136,20 @@ def matmul(a, b, bm=128, bn=128, bk=128):
 
 ## 16.5 维度语义与多核
 
+例 16.4 还给每个 grid 维标了语义。本节说明这种标注的含义，以及标错的后果（命题 16.5）。
+
 `dimension_semantics` 为每个 grid 维声明一种语义：
 
 - `"parallel"`：这一维的各步互相独立，可以以任何次序执行，也可以分给多个 TensorCore（megacore，15.6 节）；
 - `"arbitrary"`：这一维必须按顺序执行，因为各步之间有状态传递（累加到输出或 scratch）。
 
-**命题 16.5** 若某个输出（或 scratch 中的累加器）的块在某一维上保持不变并被累加，这一维必须是 `"arbitrary"`。把它标为 `"parallel"`，在有多个 TensorCore 时就是数据竞争。
+> **命题 16.5** 若某个输出（或 scratch 中的累加器）的块在某一维上保持不变并被累加，这一维必须是 `"arbitrary"`。把它标为 `"parallel"`，在有多个 TensorCore 时就是数据竞争。
 
 在只有一个 TensorCore 的芯片上，错误的标注可能恰好不出错，换到 megacore 的芯片上才出错。这是审查时要逐维检查的一点（习题 16.3）。
 
 ## 16.6 手动 DMA 与信号量
 
-自动流水线覆盖了"每步取固定的块"的情形。以下情形需要自己写 DMA：访问模式依赖于数据、各阶段的节奏不同、需要跨越 grid 步的特殊重叠，以及跨核心、跨芯片的拷贝（第 19 章）。
+自动流水线覆盖了"每步取固定的块"的情形。以下情形需要自己写 DMA：访问模式依赖于数据、各阶段的节奏不同、需要跨越 grid 步的特殊重叠，以及跨核心、跨芯片的拷贝（第 19 章）。本节用一个双缓冲的例子说明写法，并逐条对照第 9 章检查它。
 
 做法是把输入留在 HBM（`memory_space=pl.ANY`），在 scratch 中声明 VMEM 缓冲和 DMA 信号量，用 `pltpu.make_async_copy(src, dst, sem)` 建立拷贝，`.start()` 发起，`.wait()` 等待。下面的 kernel 用双缓冲按行块求列和：
 
@@ -206,6 +216,8 @@ def gather_blocks(x, idx, bm=8):
 第 $i$ 步读入第 `idx[i]` 个行块。下标映射在标量单元上执行，应当保持简单（几次加法、比较、查表）。由命题 16.3，若相邻两步的 `idx` 相同，这一块不会被重复读入。
 
 ## 16.8 形状与布局的约束
+
+最后列出写 kernel 时最常碰到的约束。
 
 - **块的最后两维**必须分别是 8 和 128 的倍数，或者等于数组相应维的全长；bf16 时第一个要求变为 16 的倍数，int8 时为 32（15.3 节的布局与打包）。数组的形状不满足时，应当在 kernel 之外补齐（习题 8.2）。
 - **不是所有 `jnp` 运算都能编译。** 一般来说，逐元素运算、沿某一维的归约、矩阵乘法、广播、对齐的切片可以；任意的 gather、改变最后两维的 reshape、复杂的索引常常不行，或者要付出重排的代价。编译失败时，先想它对应哪些硬件操作（第 15 章），换一种对硬件友好的写法。

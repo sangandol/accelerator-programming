@@ -1,10 +1,12 @@
 # 第 18 章　TPU kernel：注意力
 
-注意力是 Transformer 中唯一不是"矩阵乘法加逐元素运算"的部分。第 11 章说明了它的问题：中间的分数矩阵是 $T \times T$ 的，不能写回 HBM；第 10 章给出了解决办法：在线 softmax 让我们一块一块地处理键和值，只保留每个查询的状态 $(m, \ell, u)$。本章把它写成 TPU 上的 kernel，并讨论因果掩码与块稀疏、decode 时的注意力，以及反向传播。
+注意力是 Transformer 中唯一不是"矩阵乘法加逐元素运算"的部分。第 11 章说明了它的问题：中间的分数矩阵是 $T \times T$ 的，不能写回 HBM；第 10 章给出了解决办法：在线 softmax 让我们一块一块地处理键和值，只保留每个查询的状态 $(m, \ell, u)$。本章把它写成 TPU 上的 kernel。18.1 节先用屋顶线估出注意力的上限；18.2 节写出 flash attention 的 kernel，并分析各单元的负载；18.3 节讨论因果掩码与块稀疏；18.4 节讨论 decode 时的注意力；18.5 节讨论反向传播。
 
 > **在体系中的位置**：下层是第 10 章的在线 softmax（命题 10.5）、第 11 章的注意力算术、第 13 章的自动微分、第 15 章的 TensorCore、第 16、17 章的 Pallas 与矩阵乘法 kernel。本章给出 flash attention 的 TPU 形式、各单元的负载平衡、掩码的块级跳过、decode 注意力与反向传播。
 
 ## 18.1 注意力的屋顶线
+
+按本部分的惯例，写 kernel 之前先估上限。本节比较两种做法的算术强度，结论是命题 18.1：flash attention 在 prefill 中可以计算受限，在 decode 中必然访存受限。
 
 考虑一个头：$Q, K, V \in \mathbb{R}^{T \times d}$，输出 $O = \operatorname{softmax}(QK^{\mathsf T}/\sqrt{d})\,V$。
 
@@ -12,13 +14,15 @@
 - 若把 $S$、$P$ 写回 HBM：数据量约 $2 s T^2$ 的量级，强度约 $d/s$，访存受限；
 - 若中间结果不离开 VMEM（flash attention）：只读 $Q, K, V$ 写 $O$，但键值要被每个查询块读一遍。查询块大小为 $b_q$ 时，$K$、$V$ 被读 $T / b_q$ 次，数据量约 $2 s T d \cdot T / b_q$，强度约 $\frac{4 T^2 d}{2 s T^2 d / b_q} = \frac{2 b_q}{s}$。
 
-**命题 18.1** flash attention 在 prefill 中的强度约为 $2b_q / s$，与 $T$ 无关；$b_q$ 达到 $sI^*/2$ 时计算受限。decode 时每个序列只有一个（或少数几个）查询，强度约为 $2 \cdot (\text{同时处理的查询数}) / s$，访存受限，时间由读 KV cache 决定。
+> **命题 18.1** flash attention 在 prefill 中的强度约为 $2b_q / s$，与 $T$ 无关；$b_q$ 达到 $sI^*/2$ 时计算受限。decode 时每个序列只有一个（或少数几个）查询，强度约为 $2 \cdot (\text{同时处理的查询数}) / s$，访存受限，时间由读 KV cache 决定。
 
 *证明* 上面的计数；decode 时 $b_q$ 换成同时处理的查询数。∎
 
 所以 prefill 的注意力 kernel 要选足够大的 $b_q$，decode 的注意力 kernel 要以最高效率读 KV cache（18.4 节）。
 
 ## 18.2 Flash attention 的 TPU 形式
+
+本节把命题 10.5 写成 Pallas kernel，再分析 MXU、EUP、XLU 三个单元中谁会成为瓶颈（命题 18.2）。
 
 grid 取（批量 × 头，查询块，键值块）。对每个查询块，在 VMEM 的 scratch 中保留 f32 的状态：每行的 $m$、$\ell$，以及 $b_q \times d$ 的累加器 $u$。沿键值块的维逐块执行命题 10.5 的合并，这一维必须是 `"arbitrary"`（命题 16.5），最后一块时输出 $u / \ell$。
 
@@ -69,11 +73,11 @@ BlockSpec：$Q$ 与输出取 `(1, bq, d)`，下标 `(b, i, 0)`；$K$、$V$ 取 `
 
 **各单元的负载。** 对 $S$ 的每个元素，MXU 要做 $QK^{\mathsf T}$ 与 $PV$ 中的各 $d$ 次乘加，即 $4d$ FLOP；EUP 要做一次指数；XLU 要参与行最大值与行和两次跨通道归约。
 
-**命题 18.2（MXU 与 EUP 的平衡）** 设 MXU 每周期 $P_{\text{mxu}}$ FLOP，EUP 每周期 $E$ 个指数。flash attention 不被 EUP 限制的条件是
-
-$$
-4d \ge \frac{P_{\text{mxu}}}{E}.
-$$
+> **命题 18.2（MXU 与 EUP 的平衡）** 设 MXU 每周期 $P_{\text{mxu}}$ FLOP，EUP 每周期 $E$ 个指数。flash attention 不被 EUP 限制的条件是
+>
+> $$
+> 4d \ge \frac{P_{\text{mxu}}}{E}.
+> $$
 
 *证明* 每个分数元素的 MXU 时间为 $4d / P_{\text{mxu}}$，EUP 时间为 $1 / E$。∎
 
@@ -83,9 +87,11 @@ XLU 的负载更需要小心：若每个 $8 \times 128$ 的分数寄存器都做
 
 ## 18.3 掩码与块稀疏
 
+因果掩码让大约一半的块完全不必计算。本节算出能省下多少（命题 18.3），再推广到一般的块稀疏掩码（命题 18.4）。
+
 **因果掩码。** 查询块 $i$ 与键值块 $j$ 的关系只有三种：完全在对角线以下（全部可见），跨越对角线（部分可见），完全在对角线以上（全部屏蔽）。上面的 kernel 用 `pl.when` 跳过第三种，对第二种用 `where` 逐元素屏蔽。
 
-**命题 18.3** 取 $b_q = b_k = b$，$n = T/b$，因果掩码下需要计算的块数为 $n(n+1)/2$，占全部 $n^2$ 块的 $\frac{1}{2} + \frac{1}{2n}$。
+> **命题 18.3** 取 $b_q = b_k = b$，$n = T/b$，因果掩码下需要计算的块数为 $n(n+1)/2$，占全部 $n^2$ 块的 $\frac{1}{2} + \frac{1}{2n}$。
 
 *证明* 第 $i$ 个查询块需要第 $0, \dots, i$ 个键值块。∎
 
@@ -93,7 +99,7 @@ XLU 的负载更需要小心：若每个 $8 \times 128$ 的分数寄存器都做
 
 **块稀疏注意力。** 一般的掩码（滑动窗口、文档边界、前缀可见等）事先在块的粒度上分类：对每个（查询块，键值块），标记为"全部屏蔽""全部可见""部分可见"。用标量预取传入每个查询块需要访问的键值块列表（以及列表长度、每块是否需要逐元素掩码），grid 的键值维只遍历列表中的块，下标映射查表得到实际的键值块号（16.7 节）。
 
-**命题 18.4** 块稀疏注意力的运算量与非空块的个数成正比；部分可见块额外付出逐元素掩码的代价。
+> **命题 18.4** 块稀疏注意力的运算量与非空块的个数成正比；部分可见块额外付出逐元素掩码的代价。
 
 例如窗口为 $w$ 的滑动窗口注意力，每个查询块只需约 $w / b + 1$ 个键值块，运算量从 $O(T^2)$ 降到 $O(Tw)$。
 
@@ -111,15 +117,17 @@ decode 时每个序列只有一个新的查询，要与它的整个 KV cache 计
 
 ## 18.5 反向传播
 
+训练还需要注意力的反向传播。它的难点与前向相同：不能保存 $T \times T$ 的 $P$。本节先求出反向的公式（命题 18.5），再由公式得出反向 kernel 的结构。
+
 设损失对输出的梯度为 $\bar{O}$。对一个头（省略缩放 $1/\sqrt{d}$，它只是乘到 $S$ 上），由第 13 章：
 
-**命题 18.5（注意力的反向）**
-
-$$
-\bar{V} = P^{\mathsf T} \bar{O}, \qquad \bar{P} = \bar{O} V^{\mathsf T}, \qquad \bar{S} = P \odot (\bar{P} - D\,\mathbf{1}^{\mathsf T}), \qquad \bar{Q} = \bar{S} K, \qquad \bar{K} = \bar{S}^{\mathsf T} Q,
-$$
-
-其中 $D_i = \sum_j P_{ij} \bar{P}_{ij} = \sum_c O_{ic} \bar{O}_{ic}$。
+> **命题 18.5（注意力的反向）**
+>
+> $$
+> \bar{V} = P^{\mathsf T} \bar{O}, \qquad \bar{P} = \bar{O} V^{\mathsf T}, \qquad \bar{S} = P \odot (\bar{P} - D\,\mathbf{1}^{\mathsf T}), \qquad \bar{Q} = \bar{S} K, \qquad \bar{K} = \bar{S}^{\mathsf T} Q,
+> $$
+>
+> 其中 $D_i = \sum_j P_{ij} \bar{P}_{ij} = \sum_c O_{ic} \bar{O}_{ic}$。
 
 *证明* 前两个与后两个是矩阵乘法的 VJP（命题 13.4）。$\bar{S}$ 是逐行 softmax 的 VJP（习题 13.3）：$\bar{s} = p \odot (\bar{p} - \langle p, \bar{p} \rangle)$。最后，$\langle P_{i,:}, \bar{P}_{i,:} \rangle = \sum_j P_{ij} (\bar{O} V^{\mathsf T})_{ij} = \sum_c \bar{O}_{ic} (PV)_{ic} = \langle \bar{O}_{i,:}, O_{i,:} \rangle$。∎
 
