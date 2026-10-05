@@ -605,11 +605,17 @@ if (process.argv.includes('--check')) {
 } else {
   const portArg = process.argv.indexOf('--port');
   const port = Number(portArg > 0 ? process.argv[portArg + 1] : process.env.PORT ?? 43202);
-  createServer((req, res) => {
-    handle(req, res).catch((error) => {
-      console.error(error);
-      res.writeHead(500, { 'Content-Type': 'text/plain; charset=utf-8' });
-      res.end('Internal error');
-    });
-  }).listen(port, '127.0.0.1', () => console.log(`[ready] http://127.0.0.1:${port}/book/`));
+  // --host 127.0.0.1,100.x.y.z listens on each listed address (e.g. also a Tailscale address);
+  // the default is this machine only. Never 0.0.0.0: on a public Wi-Fi everyone could read the book.
+  const hostArg = process.argv.indexOf('--host');
+  const hosts = (hostArg > 0 ? process.argv[hostArg + 1] : '127.0.0.1').split(',');
+  for (const host of hosts) {
+    createServer((req, res) => {
+      handle(req, res).catch((error) => {
+        console.error(error);
+        res.writeHead(500, { 'Content-Type': 'text/plain; charset=utf-8' });
+        res.end('Internal error');
+      });
+    }).listen(port, host, () => console.log(`[ready] http://${host}:${port}/book/`));
+  }
 }

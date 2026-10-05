@@ -31,6 +31,7 @@
 
 ```powershell
 .\start.ps1              # 启动阅读器并打开浏览器；-NoBrowser 不打开，-Port 指定端口，-Setup 重装依赖
+.\start.ps1 -Tailscale   # 另外监听本机的 Tailscale 地址，供自己的其他设备阅读；不要监听 0.0.0.0（公共 Wi-Fi 上谁都能看）
 npm run check            # 渲染全书，报告 KaTeX 错误、缺失章节、失效链接和锚点、缺失的图、指向不存在条目的编号引用、编号不连续
 node server.mjs --export 01-circuits-adders.md out.html   # 单章导出为一个文件（样式、字体、脚本、插图都内联）
 npm run fig -- 09        # 生成名字以 09 开头的插图（不带参数则全部生成），报告文字重叠、线穿过文字、未被引用的图
