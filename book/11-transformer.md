@@ -1,0 +1,258 @@
+# 第 11 章　Transformer 的算术
+
+前十章讲的是机器和一般的计算结构。本章讲加速器上最主要的工作负载：Transformer 语言模型。我们不讨论它为什么有效，只把它写成一串矩阵乘法、归约和逐元素运算，数出每一部分的运算量和数据量，再用屋顶线判断每一部分受什么限制。之后的并行策略和 kernel，都是为了对付本章算出的这些数字。
+
+> **在体系中的位置**：下层是第 2 章的数值格式、第 6 章的屋顶线与小批量矩阵乘法（命题 6.16）、第 10 章的在线 softmax。本章给出 Transformer 的计算量、数据量、显存占用，以及训练、prefill、decode 三种情形的瓶颈。第 12 章据此设计并行策略；第 17、18、25、26 章据此设计 kernel。
+
+## 11.1 记号与模型
+
+一个仅解码器的 Transformer 由 $n_L$ 个相同结构的**层**组成。输入是 $B$ 个序列、每个长 $T$ 个**词元**（token），共 $N = BT$ 个词元，每个词元表示为 $D$ 维向量，全部堆成矩阵 $X \in \mathbb{R}^{N \times D}$。每层做：
+
+$$
+X \leftarrow X + \operatorname{Attn}(\operatorname{Norm}(X)), \qquad X \leftarrow X + \operatorname{MLP}(\operatorname{Norm}(X)).
+$$
+
+**归一化**（RMSNorm）：对每行 $x$，$x \mapsto x / \sqrt{\operatorname{mean}(x^2) + \varepsilon} \odot g$，$g \in \mathbb{R}^D$ 是参数。
+
+**注意力**：有 $H$ 个**头**，每头维数 $d_h$（通常 $H d_h = D$），键和值有 $H_{kv}$ 个头（$H_{kv} = H$ 为标准的多头注意力 MHA，$H_{kv} < H$ 为分组查询注意力 GQA，$H_{kv} = 1$ 为 MQA）。
+
+$$
+Q = X W_Q,\quad K = X W_K,\quad V = X W_V, \qquad W_Q \in \mathbb{R}^{D \times H d_h},\ W_K, W_V \in \mathbb{R}^{D \times H_{kv} d_h}.
+$$
+
+对每个头 $h$（它使用的键值头是 $\lfloor h H_{kv} / H \rfloor$），对每个序列：
+
+$$
+S_h = \frac{Q_h K_h^{\mathsf T}}{\sqrt{d_h}} + \text{mask}, \qquad P_h = \operatorname{softmax}(S_h)\ \text{（按行）}, \qquad O_h = P_h V_h,
+$$
+
+其中 mask 在位置 $t' > t$ 处为 $-\infty$（因果掩码：每个词元只看它之前的词元）。各头的 $O_h$ 拼接后乘以 $W_O \in \mathbb{R}^{H d_h \times D}$。
+
+**MLP**（带门控的形式）：
+
+$$
+\operatorname{MLP}(X) = \big(\sigma(X W_1) \odot (X W_3)\big) W_2, \qquad W_1, W_3 \in \mathbb{R}^{D \times F},\ W_2 \in \mathbb{R}^{F \times D},
+$$
+
+$\sigma$ 是一个逐元素的激活函数，$\odot$ 是逐元素乘法。
+
+最前面的**词嵌入**和最后的**输出层**各是一个 $V \times D$ 的矩阵，$V$ 是词表大小。
+
+**命题 11.1（参数量）** 每层的参数量约为
+
+$$
+\underbrace{2D \cdot H d_h + 2 D \cdot H_{kv} d_h}_{\text{注意力}} + \underbrace{3 D F}_{\text{MLP}},
+$$
+
+全模型的参数量 $\Phi \approx n_L(\cdots) + 2VD$（不计归一化的少量参数）。MHA 且 $F = 4D$、不带门控（MLP 只有两个矩阵）时，每层约 $12D^2$。
+
+## 11.2 运算量与数据量
+
+**矩阵乘法。** 一次处理 $N$ 个词元，乘以一个 $D_{\text{in}} \times D_{\text{out}}$ 的权重：运算量 $2N D_{\text{in}} D_{\text{out}}$，数据量 $s(D_{\text{in}} D_{\text{out}} + N D_{\text{in}} + N D_{\text{out}})$。由命题 6.16，$N \ll D$ 时强度约 $2N/s$，$N$ 很大时强度很高。
+
+**命题 11.2（前向的运算量）** 前向传播中矩阵乘法的运算量约为每词元 $2\Phi$ FLOP。
+
+*证明* 每个参数（权重矩阵的每个元素）对每个词元恰好参与一次乘加。∎
+
+**注意力的分数与加权和。** 每个头、每对（查询，键）要算一个长 $d_h$ 的点积（$2d_h$ FLOP），加权和又是 $2 d_h$。在因果掩码下约一半的对有效，所以一个长 $T$ 的序列每层约为
+
+$$
+2 \cdot 2 d_h \cdot H \cdot \frac{T^2}{2} = 2 D T^2 \ \text{FLOP}.
+$$
+
+与矩阵乘法的 $2T \cdot (\text{每层参数量})$ 相比，在每层 $12D^2$ 参数时比值为 $\frac{2DT^2}{24 T D^2} = \frac{T}{12D}$：序列长度达到 $D$ 的十几倍时，注意力本身的运算量才与矩阵乘法相当。但注意力有另一个问题：若把 $S_h$、$P_h$ 写到 HBM，数据量是 $s H T^2$ 量级，远大于其他部分。所以注意力必须用在线 softmax（命题 10.5）一块一块地算，中间结果不离开片上存储（第 18、26 章）。
+
+**归一化、激活、残差加法。** 这些运算的运算量和数据量都是 $O(ND)$，强度是常数，属于访存受限，应当与相邻的矩阵乘法融合（命题 6.8）。
+
+## 11.3 训练
+
+**反向传播。** 对矩阵乘法 $Y = XW$，反向要算两个乘积：
+
+$$
+\frac{\partial \mathcal{L}}{\partial X} = \frac{\partial \mathcal{L}}{\partial Y} W^{\mathsf T}, \qquad \frac{\partial \mathcal{L}}{\partial W} = X^{\mathsf T} \frac{\partial \mathcal{L}}{\partial Y},
+$$
+
+各与前向的乘积一样大。
+
+**命题 11.3（训练的运算量）** 训练一步的矩阵乘法运算量约为每词元 $6\Phi$ FLOP：前向 $2\Phi$，反向 $4\Phi$。
+
+**模型 FLOP 利用率**（MFU）定义为 $6\Phi \times (\text{每秒处理的词元数}) / P$：它衡量机器的峰值有多少用在了"有用"的矩阵乘法上。训练时间约为
+
+$$
+\frac{6 \Phi \cdot (\text{训练的总词元数})}{(\text{芯片数}) \cdot P \cdot \text{MFU}} .
+$$
+
+**显存。** 训练时片外存储里要放：
+
+- **参数、梯度与优化器状态**。常见的混合精度 Adam：bf16 参数（2 字节）、梯度（2 或 4 字节）、f32 主参数（4 字节）、两个 f32 矩（8 字节），每个参数约 16 字节。
+- **激活**。反向要用到前向的中间结果，每层每词元要保存若干个 $D$ 维（以及 $F$ 维）的向量，总量与 $n_L N D$ 成正比。可以只保存一部分，反向时重新计算其余部分（**重计算**），以多做约一次前向（运算量 $+2\Phi$/词元）换取显存。
+
+例如 $\Phi = 7 \times 10^{10}$ 的模型，仅参数和优化器状态就要约 1.1 TB，远超一颗芯片的 HBM。所以训练必须把这些状态分到许多芯片上（第 12 章）。
+
+## 11.4 推理：prefill 与 decode
+
+生成文本分两个阶段。
+
+**Prefill**：一次处理提示中的全部 $T$ 个词元，等价于一次前向传播，$N = BT$ 很大，矩阵乘法计算受限。
+
+**Decode**：之后每一步为每个序列生成一个新词元。每一步只处理 $N = B$ 个词元，但要用到之前所有词元的键和值。为了不重算，把每层的 $K$、$V$ 保存下来，称为 **KV cache**。
+
+**命题 11.4（KV cache 的大小）** 每个词元每层要保存 $2 H_{kv} d_h$ 个数，整个序列的 KV cache 为
+
+$$
+2\, n_L H_{kv} d_h\, s_{kv}\, T \ \text{字节}.
+$$
+
+**命题 11.5（decode 一步的时间）** decode 一步至少要读一遍全部权重和全部 KV cache：
+
+$$
+T_{\text{step}} \ge \frac{s \Phi + B \cdot (\text{每序列的 KV 字节数})}{B_{\text{HBM}}}, \qquad \text{吞吐} = \frac{B}{T_{\text{step}}}\ \text{词元/秒}.
+$$
+
+当 $B$ 不超过约 $s I^* / 2$ 时（命题 6.16），矩阵乘法访存受限，这个下界就是实际时间的主要部分。
+
+*证明* 每个权重都要参与这一步每个序列的计算，每个序列的注意力要读它的全部 KV cache。$B$ 小时运算时间可以忽略。∎
+
+命题 11.5 揭示了推理服务的核心权衡：批量 $B$ 越大，读权重的代价被越多的序列分摊，吞吐越高；但 KV cache 随 $B T$ 增长，既占显存又占带宽，而且每一步的时间（即每个用户看到的延迟）也随之增长。
+
+decode 中注意力的强度：每个新词元对每个头做 $4 d_h T$ FLOP，读 $2 H_{kv} d_h T s$ 字节的 KV cache，强度约 $\frac{2H}{H_{kv} s}$。MHA、bf16 时只有 1 FLOP/字节；GQA 把 $H / H_{kv}$ 提高到 4 或 8，强度随之提高，KV cache 也随之缩小。
+
+> **现状（2026-10）**：除 GQA 外，多头潜在注意力（MLA）把每个词元的键值压缩成一个共享的 $d_c$ 维潜向量（外加一小段位置编码分量），KV cache 降到每层每词元约 $d_c$ 个数；解码时可以把还原键值的矩阵并入查询和输出的投影，直接在潜向量上计算注意力。投机解码一次验证若干个草稿词元，相当于把 decode 的 $N$ 放大若干倍，以提高强度。
+
+## 11.5 混合专家模型
+
+**混合专家**（MoE）层有 $E$ 个 MLP（**专家**），一个小的**路由器**为每个词元选出 $k$ 个专家，词元的输出是这 $k$ 个专家输出的加权和。
+
+- 参数量随 $E$ 增长：每层约 $E \cdot 3DF$；
+- 每词元的运算量只随 $k$ 增长：每词元约 $2 \cdot k \cdot 3DF$。
+
+**命题 11.6** 一次处理 $N$ 个词元时，平均每个专家分到 $Nk/E$ 个词元，每个专家的矩阵乘法强度约为 $\frac{2Nk}{sE}$。
+
+*证明* 命题 6.16，以 $Nk/E$ 代替 $N$。∎
+
+所以 MoE 用参数量换取了运算量的节省，但代价是每个专家的矩阵乘法更小、更难计算受限，尤其在 decode 中。实现上要先按专家把词元**分组**（一次 gather 或排序），对每个专家做一次行数不同的矩阵乘法（**分组矩阵乘法**），再把结果**按原顺序放回**并加权。词元在专家间分配不均时，有的专家很忙、有的很闲。专家分布在不同芯片上时，分组与放回变成第 7 章的全交换。
+
+## 11.6 量化
+
+**只量化权重**（int8、int4、fp4 权重，bf16 激活）：在 decode 这种访存受限的情形下，时间与权重字节数成正比（命题 6.16），所以直接按比例变快，无论矩阵单元是否支持这种格式（kernel 内把权重转回 bf16 即可）。
+
+**权重与激活都量化**（W8A8、fp8、带块缩放的 fp4）：使用低精度的矩阵单元，在计算受限的情形（训练、prefill）下吞吐翻倍（注 2.7）。精度依赖于缩放的粒度（命题 2.10）。
+
+**量化 KV cache**：减少命题 11.5 中 KV 部分的字节数，对长上下文的 decode 尤其有效。
+
+## 接口小结
+
+1. Transformer 每层：RMSNorm、注意力（$Q, K, V$ 投影、按头的 $\operatorname{softmax}(QK^{\mathsf T}/\sqrt{d_h}) V$、输出投影）、门控 MLP，加残差。参数量见命题 11.1。（11.1 节）
+2. 前向的矩阵乘法约每词元 $2\Phi$ FLOP；注意力约每层每序列 $2DT^2$，在 $T \gtrsim 12D$ 时才与矩阵乘法相当；注意力的中间矩阵不能写回 HBM。逐元素与归一化运算访存受限，应当融合。（命题 11.2、11.2 节）
+3. 训练约每词元 $6\Phi$ FLOP；混合精度 Adam 每参数约 16 字节；激活可以用重计算换显存。（命题 11.3、11.3 节）
+4. prefill 计算受限；decode 每步要读全部权重和 KV cache，批量小于约 $sI^*/2$ 时访存受限。KV cache 为 $2 n_L H_{kv} d_h s T$ 字节每序列。（命题 11.4、11.5）
+5. MoE 的每个专家只分到 $Nk/E$ 个词元，强度更低；实现上是分组、分组矩阵乘法、放回。（命题 11.6）
+6. 只量化权重加速访存受限的 decode；量化权重与激活加速计算受限的情形；量化 KV cache 加速长上下文。（11.6 节）
+
+## 习题
+
+下面几题用同一个模型：$D = 4096$，$n_L = 32$，$H = 32$，$H_{kv} = 8$，$d_h = 128$，门控 MLP 的 $F = 14336$，$V = 128256$，词嵌入与输出层不共享参数。这是一个常见的 80 亿参数规模的公开模型的结构。
+
+**习题 11.1** ★ 求这个模型的参数量 $\Phi$。
+
+<details><summary>提示</summary>
+
+命题 11.1：注意力 $2 \cdot 4096 \cdot 4096 + 2 \cdot 4096 \cdot 1024$，MLP $3 \cdot 4096 \cdot 14336$。
+
+</details>
+<details><summary>答案</summary>
+
+注意力每层 $33.6 \times 10^6 + 8.4 \times 10^6 = 41.9 \times 10^6$；MLP 每层 $176.2 \times 10^6$；每层合计 $218.1 \times 10^6$，32 层 $6.98 \times 10^9$。词嵌入与输出层 $2 \times 128256 \times 4096 = 1.05 \times 10^9$。$\Phi \approx 8.0 \times 10^9$。
+
+</details>
+
+**习题 11.2** ★ 用 $1.5 \times 10^{13}$ 个词元训练这个模型，在 1024 颗参考芯片 X（$P = 2.6 \times 10^{14}$）上、MFU 为 40%，需要多少天？
+
+<details><summary>提示</summary>
+
+命题 11.3。
+
+</details>
+<details><summary>答案</summary>
+
+$6 \times 8 \times 10^9 \times 1.5 \times 10^{13} = 7.2 \times 10^{23}$ FLOP。每秒 $1024 \times 2.6 \times 10^{14} \times 0.4 \approx 1.07 \times 10^{17}$。约 $6.8 \times 10^6$ 秒，约 78 天。
+
+</details>
+
+**习题 11.3** ★ bf16 存储时，这个模型每个词元的 KV cache 有多大？一个 32768 词元的序列呢？若改为 MHA（$H_{kv} = 32$）呢？
+
+<details><summary>提示</summary>
+
+命题 11.4。
+
+</details>
+<details><summary>答案</summary>
+
+每词元 $2 \times 32 \times 8 \times 128 \times 2 = 131072$ 字节 $= 128$ KiB。32768 词元为 4 GiB。MHA 时是 4 倍：每词元 512 KiB，每序列 16 GiB。
+
+</details>
+
+**习题 11.4** ★ 在参考芯片 X（HBM 64 GB、1 TB/s）上用 bf16 做 decode，$B = 32$ 个序列，每个上下文 4096 词元。(a) 权重与 KV cache 共占多少显存？(b) 每步至少多少时间？吞吐是多少词元/秒？(c) 把权重量化为 int8，(b) 变成多少？
+
+<details><summary>提示</summary>
+
+命题 11.5。权重 $2\Phi$ 字节；KV cache 每序列 $4096 \times 128$ KiB。
+
+</details>
+<details><summary>答案</summary>
+
+(a) 权重约 16 GB；KV cache $32 \times 4096 \times 128\ \text{KiB} = 16$ GiB（约 17.2 GB）；合计约 33 GB，放得下。(b) 约 $33 \times 10^9 / 10^{12} = 33$ ms，吞吐 $32 / 0.033 \approx 970$ 词元/秒。(c) 权重 8 GB，每步约 25 ms，吞吐约 1280 词元/秒。只提高约 1.3 倍而不是 2 倍，因为 KV cache 没有量化。
+
+</details>
+
+**习题 11.5** ★ 对这个模型，一个长 $T = 8192$ 的序列，注意力（分数与加权和）的运算量占前向总运算量的多少？
+
+<details><summary>提示</summary>
+
+注意力每层 $2DT^2$，矩阵乘法每层 $2T \times 218.1 \times 10^6$。
+
+</details>
+<details><summary>答案</summary>
+
+注意力每层 $2 \times 4096 \times 8192^2 \approx 5.5 \times 10^{11}$；矩阵乘法每层 $2 \times 8192 \times 2.18 \times 10^8 \approx 3.6 \times 10^{12}$。注意力约占 13%。（这个模型的每层参数约 $13D^2$，与 $12D^2$ 接近。）
+
+</details>
+
+**习题 11.6** ★ 一个 MoE 层有 $E = 64$ 个专家，每词元选 $k = 2$ 个。decode 一步有 $N = 256$ 个词元。(a) 平均每个专家分到几个词元？矩阵乘法的强度是多少（bf16）？(b) 这一步大约要读多少个专家的权重？
+
+<details><summary>提示</summary>
+
+(a) 命题 11.6。(b) 一个专家一个词元都没分到的概率约为 $(1 - k/E)^N$。
+
+</details>
+<details><summary>答案</summary>
+
+(a) $256 \times 2 / 64 = 8$ 个，强度约 $2 \times 8 / 2 = 8$ FLOP/字节，严重访存受限。(b) $(1 - 1/32)^{256} \approx e^{-8} \approx 3 \times 10^{-4}$，几乎每个专家都至少分到一个词元，要读全部 64 个专家的权重。MoE 在 decode 中省下的是运算量，省不下读权重的时间。
+
+</details>
+
+**习题 11.7** ★（审查题）有人提议："把这个模型的权重和激活都量化成 fp8，用 fp8 矩阵乘法做 decode。fp8 的算力是 bf16 的两倍，所以 decode 吞吐会翻倍。"评价这个说法。
+
+<details><summary>提示</summary>
+
+decode 受什么限制？哪些字节变少了，哪些没有？
+
+</details>
+<details><summary>答案</summary>
+
+decode 访存受限，fp8 算力翻倍本身不带来加速。加速来自权重字节减半（与只量化权重的效果相同）；激活很小，影响不大；KV cache 若仍是 bf16 则不变。按习题 11.4 的设定，吞吐约提高 1.3 倍。若要接近两倍，还需量化 KV cache。fp8 算力翻倍只在计算受限的 prefill 和训练中有用。
+
+</details>
+
+**习题 11.8** ☆ 用混合精度 Adam 训练 $\Phi = 7 \times 10^{10}$ 的模型。参数、梯度和优化器状态共需多少显存？至少要多少颗 HBM 为 64 GB 的芯片才能放下（不计激活）？
+
+<details><summary>提示</summary>
+
+每参数约 16 字节。
+
+</details>
+<details><summary>答案</summary>
+
+$1.12 \times 10^{12}$ 字节，约 1.1 TB；至少 18 颗芯片，且前提是这些状态被均匀地分开存放而不是每颗芯片一份。这正是第 12 章 FSDP 的出发点。
+
+</details>
