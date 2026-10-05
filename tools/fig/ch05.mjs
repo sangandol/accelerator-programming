@@ -1,0 +1,111 @@
+// 第 5 章的插图。
+import { oblique } from './lib.mjs';
+
+export default {
+  // 图 5.1 操作数只从边界进入的乘加阵列
+  '05-array'(f) {
+    const pe = (r, c) => f.box(120 + c * 64, 50 + r * 54, 40, 34, '', { color: 'blue' });
+    const P = [0, 1, 2, 3].map((r) => [0, 1, 2, 3].map((c) => pe(r, c)));
+    for (let r = 0; r < 4; r++)
+      for (let c = 0; c < 4; c++) {
+        if (c < 3) f.arrow(P[r][c].R(), P[r][c + 1].L(), { color: 'orange', width: 1.4 });
+        if (r < 3) f.arrow(P[r][c].B(), P[r + 1][c].T(), { color: 'green', width: 1.4 });
+      }
+    for (let r = 0; r < 4; r++) f.arrow([60, P[r][0].cy], P[r][0].L(), { color: 'orange', width: 1.4 });
+    for (let c = 0; c < 4; c++) f.arrow([P[0][c].cx, 14], P[0][c].T(), { color: 'green', width: 1.4 });
+    f.text(50, P[1][0].y + 44, '从左边进入', { anchor: 'end', size: 12, color: 'orange' });
+    f.text(P[0][3].x + 60, 22, '从上边进入', { anchor: 'start', size: 12, color: 'green' });
+    f.note(P[3][0].x + 130, P[3][0].y + 58, '每周期：边上进入 $O(R + C)$ 个数，内部完成 $RC$ 次乘加', { color: '#222', size: 12 });
+  },
+
+  // 图 5.2 矩阵乘法的迭代空间与沿 u = (1, 0, 0) 的投影
+  '05-spacetime'(f) {
+    const p = oblique(70, 60, [0, 52], [56, 0], [30, -24]);
+    const R = [0, 1, 2];
+    for (const a of R) for (const b of R) {
+      f.line([p(0, a, b), p(2, a, b)], { color: '#ccc', width: 1 });
+      f.line([p(a, 0, b), p(a, 2, b)], { color: '#ccc', width: 1 });
+      f.line([p(a, b, 0), p(a, b, 2)], { color: '#ccc', width: 1 });
+    }
+    for (const i of R) for (const j of R) for (const k of R) f.dot(...p(i, j, k), 3, j === 1 && k === 1 ? 'red' : '#666');
+    f.line([p(-0.3, 1, 1), p(2.3, 1, 1)], { color: 'red', width: 2 });
+    f.arrow(p(0, 0, 0), p(2.7, 0, 0), { color: 'gray' });
+    f.arrow(p(0, 0, 0), p(0, 2.7, 0), { color: 'gray' });
+    f.arrow(p(0, 0, 0), p(0, 0, 2.7), { color: 'gray' });
+    f.text(p(2.7, 0, 0)[0] - 12, p(2.7, 0, 0)[1], '$i$');
+    f.text(p(0, 2.7, 0)[0] + 6, p(0, 2.7, 0)[1] - 12, '$j$');
+    f.text(p(0, 0, 2.7)[0] - 10, p(0, 0, 2.7)[1] - 6, '$k$');
+    // dependencies into the point (2, 2, 2)
+    f.arrow(p(2, 1, 2), p(2, 2, 2), { color: 'orange', width: 2.2 });
+    f.arrow(p(1, 2, 2), p(2, 2, 2), { color: 'green', width: 2.2 });
+    f.arrow(p(2, 2, 1), p(2, 2, 2), { color: 'blue', width: 2.2 });
+    [['orange', '$d_a = (0, 1, 0)$：$a$ 沿 $j$ 传递'], ['green', '$d_b = (1, 0, 0)$：$b$ 沿 $i$ 传递'], ['blue', '$d_c = (0, 0, 1)$：$c$ 沿 $k$ 累加']].forEach(([c, s], n) => {
+      f.arrow([40, 220 + n * 22], [70, 220 + n * 22], { color: c, width: 2.2 });
+      f.text(78, 220 + n * 22, s, { anchor: 'start', size: 12 });
+    });
+
+    const g = f.grid(380, 70, { rows: 3, cols: 3, cw: 40, ch: 40, fill: (r, c) => (r === 1 && c === 1 ? 'red' : 'blue'), colLabels: (c) => `$j = ${c}$` });
+    [0, 1, 2].forEach((r) => f.note(g.x + g.w + 8, g.cell(r, 0).cy, `$k = ${r}$`, { anchor: 'start' }));
+    f.arrow([p(2.3, 1, 1)[0] + 30, p(2.3, 1, 1)[1] - 10], g.cell(1, 1).L(), { color: 'red', bend: 0 });
+    f.note(g.cx, g.y + g.h + 18, '处理单元阵列 $(j, k)$', { color: '#222', size: 12 });
+  },
+
+  // 图 5.3 权重驻留的脉动阵列：A 的行错开一拍进入，部分和向下流动
+  '05-weight-stationary'(f) {
+    const K = 3;
+    const N = 3;
+    const pe = [];
+    for (let k = 0; k < K; k++) {
+      pe.push([]);
+      for (let j = 0; j < N; j++) pe[k].push(f.box(300 + j * 84, 50 + k * 68, 56, 40, `$B_{${k}${j}}$`, { color: 'blue', size: 13 }));
+    }
+    for (let k = 0; k < K; k++) {
+      for (let i = 0; i < 3; i++) f.box(300 - 46 - (i + k) * 40, pe[k][0].cy - 13, 32, 26, `$a_{${i}${k}}$`, { color: 'orange', size: 12, rx: 3 });
+      f.arrow([300 - 12, pe[k][0].cy], pe[k][0].L(), { color: 'orange' });
+      for (let j = 0; j + 1 < N; j++) f.arrow(pe[k][j].R(), pe[k][j + 1].L(), { color: 'orange' });
+    }
+    for (let j = 0; j < N; j++) {
+      f.arrow([pe[0][j].cx, 18], pe[0][j].T(), { color: 'green' });
+      f.text(pe[0][j].cx + 8, 16, '0', { anchor: 'start', size: 12, color: 'green' });
+      for (let k = 0; k + 1 < K; k++) f.arrow(pe[k][j].B(), pe[k + 1][j].T(), { color: 'green' });
+      f.arrow(pe[K - 1][j].B(), [pe[K - 1][j].cx, pe[K - 1][j].y + 74], { color: 'green' });
+      f.text(pe[K - 1][j].cx, pe[K - 1][j].y + 84, `$C_{i${j}}$`, { size: 13, color: 'green' });
+    }
+    f.note(150, 40, '$A$ 的第 $k$ 列错开 $k$ 拍进入', { color: 'orange', size: 12 });
+    f.note(300 + 84 * 3, pe[1][2].cy, '部分和向下流动并累加', { color: 'green', anchor: 'start', size: 12 });
+    f.note(300 + 84 * 3, pe[0][2].cy, '权重驻留', { color: 'blue', anchor: 'start', size: 12 });
+  },
+
+  // 图 5.4 权重双缓冲：计算一个权重块时，在后台装入下一个
+  '05-weight-double-buffer'(f) {
+    f.timeline(100, 20, {
+      lanes: ['装入权重', '计算'], unit: 22, ticks: 4, axisLabel: '周期',
+      bars: [
+        [0, 0, 4, '$W_0$', 'orange'], [0, 4, 8, '$W_1$', 'orange'], [0, 12, 16, '$W_2$', 'orange'],
+        [1, 4, 12, '用 $W_0$ 算 $m$ 行'], [1, 12, 20, '用 $W_1$ 算 $m$ 行'], [1, 20, 28, '用 $W_2$ 算 $m$ 行'],
+      ],
+    });
+  },
+
+  // 图 5.5 填充的浪费：N = 100 与 N = 129 在宽 128 的阵列上
+  '05-padding'(f) {
+    const s = 1.4;
+    const row = (y, n, tiles, label) => {
+      for (let t = 0; t < tiles; t++) f.box(150 + t * 128 * s, y, 128 * s, 30, '', { color: 'gray', rx: 0 });
+      let left = n;
+      for (let t = 0; t < tiles; t++) {
+        const used = Math.min(128, left);
+        f.box(150 + t * 128 * s, y, used * s, 30, '', { color: 'blue', rx: 0 });
+        left -= used;
+      }
+      f.text(140, y + 15, label, { anchor: 'end', size: 13 });
+      f.text(150 + tiles * 128 * s + 10, y + 15, `利用率 ${Math.round((100 * n) / (128 * tiles))}%`, { anchor: 'start', size: 13 });
+    };
+    row(20, 100, 1, '$N = 100$');
+    row(70, 129, 2, '$N = 129$');
+    f.box(150, 120, 14, 14, '', { color: 'blue', rx: 2 });
+    f.text(170, 127, '有效的列', { anchor: 'start', size: 12 });
+    f.box(250, 120, 14, 14, '', { color: 'gray', rx: 2 });
+    f.text(270, 127, '补零（浪费）', { anchor: 'start', size: 12 });
+  },
+};

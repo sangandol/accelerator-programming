@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="466" height="288" viewBox="-22 2 466 288" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-b45f06-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b45f06"/></marker><marker id="ah-2e7d32-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2e7d32"/></marker></defs>
+<rect x="-22" y="2" width="466" height="288" rx="8" fill="#ffffff"/>
+<rect x="120" y="50" width="40" height="34" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="184" y="50" width="40" height="34" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="248" y="50" width="40" height="34" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="312" y="50" width="40" height="34" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="120" y="104" width="40" height="34" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="184" y="104" width="40" height="34" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="248" y="104" width="40" height="34" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="312" y="104" width="40" height="34" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="120" y="158" width="40" height="34" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="184" y="158" width="40" height="34" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="248" y="158" width="40" height="34" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="312" y="158" width="40" height="34" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="120" y="212" width="40" height="34" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="184" y="212" width="40" height="34" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="248" y="212" width="40" height="34" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="312" y="212" width="40" height="34" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<polyline points="160,67 184,67" fill="none" stroke="#b45f06" stroke-width="1.4" stroke-linejoin="round" marker-end="url(#ah-b45f06-10)"/>
+<polyline points="140,84 140,104" fill="none" stroke="#2e7d32" stroke-width="1.4" stroke-linejoin="round" marker-end="url(#ah-2e7d32-10)"/>
+<polyline points="224,67 248,67" fill="none" stroke="#b45f06" stroke-width="1.4" stroke-linejoin="round" marker-end="url(#ah-b45f06-10)"/>
+<polyline points="204,84 204,104" fill="none" stroke="#2e7d32" stroke-width="1.4" stroke-linejoin="round" marker-end="url(#ah-2e7d32-10)"/>
+<polyline points="288,67 312,67" fill="none" stroke="#b45f06" stroke-width="1.4" stroke-linejoin="round" marker-end="url(#ah-b45f06-10)"/>
+<polyline points="268,84 268,104" fill="none" stroke="#2e7d32" stroke-width="1.4" stroke-linejoin="round" marker-end="url(#ah-2e7d32-10)"/>
+<polyline points="332,84 332,104" fill="none" stroke="#2e7d32" stroke-width="1.4" stroke-linejoin="round" marker-end="url(#ah-2e7d32-10)"/>
+<polyline points="160,121 184,121" fill="none" stroke="#b45f06" stroke-width="1.4" stroke-linejoin="round" marker-end="url(#ah-b45f06-10)"/>
+<polyline points="140,138 140,158" fill="none" stroke="#2e7d32" stroke-width="1.4" stroke-linejoin="round" marker-end="url(#ah-2e7d32-10)"/>
+<polyline points="224,121 248,121" fill="none" stroke="#b45f06" stroke-width="1.4" stroke-linejoin="round" marker-end="url(#ah-b45f06-10)"/>
+<polyline points="204,138 204,158" fill="none" stroke="#2e7d32" stroke-width="1.4" stroke-linejoin="round" marker-end="url(#ah-2e7d32-10)"/>
+<polyline points="288,121 312,121" fill="none" stroke="#b45f06" stroke-width="1.4" stroke-linejoin="round" marker-end="url(#ah-b45f06-10)"/>
+<polyline points="268,138 268,158" fill="none" stroke="#2e7d32" stroke-width="1.4" stroke-linejoin="round" marker-end="url(#ah-2e7d32-10)"/>
+<polyline points="332,138 332,158" fill="none" stroke="#2e7d32" stroke-width="1.4" stroke-linejoin="round" marker-end="url(#ah-2e7d32-10)"/>
+<polyline points="160,175 184,175" fill="none" stroke="#b45f06" stroke-width="1.4" stroke-linejoin="round" marker-end="url(#ah-b45f06-10)"/>
+<polyline points="140,192 140,212" fill="none" stroke="#2e7d32" stroke-width="1.4" stroke-linejoin="round" marker-end="url(#ah-2e7d32-10)"/>
+<polyline points="224,175 248,175" fill="none" stroke="#b45f06" stroke-width="1.4" stroke-linejoin="round" marker-end="url(#ah-b45f06-10)"/>
+<polyline points="204,192 204,212" fill="none" stroke="#2e7d32" stroke-width="1.4" stroke-linejoin="round" marker-end="url(#ah-2e7d32-10)"/>
+<polyline points="288,175 312,175" fill="none" stroke="#b45f06" stroke-width="1.4" stroke-linejoin="round" marker-end="url(#ah-b45f06-10)"/>
+<polyline points="268,192 268,212" fill="none" stroke="#2e7d32" stroke-width="1.4" stroke-linejoin="round" marker-end="url(#ah-2e7d32-10)"/>
+<polyline points="332,192 332,212" fill="none" stroke="#2e7d32" stroke-width="1.4" stroke-linejoin="round" marker-end="url(#ah-2e7d32-10)"/>
+<polyline points="160,229 184,229" fill="none" stroke="#b45f06" stroke-width="1.4" stroke-linejoin="round" marker-end="url(#ah-b45f06-10)"/>
+<polyline points="224,229 248,229" fill="none" stroke="#b45f06" stroke-width="1.4" stroke-linejoin="round" marker-end="url(#ah-b45f06-10)"/>
+<polyline points="288,229 312,229" fill="none" stroke="#b45f06" stroke-width="1.4" stroke-linejoin="round" marker-end="url(#ah-b45f06-10)"/>
+<polyline points="60,67 120,67" fill="none" stroke="#b45f06" stroke-width="1.4" stroke-linejoin="round" marker-end="url(#ah-b45f06-10)"/>
+<polyline points="60,121 120,121" fill="none" stroke="#b45f06" stroke-width="1.4" stroke-linejoin="round" marker-end="url(#ah-b45f06-10)"/>
+<polyline points="60,175 120,175" fill="none" stroke="#b45f06" stroke-width="1.4" stroke-linejoin="round" marker-end="url(#ah-b45f06-10)"/>
+<polyline points="60,229 120,229" fill="none" stroke="#b45f06" stroke-width="1.4" stroke-linejoin="round" marker-end="url(#ah-b45f06-10)"/>
+<polyline points="140,14 140,50" fill="none" stroke="#2e7d32" stroke-width="1.4" stroke-linejoin="round" marker-end="url(#ah-2e7d32-10)"/>
+<polyline points="204,14 204,50" fill="none" stroke="#2e7d32" stroke-width="1.4" stroke-linejoin="round" marker-end="url(#ah-2e7d32-10)"/>
+<polyline points="268,14 268,50" fill="none" stroke="#2e7d32" stroke-width="1.4" stroke-linejoin="round" marker-end="url(#ah-2e7d32-10)"/>
+<polyline points="332,14 332,50" fill="none" stroke="#2e7d32" stroke-width="1.4" stroke-linejoin="round" marker-end="url(#ah-2e7d32-10)"/>
+<text x="50" y="152.2" text-anchor="end" font-size="12" fill="#b45f06">从左边进入</text>
+<text x="372" y="26.2" text-anchor="start" font-size="12" fill="#2e7d32">从上边进入</text>
+<text x="250" y="274.2" text-anchor="middle" font-size="12" fill="#222">每周期：边上进入 <tspan font-style="italic">O</tspan>(<tspan font-style="italic">R</tspan> + <tspan font-style="italic">C</tspan>) 个数，内部完成 <tspan font-style="italic">RC</tspan> 次乘加</text>
+</svg>

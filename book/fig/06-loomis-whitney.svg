@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="638" height="362" viewBox="-47 -60 638 362" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<rect x="-47" y="-60" width="638" height="362" rx="8" fill="#ffffff"/>
+<polygon points="224,-48 464,-48 464,156 224,156" fill="#f6f6f6" stroke="#222" stroke-width="1" stroke-linejoin="round"/>
+<polygon points="80,60 224,-48 224,156 80,264" fill="#f0f0f0" stroke="#222" stroke-width="1" stroke-linejoin="round"/>
+<polygon points="80,264 224,156 464,156 320,264" fill="#e9e9e9" stroke="#222" stroke-width="1" stroke-linejoin="round"/>
+<polygon points="304,20 384,20 384,88 304,88" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1" stroke-linejoin="round"/>
+<polygon points="128,92 176,56 176,124 128,160" fill="#fdebd3" stroke="#b45f06" stroke-width="1" stroke-linejoin="round"/>
+<polygon points="208,228 256,192 336,192 288,228" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1" stroke-linejoin="round"/>
+<polygon points="208,92 288,92 288,160 208,160" fill="#efe6f8" stroke="#6a3d9a" stroke-width="1" stroke-linejoin="round"/>
+<polygon points="208,92 256,56 336,56 288,92" fill="#efe6f8" stroke="#6a3d9a" stroke-width="1" stroke-linejoin="round"/>
+<polygon points="288,92 336,56 336,124 288,160" fill="#efe6f8" stroke="#6a3d9a" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="272,108 344,54" fill="none" stroke="#555555" stroke-width="1.2" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<polyline points="272,108 152,108" fill="none" stroke="#555555" stroke-width="1.2" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<polyline points="272,108 272,210" fill="none" stroke="#555555" stroke-width="1.2" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<text x="248" y="131.3" text-anchor="middle" font-size="15" fill="#222"><tspan font-style="italic">V</tspan></text>
+<text x="474" y="-9.8" text-anchor="start" font-size="12" fill="#3a5a8c"><tspan font-style="italic">V</tspan><tspan dy="3.6" font-size="8.6" font-style="italic">ij</tspan><tspan dy="-3.6">：更新的 </tspan><tspan font-style="italic">C</tspan> 元素</text>
+<text x="70" y="148.2" text-anchor="end" font-size="12" fill="#b45f06"><tspan font-style="italic">V</tspan><tspan dy="3.6" font-size="8.6" font-style="italic">ik</tspan><tspan dy="-3.6">：用到的 </tspan><tspan font-style="italic">A</tspan> 元素</text>
+<text x="200" y="286.2" text-anchor="middle" font-size="12" fill="#2e7d32"><tspan font-style="italic">V</tspan><tspan dy="3.6" font-size="8.6" font-style="italic">kj</tspan><tspan dy="-3.6">：用到的 </tspan><tspan font-style="italic">B</tspan> 元素</text>
+</svg>

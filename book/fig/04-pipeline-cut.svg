@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="551" height="184" viewBox="17 -2 551 184" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="17" y="-2" width="551" height="184" rx="8" fill="#ffffff"/>
+<rect x="40" y="30" width="14" height="50" rx="2" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<rect x="70" y="30" width="330" height="50" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="416" y="30" width="14" height="50" rx="2" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<rect x="40" y="120" width="14" height="50" rx="2" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<rect x="70" y="120" width="90" height="50" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="176" y="120" width="14" height="50" rx="2" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<rect x="206" y="120" width="90" height="50" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="312" y="120" width="14" height="50" rx="2" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<rect x="342" y="120" width="90" height="50" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="448" y="120" width="14" height="50" rx="2" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<polyline points="54,55 70,55" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="400,55 416,55" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="54,145 70,145" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="160,145 176,145" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="190,145 206,145" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="296,145 312,145" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="326,145 342,145" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="432,145 448,145" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<text x="235" y="59.6" text-anchor="middle" font-size="13" fill="#3a5a8c">组合电路，深度 <tspan font-style="italic">d</tspan></text>
+<text x="446" y="59.6" text-anchor="start" font-size="13" fill="#222">周期 ≥ <tspan font-style="italic">d</tspan>τ</text>
+<text x="115" y="149.6" text-anchor="middle" font-size="13" fill="#3a5a8c">深度 <tspan font-style="italic">d</tspan>/3</text>
+<text x="251" y="149.6" text-anchor="middle" font-size="13" fill="#3a5a8c">深度 <tspan font-style="italic">d</tspan>/3</text>
+<text x="387" y="149.6" text-anchor="middle" font-size="13" fill="#3a5a8c">深度 <tspan font-style="italic">d</tspan>/3</text>
+<text x="478" y="149.6" text-anchor="start" font-size="13" fill="#222">周期 ≈ <tspan font-style="italic">d</tspan>τ/3</text>
+<text x="47" y="22.2" text-anchor="middle" font-size="12" fill="#666">寄存器</text>
+</svg>

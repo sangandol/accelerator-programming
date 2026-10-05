@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="500" height="298" viewBox="13 -14 500 298" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<svg xmlns="http://www.w3.org/2000/svg" width="503" height="298" viewBox="11 -14 503 298" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
 <defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
-<rect x="13" y="-14" width="500" height="298" rx="8" fill="#ffffff"/>
+<rect x="11" y="-14" width="503" height="298" rx="8" fill="#ffffff"/>
 <polyline points="60,250 432,250" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
 <polyline points="60,250 60,18" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
 <polyline points="60,250 60,254" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>

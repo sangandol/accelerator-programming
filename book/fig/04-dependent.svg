@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="452" height="348" viewBox="28 -13 452 348" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-666-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#666"/></marker><marker id="ah-c0392b-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c0392b"/></marker></defs>
+<rect x="28" y="-13" width="452" height="348" rx="8" fill="#ffffff"/>
+<rect x="70" y="24" width="88" height="22" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="92" y="52" width="88" height="22" rx="3" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="114" y="80" width="88" height="22" rx="3" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="136" y="108" width="88" height="22" rx="3" fill="#efe6f8" stroke="#6a3d9a" stroke-width="1.6"/>
+<rect x="70" y="186" width="88" height="22" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="158" y="214" width="88" height="22" rx="3" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="246" y="242" width="88" height="22" rx="3" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="334" y="270" width="88" height="22" rx="3" fill="#efe6f8" stroke="#6a3d9a" stroke-width="1.6"/>
+<polyline points="70,140 440,140" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-666-10)"/>
+<polyline points="70,137 70,143" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="158,137 158,143" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="246,137 246,143" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="334,137 334,143" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="422,137 422,143" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="70,302 440,302" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-666-10)"/>
+<polyline points="70,299 70,305" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="158,299 158,305" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="246,299 246,305" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="334,299 334,305" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="422,299 422,305" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="158,197 158,225" fill="none" stroke="#c0392b" stroke-width="1.4" stroke-linejoin="round" marker-end="url(#ah-c0392b-10)"/>
+<polyline points="246,225 246,253" fill="none" stroke="#c0392b" stroke-width="1.4" stroke-linejoin="round" marker-end="url(#ah-c0392b-10)"/>
+<polyline points="334,253 334,281" fill="none" stroke="#c0392b" stroke-width="1.4" stroke-linejoin="round" marker-end="url(#ah-c0392b-10)"/>
+<text x="40" y="12.6" text-anchor="start" font-size="13" fill="#222">(a) 互相独立：每个周期发出一个</text>
+<text x="60" y="39.6" text-anchor="end" font-size="13" fill="#222"><tspan font-style="italic">o</tspan><tspan dy="3.9" font-size="9.4">1</tspan></text>
+<text x="60" y="67.6" text-anchor="end" font-size="13" fill="#222"><tspan font-style="italic">o</tspan><tspan dy="3.9" font-size="9.4">2</tspan></text>
+<text x="60" y="95.6" text-anchor="end" font-size="13" fill="#222"><tspan font-style="italic">o</tspan><tspan dy="3.9" font-size="9.4">3</tspan></text>
+<text x="60" y="123.6" text-anchor="end" font-size="13" fill="#222"><tspan font-style="italic">o</tspan><tspan dy="3.9" font-size="9.4">4</tspan></text>
+<text x="70" y="157.2" text-anchor="middle" font-size="12" fill="#666">0</text>
+<text x="158" y="157.2" text-anchor="middle" font-size="12" fill="#666">4</text>
+<text x="246" y="157.2" text-anchor="middle" font-size="12" fill="#666">8</text>
+<text x="334" y="157.2" text-anchor="middle" font-size="12" fill="#666">12</text>
+<text x="422" y="157.2" text-anchor="middle" font-size="12" fill="#666">16</text>
+<text x="444" y="144.2" text-anchor="start" font-size="12" fill="#666">周期</text>
+<text x="40" y="174.6" text-anchor="start" font-size="13" fill="#222">(b) 互相依赖：每个都等前一个的结果</text>
+<text x="60" y="201.6" text-anchor="end" font-size="13" fill="#222"><tspan font-style="italic">o</tspan><tspan dy="3.9" font-size="9.4">1</tspan></text>
+<text x="60" y="229.6" text-anchor="end" font-size="13" fill="#222"><tspan font-style="italic">o</tspan><tspan dy="3.9" font-size="9.4">2</tspan></text>
+<text x="60" y="257.6" text-anchor="end" font-size="13" fill="#222"><tspan font-style="italic">o</tspan><tspan dy="3.9" font-size="9.4">3</tspan></text>
+<text x="60" y="285.6" text-anchor="end" font-size="13" fill="#222"><tspan font-style="italic">o</tspan><tspan dy="3.9" font-size="9.4">4</tspan></text>
+<text x="70" y="319.2" text-anchor="middle" font-size="12" fill="#666">0</text>
+<text x="158" y="319.2" text-anchor="middle" font-size="12" fill="#666">4</text>
+<text x="246" y="319.2" text-anchor="middle" font-size="12" fill="#666">8</text>
+<text x="334" y="319.2" text-anchor="middle" font-size="12" fill="#666">12</text>
+<text x="422" y="319.2" text-anchor="middle" font-size="12" fill="#666">16</text>
+<text x="444" y="306.2" text-anchor="start" font-size="12" fill="#666">周期</text>
+</svg>

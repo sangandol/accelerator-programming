@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="521" height="139" viewBox="78 8 521 139" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<rect x="78" y="8" width="521" height="139" rx="8" fill="#ffffff"/>
+<rect x="150" y="20" width="179.2" height="30" rx="0" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<rect x="150" y="20" width="140" height="30" rx="0" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="150" y="70" width="179.2" height="30" rx="0" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<rect x="329.2" y="70" width="179.2" height="30" rx="0" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<rect x="150" y="70" width="179.2" height="30" rx="0" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="329.2" y="70" width="1.4" height="30" rx="0" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="150" y="120" width="14" height="14" rx="2" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="250" y="120" width="14" height="14" rx="2" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<text x="140" y="39.6" text-anchor="end" font-size="13" fill="#222"><tspan font-style="italic">N</tspan> = 100</text>
+<text x="339.2" y="39.6" text-anchor="start" font-size="13" fill="#222">利用率 78%</text>
+<text x="140" y="89.6" text-anchor="end" font-size="13" fill="#222"><tspan font-style="italic">N</tspan> = 129</text>
+<text x="518.4" y="89.6" text-anchor="start" font-size="13" fill="#222">利用率 50%</text>
+<text x="170" y="131.2" text-anchor="start" font-size="12" fill="#222">有效的列</text>
+<text x="270" y="131.2" text-anchor="start" font-size="12" fill="#222">补零（浪费）</text>
+</svg>

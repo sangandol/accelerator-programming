@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="564" height="157" viewBox="8 10 564 157" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="8" y="10" width="564" height="157" rx="8" fill="#ffffff"/>
+<rect x="20" y="40" width="90" height="60" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="470" y="40" width="90" height="60" rx="6" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<rect x="130" y="52" width="320" height="36" rx="6" fill="none" stroke="#555555" stroke-width="1.6"/>
+<rect x="138" y="60" width="18" height="20" rx="2" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="164" y="60" width="18" height="20" rx="2" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="190" y="60" width="18" height="20" rx="2" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="216" y="60" width="18" height="20" rx="2" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="242" y="60" width="18" height="20" rx="2" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="268" y="60" width="18" height="20" rx="2" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="294" y="60" width="18" height="20" rx="2" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="320" y="60" width="18" height="20" rx="2" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="346" y="60" width="18" height="20" rx="2" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="372" y="60" width="18" height="20" rx="2" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="398" y="60" width="18" height="20" rx="2" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="424" y="60" width="18" height="20" rx="2" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<polyline points="300,30 330,30" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="130,98 130,104 450,104 450,98" fill="none" stroke="#666" stroke-width="1.2" stroke-linejoin="round"/>
+<polyline points="110,70 130,70" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="470,70 450,70" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="65" y="74.9" text-anchor="middle" font-size="14" fill="#3a5a8c">处理器</text>
+<text x="515" y="74.9" text-anchor="middle" font-size="14" fill="#555555">HBM</text>
+<text x="290" y="34.2" text-anchor="end" font-size="12" fill="#666">数据流动方向</text>
+<text x="290" y="120.2" text-anchor="middle" font-size="12" fill="#666">延迟 <tspan font-style="italic">L</tspan>：一个请求从发出到返回的时间</text>
+<text x="290" y="149.9" text-anchor="middle" font-size="14" fill="#222">管道中的数据量 = 带宽 <tspan font-style="italic">B</tspan> × 延迟 <tspan font-style="italic">L</tspan></text>
+</svg>

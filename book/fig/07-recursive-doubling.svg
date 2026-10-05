@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="508" height="272" viewBox="-15 2 508 272" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<rect x="-15" y="2" width="508" height="272" rx="8" fill="#ffffff"/>
+<polyline points="110,36 110,234" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="162,36 162,234" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="214,36 214,234" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="266,36 266,234" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="318,36 318,234" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="370,36 370,234" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="422,36 422,234" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="474,36 474,234" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="162,56 110,92" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="110,56 162,92" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="266,56 214,92" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="214,56 266,92" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="370,56 318,92" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="318,56 370,92" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="474,56 422,92" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="422,56 474,92" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="214,112 110,148" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="266,112 162,148" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="110,112 214,148" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="162,112 266,148" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="422,112 318,148" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="474,112 370,148" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="318,112 422,148" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="370,112 474,148" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="318,168 110,204" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="370,168 162,204" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="422,168 214,204" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="474,168 266,204" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="110,168 318,204" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="162,168 370,204" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="214,168 422,204" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="266,168 474,204" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<circle cx="162" cy="56" r="2.6" fill="#222"/>
+<circle cx="110" cy="92" r="6.5" fill="#b45f06"/>
+<circle cx="110" cy="56" r="2.6" fill="#222"/>
+<circle cx="162" cy="92" r="6.5" fill="#b45f06"/>
+<circle cx="266" cy="56" r="2.6" fill="#222"/>
+<circle cx="214" cy="92" r="6.5" fill="#b45f06"/>
+<circle cx="214" cy="56" r="2.6" fill="#222"/>
+<circle cx="266" cy="92" r="6.5" fill="#b45f06"/>
+<circle cx="370" cy="56" r="2.6" fill="#222"/>
+<circle cx="318" cy="92" r="6.5" fill="#b45f06"/>
+<circle cx="318" cy="56" r="2.6" fill="#222"/>
+<circle cx="370" cy="92" r="6.5" fill="#b45f06"/>
+<circle cx="474" cy="56" r="2.6" fill="#222"/>
+<circle cx="422" cy="92" r="6.5" fill="#b45f06"/>
+<circle cx="422" cy="56" r="2.6" fill="#222"/>
+<circle cx="474" cy="92" r="6.5" fill="#b45f06"/>
+<circle cx="214" cy="112" r="2.6" fill="#222"/>
+<circle cx="110" cy="148" r="6.5" fill="#b45f06"/>
+<circle cx="266" cy="112" r="2.6" fill="#222"/>
+<circle cx="162" cy="148" r="6.5" fill="#b45f06"/>
+<circle cx="110" cy="112" r="2.6" fill="#222"/>
+<circle cx="214" cy="148" r="6.5" fill="#b45f06"/>
+<circle cx="162" cy="112" r="2.6" fill="#222"/>
+<circle cx="266" cy="148" r="6.5" fill="#b45f06"/>
+<circle cx="422" cy="112" r="2.6" fill="#222"/>
+<circle cx="318" cy="148" r="6.5" fill="#b45f06"/>
+<circle cx="474" cy="112" r="2.6" fill="#222"/>
+<circle cx="370" cy="148" r="6.5" fill="#b45f06"/>
+<circle cx="318" cy="112" r="2.6" fill="#222"/>
+<circle cx="422" cy="148" r="6.5" fill="#b45f06"/>
+<circle cx="370" cy="112" r="2.6" fill="#222"/>
+<circle cx="474" cy="148" r="6.5" fill="#b45f06"/>
+<circle cx="318" cy="168" r="2.6" fill="#222"/>
+<circle cx="110" cy="204" r="6.5" fill="#b45f06"/>
+<circle cx="370" cy="168" r="2.6" fill="#222"/>
+<circle cx="162" cy="204" r="6.5" fill="#b45f06"/>
+<circle cx="422" cy="168" r="2.6" fill="#222"/>
+<circle cx="214" cy="204" r="6.5" fill="#b45f06"/>
+<circle cx="474" cy="168" r="2.6" fill="#222"/>
+<circle cx="266" cy="204" r="6.5" fill="#b45f06"/>
+<circle cx="110" cy="168" r="2.6" fill="#222"/>
+<circle cx="318" cy="204" r="6.5" fill="#b45f06"/>
+<circle cx="162" cy="168" r="2.6" fill="#222"/>
+<circle cx="370" cy="204" r="6.5" fill="#b45f06"/>
+<circle cx="214" cy="168" r="2.6" fill="#222"/>
+<circle cx="422" cy="204" r="6.5" fill="#b45f06"/>
+<circle cx="266" cy="168" r="2.6" fill="#222"/>
+<circle cx="474" cy="204" r="6.5" fill="#b45f06"/>
+<text x="110" y="29.3" text-anchor="middle" font-size="15" fill="#222">0</text>
+<text x="110" y="257.3" text-anchor="middle" font-size="15" fill="#222">0</text>
+<text x="162" y="29.3" text-anchor="middle" font-size="15" fill="#222">1</text>
+<text x="162" y="257.3" text-anchor="middle" font-size="15" fill="#222">1</text>
+<text x="214" y="29.3" text-anchor="middle" font-size="15" fill="#222">2</text>
+<text x="214" y="257.3" text-anchor="middle" font-size="15" fill="#222">2</text>
+<text x="266" y="29.3" text-anchor="middle" font-size="15" fill="#222">3</text>
+<text x="266" y="257.3" text-anchor="middle" font-size="15" fill="#222">3</text>
+<text x="318" y="29.3" text-anchor="middle" font-size="15" fill="#222">4</text>
+<text x="318" y="257.3" text-anchor="middle" font-size="15" fill="#222">4</text>
+<text x="370" y="29.3" text-anchor="middle" font-size="15" fill="#222">5</text>
+<text x="370" y="257.3" text-anchor="middle" font-size="15" fill="#222">5</text>
+<text x="422" y="29.3" text-anchor="middle" font-size="15" fill="#222">6</text>
+<text x="422" y="257.3" text-anchor="middle" font-size="15" fill="#222">6</text>
+<text x="474" y="29.3" text-anchor="middle" font-size="15" fill="#222">7</text>
+<text x="474" y="257.3" text-anchor="middle" font-size="15" fill="#222">7</text>
+<text x="82" y="96.2" text-anchor="end" font-size="12" fill="#666">第 1 步：距离 1</text>
+<text x="82" y="152.2" text-anchor="end" font-size="12" fill="#666">第 2 步：距离 2</text>
+<text x="82" y="208.2" text-anchor="end" font-size="12" fill="#666">第 3 步：距离 4</text>
+</svg>

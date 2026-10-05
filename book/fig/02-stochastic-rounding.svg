@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="392" height="130" viewBox="24 0 392 130" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-3a5a8c-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3a5a8c"/></marker></defs>
+<rect x="24" y="0" width="392" height="130" rx="8" fill="#ffffff"/>
+<polyline points="40,90 400,90" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="40,84 40,96" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="400,84 400,96" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<path d="M148,90 Q94,41.4 40,90" fill="none" stroke="#3a5a8c" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-3a5a8c-10)"/>
+<path d="M148,90 Q274,14.4 400,90" fill="none" stroke="#3a5a8c" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-3a5a8c-10)"/>
+<circle cx="148" cy="90" r="4" fill="#c0392b"/>
+<text x="40" y="112.2" text-anchor="middle" font-size="12" fill="#222"><tspan font-style="italic">a</tspan></text>
+<text x="400" y="112.2" text-anchor="middle" font-size="12" fill="#222"><tspan font-style="italic">b</tspan></text>
+<text x="148" y="112.9" text-anchor="middle" font-size="14" fill="#c0392b"><tspan font-style="italic">x</tspan></text>
+<text x="94" y="44.2" text-anchor="middle" font-size="12" fill="#3a5a8c">概率 (<tspan font-style="italic">b</tspan> - <tspan font-style="italic">x</tspan>)/(<tspan font-style="italic">b</tspan> - <tspan font-style="italic">a</tspan>)</text>
+<text x="284.8" y="24.2" text-anchor="middle" font-size="12" fill="#3a5a8c">概率 (<tspan font-style="italic">x</tspan> - <tspan font-style="italic">a</tspan>)/(<tspan font-style="italic">b</tspan> - <tspan font-style="italic">a</tspan>)</text>
+</svg>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="641" height="142" viewBox="28 2 641 142" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="28" y="2" width="641" height="142" rx="8" fill="#ffffff"/>
+<rect x="40" y="70" width="30" height="30" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="70" y="70" width="30" height="30" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="100" y="70" width="30" height="30" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="130" y="70" width="30" height="30" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="160" y="70" width="30" height="30" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="190" y="70" width="30" height="30" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="220" y="70" width="30" height="30" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="250" y="70" width="30" height="30" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="280" y="70" width="30" height="30" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="310" y="70" width="30" height="30" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="340" y="70" width="30" height="30" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="370" y="70" width="30" height="30" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="400" y="70" width="30" height="30" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="430" y="70" width="30" height="30" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="460" y="70" width="30" height="30" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="490" y="70" width="30" height="30" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="138" y="14" width="44" height="28" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="378" y="14" width="44" height="28" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<polyline points="160,42 160,70" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="42,106 42,112 278,112 278,106" fill="none" stroke="#666" stroke-width="1.2" stroke-linejoin="round"/>
+<polyline points="400,42 400,70" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="282,106 282,112 518,112 518,106" fill="none" stroke="#666" stroke-width="1.2" stroke-linejoin="round"/>
+<text x="55" y="88.9" text-anchor="middle" font-size="11" fill="#3a5a8c"><tspan font-style="italic">q</tspan><tspan dy="3.3" font-size="7.9">0</tspan></text>
+<text x="85" y="88.9" text-anchor="middle" font-size="11" fill="#3a5a8c"><tspan font-style="italic">q</tspan><tspan dy="3.3" font-size="7.9">1</tspan></text>
+<text x="115" y="88.9" text-anchor="middle" font-size="11" fill="#3a5a8c"><tspan font-style="italic">q</tspan><tspan dy="3.3" font-size="7.9">2</tspan></text>
+<text x="145" y="88.9" text-anchor="middle" font-size="11" fill="#3a5a8c"><tspan font-style="italic">q</tspan><tspan dy="3.3" font-size="7.9">3</tspan></text>
+<text x="175" y="88.9" text-anchor="middle" font-size="11" fill="#3a5a8c"><tspan font-style="italic">q</tspan><tspan dy="3.3" font-size="7.9">4</tspan></text>
+<text x="205" y="88.9" text-anchor="middle" font-size="11" fill="#3a5a8c"><tspan font-style="italic">q</tspan><tspan dy="3.3" font-size="7.9">5</tspan></text>
+<text x="235" y="88.9" text-anchor="middle" font-size="11" fill="#3a5a8c"><tspan font-style="italic">q</tspan><tspan dy="3.3" font-size="7.9">6</tspan></text>
+<text x="265" y="88.9" text-anchor="middle" font-size="11" fill="#3a5a8c"><tspan font-style="italic">q</tspan><tspan dy="3.3" font-size="7.9">7</tspan></text>
+<text x="295" y="88.9" text-anchor="middle" font-size="11" fill="#b45f06"><tspan font-style="italic">q</tspan><tspan dy="3.3" font-size="7.9">8</tspan></text>
+<text x="325" y="88.9" text-anchor="middle" font-size="11" fill="#b45f06"><tspan font-style="italic">q</tspan><tspan dy="3.3" font-size="7.9">9</tspan></text>
+<text x="355" y="88.9" text-anchor="middle" font-size="11" fill="#b45f06"><tspan font-style="italic">q</tspan><tspan dy="3.3" font-size="7.9">10</tspan></text>
+<text x="385" y="88.9" text-anchor="middle" font-size="11" fill="#b45f06"><tspan font-style="italic">q</tspan><tspan dy="3.3" font-size="7.9">11</tspan></text>
+<text x="415" y="88.9" text-anchor="middle" font-size="11" fill="#b45f06"><tspan font-style="italic">q</tspan><tspan dy="3.3" font-size="7.9">12</tspan></text>
+<text x="445" y="88.9" text-anchor="middle" font-size="11" fill="#b45f06"><tspan font-style="italic">q</tspan><tspan dy="3.3" font-size="7.9">13</tspan></text>
+<text x="475" y="88.9" text-anchor="middle" font-size="11" fill="#b45f06"><tspan font-style="italic">q</tspan><tspan dy="3.3" font-size="7.9">14</tspan></text>
+<text x="505" y="88.9" text-anchor="middle" font-size="11" fill="#b45f06"><tspan font-style="italic">q</tspan><tspan dy="3.3" font-size="7.9">15</tspan></text>
+<text x="160" y="32.9" text-anchor="middle" font-size="14" fill="#3a5a8c"><tspan font-style="italic">s</tspan><tspan dy="4.2" font-size="10.1">0</tspan></text>
+<text x="160" y="128.2" text-anchor="middle" font-size="12" fill="#666">第 0 块：<tspan font-style="italic">b</tspan> = 8 个元素</text>
+<text x="400" y="32.9" text-anchor="middle" font-size="14" fill="#b45f06"><tspan font-style="italic">s</tspan><tspan dy="4.2" font-size="10.1">1</tspan></text>
+<text x="400" y="128.2" text-anchor="middle" font-size="12" fill="#666">第 1 块：<tspan font-style="italic">b</tspan> = 8 个元素</text>
+<text x="536" y="89.9" text-anchor="start" font-size="14" fill="#222">元素的值 = <tspan font-style="italic">s</tspan><tspan dy="4.2" font-size="10.1" font-style="italic">j</tspan><tspan dy="-4.2"> · </tspan><tspan font-style="italic">q</tspan><tspan dy="4.2" font-size="10.1" font-style="italic">i</tspan></text>
+</svg>

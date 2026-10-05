@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="497" height="158" viewBox="25 10 497 158" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<rect x="25" y="10" width="497" height="158" rx="8" fill="#ffffff"/>
+<rect x="90" y="40" width="70" height="30" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="160" y="40" width="70" height="30" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="230" y="40" width="70" height="30" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="300" y="40" width="70" height="30" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="370" y="40" width="70" height="30" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="440" y="40" width="70" height="30" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="90" y="70" width="70" height="30" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="160" y="70" width="70" height="30" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="230" y="70" width="70" height="30" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="300" y="70" width="70" height="30" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="370" y="70" width="70" height="30" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="440" y="70" width="70" height="30" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="90" y="100" width="70" height="30" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="160" y="100" width="70" height="30" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="230" y="100" width="70" height="30" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="300" y="100" width="70" height="30" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="370" y="100" width="70" height="30" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="440" y="100" width="70" height="30" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<text x="125" y="59.2" text-anchor="middle" font-size="12" fill="#3a5a8c">加地址</text>
+<text x="195" y="59.2" text-anchor="middle" font-size="12" fill="#3a5a8c">乘</text>
+<text x="265" y="59.2" text-anchor="middle" font-size="12" fill="#555555">nop</text>
+<text x="335" y="59.2" text-anchor="middle" font-size="12" fill="#3a5a8c">读 <tspan font-style="italic">v</tspan><tspan dy="3.6" font-size="8.6">1</tspan></text>
+<text x="405" y="59.2" text-anchor="middle" font-size="12" fill="#555555">nop</text>
+<text x="475" y="59.2" text-anchor="middle" font-size="12" fill="#3a5a8c">推入 <tspan font-style="italic">v</tspan><tspan dy="3.6" font-size="8.6">0</tspan></text>
+<text x="125" y="89.2" text-anchor="middle" font-size="12" fill="#3a5a8c">比较</text>
+<text x="195" y="89.2" text-anchor="middle" font-size="12" fill="#3a5a8c">加</text>
+<text x="265" y="89.2" text-anchor="middle" font-size="12" fill="#3a5a8c">乘</text>
+<text x="335" y="89.2" text-anchor="middle" font-size="12" fill="#3a5a8c">读 <tspan font-style="italic">v</tspan><tspan dy="3.6" font-size="8.6">2</tspan></text>
+<text x="405" y="89.2" text-anchor="middle" font-size="12" fill="#555555">nop</text>
+<text x="475" y="89.2" text-anchor="middle" font-size="12" fill="#555555">nop</text>
+<text x="125" y="119.2" text-anchor="middle" font-size="12" fill="#3a5a8c">跳转</text>
+<text x="195" y="119.2" text-anchor="middle" font-size="12" fill="#555555">nop</text>
+<text x="265" y="119.2" text-anchor="middle" font-size="12" fill="#3a5a8c">加</text>
+<text x="335" y="119.2" text-anchor="middle" font-size="12" fill="#555555">nop</text>
+<text x="405" y="119.2" text-anchor="middle" font-size="12" fill="#3a5a8c">写 <tspan font-style="italic">v</tspan><tspan dy="3.6" font-size="8.6">3</tspan></text>
+<text x="475" y="119.2" text-anchor="middle" font-size="12" fill="#3a5a8c">取结果</text>
+<text x="84" y="59.2" text-anchor="end" font-size="12" fill="#666">指令包 0</text>
+<text x="84" y="89.2" text-anchor="end" font-size="12" fill="#666">指令包 1</text>
+<text x="84" y="119.2" text-anchor="end" font-size="12" fill="#666">指令包 2</text>
+<text x="125" y="34.2" text-anchor="middle" font-size="12" fill="#666">标量</text>
+<text x="195" y="34.2" text-anchor="middle" font-size="12" fill="#666">向量 0</text>
+<text x="265" y="34.2" text-anchor="middle" font-size="12" fill="#666">向量 1</text>
+<text x="335" y="34.2" text-anchor="middle" font-size="12" fill="#666">加载</text>
+<text x="405" y="34.2" text-anchor="middle" font-size="12" fill="#666">存储</text>
+<text x="475" y="34.2" text-anchor="middle" font-size="12" fill="#666">矩阵</text>
+<text x="300" y="152.2" text-anchor="middle" font-size="12" fill="#666">每个周期发射一个指令包；每个单元在包里有固定的槽，没事做的槽填 nop</text>
+</svg>

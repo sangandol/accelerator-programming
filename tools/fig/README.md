@@ -5,7 +5,7 @@
 ## 流程
 
 1. 在 `tools/fig/chNN.mjs`（没有就新建，照 ch01.mjs 的样子）的 `export default {}` 里加一项：`'NN-name'(f) { ... }`。`f` 是一张空白的图；坐标单位是像素，y 向下；画布自动包住所有内容，不用设宽高。
-2. `npm run fig -- NN-name`（或 `node tools/figures.mjs NN`，按前缀只生成这些图）。输出的警告：`text overlap`（两段文字重叠）、`line through text`（线穿过文字）、`not used in any chapter`（还没在正文中引用）。警告为 0 通常就不必再看渲染结果。
+2. `npm run fig -- NN-name`（或 `node tools/figures.mjs NN`，按前缀只生成这些图）。输出的警告：`text overlap`（两段文字重叠）、`line through text`（线穿过文字）、`label wider than its box/cell`（文字比框窄不下，要求两边各留约 4 像素）、`unknown math command`（数学段里用了不支持的命令）、`NaN coordinates`（用了不存在的锚点）、`not used in any chapter`（还没在正文中引用）。警告为 0 通常就不必再看渲染结果。
 3. 正文中写 `![图 N.k](fig/NN-name.svg)`，下一行写 `**图 N.k**　说明……`。
 4. 需要看效果时打开阅读器的插图页 `/book/fig/?f=NN`（按前缀筛选）。
 5. `node tools/figures.mjs --demo` 生成 `demo.mjs` 中各组件的样例到 `tools/fig/demo/`，改了 lib.mjs 之后用它做回归。
@@ -31,6 +31,7 @@
 | `f.arrow(p, q, opts)` | 箭头 |
 | `f.link(a, b, {bend, arrow, color, dash})` | 从形状 a 的边到形状 b 的边连线；`bend` 非零时为弧线（正值向 a→b 的左侧弯） |
 | `f.brace(x0, y, x1, label, {flip})`；`{vertical: true}` 时为 `(x, y0, y1)` | 标注一段范围的方括号 |
+| `f.poly(points, {color, fill, stroke, dash})` | 填充多边形（梯形、楔形等） |
 | `f.raw(svg, [x0, y0, x1, y1], z)` | 直接写 SVG（给出外框以便自动定尺寸） |
 
 **电路**：`f.gate(name, 'and'|'or'|'xor'|'not'|文字, x, y)` 画 44×44 的门，引脚为 `name.in0`、`name.in1`（左侧上下）、`name.in`（单输入）、`name.out`。`f.pin(name, x, y, label, 'in'|'out'|'top'|'bottom')` 定义端点并标字。`f.net(src, [dst...], x)` 从 src 横走到竖线 `x`，再分别横走到各 dst，T 形分叉处自动画圆点；`x` 省略时取中点。
@@ -47,9 +48,14 @@
 | `f.ring(cx, cy, {n, r, label(i)})` | 环形拓扑；配 `f.link(R.node(i), R.node(j), {bend, arrow})` 画通信 | `{node(i)}` |
 | `f.mesh(x0, y0, {rows, cols, d=64, wrap, label(r,c)})` | 网格 / 环面（`wrap` 画回绕的虚线） | `{node(r,c)}` |
 | `f.bitfield(x0, y0, {fields: [[位数, label, color]], unit=16})` | 数值格式的位布局，高位在左 | 各字段的方框 |
+| `f.numline(x0, y, {min, max, w, ticks, labels, minor})` | 数轴（浮点数的分布、舍入） | 值→x 的映射 |
+| `f.bars(x0, y0, {items: [[label, value, color]], w, log, fmt})` | 横向条形图（能耗、带宽的比较） | `{len, y(i)}` |
+
+**三维示意**：`import { oblique } from './lib.mjs'`，`const p = oblique(x0, y0, ei, ej, ek)`，`p(i, j, k)` 给出斜投影后的点（例：ch05.mjs 的迭代空间、ch06.mjs 的 Loomis–Whitney 图）。
 
 ## 省 token 的写法
 
 - 有规律的图用循环和 `map` 生成，不逐个写坐标（例：ch01.mjs 的 Kogge–Stone 网络一行写完）。
 - 先选组件；组件不够时用 `box`、`node`、`link`、`net` 拼；同一种结构第二次出现时，把它做成 lib.mjs 里的新组件，并在 demo.mjs 加一个样例、在本表加一行。
-- 靠 lint 检查，不必每次截图；只在新组件或复杂的图上看一次插图页。
+- 靠 lint 检查，不必每次截图；只在新组件或复杂的图上看一次插图页（把整章的图排在一页上一起看）。
+- 往正文插图时，锚点句必须是段落的最后一句，否则说明会和后面的文字连成一段。

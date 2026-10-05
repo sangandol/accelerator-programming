@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="673" height="328" viewBox="-6 -14 673 328" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="-6" y="-14" width="673" height="328" rx="8" fill="#ffffff"/>
+<polyline points="70,280 502,280" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="70,280 70,18" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="70,280 70,284" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="154,280 154,284" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="238,280 238,284" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="322,280 322,284" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="406,280 406,284" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="490,280 490,284" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="66,280 70,280" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="66,217.5 70,217.5" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="66,155 70,155" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="66,92.5 70,92.5" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="66,30 70,30" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="70,280 357.1,66.4 490,66.4" fill="none" stroke="#3a5a8c" stroke-width="2.6" stroke-linejoin="round"/>
+<polyline points="357.1,66.4 357.1,280" fill="none" stroke="#555555" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="4 4"/>
+<circle cx="103.4" cy="255.1" r="4" fill="#c0392b"/>
+<circle cx="154" cy="217.5" r="4" fill="#c0392b"/>
+<circle cx="305.7" cy="104.6" r="4" fill="#c0392b"/>
+<circle cx="431.3" cy="66.4" r="4" fill="#c0392b"/>
+<text x="70" y="298.2" text-anchor="middle" font-size="12" fill="#666">0.1</text>
+<text x="154" y="298.2" text-anchor="middle" font-size="12" fill="#666">1</text>
+<text x="238" y="298.2" text-anchor="middle" font-size="12" fill="#666">10</text>
+<text x="322" y="298.2" text-anchor="middle" font-size="12" fill="#666">100</text>
+<text x="406" y="298.2" text-anchor="middle" font-size="12" fill="#666">1000</text>
+<text x="490" y="298.2" text-anchor="middle" font-size="12" fill="#666">10000</text>
+<text x="62" y="284.2" text-anchor="end" font-size="12" fill="#666">0.1</text>
+<text x="62" y="221.7" text-anchor="end" font-size="12" fill="#666">1</text>
+<text x="62" y="159.2" text-anchor="end" font-size="12" fill="#666">10</text>
+<text x="62" y="96.7" text-anchor="end" font-size="12" fill="#666">100</text>
+<text x="62" y="34.2" text-anchor="end" font-size="12" fill="#666">1000</text>
+<text x="506" y="284.2" text-anchor="start" font-size="12" fill="#222">算术强度 <tspan font-style="italic">I</tspan>（FLOP/字节）</text>
+<text x="70" y="10.2" text-anchor="middle" font-size="12" fill="#222">可达算力（TFLOP/s）</text>
+<text x="111.4" y="269.3" text-anchor="start" font-size="12" fill="#c0392b">逐元素运算</text>
+<text x="162" y="231.7" text-anchor="start" font-size="12" fill="#c0392b">矩阵乘向量</text>
+<text x="187.7" y="94.8" text-anchor="start" font-size="12" fill="#c0392b">批量 64 的矩阵乘法</text>
+<text x="401.3" y="86.6" text-anchor="start" font-size="12" fill="#c0392b">大矩阵乘法</text>
+<text x="361.1" y="272.2" text-anchor="start" font-size="12" fill="#222">拐点 <tspan font-style="italic">I</tspan><tspan dy="-5" font-size="8.6">*</tspan><tspan dy="5"> = </tspan><tspan font-style="italic">P</tspan>/<tspan font-style="italic">B</tspan> = 262</text>
+<text x="420.8" y="56.6" text-anchor="middle" font-size="12" fill="#3a5a8c"><tspan font-style="italic">P</tspan> = 262 TFLOP/s</text>
+<text x="194.1" y="154.3" text-anchor="middle" font-size="12" fill="#3a5a8c">斜率 = 带宽 <tspan font-style="italic">B</tspan></text>
+<text x="145.9" y="59.4" text-anchor="middle" font-size="13" fill="#666">访存受限</text>
+<text x="420.8" y="129.7" text-anchor="middle" font-size="13" fill="#666">计算受限</text>
+</svg>

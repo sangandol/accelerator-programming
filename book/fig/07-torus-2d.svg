@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="578" height="231" viewBox="-26 9 578 231" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-c0392b-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c0392b"/></marker><marker id="ah-3a5a8c-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3a5a8c"/></marker></defs>
+<rect x="-26" y="9" width="578" height="231" rx="8" fill="#ffffff"/>
+<circle cx="60" cy="50" r="15" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="124" cy="50" r="15" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="188" cy="50" r="15" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="60" cy="114" r="15" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="124" cy="114" r="15" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="188" cy="114" r="15" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="60" cy="178" r="15" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="124" cy="178" r="15" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="188" cy="178" r="15" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="380" cy="50" r="15" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="444" cy="50" r="15" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="508" cy="50" r="15" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="380" cy="114" r="15" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="444" cy="114" r="15" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="508" cy="114" r="15" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="380" cy="178" r="15" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="444" cy="178" r="15" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="508" cy="178" r="15" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<polyline points="75,50 109,50" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="60,65 60,99" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="139,50 173,50" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="124,65 124,99" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="188,65 188,99" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="75,114 109,114" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="60,129 60,163" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="139,114 173,114" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="124,129 124,163" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="188,129 188,163" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="75,178 109,178" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="139,178 173,178" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="45,50 31.2,50" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<polyline points="203,50 216.8,50" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<polyline points="45,114 31.2,114" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<polyline points="203,114 216.8,114" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<polyline points="45,178 31.2,178" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<polyline points="203,178 216.8,178" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<polyline points="60,35 60,21.2" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<polyline points="60,193 60,206.8" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<polyline points="124,35 124,21.2" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<polyline points="124,193 124,206.8" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<polyline points="188,35 188,21.2" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<polyline points="188,193 188,206.8" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<polyline points="75,50 109,50" fill="none" stroke="#c0392b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#ah-c0392b-10)"/>
+<polyline points="139,50 173,50" fill="none" stroke="#c0392b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#ah-c0392b-10)"/>
+<polyline points="75,114 109,114" fill="none" stroke="#c0392b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#ah-c0392b-10)"/>
+<polyline points="139,114 173,114" fill="none" stroke="#c0392b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#ah-c0392b-10)"/>
+<polyline points="75,178 109,178" fill="none" stroke="#c0392b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#ah-c0392b-10)"/>
+<polyline points="139,178 173,178" fill="none" stroke="#c0392b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#ah-c0392b-10)"/>
+<polyline points="395,50 429,50" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="380,65 380,99" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="459,50 493,50" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="444,65 444,99" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="508,65 508,99" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="395,114 429,114" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="380,129 380,163" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="459,114 493,114" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="444,129 444,163" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="508,129 508,163" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="395,178 429,178" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="459,178 493,178" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="365,50 351.2,50" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<polyline points="523,50 536.8,50" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<polyline points="365,114 351.2,114" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<polyline points="523,114 536.8,114" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<polyline points="365,178 351.2,178" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<polyline points="523,178 536.8,178" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<polyline points="380,35 380,21.2" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<polyline points="380,193 380,206.8" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<polyline points="444,35 444,21.2" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<polyline points="444,193 444,206.8" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<polyline points="508,35 508,21.2" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<polyline points="508,193 508,206.8" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<polyline points="380,65 380,99" fill="none" stroke="#3a5a8c" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#ah-3a5a8c-10)"/>
+<polyline points="380,129 380,163" fill="none" stroke="#3a5a8c" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#ah-3a5a8c-10)"/>
+<polyline points="444,65 444,99" fill="none" stroke="#3a5a8c" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#ah-3a5a8c-10)"/>
+<polyline points="444,129 444,163" fill="none" stroke="#3a5a8c" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#ah-3a5a8c-10)"/>
+<polyline points="508,65 508,99" fill="none" stroke="#3a5a8c" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#ah-3a5a8c-10)"/>
+<polyline points="508,129 508,163" fill="none" stroke="#3a5a8c" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#ah-3a5a8c-10)"/>
+<text x="124" y="224.2" text-anchor="middle" font-size="12" fill="#222">(a) 每一行是一个环：对 <tspan font-style="italic">n</tspan> 字节做 reduce-scatter</text>
+<text x="444" y="224.2" text-anchor="middle" font-size="12" fill="#222">(b) 每一列是一个环：只剩 <tspan font-style="italic">n</tspan>/<tspan font-style="italic">k</tspan> 字节</text>
+</svg>

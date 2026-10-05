@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="688" height="172" viewBox="28 -2 688 172" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="28" y="-2" width="688" height="172" rx="8" fill="#ffffff"/>
+<rect x="40" y="60" width="50" height="40" rx="0" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="270" y="10" width="40" height="30" rx="0" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="360" y="60" width="46" height="40" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="90" y="60" width="50" height="40" rx="0" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="270" y="40" width="40" height="30" rx="0" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="430" y="60" width="46" height="40" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="140" y="60" width="50" height="40" rx="0" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="270" y="70" width="40" height="30" rx="0" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="500" y="60" width="46" height="40" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="190" y="60" width="50" height="40" rx="0" fill="#efe6f8" stroke="#6a3d9a" stroke-width="1.6"/>
+<rect x="270" y="100" width="40" height="30" rx="0" fill="#efe6f8" stroke="#6a3d9a" stroke-width="1.6"/>
+<rect x="570" y="60" width="46" height="40" rx="6" fill="#efe6f8" stroke="#6a3d9a" stroke-width="1.6"/>
+<rect x="658" y="60" width="46" height="40" rx="6" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<polyline points="622,80 652,80" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<text x="65" y="84.2" text-anchor="middle" font-size="12" fill="#3a5a8c"><tspan font-style="italic">A</tspan><tspan dy="3.6" font-size="8.6">0</tspan></text>
+<text x="290" y="29.2" text-anchor="middle" font-size="12" fill="#3a5a8c"><tspan font-style="italic">B</tspan><tspan dy="3.6" font-size="8.6">0</tspan></text>
+<text x="383" y="84.2" text-anchor="middle" font-size="12" fill="#3a5a8c"><tspan font-style="italic">C</tspan><tspan dy="-5" font-size="8.6">(0)</tspan></text>
+<text x="383" y="120.2" text-anchor="middle" font-size="12" fill="#666">核心 0</text>
+<text x="418" y="85.6" text-anchor="middle" font-size="16" fill="#222">+</text>
+<text x="115" y="84.2" text-anchor="middle" font-size="12" fill="#b45f06"><tspan font-style="italic">A</tspan><tspan dy="3.6" font-size="8.6">1</tspan></text>
+<text x="290" y="59.2" text-anchor="middle" font-size="12" fill="#b45f06"><tspan font-style="italic">B</tspan><tspan dy="3.6" font-size="8.6">1</tspan></text>
+<text x="453" y="84.2" text-anchor="middle" font-size="12" fill="#b45f06"><tspan font-style="italic">C</tspan><tspan dy="-5" font-size="8.6">(1)</tspan></text>
+<text x="453" y="120.2" text-anchor="middle" font-size="12" fill="#666">核心 1</text>
+<text x="488" y="85.6" text-anchor="middle" font-size="16" fill="#222">+</text>
+<text x="165" y="84.2" text-anchor="middle" font-size="12" fill="#2e7d32"><tspan font-style="italic">A</tspan><tspan dy="3.6" font-size="8.6">2</tspan></text>
+<text x="290" y="89.2" text-anchor="middle" font-size="12" fill="#2e7d32"><tspan font-style="italic">B</tspan><tspan dy="3.6" font-size="8.6">2</tspan></text>
+<text x="523" y="84.2" text-anchor="middle" font-size="12" fill="#2e7d32"><tspan font-style="italic">C</tspan><tspan dy="-5" font-size="8.6">(2)</tspan></text>
+<text x="523" y="120.2" text-anchor="middle" font-size="12" fill="#666">核心 2</text>
+<text x="558" y="85.6" text-anchor="middle" font-size="16" fill="#222">+</text>
+<text x="215" y="84.2" text-anchor="middle" font-size="12" fill="#6a3d9a"><tspan font-style="italic">A</tspan><tspan dy="3.6" font-size="8.6">3</tspan></text>
+<text x="290" y="119.2" text-anchor="middle" font-size="12" fill="#6a3d9a"><tspan font-style="italic">B</tspan><tspan dy="3.6" font-size="8.6">3</tspan></text>
+<text x="593" y="84.2" text-anchor="middle" font-size="12" fill="#6a3d9a"><tspan font-style="italic">C</tspan><tspan dy="-5" font-size="8.6">(3)</tspan></text>
+<text x="593" y="120.2" text-anchor="middle" font-size="12" fill="#666">核心 3</text>
+<text x="140" y="120.2" text-anchor="middle" font-size="12" fill="#222"><tspan font-style="italic">A</tspan>：沿 <tspan font-style="italic">K</tspan> 切成 4 段</text>
+<text x="330" y="144.9" text-anchor="middle" font-size="14" fill="#222"></text>
+<text x="681" y="84.9" text-anchor="middle" font-size="14" fill="#555555"><tspan font-style="italic">C</tspan></text>
+<text x="540" y="154.2" text-anchor="middle" font-size="12" fill="#222">每个核心算一个 f32 部分和，最后再做一次归约</text>
+</svg>

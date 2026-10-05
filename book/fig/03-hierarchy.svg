@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="838" height="219" viewBox="-160 1 838 219" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="-160" y="1" width="838" height="219" rx="8" fill="#ffffff"/>
+<polygon points="132.5,40 207.5,40 249.5,96 90.5,96" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6" stroke-linejoin="round"/>
+<polygon points="90.5,96 249.5,96 291.5,152 48.5,152" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6" stroke-linejoin="round"/>
+<polygon points="48.5,152 291.5,152 333.5,208 6.5,208" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="-30,50 -30,208" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<text x="170" y="72.9" text-anchor="middle" font-size="14" fill="#222">寄存器</text>
+<text x="390" y="72.2" text-anchor="middle" font-size="12" fill="#222">几百 KiB</text>
+<text x="510" y="72.2" text-anchor="middle" font-size="12" fill="#222">最高</text>
+<text x="630" y="72.2" text-anchor="middle" font-size="12" fill="#222">1 周期</text>
+<text x="170" y="128.9" text-anchor="middle" font-size="14" fill="#222">片上 SRAM</text>
+<text x="390" y="128.2" text-anchor="middle" font-size="12" fill="#222">几十到几百 MiB</text>
+<text x="510" y="128.2" text-anchor="middle" font-size="12" fill="#222">几十 TB/s</text>
+<text x="630" y="128.2" text-anchor="middle" font-size="12" fill="#222">几到几十周期</text>
+<text x="170" y="184.9" text-anchor="middle" font-size="14" fill="#222">HBM</text>
+<text x="390" y="184.2" text-anchor="middle" font-size="12" fill="#222">几十到几百 GB</text>
+<text x="510" y="184.2" text-anchor="middle" font-size="12" fill="#222">几 TB/s</text>
+<text x="630" y="184.2" text-anchor="middle" font-size="12" fill="#222">几百周期</text>
+<text x="390" y="26.6" text-anchor="middle" font-size="13" fill="#222" font-weight="bold">容量</text>
+<text x="510" y="26.6" text-anchor="middle" font-size="13" fill="#222" font-weight="bold">带宽</text>
+<text x="630" y="26.6" text-anchor="middle" font-size="13" fill="#222" font-weight="bold">延迟</text>
+<text x="-40" y="128.2" text-anchor="end" font-size="12" fill="#222">更大、更慢、更费能</text>
+</svg>

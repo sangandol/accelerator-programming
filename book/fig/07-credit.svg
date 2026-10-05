@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="544" height="100" viewBox="18 26 544 100" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-3a5a8c-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3a5a8c"/></marker><marker id="ah-b45f06-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b45f06"/></marker></defs>
+<rect x="18" y="26" width="544" height="100" rx="8" fill="#ffffff"/>
+<rect x="30" y="40" width="120" height="70" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="400" y="40" width="150" height="70" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<polyline points="150,61 400,61" fill="none" stroke="#3a5a8c" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-3a5a8c-10)"/>
+<polyline points="400,92.5 150,92.5" fill="none" stroke="#b45f06" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-b45f06-10)"/>
+<text x="90" y="79.9" text-anchor="middle" font-size="14" fill="#3a5a8c">发送方</text>
+<text x="475" y="79.9" text-anchor="middle" font-size="14" fill="#2e7d32">接收方的缓冲</text>
+<text x="275" y="50.2" text-anchor="middle" font-size="12" fill="#3a5a8c">① 写入数据，并给对方的完成计数器加数</text>
+<text x="275" y="110.2" text-anchor="middle" font-size="12" fill="#b45f06">② 用完缓冲后，回送"信用"：可以再写了</text>
+</svg>

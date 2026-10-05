@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="522" height="316" viewBox="28 -32 522 316" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-555555-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#555555"/></marker><marker id="ah-b45f06-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b45f06"/></marker><marker id="ah-2e7d32-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2e7d32"/></marker><marker id="ah-3a5a8c-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3a5a8c"/></marker><marker id="ah-c0392b-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c0392b"/></marker></defs>
+<rect x="28" y="-32" width="522" height="316" rx="8" fill="#ffffff"/>
+<rect x="380" y="70" width="40" height="40" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="420" y="70" width="40" height="40" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="460" y="70" width="40" height="40" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="380" y="110" width="40" height="40" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="420" y="110" width="40" height="40" rx="0" fill="#fbe4e1" stroke="#999" stroke-width="0.8"/>
+<rect x="460" y="110" width="40" height="40" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="380" y="150" width="40" height="40" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="420" y="150" width="40" height="40" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="460" y="150" width="40" height="40" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<polyline points="70,60 70,164" fill="none" stroke="#ccc" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="70,60 182,60" fill="none" stroke="#ccc" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="70,60 130,12" fill="none" stroke="#ccc" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="100,36 100,140" fill="none" stroke="#ccc" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="100,36 212,36" fill="none" stroke="#ccc" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="126,60 186,12" fill="none" stroke="#ccc" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="130,12 130,116" fill="none" stroke="#ccc" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="130,12 242,12" fill="none" stroke="#ccc" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="182,60 242,12" fill="none" stroke="#ccc" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="126,60 126,164" fill="none" stroke="#ccc" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="70,112 182,112" fill="none" stroke="#ccc" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="70,112 130,64" fill="none" stroke="#ccc" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="156,36 156,140" fill="none" stroke="#ccc" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="100,88 212,88" fill="none" stroke="#ccc" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="126,112 186,64" fill="none" stroke="#ccc" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="186,12 186,116" fill="none" stroke="#ccc" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="130,64 242,64" fill="none" stroke="#ccc" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="182,112 242,64" fill="none" stroke="#ccc" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="182,60 182,164" fill="none" stroke="#ccc" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="70,164 182,164" fill="none" stroke="#ccc" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="70,164 130,116" fill="none" stroke="#ccc" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="212,36 212,140" fill="none" stroke="#ccc" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="100,140 212,140" fill="none" stroke="#ccc" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="126,164 186,116" fill="none" stroke="#ccc" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="242,12 242,116" fill="none" stroke="#ccc" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="130,116 242,116" fill="none" stroke="#ccc" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="182,164 242,116" fill="none" stroke="#ccc" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="156,20.4 156,155.6" fill="none" stroke="#c0392b" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="70,60 70,200.4" fill="none" stroke="#555555" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-555555-10)"/>
+<polyline points="70,60 221.2,60" fill="none" stroke="#555555" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-555555-10)"/>
+<polyline points="70,60 151,-4.8" fill="none" stroke="#555555" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-555555-10)"/>
+<polyline points="186,116 242,116" fill="none" stroke="#b45f06" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#ah-b45f06-10)"/>
+<polyline points="242,64 242,116" fill="none" stroke="#2e7d32" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#ah-2e7d32-10)"/>
+<polyline points="212,140 242,116" fill="none" stroke="#3a5a8c" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#ah-3a5a8c-10)"/>
+<polyline points="40,220 70,220" fill="none" stroke="#b45f06" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#ah-b45f06-10)"/>
+<polyline points="40,242 70,242" fill="none" stroke="#2e7d32" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#ah-2e7d32-10)"/>
+<polyline points="40,264 70,264" fill="none" stroke="#3a5a8c" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#ah-3a5a8c-10)"/>
+<polyline points="186,145.6 420,130" fill="none" stroke="#c0392b" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-c0392b-10)"/>
+<circle cx="70" cy="60" r="3" fill="#666"/>
+<circle cx="100" cy="36" r="3" fill="#666"/>
+<circle cx="130" cy="12" r="3" fill="#666"/>
+<circle cx="126" cy="60" r="3" fill="#666"/>
+<circle cx="156" cy="36" r="3" fill="#c0392b"/>
+<circle cx="186" cy="12" r="3" fill="#666"/>
+<circle cx="182" cy="60" r="3" fill="#666"/>
+<circle cx="212" cy="36" r="3" fill="#666"/>
+<circle cx="242" cy="12" r="3" fill="#666"/>
+<circle cx="70" cy="112" r="3" fill="#666"/>
+<circle cx="100" cy="88" r="3" fill="#666"/>
+<circle cx="130" cy="64" r="3" fill="#666"/>
+<circle cx="126" cy="112" r="3" fill="#666"/>
+<circle cx="156" cy="88" r="3" fill="#c0392b"/>
+<circle cx="186" cy="64" r="3" fill="#666"/>
+<circle cx="182" cy="112" r="3" fill="#666"/>
+<circle cx="212" cy="88" r="3" fill="#666"/>
+<circle cx="242" cy="64" r="3" fill="#666"/>
+<circle cx="70" cy="164" r="3" fill="#666"/>
+<circle cx="100" cy="140" r="3" fill="#666"/>
+<circle cx="130" cy="116" r="3" fill="#666"/>
+<circle cx="126" cy="164" r="3" fill="#666"/>
+<circle cx="156" cy="140" r="3" fill="#c0392b"/>
+<circle cx="186" cy="116" r="3" fill="#666"/>
+<circle cx="182" cy="164" r="3" fill="#666"/>
+<circle cx="212" cy="140" r="3" fill="#666"/>
+<circle cx="242" cy="116" r="3" fill="#666"/>
+<text x="58" y="205.3" text-anchor="middle" font-size="14" fill="#222"><tspan font-style="italic">i</tspan></text>
+<text x="227.2" y="52.9" text-anchor="middle" font-size="14" fill="#222"><tspan font-style="italic">j</tspan></text>
+<text x="141" y="-5.9" text-anchor="middle" font-size="14" fill="#222"><tspan font-style="italic">k</tspan></text>
+<text x="78" y="224.2" text-anchor="start" font-size="12" fill="#222"><tspan font-style="italic">d</tspan><tspan dy="3.6" font-size="8.6" font-style="italic">a</tspan><tspan dy="-3.6"> = (0, 1, 0)：</tspan><tspan font-style="italic">a</tspan> 沿 <tspan font-style="italic">j</tspan> 传递</text>
+<text x="78" y="246.2" text-anchor="start" font-size="12" fill="#222"><tspan font-style="italic">d</tspan><tspan dy="3.6" font-size="8.6" font-style="italic">b</tspan><tspan dy="-3.6"> = (1, 0, 0)：</tspan><tspan font-style="italic">b</tspan> 沿 <tspan font-style="italic">i</tspan> 传递</text>
+<text x="78" y="268.2" text-anchor="start" font-size="12" fill="#222"><tspan font-style="italic">d</tspan><tspan dy="3.6" font-size="8.6" font-style="italic">c</tspan><tspan dy="-3.6"> = (0, 0, 1)：</tspan><tspan font-style="italic">c</tspan> 沿 <tspan font-style="italic">k</tspan> 累加</text>
+<text x="400" y="64.2" text-anchor="middle" font-size="12" fill="#666"><tspan font-style="italic">j</tspan> = 0</text>
+<text x="440" y="64.2" text-anchor="middle" font-size="12" fill="#666"><tspan font-style="italic">j</tspan> = 1</text>
+<text x="480" y="64.2" text-anchor="middle" font-size="12" fill="#666"><tspan font-style="italic">j</tspan> = 2</text>
+<text x="508" y="94.2" text-anchor="start" font-size="12" fill="#666"><tspan font-style="italic">k</tspan> = 0</text>
+<text x="508" y="134.2" text-anchor="start" font-size="12" fill="#666"><tspan font-style="italic">k</tspan> = 1</text>
+<text x="508" y="174.2" text-anchor="start" font-size="12" fill="#666"><tspan font-style="italic">k</tspan> = 2</text>
+<text x="440" y="212.2" text-anchor="middle" font-size="12" fill="#222">处理单元阵列 (<tspan font-style="italic">j</tspan>, <tspan font-style="italic">k</tspan>)</text>
+</svg>

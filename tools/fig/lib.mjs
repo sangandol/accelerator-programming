@@ -26,9 +26,12 @@ const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replac
 const SYM = {
   otimes: '⊗', oplus: '⊕', wedge: '∧', vee: '∨', neg: '¬', cdot: '·', times: '×', le: '≤', ge: '≥',
   ne: '≠', to: '→', gets: '←', leftarrow: '←', rightarrow: '→', dots: '…', ldots: '…', infty: '∞',
-  in: '∈', sum: 'Σ', alpha: 'α', beta: 'β', gamma: 'γ', delta: 'δ', tau: 'τ', mu: 'μ', pi: 'π', sigma: 'σ',
+  in: '∈', sum: 'Σ', Sigma: 'Σ', Delta: 'Δ', Theta: 'Θ', Omega: 'Ω', alpha: 'α', beta: 'β', gamma: 'γ', delta: 'δ', tau: 'τ', mu: 'μ', pi: 'π', sigma: 'σ',
   lfloor: '⌊', rfloor: '⌋', lceil: '⌈', rceil: '⌉', mid: '∣', approx: '≈', log: 'log', max: 'max', min: 'min',
+  lvert: '|', rvert: '|', langle: '⟨', rangle: '⟩', lambda: 'λ', eta: 'η', epsilon: 'ε', partial: '∂', sqrt: '√', pm: '±',
+  equiv: '≡', subset: '⊂', cup: '∪', cap: '∩', forall: '∀', exists: '∃', cdots: '⋯', ell: 'ℓ', downarrow: '↓', uparrow: '↑', leftrightarrow: '↔', Rightarrow: '⇒', ' ': ' ',
 };
+const unknown = new Set();
 
 function runs(str) {
   const out = [];
@@ -41,6 +44,7 @@ function runs(str) {
     for (let j = 0; j < s.length; j++) {
       const m = s[j] === '\\' && /^\\([a-zA-Z]+)/.exec(s.slice(j));
       if (m) {
+        if (!(m[1] in SYM)) unknown.add(m[0]);
         const sym = SYM[m[1]] ?? m[1];
         push(sym, lvl, false);
         j += m[0].length - 1;
@@ -85,8 +89,9 @@ function charW(ch) {
   const c = ch.codePointAt(0);
   if ((c >= 0x2e80 && c <= 0x9fff) || (c >= 0xff00 && c <= 0xffef) || (c >= 0x3000 && c <= 0x303f)) return 1;
   if (ch === ' ') return 0.3;
-  if (/[A-Z]/.test(ch)) return 0.66;
-  if (/[a-z0-9]/.test(ch)) return 0.55;
+  if (/[A-Z]/.test(ch)) return 0.67;
+  if (/[0-9]/.test(ch)) return 0.59;
+  if (/[a-z]/.test(ch)) return 0.55;
   if (/[.,:;′|!()[\]{}]/.test(ch)) return 0.32;
   return 0.75;
 }
@@ -140,6 +145,7 @@ export class Fig {
     this.els = [];
     this.texts = [];
     this.segs = [];
+    this.warns = [];
     this.markers = new Map();
     this.pins = {};
     this.bb = [Infinity, Infinity, -Infinity, -Infinity];
@@ -152,6 +158,7 @@ export class Fig {
 
   // Raw SVG markup with its bounding box. z: 1 shapes, 2 lines, 3 dots, 4 text (drawn in that order).
   raw(markup, [x0, y0, x1, y1], z = 2) {
+    if ([x0, y0, x1, y1].some(Number.isNaN)) this.nan = (this.nan ?? 0) + 1;
     this.els.push({ z, markup });
     this._bb(x0, y0, x1, y1);
     return this;
@@ -202,7 +209,10 @@ export class Fig {
   box(x, y, w, h, label = '', { color = 'blue', size = 14, rx = 6, dash, width = 1.6, hollow = false, textColor, z = 1 } = {}) {
     const [fill, stroke] = PAL[color] ?? [color, INK];
     const a = this.rect(x, y, w, h, { fill: hollow ? 'none' : fill, stroke, width, rx, dash, z });
-    if (label) this.text(x + w / 2, y + h / 2, label, { size, color: textColor ?? stroke });
+    if (label) {
+      this.text(x + w / 2, y + h / 2, label, { size, color: textColor ?? stroke });
+      if (typeset(label, size).width > w - 8) this.warns.push(`label wider than its box: "${label}"`);
+    }
     return a;
   }
 
@@ -338,13 +348,16 @@ export class Fig {
         const f = fill?.(r, c);
         const a = this.rect(x0 + c * cw, y0 + r * ch, cw, ch, { fill: f ?? '#fff', stroke, width: 0.8, rx: 0 });
         const t = label?.(r, c);
-        if (t !== null && t !== undefined && t !== '') this.text(a.cx, a.cy, String(t), { size, color: f ? inkOf(f) : INK });
+        if (t !== null && t !== undefined && t !== '') {
+          this.text(a.cx, a.cy, String(t), { size, color: f ? inkOf(f) : INK });
+          if (typeset(String(t), size).width > cw - 6) this.warns.push(`label wider than its cell: "${t}"`);
+        }
       }
     const lab = (spec, k) => (typeof spec === 'function' ? spec(k) : spec[k]);
     if (rowLabels) for (let r = 0; r < rows; r++) this.text(x0 - 6, y0 + (r + 0.5) * ch, lab(rowLabels, r), { size: labelSize, anchor: 'end', color: MUTED });
     if (colLabels) for (let c = 0; c < cols; c++) this.text(x0 + (c + 0.5) * cw, y0 - 10, lab(colLabels, c), { size: labelSize, color: MUTED });
     return {
-      cell, x: x0, y: y0, w: cols * cw, h: rows * ch,
+      cell, x: x0, y: y0, w: cols * cw, h: rows * ch, cx: x0 + (cols * cw) / 2, cy: y0 + (rows * ch) / 2,
       // Rectangle covering cells [r0, r1] × [c0, c1] (inclusive).
       region: (r0, c0, r1, c1) => rectAnchors(x0 + c0 * cw, y0 + r0 * ch, (c1 - c0 + 1) * cw, (r1 - r0 + 1) * ch),
     };
@@ -468,11 +481,53 @@ export class Fig {
     });
   }
 
+  // Filled polygon (trapezoids, wedges, arrows of any shape).
+  poly(points, { color = 'blue', fill, stroke, width = 1.6, dash, z = 1 } = {}) {
+    const [f0, s0] = PAL[color] ?? [color, INK];
+    const pts = points.map(center);
+    const d = dash ? ` stroke-dasharray="${dash}"` : '';
+    this.raw(`<polygon points="${pts.map(([x, y]) => `${r1(x)},${r1(y)}`).join(' ')}" fill="${fillOf(fill ?? f0)}" stroke="${inkOf(stroke ?? s0)}" stroke-width="${width}" stroke-linejoin="round"${d}/>`, [
+      Math.min(...pts.map((p) => p[0])), Math.min(...pts.map((p) => p[1])),
+      Math.max(...pts.map((p) => p[0])), Math.max(...pts.map((p) => p[1])),
+    ], z);
+    return this;
+  }
+
+  // ---- number line: ticks at values; labels = {value: text} or (v) => text; returns the value→x map.
+  numline(x0, y, { min, max, w = 400, ticks = [], labels = {}, minor = [], color, arrow = true, size = 12 }) {
+    const sx = (v) => x0 + ((v - min) / (max - min)) * w;
+    this.line([[x0, y], [x0 + w + (arrow ? 14 : 0), y]], { color, arrow: arrow ? 'end' : false });
+    for (const v of minor) this.line([[sx(v), y - 3], [sx(v), y + 3]], { color, width: 1 });
+    for (const v of ticks) {
+      this.line([[sx(v), y - 6], [sx(v), y + 6]], { color });
+      const t = typeof labels === 'function' ? labels(v) : labels[v] ?? String(v);
+      if (t !== null && t !== '') this.text(sx(v), y + 18, t, { size });
+    }
+    return sx;
+  }
+
+  // ---- horizontal bar chart: items = [[label, value, color]]; log: true for values spanning decades.
+  bars(x0, y0, { items, w = 320, bh = 18, gap = 7, log = false, min, max, fmt = (v) => String(v), size = 12 }) {
+    const vals = items.map((it) => it[1]);
+    const lo = min ?? (log ? 10 ** Math.floor(Math.log10(Math.min(...vals))) : 0);
+    const hi = max ?? Math.max(...vals);
+    const len = (v) => (log ? ((Math.log10(v) - Math.log10(lo)) / (Math.log10(hi) - Math.log10(lo))) : (v - lo) / (hi - lo)) * w;
+    items.forEach(([label, v, color = 'blue'], i) => {
+      const y = y0 + i * (bh + gap);
+      this.text(x0 - 8, y + bh / 2, label, { size, anchor: 'end' });
+      this.box(x0, y, Math.max(len(v), 1), bh, '', { color, rx: 2 });
+      this.text(x0 + Math.max(len(v), 1) + 6, y + bh / 2, fmt(v), { size, anchor: 'start', color: MUTED });
+    });
+    return { len, y: (i) => y0 + i * (bh + gap) };
+  }
+
   // ---- output
   // Warnings for labels that overlap each other (cheap check instead of looking at a render).
   lint() {
     const t = this.texts;
-    const out = [];
+    const out = [...unknown].map((c) => `unknown math command: ${c}`).concat(this.warns);
+    if (this.nan) return [...out, `NaN coordinates in ${this.nan} element(s) (undefined anchor?)`];
+    unknown.clear();
     for (let i = 0; i < t.length; i++)
       for (let j = i + 1; j < t.length; j++) {
         const [a, b] = [t[i], t[j]];
@@ -515,3 +570,6 @@ ${body.join('\n')}
 }
 
 export const fig = (opts) => new Fig(opts);
+
+// Oblique projection for 3-D sketches: oblique(x0, y0, ex, ey, ez)(i, j, k) = origin + i·ex + j·ey + k·ez.
+export const oblique = (x0, y0, ex, ey, ez) => (i, j, k) => [x0 + i * ex[0] + j * ey[0] + k * ez[0], y0 + i * ex[1] + j * ey[1] + k * ez[1]];

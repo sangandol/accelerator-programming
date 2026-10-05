@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="630" height="113" viewBox="-4 27 630 113" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="-4" y="27" width="630" height="113" rx="8" fill="#ffffff"/>
+<polyline points="40,80 614,80" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="75,74 75,86" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="83.8,74 83.8,86" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="92.5,74 92.5,86" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="101.3,74 101.3,86" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="110,74 110,86" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="127.5,74 127.5,86" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="145,74 145,86" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="162.5,74 162.5,86" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="180,74 180,86" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="215,74 215,86" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="250,74 250,86" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="285,74 285,86" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="320,74 320,86" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="390,74 390,86" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="460,74 460,86" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="530,74 530,86" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="40,74 40,86" fill="none" stroke="#c0392b" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="48.8,74 48.8,86" fill="none" stroke="#c0392b" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="57.5,74 57.5,86" fill="none" stroke="#c0392b" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="66.3,74 66.3,86" fill="none" stroke="#c0392b" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="41,66 41,60 74,60 74,66" fill="none" stroke="#c0392b" stroke-width="1.2" stroke-linejoin="round"/>
+<polyline points="76,66 76,60 109,60 109,66" fill="none" stroke="#666" stroke-width="1.2" stroke-linejoin="round"/>
+<polyline points="111,66 111,60 179,60 179,66" fill="none" stroke="#666" stroke-width="1.2" stroke-linejoin="round"/>
+<polyline points="181,66 181,60 319,60 319,66" fill="none" stroke="#666" stroke-width="1.2" stroke-linejoin="round"/>
+<polyline points="321,66 321,60 599,60 599,66" fill="none" stroke="#666" stroke-width="1.2" stroke-linejoin="round"/>
+<text x="75" y="102.2" text-anchor="middle" font-size="12" fill="#222">0.5</text>
+<text x="110" y="102.2" text-anchor="middle" font-size="12" fill="#222">1</text>
+<text x="145" y="102.2" text-anchor="middle" font-size="12" fill="#222">1.5</text>
+<text x="180" y="102.2" text-anchor="middle" font-size="12" fill="#222">2</text>
+<text x="250" y="102.2" text-anchor="middle" font-size="12" fill="#222">3</text>
+<text x="320" y="102.2" text-anchor="middle" font-size="12" fill="#222">4</text>
+<text x="390" y="102.2" text-anchor="middle" font-size="12" fill="#222">5</text>
+<text x="460" y="102.2" text-anchor="middle" font-size="12" fill="#222">6</text>
+<text x="530" y="102.2" text-anchor="middle" font-size="12" fill="#222">7</text>
+<text x="40" y="102.9" text-anchor="middle" font-size="14" fill="#222">0</text>
+<text x="57.5" y="52.2" text-anchor="middle" font-size="12" fill="#c0392b">1/8</text>
+<text x="92.5" y="52.2" text-anchor="middle" font-size="12" fill="#666">1/8</text>
+<text x="145" y="52.2" text-anchor="middle" font-size="12" fill="#666">1/4</text>
+<text x="250" y="52.2" text-anchor="middle" font-size="12" fill="#666">1/2</text>
+<text x="460" y="52.2" text-anchor="middle" font-size="12" fill="#666">1</text>
+<text x="32" y="51.2" text-anchor="end" font-size="12" fill="#666">间距</text>
+<text x="57.5" y="124.2" text-anchor="middle" font-size="12" fill="#c0392b">次正规数</text>
+</svg>
