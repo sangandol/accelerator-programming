@@ -56,7 +56,7 @@ md.core.ruler.push('drop_empty_text', (state) => {
 
 const KINDS = { 定义: 'def', 命题: 'prop', 定理: 'thm', 引理: 'lemma', 推论: 'cor', 例: 'example', 注: 'remark', 习题: 'exercise', 图: 'figure' };
 const LABEL = /^(定义|命题|定理|引理|推论|例|注|习题|图)\s?(\d+|[A-E])\.(\d+)/;
-const BOXES = [[/^本节/, 'section-box'], [/^在体系中的位置/, 'position-box'], [/^现状/, 'status-box']];
+const BOXES = [[/^在体系中的位置/, 'position-box'], [/^现状/, 'status-box']];
 const REF_LABEL = /(定义|命题|定理|引理|推论|例|注|习题|图)\s?((?:\d+|[A-E])\.\d+)((?:\s?[、，,和与及–]\s?(?:\d+|[A-E])\.\d+(?![\d.]|\s?节))*)/gu;
 const REF_SECTION = /(?<![\d.A-Za-z])((?:\d+|[A-E])\.\d+)((?:\s?[、，–—-]\s?(?:\d+|[A-E])\.\d+)*)\s?节/gu;
 const REF_CHAPTER = /第\s?(\d+)((?:\s?[、，和与及–]\s?\d+)*)\s?章/gu;
@@ -408,6 +408,15 @@ async function chapterOrder() {
   return [...new Set([...index.matchAll(/\]\(([^)#\s]+\.md)\)/g)].map((m) => m[1]))];
 }
 
+// Web fonts for the reader's 宋体 and 楷体 settings; a font's files load only when the page uses it, and
+// the stacks in style.css fall back to system fonts when offline.
+const FONT_CSS = {
+  song: 'https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap',
+  kai: 'https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.7.0/lxgwwenkaiscreen.css',
+};
+// Applies the reader settings saved by web/reader.js before the first paint.
+const SETTINGS_SCRIPT = "try{var r=document.documentElement,s=localStorage;['font','width','lh','theme'].forEach(function(k){var v=s.getItem('rd-'+k);if(v)r.setAttribute('data-'+k,v)});var f=s.getItem('rd-fs');if(f)r.style.setProperty('--fs',f+'px')}catch(e){}";
+
 function page(title, body, nav, file = '') {
   return `<!doctype html>
 <html lang="zh-CN">
@@ -415,6 +424,10 @@ function page(title, body, nav, file = '') {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${title}</title>
+<script>${SETTINGS_SCRIPT}</script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="${FONT_CSS.song}">
+<link rel="stylesheet" href="${FONT_CSS.kai}">
 <link rel="stylesheet" href="/assets/katex/katex.min.css">
 <link rel="stylesheet" href="/assets/style.css">
 <script src="/assets/reader.js" defer></script>

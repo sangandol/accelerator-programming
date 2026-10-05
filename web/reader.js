@@ -1,59 +1,92 @@
 // Reading aids for the pages rendered by server.mjs. The page reads fine without this script; with it:
 // an outline of sections and results, previews of references and terms on hover (tap on phones),
-// a glossary panel, "cited by" lists, foldable proofs, English names after terms, interactive figures.
+// a glossary, "cited by" lists, foldable proofs, English names after terms, reader settings
+// (font, size, width, line height, background), interactive figures.
 (() => {
   const main = document.querySelector('main');
   if (!main) return;
   // This page's chapter file (as in data-ref="01-x.md#…"), also when the page is an exported copy.
   const file = main.dataset.file || decodeURIComponent(location.pathname.split('/').pop() || 'README.md');
+  const root = document.documentElement;
   const store = {
     get: (k) => { try { return localStorage.getItem(k); } catch { return null; } },
-    set: (k, v) => { try { localStorage.setItem(k, v); } catch { /* private mode */ } },
+    set: (k, v) => { try { if (v === null) localStorage.removeItem(k); else localStorage.setItem(k, v); } catch { /* private mode */ } },
   };
   const h = (tag, attrs = {}, ...kids) => {
     const e = document.createElement(tag);
     for (const [k, v] of Object.entries(attrs)) if (v !== null && v !== undefined) e.setAttribute(k, v);
-    e.append(...kids.filter((k) => k !== null && k !== undefined));
+    e.append(...kids.flat().filter((k) => k !== null && k !== undefined));
     return e;
   };
   const LABEL = /^(定义|命题|定理|引理|推论|例|注|习题|图)\s?(\d+|[A-E])\.(\d+)/;
 
-  // ---- toolbar -----------------------------------------------------------------------------
+  // ---- toolbar and panels -----------------------------------------------------------------------
   let topbar = document.querySelector('.topbar');
   if (!topbar) document.body.prepend((topbar = h('header', { class: 'topbar' })));
   const tools = h('div', { class: 'tools' });
   topbar.append(tools);
-  const tool = (label, title, onClick) => {
+  const tool = (label, title) => {
     const b = h('button', { type: 'button', title }, label);
-    b.addEventListener('click', onClick);
     tools.append(b);
     return b;
   };
   // A remembered on/off switch that sets a class on <body>.
-  const toggle = (key, cls, button, labels, initial, onChange) => {
-    let on = (store.get(key) ?? (initial ? '1' : '0')) === '1';
+  const toggle = (key, cls, button, labels, onChange) => {
+    let on = store.get(key) === '1';
     const apply = () => {
       document.body.classList.toggle(cls, on);
       button.setAttribute('aria-pressed', String(on));
       if (labels) button.textContent = labels[on ? 1 : 0];
       onChange?.(on);
     };
-    button.addEventListener('click', () => { on = !on; store.set(key, on ? '1' : '0'); apply(); });
+    button.addEventListener('click', () => { on = !on; store.set(key, on ? '1' : null); apply(); });
     apply();
   };
+  // Panels drop down from the top bar; one at a time, closed by the button, Esc or a click elsewhere.
+  const panels = [];
+  const closePanels = (except) => {
+    for (const p of panels) if (p.box !== except) { p.box.hidden = true; p.button.setAttribute('aria-expanded', 'false'); }
+  };
+  const panel = (label, title, cls, build) => {
+    const button = tool(label, title);
+    const close = h('button', { type: 'button', class: 'panel-close', title: '关闭' }, '×');
+    const box = h('aside', { class: `panel ${cls}`, 'aria-label': title, hidden: '' }, h('div', { class: 'panel-head' }, h('span', {}, label), close));
+    build(box);
+    document.body.append(box);
+    button.setAttribute('aria-expanded', 'false');
+    const entry = { box, button, onOpen: null };
+    panels.push(entry);
+    button.addEventListener('click', () => {
+      const opening = box.hidden;
+      closePanels(box);
+      box.hidden = !opening;
+      button.setAttribute('aria-expanded', String(opening));
+      if (opening) entry.onOpen?.();
+    });
+    close.addEventListener('click', () => closePanels());
+    return entry;
+  };
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.panel, .tools, .pop')) closePanels();
+  });
 
-  // ---- proofs: a bar that folds the proof ---------------------------------------------------
+  // ---- proofs: the word 证明 folds the proof --------------------------------------------------
   const proofs = [...main.querySelectorAll('.proof')];
   for (const p of proofs) {
     const body = h('div', { class: 'proof-body' });
     body.append(...p.childNodes);
-    const bar = h('button', { type: 'button', class: 'proof-bar', title: '折叠或展开这段证明' }, '证明');
-    bar.addEventListener('click', () => p.classList.toggle('folded'));
-    p.append(bar, body);
+    const head = body.querySelector('.proof-head');
+    if (head) {
+      head.classList.add('proof-toggle');
+      head.title = '折叠这段证明';
+    }
+    const line = h('p', { class: 'proof-fold-line' }, h('span', { class: 'proof-head proof-toggle', title: '展开这段证明' }, '证明'), '　（已折叠，点击展开）');
+    p.append(line, body);
+    p.addEventListener('click', (e) => { if (e.target.closest('.proof-toggle')) p.classList.toggle('folded'); });
   }
   if (proofs.length) {
-    const b = tool('折叠证明', '折叠本章所有证明，只读定义、定理与例（初读时的"骨架"读法）', () => {});
-    toggle('fold-proofs', 'fold-proofs', b, ['折叠证明', '展开证明'], false, (on) => proofs.forEach((p) => p.classList.toggle('folded', on)));
+    const b = tool('折叠证明', '折叠本章所有证明，只读定义、定理与例（初读时的"骨架"读法）');
+    toggle('fold-proofs', 'fold-proofs', b, ['折叠证明', '展开证明'], (on) => proofs.forEach((p) => p.classList.toggle('folded', on)));
   }
 
   // The name in （…） after a label, with its math: "定义 1.30（运算 ⊗）" → "运算 ⊗".
@@ -76,47 +109,120 @@
   // ---- outline: sections and the numbered results under each ----------------------------------
   const heads = [...main.querySelectorAll('h2[id]')];
   if (heads.length > 2) {
-    const nav = h('nav', { class: 'outline', 'aria-label': '本章大纲' });
-    const title = main.querySelector('h1')?.textContent ?? '';
-    nav.append(h('div', { class: 'outline-title' }, title));
-    const list = h('ol');
     const links = new Map();
-    let sub = null;
-    for (const e of main.querySelectorAll('h2[id], [data-kind]')) {
-      if (e.tagName === 'H2') {
-        const a = h('a', { href: `#${e.id}` }, e.textContent);
-        links.set(e, a);
-        sub = h('ol');
-        list.append(h('li', { class: 'outline-sec' }, a, sub));
-        continue;
+    const outline = panel('大纲', '本章的节与编号条目', 'outline', (box) => {
+      const list = h('ol');
+      let sub = null;
+      for (const e of main.querySelectorAll('h2[id], [data-kind]')) {
+        if (e.tagName === 'H2') {
+          const a = h('a', { href: `#${e.id}` }, e.textContent);
+          links.set(e, a);
+          sub = h('ol');
+          list.append(h('li', { class: 'outline-sec' }, a, sub));
+          continue;
+        }
+        const kind = e.dataset.kind;
+        if (!sub || !['定义', '命题', '定理', '引理', '推论', '例'].includes(kind)) continue;
+        const num = e.id.slice(kind.length + 1);
+        sub.append(h('li', {}, h('a', { href: `#${e.id}` }, h('span', { class: 'outline-num' }, `${kind} ${num}`), ' ', titleOf(e))));
       }
-      const kind = e.dataset.kind;
-      if (!sub || !['定义', '命题', '定理', '引理', '推论', '例'].includes(kind)) continue;
-      const num = e.id.slice(kind.length + 1);
-      const a = h('a', { href: `#${e.id}`, class: `k-${kind}` }, h('span', { class: 'outline-num' }, `${kind} ${num}`), ' ', titleOf(e));
-      sub.append(h('li', {}, a));
-    }
-    nav.append(list);
-    document.body.append(nav);
-    document.body.classList.add('has-outline');
-    const wide = matchMedia('(min-width: 1100px)');
-    const b = tool('大纲', '显示或隐藏本章大纲', () => {});
-    toggle('outline', 'outline-open', b, null, wide.matches);
-    nav.addEventListener('click', (e) => { if (e.target.closest('a') && !wide.matches) document.body.classList.remove('outline-open'); });
-    // Highlight the section being read.
-    const spy = () => {
+      box.append(list);
+      box.addEventListener('click', (e) => { if (e.target.closest('a')) closePanels(); });
+    });
+    // Mark the section being read, and scroll it into view in the outline.
+    outline.onOpen = () => {
       let cur = heads[0];
       for (const e of heads) if (e.getBoundingClientRect().top < innerHeight * 0.3) cur = e;
       for (const [e, a] of links) a.classList.toggle('current', e === cur);
+      links.get(cur)?.scrollIntoView({ block: 'center' });
     };
-    addEventListener('scroll', spy, { passive: true });
-    spy();
+  }
+
+  // ---- glossary -------------------------------------------------------------------------------
+  const defs = [...main.querySelectorAll('.term-def')];
+  const used = new Map();
+  for (const t of main.querySelectorAll('.term')) if (!t.dataset.ref.startsWith(`${file}#`) && !used.has(t.textContent)) used.set(t.textContent, t);
+  if (defs.length || used.size) {
+    panel('术语', '本章的术语与英文对照', 'glossary', (box) => {
+      const filter = h('input', { type: 'search', placeholder: '筛选：中文或英文', 'aria-label': '筛选术语' });
+      box.append(filter);
+      const section = (title, rows) => {
+        if (!rows.length) return;
+        box.append(h('div', { class: 'glossary-group' }, title), h('dl', {}, rows));
+      };
+      const secOf = (e) => {
+        let n = e.closest('main > *') ?? e;
+        while (n && n.tagName !== 'H2') n = n.previousElementSibling;
+        return n?.textContent.match(/^\S+/)?.[0] ?? '';
+      };
+      section('本章定义', defs.map((d) => h('div', { class: 'g-row', 'data-key': `${d.textContent} ${d.dataset.en}`.toLowerCase() },
+        h('dt', {}, h('a', { class: 'xref', href: `#${d.id}`, 'data-ref': `${file}#${d.id}` }, d.textContent)),
+        h('dd', {}, d.dataset.en, h('span', { class: 'g-sec' }, secOf(d))))));
+      section('前面各章的术语', [...used.values()].map((t) => h('div', { class: 'g-row', 'data-key': `${t.textContent} ${t.dataset.en}`.toLowerCase() },
+        h('dt', {}, h('a', { class: 'xref', href: t.dataset.ref, 'data-ref': t.dataset.ref }, t.textContent)),
+        h('dd', {}, t.dataset.en, h('span', { class: 'g-sec' }, t.dataset.where)))));
+      filter.addEventListener('input', () => {
+        const q = filter.value.trim().toLowerCase();
+        box.querySelectorAll('.g-row').forEach((r) => { r.hidden = q && !r.dataset.key.includes(q); });
+      });
+    });
   }
 
   // ---- English names after terms ----------------------------------------------------------------
-  if (main.querySelector('.term, .term-def')) {
-    toggle('show-en', 'show-en', tool('英文', '在术语后面显示英文名', () => {}), null, false);
-  }
+  if (main.querySelector('.term, .term-def')) toggle('show-en', 'show-en', tool('英文', '在术语后面显示英文名'));
+
+  // ---- reader settings ------------------------------------------------------------------------
+  // Stored as rd-<key>; only values that differ from the default are kept (the page head applies them before paint).
+  const CHOICES = [
+    ['font', '字体', 'song', [['song', '宋体', 'sample-song'], ['hei', '黑体', 'sample-hei'], ['kai', '楷体', 'sample-kai']]],
+    ['width', '行宽', 'wide', [['narrow', '窄'], ['medium', '中'], ['wide', '宽'], ['full', '满']]],
+    ['lh', '行距', 'normal', [['tight', '紧'], ['normal', '中'], ['loose', '松']]],
+    ['theme', '背景', 'auto', [['auto', '跟随系统'], ['light', '白'], ['sepia', '米黄'], ['dark', '黑']]],
+  ];
+  const FS = { min: 14, max: 24, def: 18 };
+  const setChoice = (key, value, def) => {
+    if (value === def) root.removeAttribute(`data-${key}`);
+    else root.setAttribute(`data-${key}`, value);
+    store.set(`rd-${key}`, value === def ? null : value);
+  };
+  const fontSize = () => Number(store.get('rd-fs')) || FS.def;
+  const setFontSize = (px) => {
+    const v = Math.min(FS.max, Math.max(FS.min, px));
+    if (v === FS.def) root.style.removeProperty('--fs');
+    else root.style.setProperty('--fs', `${v}px`);
+    store.set('rd-fs', v === FS.def ? null : String(v));
+    return v;
+  };
+  panel('版式', '字体、字号、行宽、行距与背景', 'settings', (box) => {
+    const refresh = [];
+    for (const [key, label, def, opts] of CHOICES) {
+      const row = h('div', { class: 'opts' });
+      for (const [value, text, cls] of opts) {
+        const b = h('button', { type: 'button', class: cls ?? null }, text);
+        b.addEventListener('click', () => { setChoice(key, value, def); refresh.forEach((f) => f()); barHeight(); });
+        refresh.push(() => b.setAttribute('aria-pressed', String((root.getAttribute(`data-${key}`) ?? def) === value)));
+        row.append(b);
+      }
+      box.append(h('div', { class: 'row' }, h('span', {}, label), row));
+    }
+    const size = h('span', { class: 'size' });
+    const step = (d) => { size.textContent = setFontSize(fontSize() + d); barHeight(); };
+    const minus = h('button', { type: 'button', title: '缩小' }, 'A−');
+    const plus = h('button', { type: 'button', title: '放大' }, 'A+');
+    minus.addEventListener('click', () => step(-1));
+    plus.addEventListener('click', () => step(1));
+    refresh.push(() => { size.textContent = fontSize(); });
+    box.append(h('div', { class: 'row' }, h('span', {}, '字号'), h('div', { class: 'opts' }, minus, size, plus)));
+    const reset = h('button', { type: 'button', class: 'reset' }, '恢复默认');
+    reset.addEventListener('click', () => {
+      for (const [key, , def] of CHOICES) setChoice(key, def, def);
+      setFontSize(FS.def);
+      refresh.forEach((f) => f());
+      barHeight();
+    });
+    box.append(reset);
+    refresh.forEach((f) => f());
+  });
 
   // ---- previews -------------------------------------------------------------------------------
   const pages = new Map();
@@ -148,11 +254,11 @@
       pieces.push(box);
       head = `${target.textContent}　${target.dataset.en ?? ''}`;
     } else if (/^H[1-6]$/.test(target.tagName)) {
+      // A section: its opening paragraphs, which say what it does.
       head = target.textContent;
-      let n = target.nextElementSibling;
-      for (let k = 0; n && k < 3 && !/^H[1-6]$/.test(n.tagName); k++, n = n.nextElementSibling) {
+      for (let n = target.nextElementSibling; n && pieces.length < 2 && !/^H[1-6]$/.test(n.tagName); n = n.nextElementSibling) {
+        if (!n.matches('p')) break;
         pieces.push(n);
-        if (n.matches('.section-box')) break;
       }
     } else {
       pieces.push(target);
@@ -167,7 +273,7 @@
     const box = h('div', { class: 'pop-body' });
     for (const p of pieces) {
       const c = document.importNode(p, true);
-      c.querySelectorAll('.cited, .proof-bar').forEach((n) => n.remove());
+      c.querySelectorAll('.cited, .proof-fold-line').forEach((n) => n.remove());
       c.removeAttribute('id');
       c.querySelectorAll('[id]').forEach((n) => n.removeAttribute('id'));
       if (f && f !== file) {
@@ -235,7 +341,7 @@
       clearTimeout(closeTimer);
       const t = e.target.closest(TRIGGER);
       clearTimeout(openTimer);
-      if (t && !t.matches('.cited')) openTimer = setTimeout(() => open(t), 220);
+      if (t && !t.matches('.cited') && !t.closest('.panel')) openTimer = setTimeout(() => open(t), 220);
       else if (!t) {
         closeTimer = setTimeout(() => {
           let keep = -1;
@@ -247,7 +353,7 @@
   }
   document.addEventListener('click', (e) => {
     const t = e.target.closest(TRIGGER);
-    if (t && (t.matches('.term, .cited') || (!canHover && t.matches('.xref') && !t.closest('.pop')))) {
+    if (t && !t.closest('.panel') && (t.matches('.term, .cited') || (!canHover && t.matches('.xref') && !t.closest('.pop')))) {
       e.preventDefault();
       clearTimeout(openTimer);
       open(t);
@@ -255,55 +361,19 @@
     }
     if (!e.target.closest('.pop')) closeFrom(0);
   });
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeFrom(0); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { closeFrom(0); closePanels(); } });
   addEventListener('resize', () => closeFrom(0));
 
-  // ---- "cited by" badges ----------------------------------------------------------------------
+  // ---- "cited by" notes -----------------------------------------------------------------------
   for (const e of main.querySelectorAll('[data-cited]')) {
     const list = JSON.parse(e.dataset.cited);
-    const b = h('button', { type: 'button', class: 'cited', title: '本书其他章中引用它的地方', 'data-list': e.dataset.cited }, `被引用 ${list.length}`);
+    const b = h('button', { type: 'button', class: 'cited', title: '本书其他章中引用它的地方', 'data-list': e.dataset.cited }, `被引用 ${list.length} 处`);
     if (e.matches('blockquote')) e.prepend(b);
     else e.append(' ', b);
   }
 
-  // ---- glossary panel -------------------------------------------------------------------------
-  const defs = [...main.querySelectorAll('.term-def')];
-  const used = new Map();
-  for (const t of main.querySelectorAll('.term')) if (!t.dataset.ref.startsWith(`${file}#`) && !used.has(t.textContent)) used.set(t.textContent, t);
-  if (defs.length || used.size) {
-    const panel = h('aside', { class: 'glossary', id: 'glossary', 'aria-label': '术语表' });
-    const filter = h('input', { type: 'search', placeholder: '筛选：中文或英文', 'aria-label': '筛选术语' });
-    const close = h('button', { type: 'button', class: 'glossary-close', title: '关闭' }, '×');
-    panel.append(h('div', { class: 'glossary-head' }, h('b', {}, '术语表'), close), filter);
-    const section = (title, rows) => {
-      if (!rows.length) return;
-      const dl = h('dl');
-      for (const r of rows) dl.append(r);
-      panel.append(h('div', { class: 'glossary-group' }, title), dl);
-    };
-    const secOf = (e) => {
-      let n = e.closest('main > *') ?? e;
-      while (n && n.tagName !== 'H2') n = n.previousElementSibling;
-      return n?.textContent.match(/^\S+/)?.[0] ?? '';
-    };
-    section('本章定义', defs.map((d) => h('div', { class: 'g-row', 'data-key': `${d.textContent} ${d.dataset.en}`.toLowerCase() },
-      h('dt', {}, h('a', { class: 'xref', href: `#${d.id}`, 'data-ref': `${file}#${d.id}` }, d.textContent)),
-      h('dd', {}, d.dataset.en, h('span', { class: 'g-sec' }, secOf(d))))));
-    section('前面各章的术语', [...used.values()].map((t) => h('div', { class: 'g-row', 'data-key': `${t.textContent} ${t.dataset.en}`.toLowerCase() },
-      h('dt', {}, h('a', { class: 'xref', href: t.dataset.ref, 'data-ref': t.dataset.ref }, t.textContent)),
-      h('dd', {}, t.dataset.en, h('span', { class: 'g-sec' }, t.dataset.where)))));
-    filter.addEventListener('input', () => {
-      const q = filter.value.trim().toLowerCase();
-      panel.querySelectorAll('.g-row').forEach((r) => { r.hidden = q && !r.dataset.key.includes(q); });
-    });
-    document.body.append(panel);
-    const b = tool('术语', '本章的术语与英文对照', () => document.body.classList.toggle('glossary-open'));
-    close.addEventListener('click', () => document.body.classList.remove('glossary-open'));
-    b.setAttribute('aria-controls', 'glossary');
-  }
-
-  // The outline and glossary start below the sticky top bar.
-  const barHeight = () => document.documentElement.style.setProperty('--bar-h', `${topbar.offsetHeight}px`);
+  // Panels start below the sticky top bar.
+  function barHeight() { root.style.setProperty('--bar-h', `${topbar.offsetHeight}px`); }
   barHeight();
   addEventListener('resize', barHeight);
 
