@@ -2,11 +2,15 @@
 
 第 12 章用记号 $A[I_x, J]$ 描述分片，用命题 12.3 判断一次分布式矩阵乘法需要什么通信。JAX 的分布式接口就是这套记号的程序形式。本章讲三件事：怎样描述网格和分片；谁来决定中间结果的分片（JAX 提供三种模式）；怎样在需要完全控制时，以每台设备的视角写程序并显式地调用集合通信。
 
+14.1 节讲网格与分片的写法；14.2 节讲三种模式；14.3 节讲 shard_map 与集合原语；14.4 节把第 12 章的 FSDP 与张量并行写成程序；14.5、14.6 节讲显存与多主机。
+
 本章的代码都在 8 台模拟设备上运行过（2026-10，JAX 0.11）。
 
 > **在体系中的位置**：下层是第 7 章的集合操作、第 12 章的分片记号与并行策略、第 13 章的追踪与 `jit`。本章给出 mesh 与 PartitionSpec、Explicit/Auto/Manual 三种模式、`shard_map` 与集合原语、FSDP 与张量并行的写法以及显存工具。第 16 章的 Pallas kernel 可以放在 `shard_map` 之内；第 19 章的 TPU 多芯片 kernel 是 `shard_map` 中集合通信的手写版本。
 
 ## 14.1 网格与 PartitionSpec
+
+第 12 章的网格与分片（定义 12.1、12.2）在 JAX 中各有一个对象。本节给出它们的写法，以及它们与第 12 章记号的对应。
 
 ```python
 from jax.sharding import AxisType
@@ -34,13 +38,13 @@ with jax.set_mesh(mesh):
 
 ## 14.2 三种模式
 
-中间结果的分片由谁决定？JAX 按网格轴提供三种答案。
+中间结果的分片由谁决定？JAX 按网格轴提供三种答案。本节给出它们的定义（定义 14.1），在矩阵乘法上比较它们，并说明怎样取舍。
 
-**定义 14.1（轴类型）**
-
-- **Explicit**：分片是类型的一部分，在追踪时按类型规则逐个运算地确定。规则有歧义的运算（例如收缩维被分片的矩阵乘法）必须由程序员指定输出的分片；不相容的分片是类型错误。
-- **Auto**：中间结果的分片由编译器的分区器决定，它根据输入的分片和程序中的约束推断，并自动插入集合通信。
-- **Manual**：在 `shard_map` 之内，程序看到的是每台设备上的局部块，通信由程序员显式调用集合原语完成（14.3 节）。
+> **定义 14.1（轴类型）**
+>
+> - **Explicit**：分片是类型的一部分，在追踪时按类型规则逐个运算地确定。规则有歧义的运算（例如收缩维被分片的矩阵乘法）必须由程序员指定输出的分片；不相容的分片是类型错误。
+> - **Auto**：中间结果的分片由编译器的分区器决定，它根据输入的分片和程序中的约束推断，并自动插入集合通信。
+> - **Manual**：在 `shard_map` 之内，程序看到的是每台设备上的局部块，通信由程序员显式调用集合原语完成（14.3 节）。
 
 **Explicit 模式下的矩阵乘法**正是命题 12.3：
 
@@ -73,6 +77,8 @@ with jax.set_mesh(mesh):
 
 ## 14.3 shard_map 与集合原语
 
+Manual 模式下，程序以每台设备的视角写成，通信由集合原语显式完成。本节给出 shard_map 的用法、集合原语与第 7 章集合操作的对应，以及一个把通信与计算重叠起来的例子（例 14.2）。
+
 `jax.shard_map` 让一个函数以每台设备的视角运行：
 
 ```python
@@ -99,30 +105,30 @@ def column_sum(x_blk):                                   # x_blk 是本设备的
 
 **一个常见的错误**：对一个本来就复制的值做 `psum`，结果是它的 $\lvert x \rvert$ 倍，因为每台设备都贡献了同一个值（习题 14.3）。
 
-**例 14.2（通信与计算重叠的矩阵乘法）** 计算 $Y[N, F_x] = X[N_x, D] \cdot W[D, F_x]$：直接的做法是先 all-gather $X$ 再相乘。按命题 7.10，可以把 all-gather 拆成环形的 $p - 1$ 次置换，每收到一块就先乘这一块：
-
-```python
-@jax.jit
-@jax.shard_map(in_specs=(jax.P("x", None), jax.P(None, "x")), out_specs=jax.P(None, "x"))
-def ag_matmul(x_blk, w_blk):              # x_blk: [N/p, D]，w_blk: [D, F/p]
-    p = jax.lax.axis_size("x")            # Python 整数，下面的循环在追踪时展开
-    r = jax.lax.axis_index("x")
-    perm = [(i, (i + 1) % p) for i in range(p)]
-    out = jnp.zeros((p, x_blk.shape[0], w_blk.shape[1]), x_blk.dtype)
-    blk = x_blk
-    for t in range(p):
-        src = (r - t) % p                 # 第 t 步手中是第 src 块行
-        out = out.at[src].set(blk @ w_blk)
-        if t + 1 < p:
-            blk = jax.lax.ppermute(blk, "x", perm)
-    return out.reshape(-1, w_blk.shape[1])
-```
-
-每一步的矩阵乘法与下一块的传递互不依赖，编译器可以让它们同时进行。正确性只依赖于一个不变量：第 $t$ 步时，设备 $r$ 手中的是第 $(r - t) \bmod p$ 块行。
+> **例 14.2（通信与计算重叠的矩阵乘法）** 计算 $Y[N, F_x] = X[N_x, D] \cdot W[D, F_x]$：直接的做法是先 all-gather $X$ 再相乘。按命题 7.10，可以把 all-gather 拆成环形的 $p - 1$ 次置换，每收到一块就先乘这一块：
+>
+> ```python
+> @jax.jit
+> @jax.shard_map(in_specs=(jax.P("x", None), jax.P(None, "x")), out_specs=jax.P(None, "x"))
+> def ag_matmul(x_blk, w_blk):              # x_blk: [N/p, D]，w_blk: [D, F/p]
+>     p = jax.lax.axis_size("x")            # Python 整数，下面的循环在追踪时展开
+>     r = jax.lax.axis_index("x")
+>     perm = [(i, (i + 1) % p) for i in range(p)]
+>     out = jnp.zeros((p, x_blk.shape[0], w_blk.shape[1]), x_blk.dtype)
+>     blk = x_blk
+>     for t in range(p):
+>         src = (r - t) % p                 # 第 t 步手中是第 src 块行
+>         out = out.at[src].set(blk @ w_blk)
+>         if t + 1 < p:
+>             blk = jax.lax.ppermute(blk, "x", perm)
+>     return out.reshape(-1, w_blk.shape[1])
+> ```
+>
+> 每一步的矩阵乘法与下一块的传递互不依赖，编译器可以让它们同时进行。正确性只依赖于一个不变量：第 $t$ 步时，设备 $r$ 手中的是第 $(r - t) \bmod p$ 块行。
 
 ## 14.4 FSDP 与张量并行的写法
 
-把第 12 章的方案写成 Explicit 模式的程序。网格 $\{d: 2, t: 4\}$，$d$ 是数据并行与 FSDP 的轴，$t$ 是张量并行的轴。MLP 的激活沿 $d$ 分片批量维；权重沿 $d$ 做 FSDP 分片，同时沿 $t$ 做张量并行分片：
+作为前几节的综合，把第 12 章的方案写成 Explicit 模式的程序。网格 $\{d: 2, t: 4\}$，$d$ 是数据并行与 FSDP 的轴，$t$ 是张量并行的轴。MLP 的激活沿 $d$ 分片批量维；权重沿 $d$ 做 FSDP 分片，同时沿 $t$ 做张量并行分片：
 
 ```python
 x  = jax.device_put(x,  jax.P("d", None))     # X[N_d, D]
@@ -140,6 +146,8 @@ def mlp(x, w1, w2):
 编译后的程序中恰好出现两类集合通信：all-gather（FSDP 取回权重）与 all-reduce（张量并行合并部分和），与命题 12.3 的预测一致。反向传播由 `jax.grad` 自动生成：权重梯度的收缩维是批量维（沿 $d$ 分片），按命题 12.3 得到部分和；而梯度要与参数一样沿 $d$ 分片（实际得到的梯度类型正是 `float32[32@d,64@t]`），所以语义上这是一次沿 $d$ 的 reduce-scatter，正是 FSDP 的梯度规约。编译器可以把它实现为 reduce-scatter，也可以实现为 all-reduce 之后再取本地的一段：在模拟设备（CPU）上编译的程序就是后者，通信量是前者的两倍。加速器的编译器通常会把后者改写为前者，但这正是审查时应当在 HLO 中确认的一点。
 
 ## 14.5 显存
+
+第 11 章说明，训练时显存往往比运算更早成为限制。JAX 为此提供了下列工具：
 
 - **捐赠**（`donate_argnums`，13.3 节）：让更新后的参数和优化器状态复用旧的存储，避免同时存在两份。
 - **重计算**（`jax.checkpoint`，13.4 节）：以运算换激活显存。
