@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="322" viewBox="0 0 500 322" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker><marker id="arrow-carry" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c0392b"/></marker></defs>
+<rect width="500" height="322" rx="8" fill="#ffffff"/>
+<text x="96" y="24" text-anchor="middle" font-size="15" fill="#222" font-style="italic">x<tspan dy="4" font-size="11">0</tspan></text>
+<polyline points="96,34 96,288" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="96" y="308" text-anchor="middle" font-size="15" fill="#222" font-style="italic">y<tspan dy="4" font-size="11">0</tspan></text>
+<text x="148" y="24" text-anchor="middle" font-size="15" fill="#222" font-style="italic">x<tspan dy="4" font-size="11">1</tspan></text>
+<polyline points="148,34 148,288" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="148" y="308" text-anchor="middle" font-size="15" fill="#222" font-style="italic">y<tspan dy="4" font-size="11">1</tspan></text>
+<text x="200" y="24" text-anchor="middle" font-size="15" fill="#222" font-style="italic">x<tspan dy="4" font-size="11">2</tspan></text>
+<polyline points="200,34 200,288" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="200" y="308" text-anchor="middle" font-size="15" fill="#222" font-style="italic">y<tspan dy="4" font-size="11">2</tspan></text>
+<text x="252" y="24" text-anchor="middle" font-size="15" fill="#222" font-style="italic">x<tspan dy="4" font-size="11">3</tspan></text>
+<polyline points="252,34 252,288" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="252" y="308" text-anchor="middle" font-size="15" fill="#222" font-style="italic">y<tspan dy="4" font-size="11">3</tspan></text>
+<text x="304" y="24" text-anchor="middle" font-size="15" fill="#222" font-style="italic">x<tspan dy="4" font-size="11">4</tspan></text>
+<polyline points="304,34 304,288" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="304" y="308" text-anchor="middle" font-size="15" fill="#222" font-style="italic">y<tspan dy="4" font-size="11">4</tspan></text>
+<text x="356" y="24" text-anchor="middle" font-size="15" fill="#222" font-style="italic">x<tspan dy="4" font-size="11">5</tspan></text>
+<polyline points="356,34 356,288" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="356" y="308" text-anchor="middle" font-size="15" fill="#222" font-style="italic">y<tspan dy="4" font-size="11">5</tspan></text>
+<text x="408" y="24" text-anchor="middle" font-size="15" fill="#222" font-style="italic">x<tspan dy="4" font-size="11">6</tspan></text>
+<polyline points="408,34 408,288" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="408" y="308" text-anchor="middle" font-size="15" fill="#222" font-style="italic">y<tspan dy="4" font-size="11">6</tspan></text>
+<text x="460" y="24" text-anchor="middle" font-size="15" fill="#222" font-style="italic">x<tspan dy="4" font-size="11">7</tspan></text>
+<polyline points="460,34 460,288" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="460" y="308" text-anchor="middle" font-size="15" fill="#222" font-style="italic">y<tspan dy="4" font-size="11">7</tspan></text>
+<text x="12" y="94" text-anchor="start" font-size="12" fill="#666">第 1 级</text>
+<polyline points="96,54 148,90" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="200,54 252,90" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="304,54 356,90" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="408,54 460,90" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="12" y="150" text-anchor="start" font-size="12" fill="#666">第 2 级</text>
+<polyline points="148,110 252,146" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="356,110 460,146" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="12" y="206" text-anchor="start" font-size="12" fill="#666">第 3 级</text>
+<polyline points="252,166 460,202" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="252,166 356,202" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="12" y="262" text-anchor="start" font-size="12" fill="#666">第 4 级</text>
+<polyline points="148,222 200,258" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="252,222 304,258" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="356,222 408,258" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<circle cx="96" cy="54" r="2.6" fill="#222"/>
+<circle cx="148" cy="90" r="6.5" fill="#2f5597"/>
+<circle cx="200" cy="54" r="2.6" fill="#222"/>
+<circle cx="252" cy="90" r="6.5" fill="#2f5597"/>
+<circle cx="304" cy="54" r="2.6" fill="#222"/>
+<circle cx="356" cy="90" r="6.5" fill="#2f5597"/>
+<circle cx="408" cy="54" r="2.6" fill="#222"/>
+<circle cx="460" cy="90" r="6.5" fill="#2f5597"/>
+<circle cx="148" cy="110" r="2.6" fill="#222"/>
+<circle cx="252" cy="146" r="6.5" fill="#2f5597"/>
+<circle cx="356" cy="110" r="2.6" fill="#222"/>
+<circle cx="460" cy="146" r="6.5" fill="#2f5597"/>
+<circle cx="252" cy="166" r="2.6" fill="#222"/>
+<circle cx="460" cy="202" r="6.5" fill="#2f5597"/>
+<circle cx="252" cy="166" r="2.6" fill="#222"/>
+<circle cx="356" cy="202" r="6.5" fill="#2f5597"/>
+<circle cx="148" cy="222" r="2.6" fill="#222"/>
+<circle cx="200" cy="258" r="6.5" fill="#2f5597"/>
+<circle cx="252" cy="222" r="2.6" fill="#222"/>
+<circle cx="304" cy="258" r="6.5" fill="#2f5597"/>
+<circle cx="356" cy="222" r="2.6" fill="#222"/>
+<circle cx="408" cy="258" r="6.5" fill="#2f5597"/>
+</svg>

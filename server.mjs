@@ -136,7 +136,7 @@ async function handle(req, res) {
   res.end('Not found');
 }
 
-// --check: render every Markdown file and report KaTeX errors and broken local links.
+// --check: render every Markdown file and report KaTeX errors, broken local links and missing images.
 async function check() {
   const files = (await readdir(BOOK)).filter((f) => f.endsWith('.md')).sort();
   const order = await chapterOrder();
@@ -151,6 +151,15 @@ async function check() {
     for (const m of html.matchAll(/class="katex-error"[^>]*title="([^"]*)"/g)) {
       console.log(`${name}: KaTeX: ${m[1].slice(0, 160)}`);
       problems++;
+    }
+    for (const m of source.matchAll(/!\[[^\]]*\]\(([^)\s]+)\)/g)) {
+      if (/^[a-z]+:/i.test(m[1])) continue;
+      try {
+        await stat(join(BOOK, m[1]));
+      } catch {
+        console.log(`${name}: missing image: ${m[1]}`);
+        problems++;
+      }
     }
     for (const m of source.matchAll(/\]\(([^)\s#]+\.md)(#[^)\s]*)?\)/g)) {
       if (/^[a-z]+:/i.test(m[1])) continue;

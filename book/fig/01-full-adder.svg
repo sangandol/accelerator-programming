@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="540" height="240" viewBox="0 0 540 240" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker><marker id="arrow-carry" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c0392b"/></marker></defs>
+<rect width="540" height="240" rx="8" fill="#ffffff"/>
+<rect x="88" y="22" width="98" height="184" rx="6" fill="none" stroke="#3a5a8c" stroke-width="1.6" stroke-dasharray="5 4"/>
+<text x="137" y="224" text-anchor="middle" font-size="12" fill="#666">半加器</text>
+<rect x="232" y="28" width="114" height="132" rx="6" fill="none" stroke="#3a5a8c" stroke-width="1.6" stroke-dasharray="5 4"/>
+<text x="289" y="178" text-anchor="middle" font-size="12" fill="#666">半加器</text>
+<text x="32" y="51" text-anchor="end" font-size="15" fill="#222" font-style="italic">a</text>
+<text x="32" y="67" text-anchor="end" font-size="15" fill="#222" font-style="italic">b</text>
+<polyline points="40,46 130,46" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="100,46 100,164 130,164" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<circle cx="100" cy="46" r="3.2" fill="#222"/>
+<polyline points="40,62 130,62" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="115,62 115,180 130,180" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<circle cx="115" cy="62" r="3.2" fill="#222"/>
+<text x="260" y="14" text-anchor="middle" font-size="15" fill="#222" font-style="italic">c</text>
+<polyline points="260,20 260,140 290,140" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="260,70 290,70" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<circle cx="260" cy="70" r="3.2" fill="#222"/>
+<polyline points="174,54 290,54" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="245,54 245,124 290,124" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<circle cx="245" cy="54" r="3.2" fill="#222"/>
+<text x="205" y="48" text-anchor="middle" font-size="15" fill="#222" font-style="italic">p</text>
+<polyline points="174,172 380,172 380,148 400,148" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="205" y="166" text-anchor="middle" font-size="15" fill="#222" font-style="italic">g</text>
+<polyline points="334,132 400,132" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="366" y="126" text-anchor="middle" font-size="15" fill="#222" font-style="italic">t</text>
+<polyline points="334,62 490,62" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="500" y="67" text-anchor="start" font-size="15" fill="#222" font-style="italic">s</text>
+<polyline points="444,140 490,140" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="500" y="145" text-anchor="start" font-size="15" fill="#222" font-style="italic">c′</text>
+<rect x="130" y="32" width="44" height="44" rx="6" fill="#eef3fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<text x="152" y="61" text-anchor="middle" font-size="20" fill="#3a5a8c">⊕</text>
+<rect x="130" y="150" width="44" height="44" rx="6" fill="#eef3fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<text x="152" y="179" text-anchor="middle" font-size="20" fill="#3a5a8c">∧</text>
+<rect x="290" y="40" width="44" height="44" rx="6" fill="#eef3fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<text x="312" y="69" text-anchor="middle" font-size="20" fill="#3a5a8c">⊕</text>
+<rect x="290" y="110" width="44" height="44" rx="6" fill="#eef3fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<text x="312" y="139" text-anchor="middle" font-size="20" fill="#3a5a8c">∧</text>
+<rect x="400" y="118" width="44" height="44" rx="6" fill="#eef3fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<text x="422" y="147" text-anchor="middle" font-size="20" fill="#3a5a8c">∨</text>
+</svg>
