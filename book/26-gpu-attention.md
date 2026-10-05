@@ -1,17 +1,19 @@
 # 第 26 章　GPU kernel：注意力
 
-注意力的中间矩阵是 $T \times T$ 的，不能写回显存；第 10 章的在线 softmax（命题 10.5）让我们一块一块地处理键和值，只保留每个查询的状态 $(m, \ell, u)$。本章把它写成 GPU 上的 kernel：FlashAttention 的基本结构与 warp 的分工，它在 Hopper 与 Blackwell 上为什么要重新设计（指数运算成了瓶颈），decode 时的注意力与分页 KV cache，以及反向传播。
+注意力的中间矩阵是 $T \times T$ 的，不能写回显存；第 10 章的在线 softmax（命题 10.5）让我们一块一块地处理键和值，只保留每个查询的状态 $(m, \ell, u)$。本章把它写成 GPU 上的 kernel。26.1 节先估出上限；26.2 节讲 FlashAttention 的基本结构与 warp 的分工；26.3、26.4 节说明它在 Hopper 与 Blackwell 上为什么要重新设计（指数运算成了瓶颈），以及怎样设计；26.5 节讲 decode 时的注意力与分页 KV cache；26.6 节讲反向传播。
 
 > **在体系中的位置**：下层是第 10 章的在线 softmax、第 11 章的注意力算术、第 21–25 章的 GPU 结构与 kernel 写法；反向传播所需的求导在 26.6 节直接推出。本章给出 FlashAttention 的结构与负载分析、Hopper 与 Blackwell 上的设计、decode 注意力、分页 KV、反向传播。
 
 ## 26.1 注意力的屋顶线
 
-一个头：$Q, K, V \in \mathbb{R}^{T \times d}$，$O = \operatorname{softmax}(QK^{\mathsf T}/\sqrt{d})\, V$，运算量约 $4T^2 d$（不计掩码）。若中间矩阵不离开片上存储，每个查询块（$b_q$ 行）要读一遍全部的 $K$、$V$，强度约为 $\frac{4T^2d}{2sTd \cdot T/b_q} = \frac{2b_q}{s}$，与 $T$ 无关。所以：
+按惯例，写 kernel 之前先估上限。考虑一个头：$Q, K, V \in \mathbb{R}^{T \times d}$，$O = \operatorname{softmax}(QK^{\mathsf T}/\sqrt{d})\, V$，运算量约 $4T^2 d$（不计掩码）。若中间矩阵不离开片上存储，每个查询块（$b_q$ 行）要读一遍全部的 $K$、$V$，强度约为 $\frac{4T^2d}{2sTd \cdot T/b_q} = \frac{2b_q}{s}$，与 $T$ 无关。所以：
 
 - **prefill**（或训练）：$b_q$ 取 128 左右即可计算受限；
 - **decode**：每个序列只有一个（或少数几个）查询，强度约为 $2 \times (\text{同时处理的查询数}) / s$，访存受限，时间由读 KV cache 决定。
 
 ## 26.2 FlashAttention 的结构
+
+本节把命题 10.5 落实为线程块的工作流程，再说明一个线程块内的 warp 应当怎样分工。
 
 **网格**：每个线程块负责一个（批量，头，查询块）。线程块把它的 $Q$ 块载入共享内存，然后依次处理各个键值块 $j$：
 
@@ -28,9 +30,11 @@
 
 ## 26.3 指数运算为什么成为瓶颈
 
+26.2 节的结构在 Ampere 上已经够好。在更新的 GPU 上，瓶颈出现在一个意想不到的地方：矩阵乘法之外的逐元素运算。本节用一个简单的比较说明原因（命题 26.1）。
+
 对分数矩阵 $S$ 的每个元素，Tensor Core 要做 $QK^{\mathsf T}$ 与 $PV$ 中的各 $d$ 次乘加（$4d$ FLOP），专门的函数单元（SFU）要做一次指数，CUDA 核心还要做几次减法、乘法与比较（最大值、缩放）。
 
-**命题 26.1** 设每个 SM 每周期的 Tensor Core 算力为 $P$（FLOP），指数运算为 $E$ 次。注意力的指数运算不成为瓶颈的条件是 $4d \ge P / E$。
+> **命题 26.1** 设每个 SM 每周期的 Tensor Core 算力为 $P$（FLOP），指数运算为 $E$ 次。注意力的指数运算不成为瓶颈的条件是 $4d \ge P / E$。
 
 *证明* 每个元素的 Tensor Core 时间为 $4d/P$，指数时间为 $1/E$。∎
 
@@ -39,6 +43,8 @@
 所以在新的 GPU 上，注意力 kernel 的设计重点不再只是矩阵乘法，而是：**让 softmax 的逐元素运算与矩阵乘法同时进行，并减少逐元素运算本身**。
 
 ## 26.4 Hopper 与 Blackwell 上的设计
+
+26.3 节的结论给出了新设计的两个方向：让逐元素运算与矩阵乘法同时进行，以及减少逐元素运算本身。两代 GPU 上的公开设计分别侧重其一：
 
 **Hopper（FlashAttention-3 的思路）**：
 
@@ -69,7 +75,7 @@ decode 时，目标是以接近显存带宽的速度读完 KV cache。
 
 ## 26.6 反向传播
 
-设损失对输出的梯度为 $\bar{O}$（与 $O$ 同形状）。只需要两条求导规则：
+训练还需要注意力的反向传播。GPU 路线不依赖第 13 章，所以这里直接推出所需的公式，再说明 kernel 的结构。设损失对输出的梯度为 $\bar{O}$（与 $O$ 同形状）。只需要两条求导规则：
 
 - 矩阵乘法 $Y = XW$：$\bar{X} = \bar{Y} W^{\mathsf T}$，$\bar{W} = X^{\mathsf T} \bar{Y}$（由 $\langle \bar{Y}, XW \rangle = \operatorname{tr}(\bar{Y}^{\mathsf T} X W)$ 分别对 $X$、$W$ 求梯度）；
 - 逐行 softmax $y = \operatorname{softmax}(x)$：雅可比矩阵是对称的 $\operatorname{diag}(y) - y y^{\mathsf T}$，所以 $\bar{x} = y \odot (\bar{y} - \langle y, \bar{y} \rangle)$。
@@ -82,7 +88,7 @@ $$
 
 其中 $D_i = \langle O_{i,:}, \bar{O}_{i,:} \rangle$。（$D_i = \sum_j P_{ij} \bar{P}_{ij}$，代入 $\bar{P} = \bar{O} V^{\mathsf T}$ 与 $O = PV$ 即得。）
 
-GPU 上的结构：
+由公式得到 GPU 上的结构：
 
 - 前向为每行保存 $\operatorname{lse}_i = m_i + \log \ell_i$；反向时用 $P_{ij} = e^{S_{ij} - \operatorname{lse}_i}$ 重新算出 $P$ 的每一块。预先用一个小 kernel 算出 $D$。
 - 每个线程块负责一个键值块，持有它的 $\bar{K}$、$\bar{V}$ 累加器，遍历所有查询块。
