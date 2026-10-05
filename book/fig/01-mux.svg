@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="517" height="224" viewBox="11 18 517 224" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
-<rect x="11" y="18" width="517" height="224" rx="8" fill="#ffffff"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="517" height="206" viewBox="11 0 517 206" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<rect x="11" y="0" width="517" height="206" rx="8" fill="#ffffff"/>
 <rect x="110" y="68" width="44" height="44" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
 <rect x="230" y="30" width="44" height="44" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
 <rect x="230" y="150" width="44" height="44" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
@@ -33,7 +33,8 @@
 <text x="362" y="119" text-anchor="middle" font-size="20" fill="#3a5a8c">∨</text>
 <text x="438" y="117.3" text-anchor="start" font-size="15" fill="#222">mux(<tspan font-style="italic">s</tspan>, <tspan font-style="italic">a</tspan>, <tspan font-style="italic">b</tspan>)</text>
 <text x="174" y="85.6" text-anchor="middle" font-size="13" fill="#222">¬ <tspan font-style="italic">s</tspan></text>
-<text x="132" y="226.2" text-anchor="middle" font-size="12" fill="#666">第 1 级</text>
-<text x="252" y="226.2" text-anchor="middle" font-size="12" fill="#666">第 2 级</text>
-<text x="362" y="226.2" text-anchor="middle" font-size="12" fill="#666">第 3 级</text>
+<text x="132" y="62.2" text-anchor="middle" font-size="12" fill="#666">深度 1</text>
+<text x="252" y="24.2" text-anchor="middle" font-size="12" fill="#666">深度 2</text>
+<text x="252" y="144.2" text-anchor="middle" font-size="12" fill="#666">深度 1</text>
+<text x="362" y="84.2" text-anchor="middle" font-size="12" fill="#666">深度 3</text>
 </svg>

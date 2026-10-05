@@ -9,15 +9,19 @@
 | 比特、逻辑门、真值表 | bit, logic gate, truth table | 1.1 |
 | 与、或、异或、非 | AND, OR, XOR, NOT | 1.1 |
 | 选择器 | multiplexer (mux) | 1.1 |
-| 组合电路、规模、深度 | combinational circuit, size, depth | 1.2 |
-| 半加器、全加器、行波进位加法器 | half adder, full adder, ripple-carry adder | 1.3 |
-| 时钟、寄存器、触发器 | clock, register, flip-flop | 1.4 |
-| 同步电路、关键路径 | synchronous circuit, critical path | 1.4 |
-| 进位产生、传递、吸收 | generate, propagate, kill | 1.5 |
-| 前缀问题（扫描）、归约 | prefix problem (scan), reduction | 1.6 |
-| 超前进位加法器 | carry-lookahead adder | 1.6 |
-| 进位保留加法、3:2 压缩 | carry-save addition, 3:2 compressor | 1.7 |
-| 工作量、深度 | work, depth (span) | 1.8 |
+| 组合电路、扇出、规模、深度 | combinational circuit, fan-out, size, depth | 1.2 |
+| 门延迟、关键路径 | gate delay, critical path | 1.3 |
+| 半加器、全加器、多数函数 | half adder, full adder, majority | 1.4 |
+| 行波进位加法器 | ripple-carry adder | 1.4 |
+| 时钟、时钟周期、上升沿 | clock, clock period, rising edge | 1.5 |
+| 寄存器、触发器、同步电路 | register, flip-flop, synchronous circuit | 1.5 |
+| 进位函数 | carry function | 1.6 |
+| 进位产生、传递、吸收 | generate, propagate, kill | 1.6 |
+| 前缀问题（扫描）、归约 | prefix problem (scan), reduction | 1.7 |
+| 前缀网络、节点 | prefix network, node | 1.7 |
+| 超前进位加法器 | carry-lookahead adder | 1.9 |
+| 进位保留加法、3:2 压缩、Wallace 树 | carry-save addition, 3:2 compression, Wallace tree | 1.10 |
+| 工作量、深度、调度 | work, depth (span), schedule | 1.11 |
 | 部分积 | partial product | 2.1 |
 | 尾数、指数、次正规数 | significand, exponent, subnormal | 2.2 |
 | 单位舍入误差 | unit roundoff | 2.2 |

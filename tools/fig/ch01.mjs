@@ -21,7 +21,8 @@ export default {
     f.pin('y', 430, 112, 'mux($s$, $a$, $b$)', 'out');
     f.net('g3.out', 'y');
     f.text(174, 81, '$\\neg s$', { size: 13 });
-    [132, 252, 362].forEach((x, k) => f.note(x, 222, `第 ${k + 1} 级`));
+    // depth of each gate (定义 1.6)
+    [[132, 58, 1], [252, 20, 2], [252, 140, 1], [362, 80, 3]].forEach(([x, y, d]) => f.note(x, y, `深度 ${d}`));
   },
 
   // 图 1.2 八个输入的与：逐个相与与二叉树
@@ -120,6 +121,44 @@ export default {
     f.arrow([260, 226], [260, 186]);
     f.text(260, 240, '时钟', { size: 13 });
     f.raw('<path d="M252,184 L268,184 L260,174 z" fill="none" stroke="#3a5a8c" stroke-width="1.4"/>', [252, 174, 268, 184], 3);
+  },
+
+  // 图 1.9 超前进位加法器：半加器 → 前缀网络（n = 4 的 Kogge–Stone）→ 异或；位置 0 在左
+  '01-cla'(f) {
+    const X = (i) => 80 + 160 * i;
+    const Y = (L) => 165 + 68 * L;
+    for (let i = 0; i < 4; i++) {
+      const x = X(i);
+      f.text(x - 16, 16, `$a_${i}$`, { size: 15 });
+      f.text(x + 16, 16, `$b_${i}$`, { size: 15 });
+      f.arrow([x - 16, 28], [x - 16, 44]);
+      f.arrow([x + 16, 28], [x + 16, 44]);
+      f.box(x - 38, 44, 76, 36, '半加器', { size: 13 });
+      f.line([[x, 80], [x, 282]]);
+      f.text(x - 8, 104, `$(g_${i}, p_${i})$`, { size: 13, anchor: 'end' });
+      f.text(x - 8, 268, `$G_${i}$`, { size: 13, anchor: 'end' });
+      if (i === 0) {
+        f.arrow([x + 28, 80], [x + 28, 368], { color: 'teal' });
+        f.text(x + 28, 384, '$s_0 = p_0$', { size: 15 });
+      } else {
+        f.box(x - 6, 336, 40, 32, '$\\oplus$', { color: 'orange', size: 16 });
+        f.arrow([x + 28, 80], [x + 28, 336], { color: 'teal' });
+        f.arrow([X(i - 1), 282], [x + 2, 336], { color: CARRY });
+        f.arrow([x + 14, 368], [x + 14, 380]);
+        f.text(x + 14, 394, `$s_${i}$`, { size: 15 });
+      }
+      f.text(x + 34, 104, `$p_${i}$`, { size: 13, anchor: 'start', color: 'teal' });
+    }
+    f.arrow([X(3), 282], [X(3) + 90, 336], { color: CARRY });
+    f.text(X(3) + 96, 344, '$c_4 = G_3$', { size: 15, anchor: 'start', color: CARRY });
+    for (const [L, i, j] of [[0, 1, 0], [0, 2, 1], [0, 3, 2], [1, 2, 0], [1, 3, 1]]) {
+      f.line([[X(j), Y(L) - 40], [X(i), Y(L)]]);
+      f.dot(X(j), Y(L) - 40, 2.6);
+      f.dot(X(i), Y(L), 6.5, '#3a5a8c');
+    }
+    f.box(X(0) - 32, 118, X(3) - X(0) + 70, 132, '', { hollow: true, dash: '5 4' });
+    f.text(X(0) - 44, 176, '前缀网络', { size: 13, anchor: 'end' });
+    f.note(X(0) - 44, 196, '（运算 $\\otimes$）', { anchor: 'end' });
   },
 
   // 图 1.6–1.8 前缀网络（n = 8）；ops 的每项 [级, i, j]：第 i 列结合第 j 列
