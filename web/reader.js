@@ -20,6 +20,16 @@
   };
   const LABEL = /^(定义|命题|定理|引理|推论|例|注|习题|图)\s?(\d+|[A-E])\.(\d+)/;
 
+  // Pages from an older server lack the head script and font links that server.mjs now writes: add them here.
+  if (!document.querySelector('link[href*="fonts.googleapis.com"]')) {
+    for (const href of ['https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap',
+      'https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.7.0/lxgwwenkaiscreen.css']) {
+      document.head.append(h('link', { rel: 'stylesheet', href }));
+    }
+    for (const k of ['font', 'width', 'lh', 'theme']) { const v = store.get(`rd-${k}`); if (v) root.setAttribute(`data-${k}`, v); }
+    if (store.get('rd-fs')) root.style.setProperty('--fs', `${store.get('rd-fs')}px`);
+  }
+
   // ---- toolbar and panels -----------------------------------------------------------------------
   let topbar = document.querySelector('.topbar');
   if (!topbar) document.body.prepend((topbar = h('header', { class: 'topbar' })));
