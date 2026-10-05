@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "project": {
+    "id": "accelerator-programming",
+    "name": "加速器编程",
+    "startArguments": [
+      "-NoBrowser",
+      "-Port",
+      "{port:main}"
+    ],
+    "stopTimeoutSeconds": 15,
+    "endpoints": [
+      {
+        "id": "main",
+        "name": "Web",
+        "ports": [
+          43202
+        ],
+        "url": "http://127.0.0.1:{port:main}/book/",
+        "healthUrl": "http://127.0.0.1:{port:main}/api/health",
+        "healthKind": "http",
+        "required": true,
+        "autoOpen": true
+      }
+    ]
+  }
+}

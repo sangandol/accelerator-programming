@@ -1,0 +1,41 @@
+:root {
+  --fg: #1b1b1b;
+  --bg: #fdfdfb;
+  --muted: #666;
+  --rule: #ddd;
+  --code-bg: #f3f3f0;
+  --box-bg: #f6f7fa;
+  --link: #1f5fb4;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fg: #e6e6e6;
+    --bg: #18191b;
+    --muted: #9a9a9a;
+    --rule: #3a3a3a;
+    --code-bg: #24262a;
+    --box-bg: #202328;
+    --link: #8ab4f8;
+  }
+}
+html { background: var(--bg); color: var(--fg); }
+body {
+  margin: 0 auto;
+  max-width: 46rem;
+  padding: 1rem 16px 4rem;
+  font: 17px/1.75 system-ui, "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+a { color: var(--link); }
+nav { color: var(--muted); font-size: 0.9rem; margin: 0.5rem 0 1.5rem; }
+h1, h2, h3 { line-height: 1.35; }
+h2 { border-bottom: 1px solid var(--rule); padding-bottom: 0.2rem; margin-top: 2.5rem; }
+code { background: var(--code-bg); padding: 0.1em 0.3em; border-radius: 3px; font-size: 0.9em; }
+pre { background: var(--code-bg); padding: 0.8rem; overflow-x: auto; border-radius: 4px; line-height: 1.5; }
+pre code { padding: 0; background: none; }
+table { border-collapse: collapse; display: block; overflow-x: auto; margin: 1rem 0; }
+th, td { border: 1px solid var(--rule); padding: 0.3rem 0.6rem; vertical-align: top; }
+blockquote { margin: 1rem 0; padding: 0.4rem 1rem; background: var(--box-bg); border-left: 3px solid var(--rule); }
+details { margin: 0.4rem 0 0.4rem 1rem; }
+summary { cursor: pointer; color: var(--muted); }
+img { max-width: 100%; }
+.katex-display { overflow-x: auto; overflow-y: hidden; }
