@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="591" height="204" viewBox="22 -2 591 204" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-666-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#666"/></marker></defs>
+<rect x="22" y="-2" width="591" height="204" rx="8" fill="#ffffff"/>
+<rect x="70" y="30" width="90" height="30" rx="3" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="160" y="30" width="15" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="175" y="30" width="15" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="280" y="30" width="90" height="30" rx="3" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<rect x="370" y="30" width="90" height="30" rx="3" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="460" y="30" width="15" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="250" y="70" width="15" height="30" rx="3" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="265" y="70" width="15" height="30" rx="3" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="550" y="70" width="15" height="30" rx="3" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<polyline points="70,110 583,110" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-666-10)"/>
+<polyline points="70,107 70,113" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="160,107 160,113" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="250,107 250,113" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="340,107 340,113" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="430,107 430,113" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="520,107 520,113" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="160,142 160,148 250,148 250,142" fill="none" stroke="#666" stroke-width="1.2" stroke-linejoin="round"/>
+<polyline points="460,142 460,148 550,148 550,142" fill="none" stroke="#666" stroke-width="1.2" stroke-linejoin="round"/>
+<text x="60" y="49.6" text-anchor="end" font-size="13" fill="#222">命令</text>
+<text x="60" y="89.6" text-anchor="end" font-size="13" fill="#222">数据</text>
+<text x="115" y="49.6" text-anchor="middle" font-size="13" fill="#b45f06">激活第 5 行</text>
+<text x="325" y="49.6" text-anchor="middle" font-size="13" fill="#555555">预充电</text>
+<text x="415" y="49.6" text-anchor="middle" font-size="13" fill="#b45f06">激活第 9 行</text>
+<text x="70" y="127.2" text-anchor="middle" font-size="12" fill="#666">0</text>
+<text x="160" y="127.2" text-anchor="middle" font-size="12" fill="#666">15</text>
+<text x="250" y="127.2" text-anchor="middle" font-size="12" fill="#666">30</text>
+<text x="340" y="127.2" text-anchor="middle" font-size="12" fill="#666">45</text>
+<text x="430" y="127.2" text-anchor="middle" font-size="12" fill="#666">60</text>
+<text x="520" y="127.2" text-anchor="middle" font-size="12" fill="#666">75</text>
+<text x="587" y="114.2" text-anchor="start" font-size="12" fill="#666">ns</text>
+<text x="175" y="22.2" text-anchor="middle" font-size="12" fill="#666">两个读命令</text>
+<text x="466" y="22.2" text-anchor="middle" font-size="12" fill="#666">读命令</text>
+<text x="205" y="164.2" text-anchor="middle" font-size="12" fill="#666">读命令后 15 ns 出数据</text>
+<text x="505" y="164.2" text-anchor="middle" font-size="12" fill="#666">读命令后 15 ns 出数据</text>
+<text x="70" y="186.2" text-anchor="start" font-size="12" fill="#666">绿色：一个 64 字节的突发（2.5 ns）</text>
+</svg>

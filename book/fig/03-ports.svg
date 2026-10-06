@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="574" height="243" viewBox="30 0 574 243" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<rect x="30" y="0" width="574" height="243" rx="8" fill="#ffffff"/>
+<rect x="60" y="50" width="50" height="50" rx="6" fill="#eeeeee" stroke="#888" stroke-width="1.6"/>
+<rect x="260" y="30" width="150" height="150" rx="6" fill="#eeeeee" stroke="#888" stroke-width="1.6"/>
+<polyline points="42,75 128,75" fill="none" stroke="#3a5a8c" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="85,32 85,118" fill="none" stroke="#2e7d32" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="242,67.5 428,67.5" fill="none" stroke="#3a5a8c" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="297.5,12 297.5,198" fill="none" stroke="#2e7d32" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="242,105 428,105" fill="none" stroke="#3a5a8c" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="335,12 335,198" fill="none" stroke="#2e7d32" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="242,142.5 428,142.5" fill="none" stroke="#3a5a8c" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="372.5,12 372.5,198" fill="none" stroke="#2e7d32" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="440,66 452,66" fill="none" stroke="#3a5a8c" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="446,88 446,104" fill="none" stroke="#2e7d32" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="85" y="164.6" text-anchor="middle" font-size="13" fill="#222">(a) 一个端口</text>
+<text x="335" y="226.6" text-anchor="middle" font-size="13" fill="#222">(b) 三个端口：边长约 3 倍</text>
+<text x="460" y="70.2" text-anchor="start" font-size="12" fill="#3a5a8c">选择线（每个端口一根）</text>
+<text x="460" y="100.2" text-anchor="start" font-size="12" fill="#2e7d32">数据线（每个端口一根）</text>
+</svg>

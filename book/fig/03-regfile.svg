@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="628" height="298" viewBox="-2 -10 628 298" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker><marker id="ah-2e7d32-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2e7d32"/></marker></defs>
+<rect x="-2" y="-10" width="628" height="298" rx="8" fill="#ffffff"/>
+<rect x="60" y="50" width="70" height="176" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="250" y="50" width="130" height="32" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="250" y="98" width="130" height="32" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="250" y="146" width="130" height="32" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="250" y="194" width="130" height="32" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="450" y="60" width="92" height="156" rx="6" fill="#dff3f1" stroke="#00796b" stroke-width="1.6"/>
+<polyline points="10,138 60,138" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="130,74 250,74" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="200,58 250,58" fill="none" stroke="#2e7d32" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-2e7d32-10)"/>
+<polyline points="130,122 250,122" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="200,106 250,106" fill="none" stroke="#2e7d32" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-2e7d32-10)"/>
+<polyline points="130,170 250,170" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="200,154 250,154" fill="none" stroke="#2e7d32" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-2e7d32-10)"/>
+<polyline points="130,218 250,218" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="200,202 250,202" fill="none" stroke="#2e7d32" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-2e7d32-10)"/>
+<polyline points="200,20 200,202" fill="none" stroke="#2e7d32" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="380,66 450,74" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="380,114 450,116" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="380,162 450,158" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="380,210 450,200" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="496,256 496,216" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="542,138 582,138" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<circle cx="200" cy="58" r="3.2" fill="#2e7d32"/>
+<circle cx="200" cy="106" r="3.2" fill="#2e7d32"/>
+<circle cx="200" cy="154" r="3.2" fill="#2e7d32"/>
+<circle cx="200" cy="202" r="3.2" fill="#2e7d32"/>
+<text x="95" y="142.6" text-anchor="middle" font-size="13" fill="#b45f06">译码器</text>
+<text x="30" y="128.2" text-anchor="middle" font-size="12" fill="#222">写地址</text>
+<text x="315" y="70.2" text-anchor="middle" font-size="12" fill="#3a5a8c">寄存器 <tspan font-style="italic">r</tspan><tspan dy="3.6" font-size="8.6">0</tspan><tspan dy="-3.6">（8 位）</tspan></text>
+<text x="315" y="118.2" text-anchor="middle" font-size="12" fill="#3a5a8c">寄存器 <tspan font-style="italic">r</tspan><tspan dy="3.6" font-size="8.6">1</tspan><tspan dy="-3.6">（8 位）</tspan></text>
+<text x="315" y="166.2" text-anchor="middle" font-size="12" fill="#3a5a8c">寄存器 <tspan font-style="italic">r</tspan><tspan dy="3.6" font-size="8.6">2</tspan><tspan dy="-3.6">（8 位）</tspan></text>
+<text x="315" y="214.2" text-anchor="middle" font-size="12" fill="#3a5a8c">寄存器 <tspan font-style="italic">r</tspan><tspan dy="3.6" font-size="8.6">3</tspan><tspan dy="-3.6">（8 位）</tspan></text>
+<text x="144" y="69.2" text-anchor="middle" font-size="12" fill="#666"><tspan font-style="italic">e</tspan><tspan dy="3.6" font-size="8.6">0</tspan></text>
+<text x="144" y="117.2" text-anchor="middle" font-size="12" fill="#666"><tspan font-style="italic">e</tspan><tspan dy="3.6" font-size="8.6">1</tspan></text>
+<text x="144" y="165.2" text-anchor="middle" font-size="12" fill="#666"><tspan font-style="italic">e</tspan><tspan dy="3.6" font-size="8.6">2</tspan></text>
+<text x="144" y="213.2" text-anchor="middle" font-size="12" fill="#666"><tspan font-style="italic">e</tspan><tspan dy="3.6" font-size="8.6">3</tspan></text>
+<text x="200" y="14.2" text-anchor="middle" font-size="12" fill="#2e7d32">写数据 <tspan font-style="italic">d</tspan>（8 位）</text>
+<text x="496" y="142.2" text-anchor="middle" font-size="12" fill="#00796b">四选一 ×8</text>
+<text x="496" y="272.2" text-anchor="middle" font-size="12" fill="#222">读地址</text>
+<text x="588" y="142.6" text-anchor="start" font-size="13" fill="#222">读出</text>
+</svg>

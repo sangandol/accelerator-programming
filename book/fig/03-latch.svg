@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="452" height="168" viewBox="58 -2 452 168" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<rect x="58" y="-2" width="452" height="168" rx="8" fill="#ffffff"/>
+<rect x="120" y="30" width="44" height="44" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="120" y="110" width="44" height="44" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<polyline points="164,52 210,52 210,95 90,95 90,132 120,132" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="164,132 240,132 240,10 70,10 70,52 120,52" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="142" y="59" text-anchor="middle" font-size="20" fill="#3a5a8c">¬</text>
+<text x="142" y="139" text-anchor="middle" font-size="20" fill="#3a5a8c">¬</text>
+<text x="100" y="46.9" text-anchor="middle" font-size="14" fill="#c0392b">1</text>
+<text x="187" y="46.9" text-anchor="middle" font-size="14" fill="#c0392b">0</text>
+<text x="104" y="126.9" text-anchor="middle" font-size="14" fill="#c0392b">0</text>
+<text x="200" y="126.9" text-anchor="middle" font-size="14" fill="#c0392b">1</text>
+<text x="270" y="74.2" text-anchor="start" font-size="12" fill="#222">左上的非门输入 1、输出 0；</text>
+<text x="270" y="96.2" text-anchor="start" font-size="12" fill="#222">下面的非门输入 0、输出 1，又送回上面。</text>
+<text x="270" y="118.2" text-anchor="start" font-size="12" fill="#222">把所有值取反，同样自洽：两个稳定状态。</text>
+</svg>

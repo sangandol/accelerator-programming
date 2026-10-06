@@ -31,10 +31,12 @@
 | 块缩放 | block scaling (microscaling) | 2.8 |
 | 随机舍入 | stochastic rounding | 2.10 |
 | 寄存器堆、端口 | register file, port | 3.1 |
-| 存储体、冲突度 | bank, conflict degree | 3.2 |
-| 行缓冲、突发 | row buffer, burst | 3.3 |
-| 高带宽存储 | high-bandwidth memory (HBM) | 3.3 |
-| 缓存、便签存储 | cache, scratchpad | 3.5 |
+| 译码器、写使能 | decoder, write enable | 3.1 |
+| 字线、位线 | word line, bit line | 3.2 |
+| 存储体、冲突度、交错 | bank, conflict degree, interleaving | 3.3 |
+| 行缓冲、突发 | row buffer, burst | 3.4 |
+| 高带宽存储 | high-bandwidth memory (HBM) | 3.4 |
+| 存储层次、缓存、缓存行、便签存储 | memory hierarchy, cache, cache line, scratchpad | 3.6 |
 | 延迟、发射间隔 | latency, issue interval | 4.1 |
 | 通道、掩码 | lane, mask | 4.3 |
 | 超长指令字、指令包、槽 | VLIW, bundle, slot | 4.4 |

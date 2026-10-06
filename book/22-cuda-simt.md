@@ -296,6 +296,6 @@ $65536 / (100 \times 256) \approx 2.56$，2 个块（按分配粒度可能是 2�
 </details>
 <details><summary>答案</summary>
 
-`__shared__ float tile[32][33];`（每行补一个元素）。读入：线程 $(ty, tx)$ 读输入的第 $r_0 + ty$ 行、第 $c_0 + tx$ 列，写入 `tile[ty][tx]`（warp 内连续，合并）。`__syncthreads()`。写出：线程 $(ty, tx)$ 把 `tile[tx][ty]` 写到输出的第 $c_0 + ty$ 行、第 $r_0 + tx$ 列（warp 内 `tx` 连续，写合并）；读 `tile[tx][ty]` 时 32 个线程的地址相隔 33 个字，存储体互不相同（命题 3.4，$\gcd(33, 32) = 1$）。不补元素时这一步的冲突度是 32。
+`__shared__ float tile[32][33];`（每行补一个元素）。读入：线程 $(ty, tx)$ 读输入的第 $r_0 + ty$ 行、第 $c_0 + tx$ 列，写入 `tile[ty][tx]`（warp 内连续，合并）。`__syncthreads()`。写出：线程 $(ty, tx)$ 把 `tile[tx][ty]` 写到输出的第 $c_0 + ty$ 行、第 $r_0 + tx$ 列（warp 内 `tx` 连续，写合并）；读 `tile[tx][ty]` 时 32 个线程的地址相隔 33 个字，存储体互不相同（命题 3.11，$\gcd(33, 32) = 1$）。不补元素时这一步的冲突度是 32。
 
 </details>

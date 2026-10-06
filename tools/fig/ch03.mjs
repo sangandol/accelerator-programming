@@ -105,4 +105,75 @@ export default {
     f.arrow([cx - 200, 50], [cx - 200, 40 + 3 * h]);
     f.text(cx - 210, 40 + 1.5 * h, '更大、更慢、更费能', { size: 12, anchor: 'end' });
   },
+
+  // 图：4 个 8 位寄存器的寄存器堆，一个写端口、一个读端口
+  '03-regfile'(f) {
+    const dec = f.box(60, 50, 70, 176, '译码器', { color: 'orange', size: 13 });
+    f.arrow([10, dec.cy], dec.L());
+    f.note(30, dec.cy - 14, '写地址', { color: '#222' });
+    const regs = [0, 1, 2, 3].map((i) => f.box(250, 50 + i * 48, 130, 32, `寄存器 $r_${i}$（8 位）`, { color: 'blue', size: 12 }));
+    regs.forEach((r, i) => {
+      f.line([[dec.x + dec.w, r.y + 24], [r.x, r.y + 24]], { arrow: 'end' });
+      f.note(dec.x + dec.w + 14, r.y + 15, `$e_${i}$`);
+      f.line([[200, r.y + 8], [r.x, r.y + 8]], { arrow: 'end', color: 'green' });
+      f.dot(200, r.y + 8, 3.2, 'green');
+    });
+    f.line([[200, 20], [200, regs[3].y + 8]], { color: 'green', width: 2 });
+    f.note(200, 10, '写数据 $d$（8 位）', { color: 'green' });
+    const mux = f.box(450, 60, 92, 156, '四选一 ×8', { color: 'teal', size: 12 });
+    regs.forEach((r, i) => f.line([r.R(), [mux.x, 74 + i * 42]], { arrow: 'end' }));
+    f.arrow([mux.cx, mux.y + mux.h + 40], mux.B());
+    f.note(mux.cx, mux.y + mux.h + 52, '读地址', { color: '#222' });
+    f.arrow(mux.R(), [mux.x + mux.w + 40, mux.cy]);
+    f.text(mux.x + mux.w + 46, mux.cy, '读出', { anchor: 'start', size: 13 });
+  },
+
+  // 图：存储单元与端口导线：一个端口与三个端口
+  '03-ports'(f) {
+    const cell = (x, y, n, s) => {
+      f.rect(x, y, s, s, { fill: '#eeeeee', stroke: '#888' });
+      for (let k = 1; k <= n; k++) {
+        const t = (k * s) / (n + 1);
+        f.line([[x - 18, y + t], [x + s + 18, y + t]], { color: 'blue', width: 1.6 });
+        f.line([[x + t, y - 18], [x + t, y + s + 18]], { color: 'green', width: 1.6 });
+      }
+    };
+    cell(60, 50, 1, 50);
+    f.note(85, 160, '(a) 一个端口', { color: '#222', size: 13 });
+    cell(260, 30, 3, 150);
+    f.note(335, 222, '(b) 三个端口：边长约 3 倍', { color: '#222', size: 13 });
+    f.text(460, 66, '选择线（每个端口一根）', { anchor: 'start', size: 12, color: 'blue' });
+    f.text(460, 96, '数据线（每个端口一根）', { anchor: 'start', size: 12, color: 'green' });
+    f.line([[440, 66], [452, 66]], { color: 'blue', width: 1.6 });
+    f.line([[446, 88], [446, 104]], { color: 'green', width: 1.6 });
+  },
+
+  // 图：两个首尾相接的非门存下一个比特
+  '03-latch'(f) {
+    f.gate('A', 'not', 120, 30);
+    f.gate('B', 'not', 120, 110);
+    f.line([[164, 52], [210, 52], [210, 95], [90, 95], [90, 132], [120, 132]]);
+    f.line([[164, 132], [240, 132], [240, 10], [70, 10], [70, 52], [120, 52]]);
+    [[100, 42, '1'], [187, 42, '0'], [104, 122, '0'], [200, 122, '1']].forEach(([x, y, s]) => f.text(x, y, s, { color: 'red', size: 14 }));
+    f.text(270, 70, '左上的非门输入 1、输出 0；', { anchor: 'start', size: 12 });
+    f.text(270, 92, '下面的非门输入 0、输出 1，又送回上面。', { anchor: 'start', size: 12 });
+    f.text(270, 114, '把所有值取反，同样自洽：两个稳定状态。', { anchor: 'start', size: 12 });
+  },
+
+  // 图：DRAM 一个存储体的命令与数据（单位 ns）
+  '03-dram-timing'(f) {
+    const T = f.timeline(70, 30, {
+      lanes: ['命令', '数据'], unit: 6, lh: 30, ticks: 15, axisLabel: 'ns',
+      bars: [
+        [0, 0, 15, '激活第 5 行', 'orange'], [0, 15, 17.5, '', 'blue'], [0, 17.5, 20, '', 'blue'],
+        [0, 35, 50, '预充电', 'gray'], [0, 50, 65, '激活第 9 行', 'orange'], [0, 65, 67.5, '', 'blue'],
+        [1, 30, 32.5, '', 'green'], [1, 32.5, 35, '', 'green'], [1, 80, 82.5, '', 'green'],
+      ],
+    });
+    f.note(T.tx(17.5), 18, '两个读命令');
+    f.note(T.tx(66), 18, '读命令');
+    f.brace(T.tx(15), 142, T.tx(30), '读命令后 15 ns 出数据');
+    f.brace(T.tx(65), 142, T.tx(80), '读命令后 15 ns 出数据');
+    f.note(T.tx(0), 182, '绿色：一个 64 字节的突发（2.5 ns）', { anchor: 'start' });
+  },
 };
