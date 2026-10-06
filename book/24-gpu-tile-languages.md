@@ -160,7 +160,7 @@ for k0 in range(0, K, BK):
 
 <details><summary>提示</summary>
 
-例 2.13 与习题 2.6。
+例 2.18 与习题 2.9。
 
 </details>
 <details><summary>答案</summary>

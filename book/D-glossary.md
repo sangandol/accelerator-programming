@@ -24,11 +24,12 @@
 | 工作量、深度、调度 | work, depth (span), schedule | 1.12 |
 | 部分积 | partial product | 2.1 |
 | 尾数、指数、次正规数 | significand, exponent, subnormal | 2.2 |
-| 单位舍入误差 | unit roundoff | 2.2 |
-| 融合乘加 | fused multiply-add (FMA) | 2.3 |
-| 混合精度 | mixed precision | 2.3 |
-| 块缩放 | block scaling (microscaling) | 2.5 |
-| 随机舍入 | stochastic rounding | 2.8 |
+| 偏置、ulp | (exponent) bias, unit in the last place | 2.2 |
+| 单位舍入误差 | unit roundoff | 2.3 |
+| 相消、融合乘加 | cancellation, fused multiply-add (FMA) | 2.4 |
+| 混合精度 | mixed precision | 2.7 |
+| 块缩放 | block scaling (microscaling) | 2.8 |
+| 随机舍入 | stochastic rounding | 2.10 |
 | 寄存器堆、端口 | register file, port | 3.1 |
 | 存储体、冲突度 | bank, conflict degree | 3.2 |
 | 行缓冲、突发 | row buffer, burst | 3.3 |

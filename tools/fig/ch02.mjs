@@ -115,4 +115,128 @@ export default {
     f.text(sx(0.15), y - 50, '概率 $(b - x)/(b - a)$', { size: 12, color: 'blue' });
     f.text(sx(0.68), y - 70, '概率 $(x - a)/(b - a)$', { size: 12, color: 'blue' });
   },
+
+  // 图：11 × 13 的比特点阵，两级 3:2 压缩之后只剩两行
+  '02-dots'(f) {
+    const X = (col) => 130 + (7 - col) * 24;
+    const row = (y, bits, low, label, color, value) => {
+      [...bits].forEach((ch, k) => f.box(X(low + bits.length - 1 - k) - 10, y - 10, 20, 20, ch, { color, size: 12, rx: 2 }));
+      f.text(X(7) - 24, y, label, { anchor: 'end', size: 13 });
+      if (value) f.note(X(0) + 22, y, value, { anchor: 'start' });
+    };
+    for (let c = 0; c < 8; c++) f.note(X(c), 8, String(c));
+    f.note(X(7) - 24, 8, '位', { anchor: 'end' });
+    const step = (y, s) => { f.arrow([X(3.5), y], [X(3.5), y + 26]); f.text(X(3.5) + 12, y + 13, s, { anchor: 'start', size: 12 }); };
+    row(30, '1011', 0, '$q_0$', 'blue', '11');
+    row(54, '0000', 1, '$q_1$', 'blue', '0');
+    row(78, '1011', 2, '$q_2$', 'blue', '44');
+    row(102, '1011', 3, '$q_3$', 'blue', '88');
+    step(118, '第一级 3:2，压缩 $q_0, q_1, q_2$');
+    row(162, '100111', 0, '$s$', 'green', '39');
+    row(186, '001000', 1, '$2c$', 'orange', '16');
+    row(210, '1011', 3, '$q_3$', 'blue', '88');
+    step(226, '第二级 3:2');
+    row(270, '1101111', 0, '$s$', 'green', '111');
+    row(294, '0010000', 1, '$2c$', 'orange', '32');
+    step(310, '超前进位加法');
+    row(354, '10001111', 0, '积', 'gray', '143');
+  },
+
+  // 图：bf16 的 16 个比特（13.0）
+  '02-bf16-decode'(f) {
+    const bits = '0100000101010000';
+    const field = (c) => (c === 0 ? 'red' : c <= 8 ? 'green' : 'blue');
+    const g = f.grid(40, 60, { rows: 1, cols: 16, cw: 26, ch: 28, fill: (r, c) => field(c), label: (r, c) => bits[c], size: 13 });
+    for (let c = 0; c < 16; c++) f.note(g.cell(0, c).cx, 46, String(15 - c), { size: 10 });
+    f.brace(g.cell(0, 0).x + 2, 34, g.cell(0, 0).x + 24, '符号 0：正数', { flip: true });
+    f.brace(g.cell(0, 1).x + 2, 96, g.cell(0, 8).x + 24, '指数字段 $10000010_2 = 130$，$e = 130 - 127 = 3$');
+    f.brace(g.cell(0, 9).x + 2, 128, g.cell(0, 15).x + 24, '尾数字段，有效数字 $(1.1010000)_2 = 1.625$');
+    f.text(g.cx, 170, '值 $= +1.625 \\times 2^3 = 13$', { size: 14 });
+  },
+
+  // 图：8 位右移器，k = 5
+  '02-shifter'(f) {
+    const X = (i) => 70 + (7 - i) * 52;
+    const Y = [20, 96, 172, 248];
+    const content = [
+      [7, 6, 5, 4, 3, 2, 1, 0].map((i) => `$x_${i}$`),
+      ['0', '$x_7$', '$x_6$', '$x_5$', '$x_4$', '$x_3$', '$x_2$', '$x_1$'],
+      ['0', '$x_7$', '$x_6$', '$x_5$', '$x_4$', '$x_3$', '$x_2$', '$x_1$'],
+      ['0', '0', '0', '0', '0', '$x_7$', '$x_6$', '$x_5$'],
+    ];
+    const k = [1, 0, 1];
+    for (let r = 0; r < 3; r++)
+      for (let i = 0; i < 8; i++) {
+        const top = [X(i), Y[r + 1]];
+        const straight = [[X(i), Y[r] + 24], top];
+        const src = i + 2 ** r;
+        const diag = src <= 7 ? [[X(src), Y[r] + 24], top] : null;
+        const pick = k[r] ? diag : straight;
+        const other = k[r] ? straight : diag;
+        if (other) f.line(other, { color: '#c8c8c8', width: 1, dash: '3 3' });
+        if (pick) f.line(pick, { color: 'blue', width: 1.4 });
+      }
+    const onPath = [7, 6, 6, 2];
+    for (let r = 0; r < 3; r++) f.line([[X(onPath[r]), Y[r] + 24], [X(onPath[r + 1]), Y[r + 1]]], { color: 'red', width: 2.6 });
+    content.forEach((labels, r) => labels.forEach((s, c) => f.box(X(7 - c) - 17, Y[r], 34, 24, s, { color: 7 - c === onPath[r] ? 'red' : r ? 'blue' : 'green', size: 12 })));
+    ['第 0 级：$k_0 = 1$，右移 1 位', '第 1 级：$k_1 = 0$，不移', '第 2 级：$k_2 = 1$，右移 4 位'].forEach((s, r) =>
+      f.text(X(0) + 30, (Y[r] + Y[r + 1] + 24) / 2, s, { anchor: 'start', size: 12 }));
+  },
+
+  // 图：浮点乘法与浮点加法的数据通路
+  '02-fp-units'(f) {
+    const col = (x0, title, steps) => {
+      f.text(x0 + 100, 14, title, { size: 14, weight: 'bold' });
+      const boxes = steps.map(([s, color, w = 200, dx = 0], i) => f.box(x0 + dx, 34 + i * 52, w, 32, s, { color, size: 12 }));
+      return boxes;
+    };
+    const m = col(30, '浮点乘法', [['尾数相乘：$p \\times p$ 乘法器', 'orange', 168], ['规格化：至多右移 1 位', 'blue'], ['舍入', 'blue']]);
+    const e = f.box(30 + 176, 34, 62, 32, '指数相加', { color: 'gray', size: 11 });
+    f.arrow(m[0].B(), [m[0].cx, m[1].y]);
+    f.arrow(e.B(), [e.cx, m[1].y]);
+    f.arrow(m[1].B(), m[2].T());
+    f.note(m[0].cx, m[2].y + 56, '面积 $\\Theta(p^2)$，几乎全在尾数乘法器');
+    const a = col(350, '浮点加法', [['比较指数，求差 $d$', 'gray'], ['对阶：右移 $d$ 位', 'orange'], ['尾数相加', 'orange'], ['数前导零', 'blue'], ['规格化：左移', 'orange'], ['舍入', 'blue']]);
+    for (let i = 1; i < a.length; i++) f.arrow(a[i - 1].B(), a[i].T());
+    f.note(a[0].cx, a[5].y + 56, '面积 $O(p \\log p)$：两个移位器和一个加法器');
+  },
+
+  // 图：顺序求和与成对求和中，每个数经过几次舍入
+  '02-sum-tree'(f) {
+    const X = (ox, i) => ox + 38 * i;
+    const inputs = (ox) => Array.from({ length: 8 }, (_, i) => (f.text(X(ox, i), 22, `$x_${i + 1}$`, { size: 15 }), [X(ox, i), 34]));
+    const tops = inputs(0);
+    let prev = tops[0];
+    for (let k = 1; k < 8; k++) {
+      const g = f.node(X(0, k), 34 + 36 * k, '+');
+      f.link(tops[k], g);
+      f.link(prev, g, { color: 'red', width: 2.4 });
+      prev = g;
+    }
+    f.text(X(0, 3.5), 340, '顺序求和：$x_1$ 经过 7 次舍入', { size: 13 });
+    let level = inputs(370);
+    for (let d = 1; level.length > 1; d++) {
+      const next = [];
+      for (let j = 0; j < level.length; j += 2) {
+        const [p, q] = [level[j], level[j + 1]];
+        const g = f.node(((p.cx ?? p[0]) + (q.cx ?? q[0])) / 2, 34 + 60 * d, '+');
+        f.link(p, g, { color: j === 0 ? 'red' : undefined, width: j === 0 ? 2.4 : undefined });
+        f.link(q, g);
+        next.push(g);
+      }
+      level = next;
+    }
+    f.text(X(370, 3.5), 340, '成对求和：每个数经过 3 次舍入', { size: 13 });
+  },
+
+  // 图：xy 的 9 个部分乘积 x_i y_j 的大小
+  '02-split-products'(f) {
+    f.grid(90, 50, {
+      rows: 3, cols: 3, cw: 80, ch: 40, size: 13,
+      fill: (r, c) => (r + c <= 1 ? 'orange' : r + c === 2 ? 'yellow' : null),
+      label: (r, c) => (r + c === 0 ? '$\\approx 1$' : `$\\approx 2^{-${8 * (r + c)}}$`),
+      rowLabels: ['$x_1$', '$x_2$', '$x_3$'], colLabels: ['$y_1$', '$y_2$', '$y_3$'],
+    });
+    f.note(210, 192, '每格是 $x_i y_j$ 相对于 $\\lvert xy \\rvert$ 的大小');
+  },
 };

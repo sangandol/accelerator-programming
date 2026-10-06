@@ -146,7 +146,7 @@ x = jax.random.normal(k1, (1024,))
 
 - 默认的浮点类型是 f32（64 位类型默认关闭）。`x.astype(jnp.bfloat16)` 转为 bf16。
 - **类型提升**：bf16 与 f32 的数组运算得到 f32；但 Python 的数字字面量是"弱类型"的，不会提升数组的类型：`x_bf16 * 2.0` 仍是 bf16，`x_bf16 * jnp.float32(2)` 是 f32。
-- **矩阵乘法**：两个 bf16 相乘默认得到 bf16。用 `preferred_element_type=jnp.float32` 得到 f32 结果（习题 2.6）。`precision` 参数控制 f32 输入时的计算精度：`lax.Precision.DEFAULT`、`HIGH`、`HIGHEST`（推论 2.15）。
+- **矩阵乘法**：两个 bf16 相乘默认得到 bf16。用 `preferred_element_type=jnp.float32` 得到 f32 结果（习题 2.9）。`precision` 参数控制 f32 输入时的计算精度：`lax.Precision.DEFAULT`、`HIGH`、`HIGHEST`（推论 2.31）。
 
 ## 接口小结
 

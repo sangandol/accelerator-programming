@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="562" height="378" viewBox="14 -8 562 378" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="14" y="-8" width="562" height="378" rx="8" fill="#ffffff"/>
+<rect x="30" y="34" width="168" height="32" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="30" y="86" width="200" height="32" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="30" y="138" width="200" height="32" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="206" y="34" width="62" height="32" rx="6" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<rect x="350" y="34" width="200" height="32" rx="6" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<rect x="350" y="86" width="200" height="32" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="350" y="138" width="200" height="32" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="350" y="190" width="200" height="32" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="350" y="242" width="200" height="32" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="350" y="294" width="200" height="32" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<polyline points="114,66 114,86" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="237,66 237,86" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="130,118 130,138" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="450,66 450,86" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="450,118 450,138" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="450,170 450,190" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="450,222 450,242" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="450,274 450,294" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<text x="130" y="18.9" text-anchor="middle" font-size="14" fill="#222" font-weight="bold">浮点乘法</text>
+<text x="114" y="54.2" text-anchor="middle" font-size="12" fill="#b45f06">尾数相乘：<tspan font-style="italic">p</tspan> × <tspan font-style="italic">p</tspan> 乘法器</text>
+<text x="130" y="106.2" text-anchor="middle" font-size="12" fill="#3a5a8c">规格化：至多右移 1 位</text>
+<text x="130" y="158.2" text-anchor="middle" font-size="12" fill="#3a5a8c">舍入</text>
+<text x="237" y="53.9" text-anchor="middle" font-size="11" fill="#555555">指数相加</text>
+<text x="114" y="198.2" text-anchor="middle" font-size="12" fill="#666">面积 Θ(<tspan font-style="italic">p</tspan><tspan dy="-5" font-size="8.6">2</tspan><tspan dy="5">)，几乎全在尾数乘法器</tspan></text>
+<text x="450" y="18.9" text-anchor="middle" font-size="14" fill="#222" font-weight="bold">浮点加法</text>
+<text x="450" y="54.2" text-anchor="middle" font-size="12" fill="#555555">比较指数，求差 <tspan font-style="italic">d</tspan></text>
+<text x="450" y="106.2" text-anchor="middle" font-size="12" fill="#b45f06">对阶：右移 <tspan font-style="italic">d</tspan> 位</text>
+<text x="450" y="158.2" text-anchor="middle" font-size="12" fill="#b45f06">尾数相加</text>
+<text x="450" y="210.2" text-anchor="middle" font-size="12" fill="#3a5a8c">数前导零</text>
+<text x="450" y="262.2" text-anchor="middle" font-size="12" fill="#b45f06">规格化：左移</text>
+<text x="450" y="314.2" text-anchor="middle" font-size="12" fill="#3a5a8c">舍入</text>
+<text x="450" y="354.2" text-anchor="middle" font-size="12" fill="#666">面积 <tspan font-style="italic">O</tspan>(<tspan font-style="italic">p</tspan> log <tspan font-style="italic">p</tspan>)：两个移位器和一个加法器</text>
+</svg>

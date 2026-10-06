@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="676" height="361" viewBox="-20 0 676 361" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<rect x="-20" y="0" width="676" height="361" rx="8" fill="#ffffff"/>
+<circle cx="38" cy="70" r="13" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="76" cy="106" r="13" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="114" cy="142" r="13" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="152" cy="178" r="13" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="190" cy="214" r="13" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="228" cy="250" r="13" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="266" cy="286" r="13" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="389" cy="94" r="13" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="465" cy="94" r="13" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="541" cy="94" r="13" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="617" cy="94" r="13" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="427" cy="154" r="13" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="579" cy="154" r="13" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="503" cy="214" r="13" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<polyline points="38,34 38,57" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="0,34 28.6,61.1" fill="none" stroke="#c0392b" stroke-width="2.4" stroke-linejoin="round"/>
+<polyline points="76,34 76,93" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="47.4,78.9 66.6,97.1" fill="none" stroke="#c0392b" stroke-width="2.4" stroke-linejoin="round"/>
+<polyline points="114,34 114,129" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="85.4,114.9 104.6,133.1" fill="none" stroke="#c0392b" stroke-width="2.4" stroke-linejoin="round"/>
+<polyline points="152,34 152,165" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="123.4,150.9 142.6,169.1" fill="none" stroke="#c0392b" stroke-width="2.4" stroke-linejoin="round"/>
+<polyline points="190,34 190,201" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="161.4,186.9 180.6,205.1" fill="none" stroke="#c0392b" stroke-width="2.4" stroke-linejoin="round"/>
+<polyline points="228,34 228,237" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="199.4,222.9 218.6,241.1" fill="none" stroke="#c0392b" stroke-width="2.4" stroke-linejoin="round"/>
+<polyline points="266,34 266,273" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="237.4,258.9 256.6,277.1" fill="none" stroke="#c0392b" stroke-width="2.4" stroke-linejoin="round"/>
+<polyline points="370,34 385.1,81.6" fill="none" stroke="#c0392b" stroke-width="2.4" stroke-linejoin="round"/>
+<polyline points="408,34 392.9,81.6" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="446,34 461.1,81.6" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="484,34 468.9,81.6" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="522,34 537.1,81.6" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="560,34 544.9,81.6" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="598,34 613.1,81.6" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="636,34 620.9,81.6" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="396,105 420,143" fill="none" stroke="#c0392b" stroke-width="2.4" stroke-linejoin="round"/>
+<polyline points="458,105 434,143" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="548,105 572,143" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="610,105 586,143" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="437.2,162.1 492.8,205.9" fill="none" stroke="#c0392b" stroke-width="2.4" stroke-linejoin="round"/>
+<polyline points="568.8,162.1 513.2,205.9" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="0" y="27.3" text-anchor="middle" font-size="15" fill="#222"><tspan font-style="italic">x</tspan><tspan dy="4.5" font-size="10.8">1</tspan></text>
+<text x="38" y="27.3" text-anchor="middle" font-size="15" fill="#222"><tspan font-style="italic">x</tspan><tspan dy="4.5" font-size="10.8">2</tspan></text>
+<text x="76" y="27.3" text-anchor="middle" font-size="15" fill="#222"><tspan font-style="italic">x</tspan><tspan dy="4.5" font-size="10.8">3</tspan></text>
+<text x="114" y="27.3" text-anchor="middle" font-size="15" fill="#222"><tspan font-style="italic">x</tspan><tspan dy="4.5" font-size="10.8">4</tspan></text>
+<text x="152" y="27.3" text-anchor="middle" font-size="15" fill="#222"><tspan font-style="italic">x</tspan><tspan dy="4.5" font-size="10.8">5</tspan></text>
+<text x="190" y="27.3" text-anchor="middle" font-size="15" fill="#222"><tspan font-style="italic">x</tspan><tspan dy="4.5" font-size="10.8">6</tspan></text>
+<text x="228" y="27.3" text-anchor="middle" font-size="15" fill="#222"><tspan font-style="italic">x</tspan><tspan dy="4.5" font-size="10.8">7</tspan></text>
+<text x="266" y="27.3" text-anchor="middle" font-size="15" fill="#222"><tspan font-style="italic">x</tspan><tspan dy="4.5" font-size="10.8">8</tspan></text>
+<text x="38" y="75.6" text-anchor="middle" font-size="16" fill="#3a5a8c">+</text>
+<text x="76" y="111.6" text-anchor="middle" font-size="16" fill="#3a5a8c">+</text>
+<text x="114" y="147.6" text-anchor="middle" font-size="16" fill="#3a5a8c">+</text>
+<text x="152" y="183.6" text-anchor="middle" font-size="16" fill="#3a5a8c">+</text>
+<text x="190" y="219.6" text-anchor="middle" font-size="16" fill="#3a5a8c">+</text>
+<text x="228" y="255.6" text-anchor="middle" font-size="16" fill="#3a5a8c">+</text>
+<text x="266" y="291.6" text-anchor="middle" font-size="16" fill="#3a5a8c">+</text>
+<text x="133" y="344.6" text-anchor="middle" font-size="13" fill="#222">顺序求和：<tspan font-style="italic">x</tspan><tspan dy="3.9" font-size="9.4">1</tspan><tspan dy="-3.9"> 经过 7 次舍入</tspan></text>
+<text x="370" y="27.3" text-anchor="middle" font-size="15" fill="#222"><tspan font-style="italic">x</tspan><tspan dy="4.5" font-size="10.8">1</tspan></text>
+<text x="408" y="27.3" text-anchor="middle" font-size="15" fill="#222"><tspan font-style="italic">x</tspan><tspan dy="4.5" font-size="10.8">2</tspan></text>
+<text x="446" y="27.3" text-anchor="middle" font-size="15" fill="#222"><tspan font-style="italic">x</tspan><tspan dy="4.5" font-size="10.8">3</tspan></text>
+<text x="484" y="27.3" text-anchor="middle" font-size="15" fill="#222"><tspan font-style="italic">x</tspan><tspan dy="4.5" font-size="10.8">4</tspan></text>
+<text x="522" y="27.3" text-anchor="middle" font-size="15" fill="#222"><tspan font-style="italic">x</tspan><tspan dy="4.5" font-size="10.8">5</tspan></text>
+<text x="560" y="27.3" text-anchor="middle" font-size="15" fill="#222"><tspan font-style="italic">x</tspan><tspan dy="4.5" font-size="10.8">6</tspan></text>
+<text x="598" y="27.3" text-anchor="middle" font-size="15" fill="#222"><tspan font-style="italic">x</tspan><tspan dy="4.5" font-size="10.8">7</tspan></text>
+<text x="636" y="27.3" text-anchor="middle" font-size="15" fill="#222"><tspan font-style="italic">x</tspan><tspan dy="4.5" font-size="10.8">8</tspan></text>
+<text x="389" y="99.6" text-anchor="middle" font-size="16" fill="#3a5a8c">+</text>
+<text x="465" y="99.6" text-anchor="middle" font-size="16" fill="#3a5a8c">+</text>
+<text x="541" y="99.6" text-anchor="middle" font-size="16" fill="#3a5a8c">+</text>
+<text x="617" y="99.6" text-anchor="middle" font-size="16" fill="#3a5a8c">+</text>
+<text x="427" y="159.6" text-anchor="middle" font-size="16" fill="#3a5a8c">+</text>
+<text x="579" y="159.6" text-anchor="middle" font-size="16" fill="#3a5a8c">+</text>
+<text x="503" y="219.6" text-anchor="middle" font-size="16" fill="#3a5a8c">+</text>
+<text x="503" y="344.6" text-anchor="middle" font-size="13" fill="#222">成对求和：每个数经过 3 次舍入</text>
+</svg>

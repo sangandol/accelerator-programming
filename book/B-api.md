@@ -14,7 +14,7 @@
 | 向量化 | `jax.vmap(f, in_axes=...)` | 13.5 节 |
 | 控制流 | `lax.cond`、`lax.while_loop`、`lax.fori_loop`、`lax.scan`、`lax.associative_scan` | 13.6 节 |
 | 随机数 | `jax.random.key(seed)`、`jax.random.split(key)` | 13.7 节 |
-| 精度 | `jnp.dot(a, b, preferred_element_type=jnp.float32, precision=lax.Precision.HIGHEST)` | 13.8 节、2.7 节 |
+| 精度 | `jnp.dot(a, b, preferred_element_type=jnp.float32, precision=lax.Precision.HIGHEST)` | 13.8 节、2.9 节 |
 | 网格 | `jax.make_mesh(形状, 轴名, (AxisType.Explicit, ...))`，`jax.set_mesh(mesh)` | 14.1 节 |
 | 分片 | `jax.P("x", None)`、`NamedSharding(mesh, spec)`、`jax.device_put(x, spec)`、`jax.typeof(x)` | 14.1 节 |
 | 重新分片、指定输出分片 | `jax.reshard(x, spec)`、`jnp.dot(..., out_sharding=spec)`、`lax.with_sharding_constraint` | 14.2 节 |
