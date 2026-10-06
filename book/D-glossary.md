@@ -17,11 +17,11 @@
 | 寄存器、触发器、同步电路 | register, flip-flop, synchronous circuit | 1.5 |
 | 进位函数 | carry function | 1.6 |
 | 进位产生、传递、吸收 | generate, propagate, kill | 1.6 |
-| 前缀问题（扫描）、归约 | prefix problem (scan), reduction | 1.7 |
-| 前缀网络、节点 | prefix network, node | 1.7 |
-| 超前进位加法器 | carry-lookahead adder | 1.9 |
-| 进位保留加法、3:2 压缩、Wallace 树 | carry-save addition, 3:2 compression, Wallace tree | 1.10 |
-| 工作量、深度、调度 | work, depth (span), schedule | 1.11 |
+| 前缀问题（扫描）、归约 | prefix problem (scan), reduction | 1.8 |
+| 前缀网络、节点 | prefix network, node | 1.8 |
+| 超前进位加法器 | carry-lookahead adder | 1.10 |
+| 进位保留加法、3:2 压缩、Wallace 树 | carry-save addition, 3:2 compression, Wallace tree | 1.11 |
+| 工作量、深度、调度 | work, depth (span), schedule | 1.12 |
 | 部分积 | partial product | 2.1 |
 | 尾数、指数、次正规数 | significand, exponent, subnormal | 2.2 |
 | 单位舍入误差 | unit roundoff | 2.2 |

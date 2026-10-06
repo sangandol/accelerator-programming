@@ -175,4 +175,100 @@ export default {
     [2, 7, 3], [2, 5, 3],
     [3, 2, 1], [3, 4, 3], [3, 6, 5],
   ] }),
+  // 图：一个时钟周期内的信号（命题 1.24 的证明）
+  '01-timing'(f) {
+    const [e1, e2, xa, xb] = [130, 490, 70, 560];
+    const bus = (x0, x1, y, label, color = 'white') => {
+      const [h, b] = [26, 6];
+      f.poly([[x0, y + h / 2], [x0 + b, y], [x1 - b, y], [x1, y + h / 2], [x1 - b, y + h], [x0 + b, y + h]], { color });
+      if (label) f.text((x0 + x1) / 2, y + h / 2, label, { size: 13 });
+    };
+    f.line([[xa, 58], [e1, 58], [e1, 30], [310, 30], [310, 58], [e2, 58], [e2, 30], [xb, 30]], { width: 2 });
+    for (const [x, s] of [[e1, '第 $t$ 个上升沿'], [e2, '第 $t + 1$ 个上升沿']]) {
+      f.line([[x, 30], [x, 164]], { color: 'gray', dash: '4 4', width: 1 });
+      f.note(x, 14, s);
+    }
+    bus(xa, 160, 84, '$s_t$');
+    bus(160, 520, 84, '$s_{t+1}$');
+    bus(520, xb, 84, '');
+    bus(xa, 160, 134, '旧值');
+    bus(160, 400, 134, '变化中', 'gray');
+    bus(400, 520, 134, '稳定');
+    bus(520, xb, 134, '', 'gray');
+    [['时钟', 44], ['$Q$', 97], ['组合电路输出', 147]].forEach(([s, y]) => f.text(xa - 10, y, s, { anchor: 'end', size: 13 }));
+    f.brace(e1, 172, 160, '$t_1$');
+    f.brace(160, 172, 400, '至多 $D\\tau$');
+    f.brace(460, 172, e2, '$t_2$');
+    f.brace(e1, 212, e2, '时钟周期 $T$，要求 $D\\tau + t_1 + t_2 \\le T$');
+  },
+
+  // 图：三种进位函数（命题 1.28）
+  '01-carry-functions'(f) {
+    const maps = [['吸收：送出恒为 0', [0, 0]], ['传递：收到什么送出什么', [0, 1]], ['产生：送出恒为 1', [1, 1]]];
+    maps.forEach(([title, out], k) => {
+      const x0 = 50 + k * 210;
+      f.note(x0, 22, '收到');
+      f.note(x0 + 100, 22, '送出');
+      const L = [0, 1].map((v) => f.node(x0, 52 + 56 * v, String(v)));
+      const R = [0, 1].map((v) => f.node(x0 + 100, 52 + 56 * v, String(v)));
+      [0, 1].forEach((v) => f.link(L[v], R[out[v]], { arrow: 'end', color: 'blue' }));
+      f.text(x0 + 50, 150, title, { size: 13 });
+    });
+  },
+
+  // 图：9 个数经 3:2 压缩化为 2 个数（Wallace 树）
+  '01-wallace'(f) {
+    const item = (x, y, label) => f.box(x - 12, y, 24, 18, label, { color: 'green', size: 11, rx: 3 });
+    let xs = Array.from({ length: 9 }, (_, i) => 40 + i * 52);
+    let y = 20;
+    xs.forEach((x, i) => item(x, y, `$x_${i + 1}$`));
+    f.note(520, y + 9, '9 个数', { anchor: 'start' });
+    while (xs.length > 2) {
+      const yb = y + 46;
+      const outY = yb + 28 + 28;
+      const next = [];
+      const full = 3 * Math.floor(xs.length / 3);
+      for (let g = 0; g < full; g += 3) {
+        const [a, b, c] = xs.slice(g, g + 3);
+        f.box(a - 16, yb, c - a + 32, 28, '3:2', { size: 12 });
+        for (const x of [a, b, c]) f.line([[x, y + 18], [x, yb]]);
+        for (const x of [(a + b) / 2, (b + c) / 2]) { f.line([[x, yb + 28], [x, outY]]); next.push(x); }
+      }
+      for (const x of xs.slice(full)) { f.line([[x, y + 18], [x, outY]]); next.push(x); }
+      xs = next.sort((p, q) => p - q);
+      y = outY;
+      xs.forEach((x) => item(x, y, ''));
+      f.note(520, y + 9, `${xs.length} 个数`, { anchor: 'start' });
+    }
+    const [a, b] = xs;
+    const cpa = f.box(a - 40, y + 46, b - a + 80, 30, '超前进位加法器', { size: 12, color: 'orange' });
+    for (const x of xs) f.line([[x, y + 18], [x, y + 46]]);
+    f.arrow(cpa.B(), [cpa.cx, cpa.y + cpa.h + 26]);
+    f.text(cpa.cx + 10, cpa.y + cpa.h + 18, '和', { anchor: 'start', size: 13 });
+  },
+
+  // 图：两个单元按层调度归约 8 个数（定理 1.57 的例子）
+  '01-brent-schedule'(f) {
+    const names = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
+    let level = Array.from({ length: 8 }, (_, i) => {
+      f.text(30 + 36 * i, 18, `$x_${i}$`, { size: 14 });
+      return [30 + 36 * i, 30];
+    });
+    let k = 0;
+    for (let d = 1; level.length > 1; d++) {
+      const next = [];
+      for (let j = 0; j < level.length; j += 2) {
+        const [p, q] = [level[j], level[j + 1]];
+        const n = f.node(((p.cx ?? p[0]) + (q.cx ?? q[0])) / 2, 30 + 50 * d, `$${names[k++]}$`);
+        f.link(p, n);
+        f.link(q, n);
+        next.push(n);
+      }
+      level = next;
+    }
+    f.timeline(390, 50, {
+      lanes: ['单元 0', '单元 1'], unit: 52, lh: 30, ticks: 1, axisLabel: '时间步',
+      bars: [[0, 0, 1, '$a$'], [1, 0, 1, '$b$'], [0, 1, 2, '$c$'], [1, 1, 2, '$d$'], [0, 2, 3, '$e$', 'orange'], [1, 2, 3, '$f$', 'orange'], [0, 3, 4, '$g$', 'green'], [1, 3, 4, '空闲', 'gray']],
+    });
+  },
 };

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="657" height="209" viewBox="11 -4 657 209" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-666-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#666"/></marker></defs>
+<rect x="11" y="-4" width="657" height="209" rx="8" fill="#ffffff"/>
+<circle cx="48" cy="80" r="13" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="120" cy="80" r="13" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="192" cy="80" r="13" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="264" cy="80" r="13" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="84" cy="130" r="13" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="228" cy="130" r="13" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="156" cy="180" r="13" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="390" y="50" width="52" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="390" y="90" width="52" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="442" y="50" width="52" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="442" y="90" width="52" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="494" y="50" width="52" height="30" rx="3" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="494" y="90" width="52" height="30" rx="3" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="546" y="50" width="52" height="30" rx="3" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="546" y="90" width="52" height="30" rx="3" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<polyline points="30,30 43.6,67.8" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="66,30 52.4,67.8" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="102,30 115.6,67.8" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="138,30 124.4,67.8" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="174,30 187.6,67.8" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="210,30 196.4,67.8" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="246,30 259.6,67.8" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="282,30 268.4,67.8" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="55.6,90.5 76.4,119.5" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="112.4,90.5 91.6,119.5" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="199.6,90.5 220.4,119.5" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="256.4,90.5 235.6,119.5" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="94.7,137.4 145.3,172.6" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="217.3,137.4 166.7,172.6" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="390,130 616,130" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-666-10)"/>
+<polyline points="390,127 390,133" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="442,127 442,133" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="494,127 494,133" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="546,127 546,133" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="598,127 598,133" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="30" y="22.9" text-anchor="middle" font-size="14" fill="#222"><tspan font-style="italic">x</tspan><tspan dy="4.2" font-size="10.1">0</tspan></text>
+<text x="66" y="22.9" text-anchor="middle" font-size="14" fill="#222"><tspan font-style="italic">x</tspan><tspan dy="4.2" font-size="10.1">1</tspan></text>
+<text x="102" y="22.9" text-anchor="middle" font-size="14" fill="#222"><tspan font-style="italic">x</tspan><tspan dy="4.2" font-size="10.1">2</tspan></text>
+<text x="138" y="22.9" text-anchor="middle" font-size="14" fill="#222"><tspan font-style="italic">x</tspan><tspan dy="4.2" font-size="10.1">3</tspan></text>
+<text x="174" y="22.9" text-anchor="middle" font-size="14" fill="#222"><tspan font-style="italic">x</tspan><tspan dy="4.2" font-size="10.1">4</tspan></text>
+<text x="210" y="22.9" text-anchor="middle" font-size="14" fill="#222"><tspan font-style="italic">x</tspan><tspan dy="4.2" font-size="10.1">5</tspan></text>
+<text x="246" y="22.9" text-anchor="middle" font-size="14" fill="#222"><tspan font-style="italic">x</tspan><tspan dy="4.2" font-size="10.1">6</tspan></text>
+<text x="282" y="22.9" text-anchor="middle" font-size="14" fill="#222"><tspan font-style="italic">x</tspan><tspan dy="4.2" font-size="10.1">7</tspan></text>
+<text x="48" y="85.6" text-anchor="middle" font-size="16" fill="#3a5a8c"><tspan font-style="italic">a</tspan></text>
+<text x="120" y="85.6" text-anchor="middle" font-size="16" fill="#3a5a8c"><tspan font-style="italic">b</tspan></text>
+<text x="192" y="85.6" text-anchor="middle" font-size="16" fill="#3a5a8c"><tspan font-style="italic">c</tspan></text>
+<text x="264" y="85.6" text-anchor="middle" font-size="16" fill="#3a5a8c"><tspan font-style="italic">d</tspan></text>
+<text x="84" y="135.6" text-anchor="middle" font-size="16" fill="#3a5a8c"><tspan font-style="italic">e</tspan></text>
+<text x="228" y="135.6" text-anchor="middle" font-size="16" fill="#3a5a8c"><tspan font-style="italic">f</tspan></text>
+<text x="156" y="185.6" text-anchor="middle" font-size="16" fill="#3a5a8c"><tspan font-style="italic">g</tspan></text>
+<text x="380" y="69.6" text-anchor="end" font-size="13" fill="#222">单元 0</text>
+<text x="380" y="109.6" text-anchor="end" font-size="13" fill="#222">单元 1</text>
+<text x="416" y="69.6" text-anchor="middle" font-size="13" fill="#3a5a8c"><tspan font-style="italic">a</tspan></text>
+<text x="416" y="109.6" text-anchor="middle" font-size="13" fill="#3a5a8c"><tspan font-style="italic">b</tspan></text>
+<text x="468" y="69.6" text-anchor="middle" font-size="13" fill="#3a5a8c"><tspan font-style="italic">c</tspan></text>
+<text x="468" y="109.6" text-anchor="middle" font-size="13" fill="#3a5a8c"><tspan font-style="italic">d</tspan></text>
+<text x="520" y="69.6" text-anchor="middle" font-size="13" fill="#b45f06"><tspan font-style="italic">e</tspan></text>
+<text x="520" y="109.6" text-anchor="middle" font-size="13" fill="#b45f06"><tspan font-style="italic">f</tspan></text>
+<text x="572" y="69.6" text-anchor="middle" font-size="13" fill="#2e7d32"><tspan font-style="italic">g</tspan></text>
+<text x="572" y="109.6" text-anchor="middle" font-size="13" fill="#555555">空闲</text>
+<text x="390" y="147.2" text-anchor="middle" font-size="12" fill="#666">0</text>
+<text x="442" y="147.2" text-anchor="middle" font-size="12" fill="#666">1</text>
+<text x="494" y="147.2" text-anchor="middle" font-size="12" fill="#666">2</text>
+<text x="546" y="147.2" text-anchor="middle" font-size="12" fill="#666">3</text>
+<text x="598" y="147.2" text-anchor="middle" font-size="12" fill="#666">4</text>
+<text x="620" y="134.2" text-anchor="start" font-size="12" fill="#666">时间步</text>
+</svg>

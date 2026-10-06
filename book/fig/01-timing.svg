@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="602" height="256" viewBox="-30 -6 602 256" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<rect x="-30" y="-6" width="602" height="256" rx="8" fill="#ffffff"/>
+<polygon points="70,97 76,84 154,84 160,97 154,110 76,110" fill="#ffffff" stroke="#222222" stroke-width="1.6" stroke-linejoin="round"/>
+<polygon points="160,97 166,84 514,84 520,97 514,110 166,110" fill="#ffffff" stroke="#222222" stroke-width="1.6" stroke-linejoin="round"/>
+<polygon points="520,97 526,84 554,84 560,97 554,110 526,110" fill="#ffffff" stroke="#222222" stroke-width="1.6" stroke-linejoin="round"/>
+<polygon points="70,147 76,134 154,134 160,147 154,160 76,160" fill="#ffffff" stroke="#222222" stroke-width="1.6" stroke-linejoin="round"/>
+<polygon points="160,147 166,134 394,134 400,147 394,160 166,160" fill="#efefef" stroke="#555555" stroke-width="1.6" stroke-linejoin="round"/>
+<polygon points="400,147 406,134 514,134 520,147 514,160 406,160" fill="#ffffff" stroke="#222222" stroke-width="1.6" stroke-linejoin="round"/>
+<polygon points="520,147 526,134 554,134 560,147 554,160 526,160" fill="#efefef" stroke="#555555" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="70,58 130,58 130,30 310,30 310,58 490,58 490,30 560,30" fill="none" stroke="#222" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="130,30 130,164" fill="none" stroke="#555555" stroke-width="1" stroke-linejoin="round" stroke-dasharray="4 4"/>
+<polyline points="490,30 490,164" fill="none" stroke="#555555" stroke-width="1" stroke-linejoin="round" stroke-dasharray="4 4"/>
+<polyline points="130,172 130,178 160,178 160,172" fill="none" stroke="#666" stroke-width="1.2" stroke-linejoin="round"/>
+<polyline points="160,172 160,178 400,178 400,172" fill="none" stroke="#666" stroke-width="1.2" stroke-linejoin="round"/>
+<polyline points="460,172 460,178 490,178 490,172" fill="none" stroke="#666" stroke-width="1.2" stroke-linejoin="round"/>
+<polyline points="130,212 130,218 490,218 490,212" fill="none" stroke="#666" stroke-width="1.2" stroke-linejoin="round"/>
+<text x="130" y="18.2" text-anchor="middle" font-size="12" fill="#666">第 <tspan font-style="italic">t</tspan> 个上升沿</text>
+<text x="490" y="18.2" text-anchor="middle" font-size="12" fill="#666">第 <tspan font-style="italic">t</tspan> + 1 个上升沿</text>
+<text x="115" y="101.6" text-anchor="middle" font-size="13" fill="#222"><tspan font-style="italic">s</tspan><tspan dy="3.9" font-size="9.4" font-style="italic">t</tspan></text>
+<text x="340" y="101.6" text-anchor="middle" font-size="13" fill="#222"><tspan font-style="italic">s</tspan><tspan dy="3.9" font-size="9.4" font-style="italic">t</tspan><tspan font-size="9.4">+1</tspan></text>
+<text x="115" y="151.6" text-anchor="middle" font-size="13" fill="#222">旧值</text>
+<text x="280" y="151.6" text-anchor="middle" font-size="13" fill="#222">变化中</text>
+<text x="460" y="151.6" text-anchor="middle" font-size="13" fill="#222">稳定</text>
+<text x="60" y="48.6" text-anchor="end" font-size="13" fill="#222">时钟</text>
+<text x="60" y="101.6" text-anchor="end" font-size="13" fill="#222"><tspan font-style="italic">Q</tspan></text>
+<text x="60" y="151.6" text-anchor="end" font-size="13" fill="#222">组合电路输出</text>
+<text x="145" y="194.2" text-anchor="middle" font-size="12" fill="#666"><tspan font-style="italic">t</tspan><tspan dy="3.6" font-size="8.6">1</tspan></text>
+<text x="280" y="194.2" text-anchor="middle" font-size="12" fill="#666">至多 <tspan font-style="italic">D</tspan>τ</text>
+<text x="475" y="194.2" text-anchor="middle" font-size="12" fill="#666"><tspan font-style="italic">t</tspan><tspan dy="3.6" font-size="8.6">2</tspan></text>
+<text x="310" y="234.2" text-anchor="middle" font-size="12" fill="#666">时钟周期 <tspan font-style="italic">T</tspan>，要求 <tspan font-style="italic">D</tspan>τ + <tspan font-style="italic">t</tspan><tspan dy="3.6" font-size="8.6">1</tspan><tspan dy="-3.6"> + </tspan><tspan font-style="italic">t</tspan><tspan dy="3.6" font-size="8.6">2</tspan><tspan dy="-3.6"> ≤ </tspan><tspan font-style="italic">T</tspan></text>
+</svg>
