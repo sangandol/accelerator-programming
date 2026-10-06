@@ -49,8 +49,9 @@
 | MMA 操作、点积单元 | matrix multiply-accumulate (MMA), dot-product unit | 5.5 |
 | 结构化稀疏 | structured sparsity (2:4) | 5.6 |
 | 算术强度、屋顶线、拐点 | arithmetic intensity, roofline, ridge point | 6.2 |
-| 融合 | fusion | 6.2 |
-| 波次量化 | wave quantization | 6.6 |
+| 访存受限、计算受限 | memory-bound, compute-bound | 6.2 |
+| 融合 | fusion | 6.3 |
+| 波次量化 | wave quantization | 6.8 |
 | 链路、拓扑、环面、二分带宽 | link, topology, torus, bisection bandwidth | 7.1 |
 | 集合操作 | collective operation | 7.2 |
 

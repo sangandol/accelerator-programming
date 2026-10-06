@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="672" height="301" viewBox="28 -11 672 301" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-3a5a8c-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3a5a8c"/></marker><marker id="ah-2e7d32-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2e7d32"/></marker></defs>
+<rect x="28" y="-11" width="672" height="301" rx="8" fill="#ffffff"/>
+<rect x="40" y="102" width="560" height="26" rx="6" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<rect x="50" y="30" width="150" height="36" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="240" y="30" width="150" height="36" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="430" y="30" width="150" height="36" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="40" y="252" width="560" height="26" rx="6" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<rect x="160" y="180" width="330" height="36" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<polyline points="74,102 74,66" fill="none" stroke="#3a5a8c" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-3a5a8c-10)"/>
+<polyline points="176,66 176,102" fill="none" stroke="#2e7d32" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-2e7d32-10)"/>
+<polyline points="264,102 264,66" fill="none" stroke="#3a5a8c" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-3a5a8c-10)"/>
+<polyline points="366,66 366,102" fill="none" stroke="#2e7d32" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-2e7d32-10)"/>
+<polyline points="454,102 454,66" fill="none" stroke="#3a5a8c" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-3a5a8c-10)"/>
+<polyline points="556,66 556,102" fill="none" stroke="#2e7d32" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-2e7d32-10)"/>
+<polyline points="184,252 184,216" fill="none" stroke="#3a5a8c" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-3a5a8c-10)"/>
+<polyline points="466,216 466,252" fill="none" stroke="#2e7d32" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-2e7d32-10)"/>
+<text x="40" y="14.6" text-anchor="start" font-size="13" fill="#222">不融合：三个程序</text>
+<text x="320" y="119.2" text-anchor="middle" font-size="12" fill="#555555">HBM</text>
+<text x="125" y="52.2" text-anchor="middle" font-size="12" fill="#b45f06">程序 1：<tspan font-style="italic">t</tspan><tspan dy="3.6" font-size="8.6">1</tspan><tspan dy="-3.6"> = 2</tspan><tspan font-style="italic">x</tspan></text>
+<text x="84" y="88.2" text-anchor="start" font-size="12" fill="#3a5a8c">读</text>
+<text x="166" y="88.2" text-anchor="end" font-size="12" fill="#2e7d32">写</text>
+<text x="315" y="52.2" text-anchor="middle" font-size="12" fill="#b45f06">程序 2：<tspan font-style="italic">t</tspan><tspan dy="3.6" font-size="8.6">2</tspan><tspan dy="-3.6"> = </tspan><tspan font-style="italic">t</tspan><tspan dy="3.6" font-size="8.6">1</tspan><tspan dy="-3.6"> + 1</tspan></text>
+<text x="274" y="88.2" text-anchor="start" font-size="12" fill="#3a5a8c">读</text>
+<text x="356" y="88.2" text-anchor="end" font-size="12" fill="#2e7d32">写</text>
+<text x="505" y="52.2" text-anchor="middle" font-size="12" fill="#b45f06">程序 3：<tspan font-style="italic">y</tspan> = tanh <tspan font-style="italic">t</tspan><tspan dy="3.6" font-size="8.6">2</tspan></text>
+<text x="464" y="88.2" text-anchor="start" font-size="12" fill="#3a5a8c">读</text>
+<text x="546" y="88.2" text-anchor="end" font-size="12" fill="#2e7d32">写</text>
+<text x="610" y="119.2" text-anchor="start" font-size="12" fill="#666">HBM 读写 6 次</text>
+<text x="40" y="164.6" text-anchor="start" font-size="13" fill="#222">融合：一个程序</text>
+<text x="320" y="269.2" text-anchor="middle" font-size="12" fill="#555555">HBM</text>
+<text x="325" y="202.2" text-anchor="middle" font-size="12" fill="#b45f06">一个程序：2<tspan font-style="italic">x</tspan>、+1、tanh，中间结果留在片上</text>
+<text x="194" y="238.2" text-anchor="start" font-size="12" fill="#3a5a8c">读</text>
+<text x="456" y="238.2" text-anchor="end" font-size="12" fill="#2e7d32">写</text>
+<text x="610" y="269.2" text-anchor="start" font-size="12" fill="#666">HBM 读写 2 次</text>
+</svg>

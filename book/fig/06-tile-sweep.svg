@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="524" height="318" viewBox="21 -14 524 318" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="21" y="-14" width="524" height="318" rx="8" fill="#ffffff"/>
+<polyline points="70,270 482,270" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="70,270 70,18" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="70,270 70,274" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="136.7,270 136.7,274" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="203.3,270 203.3,274" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="270,270 270,274" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="336.7,270 336.7,274" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="403.3,270 403.3,274" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="470,270 470,274" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="66,251.9 70,251.9" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="66,191.9 70,191.9" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="66,131.9 70,131.9" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="66,71.9 70,71.9" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="70,51.4 103.3,69.5 136.7,87.5 170,105.6 203.3,123.6 236.7,141.7 270,159.7 303.3,177.6 336.7,195.5 370,213.2 403.3,230.4 436.7,247 470,262.3" fill="none" stroke="#3a5a8c" stroke-width="2.2" stroke-linejoin="round"/>
+<polyline points="70,214.5 470,214.5" fill="none" stroke="#b45f06" stroke-width="2.2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+<circle cx="372.6" cy="214.5" r="4" fill="#c0392b"/>
+<text x="70" y="288.2" text-anchor="middle" font-size="12" fill="#666">1</text>
+<text x="136.7" y="288.2" text-anchor="middle" font-size="12" fill="#666">4</text>
+<text x="203.3" y="288.2" text-anchor="middle" font-size="12" fill="#666">16</text>
+<text x="270" y="288.2" text-anchor="middle" font-size="12" fill="#666">64</text>
+<text x="336.7" y="288.2" text-anchor="middle" font-size="12" fill="#666">256</text>
+<text x="403.3" y="288.2" text-anchor="middle" font-size="12" fill="#666">1024</text>
+<text x="470" y="288.2" text-anchor="middle" font-size="12" fill="#666">4096</text>
+<text x="62" y="256.1" text-anchor="end" font-size="12" fill="#666">1</text>
+<text x="62" y="196.1" text-anchor="end" font-size="12" fill="#666">10</text>
+<text x="62" y="136.1" text-anchor="end" font-size="12" fill="#666">100</text>
+<text x="62" y="76.1" text-anchor="end" font-size="12" fill="#666">1000</text>
+<text x="486" y="274.2" text-anchor="start" font-size="12" fill="#222">块边长 <tspan font-style="italic">b</tspan></text>
+<text x="70" y="10.2" text-anchor="middle" font-size="12" fill="#222">时间（ms）</text>
+<text x="178" y="103.8" text-anchor="start" font-size="12" fill="#3a5a8c">搬运时间</text>
+<text x="76" y="232.7" text-anchor="start" font-size="12" fill="#b45f06">计算时间 4.2 ms</text>
+<text x="382.6" y="204.7" text-anchor="start" font-size="12" fill="#c0392b"><tspan font-style="italic">b</tspan> ≈ 540</text>
+<text x="203.3" y="262" text-anchor="start" font-size="12" fill="#666">← 访存受限</text>
+<text x="380.7" y="262" text-anchor="start" font-size="12" fill="#666">计算受限 →</text>
+</svg>

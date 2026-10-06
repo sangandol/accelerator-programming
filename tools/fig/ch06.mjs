@@ -107,4 +107,40 @@ export default {
     f.box(360 + 3 * 70 + 88, 60, 46, 40, '$C$', { color: 'gray' });
     f.note(400 + 2 * 70, 150, '每个核心算一个 f32 部分和，最后再做一次归约', { color: '#222', size: 12 });
   },
+
+  // 图：y = tanh(2x + 1) 不融合与融合时的 HBM 读写
+  '06-fusion'(f) {
+    const panel = (y0, programs, title, count) => {
+      f.note(40, y0, title, { anchor: 'start', color: '#222', size: 13 });
+      const hbm = f.box(40, y0 + 92, 560, 26, 'HBM', { color: 'gray', size: 12 });
+      programs.forEach(([x, w, label]) => {
+        const b = f.box(x, y0 + 20, w, 36, label, { color: 'orange', size: 12 });
+        f.arrow([x + 24, hbm.y], [x + 24, b.y + b.h], { color: 'blue' });
+        f.arrow([x + w - 24, b.y + b.h], [x + w - 24, hbm.y], { color: 'green' });
+        f.note(x + 34, y0 + 74, '读', { anchor: 'start', color: 'blue' });
+        f.note(x + w - 34, y0 + 74, '写', { anchor: 'end', color: 'green' });
+      });
+      f.note(610, y0 + 105, count, { anchor: 'start' });
+    };
+    panel(10, [[50, 150, '程序 1：$t_1 = 2x$'], [240, 150, '程序 2：$t_2 = t_1 + 1$'], [430, 150, '程序 3：$y$ = tanh $t_2$']], '不融合：三个程序', 'HBM 读写 6 次');
+    panel(160, [[160, 330, '一个程序：$2x$、$+1$、tanh，中间结果留在片上']], '融合：一个程序', 'HBM 读写 2 次');
+  },
+
+  // 图：8192³ 矩阵乘法的搬运时间随块边长的变化（芯片 X）
+  '06-tile-sweep'(f) {
+    const bs = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096];
+    const mem = (b) => (2.199e12 / b + 1.342e8) / 1e9;
+    const { sx, sy } = f.plot(70, 30, {
+      w: 400, h: 240,
+      x: { min: 1, max: 4096, log: true, label: '块边长 $b$', ticks: [1, 4, 16, 64, 256, 1024, 4096] },
+      y: { min: 0.5, max: 5000, log: true, label: '时间（ms）', ticks: [1, 10, 100, 1000] },
+      series: [
+        { pts: bs.map((b) => [b, mem(b)]), color: 'blue', label: '搬运时间', at: 3, dx: 8, dy: -6 },
+        { pts: [[1, 4.2], [4096, 4.2]], color: 'orange', dash: '6 4', label: '计算时间 4.2 ms', at: 0, dx: 6, dy: 14 },
+      ],
+      marks: [{ at: [540, 4.2], label: '$b \\approx 540$', dx: 10, dy: -14 }],
+    });
+    f.note(sx(16), sy(0.8), '← 访存受限', { anchor: 'start' });
+    f.note(sx(640), sy(0.8), '计算受限 →', { anchor: 'start' });
+  },
 };

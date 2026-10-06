@@ -193,7 +193,7 @@ $2 \times 4 \times 16384 \times 2 \times 1.05 \times 10^9 \approx 2.75 \times 10
 </details>
 <details><summary>答案</summary>
 
-(a) $1024 \times 1024 / 1024 = 1024$ 块。(b) 约 2048 个周期（约 2 µs）。(c) 读写共 8 MiB，约 $8192 \times 1.1 \approx 9000$ 个周期（约 8.6 µs）。HBM 是瓶颈，EUP 只用了约四分之一的时间：逐元素运算访存受限（例 6.6）。
+(a) $1024 \times 1024 / 1024 = 1024$ 块。(b) 约 2048 个周期（约 2 µs）。(c) 读写共 8 MiB，约 $8192 \times 1.1 \approx 9000$ 个周期（约 8.6 µs）。HBM 是瓶颈，EUP 只用了约四分之一的时间：逐元素运算访存受限（例 6.7）。
 
 </details>
 
