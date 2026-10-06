@@ -30,7 +30,7 @@
 | `f.line(points, {color, width=1.6, dash, arrow})` | 折线；`arrow: 'end' / 'start' / 'both'` |
 | `f.arrow(p, q, opts)` | 箭头 |
 | `f.link(a, b, {bend, arrow, color, dash})` | 从形状 a 的边到形状 b 的边连线；`bend` 非零时为弧线（正值向 a→b 的左侧弯） |
-| `f.brace(x0, y, x1, label, {flip})`；`{vertical: true}` 时为 `(x, y0, y1)` | 标注一段范围的方括号 |
+| `f.brace(x0, y, x1, label, {flip})`；`{vertical: true}` 时为 `(y0, x, y1)` | 标注一段范围的方括号 |
 | `f.poly(points, {color, fill, stroke, dash})` | 填充多边形（梯形、楔形等） |
 | `f.raw(svg, [x0, y0, x1, y1], z)` | 直接写 SVG（给出外框以便自动定尺寸） |
 

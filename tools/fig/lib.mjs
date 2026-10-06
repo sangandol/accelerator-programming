@@ -262,7 +262,7 @@ export class Fig {
     return this;
   }
 
-  // Bracket under (or beside) a span, with a label: brace(x0, y, x1, '长为 $2^k$') or {vertical: true} for (x, y0, y1).
+  // Bracket under (or beside) a span, with a label: brace(x0, y, x1, '长为 $2^k$') or {vertical: true} for (y0, x, y1).
   brace(a0, at, a1, label = '', { vertical = false, flip = false, size = 12, color = MUTED, d = 6 } = {}) {
     const s = flip ? -d : d;
     if (!vertical) {

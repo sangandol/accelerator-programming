@@ -150,7 +150,7 @@ Hopper：$d = 64$ 时 $256/256 = 1$，$d = 128$ 时 $0.5$。Blackwell：$d = 64$
 
 <details><summary>提示</summary>
 
-(c) 每页一次载入，对比命题 4.12 与定义 8.11。
+(c) 每页一次载入，对比命题 4.19 与定义 8.11。
 
 </details>
 <details><summary>答案</summary>

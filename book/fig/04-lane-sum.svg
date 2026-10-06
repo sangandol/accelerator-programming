@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="417" height="256" viewBox="45 0 417 256" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<rect x="45" y="0" width="417" height="256" rx="8" fill="#ffffff"/>
+<rect x="130" y="30" width="40" height="28" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="170" y="30" width="40" height="28" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="210" y="30" width="40" height="28" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="250" y="30" width="40" height="28" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="290" y="30" width="40" height="28" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="330" y="30" width="40" height="28" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="370" y="30" width="40" height="28" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="410" y="30" width="40" height="28" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="130" y="92" width="40" height="28" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="170" y="92" width="40" height="28" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="210" y="92" width="40" height="28" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="250" y="92" width="40" height="28" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="290" y="92" width="40" height="28" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="330" y="92" width="40" height="28" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="370" y="92" width="40" height="28" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="410" y="92" width="40" height="28" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="130" y="154" width="40" height="28" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="170" y="154" width="40" height="28" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="210" y="154" width="40" height="28" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="250" y="154" width="40" height="28" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="290" y="154" width="40" height="28" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="330" y="154" width="40" height="28" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="370" y="154" width="40" height="28" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="410" y="154" width="40" height="28" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="130" y="216" width="40" height="28" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="170" y="216" width="40" height="28" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="210" y="216" width="40" height="28" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="250" y="216" width="40" height="28" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="290" y="216" width="40" height="28" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="330" y="216" width="40" height="28" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="370" y="216" width="40" height="28" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="410" y="216" width="40" height="28" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<polyline points="150,58 150,92" fill="none" stroke="#c0392b" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="310,58 150,92" fill="none" stroke="#c0392b" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="150,120 150,154" fill="none" stroke="#c0392b" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="230,120 150,154" fill="none" stroke="#c0392b" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="150,182 150,216" fill="none" stroke="#c0392b" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="190,182 150,216" fill="none" stroke="#c0392b" stroke-width="2" stroke-linejoin="round"/>
+<text x="150" y="48.6" text-anchor="middle" font-size="13" fill="#b45f06">3</text>
+<text x="190" y="48.6" text-anchor="middle" font-size="13" fill="#3a5a8c">1</text>
+<text x="230" y="48.6" text-anchor="middle" font-size="13" fill="#3a5a8c">4</text>
+<text x="270" y="48.6" text-anchor="middle" font-size="13" fill="#3a5a8c">1</text>
+<text x="310" y="48.6" text-anchor="middle" font-size="13" fill="#3a5a8c">5</text>
+<text x="350" y="48.6" text-anchor="middle" font-size="13" fill="#3a5a8c">9</text>
+<text x="390" y="48.6" text-anchor="middle" font-size="13" fill="#3a5a8c">2</text>
+<text x="430" y="48.6" text-anchor="middle" font-size="13" fill="#3a5a8c">6</text>
+<text x="150" y="24.2" text-anchor="middle" font-size="12" fill="#666">通道 0</text>
+<text x="190" y="24.2" text-anchor="middle" font-size="12" fill="#666">通道 1</text>
+<text x="230" y="24.2" text-anchor="middle" font-size="12" fill="#666">通道 2</text>
+<text x="270" y="24.2" text-anchor="middle" font-size="12" fill="#666">通道 3</text>
+<text x="310" y="24.2" text-anchor="middle" font-size="12" fill="#666">通道 4</text>
+<text x="350" y="24.2" text-anchor="middle" font-size="12" fill="#666">通道 5</text>
+<text x="390" y="24.2" text-anchor="middle" font-size="12" fill="#666">通道 6</text>
+<text x="430" y="24.2" text-anchor="middle" font-size="12" fill="#666">通道 7</text>
+<text x="120" y="48.2" text-anchor="end" font-size="12" fill="#222">开始</text>
+<text x="150" y="110.6" text-anchor="middle" font-size="13" fill="#b45f06">8</text>
+<text x="190" y="110.6" text-anchor="middle" font-size="13" fill="#3a5a8c">10</text>
+<text x="230" y="110.6" text-anchor="middle" font-size="13" fill="#3a5a8c">6</text>
+<text x="270" y="110.6" text-anchor="middle" font-size="13" fill="#3a5a8c">7</text>
+<text x="310" y="110.6" text-anchor="middle" font-size="13" fill="#3a5a8c">8</text>
+<text x="350" y="110.6" text-anchor="middle" font-size="13" fill="#3a5a8c">10</text>
+<text x="390" y="110.6" text-anchor="middle" font-size="13" fill="#3a5a8c">6</text>
+<text x="430" y="110.6" text-anchor="middle" font-size="13" fill="#3a5a8c">7</text>
+<text x="120" y="110.2" text-anchor="end" font-size="12" fill="#222">移 4 位再加</text>
+<text x="150" y="172.6" text-anchor="middle" font-size="13" fill="#b45f06">14</text>
+<text x="190" y="172.6" text-anchor="middle" font-size="13" fill="#3a5a8c">17</text>
+<text x="230" y="172.6" text-anchor="middle" font-size="13" fill="#3a5a8c">14</text>
+<text x="270" y="172.6" text-anchor="middle" font-size="13" fill="#3a5a8c">17</text>
+<text x="310" y="172.6" text-anchor="middle" font-size="13" fill="#3a5a8c">14</text>
+<text x="350" y="172.6" text-anchor="middle" font-size="13" fill="#3a5a8c">17</text>
+<text x="390" y="172.6" text-anchor="middle" font-size="13" fill="#3a5a8c">14</text>
+<text x="430" y="172.6" text-anchor="middle" font-size="13" fill="#3a5a8c">17</text>
+<text x="120" y="172.2" text-anchor="end" font-size="12" fill="#222">移 2 位再加</text>
+<text x="150" y="234.6" text-anchor="middle" font-size="13" fill="#b45f06">31</text>
+<text x="190" y="234.6" text-anchor="middle" font-size="13" fill="#3a5a8c">31</text>
+<text x="230" y="234.6" text-anchor="middle" font-size="13" fill="#3a5a8c">31</text>
+<text x="270" y="234.6" text-anchor="middle" font-size="13" fill="#3a5a8c">31</text>
+<text x="310" y="234.6" text-anchor="middle" font-size="13" fill="#3a5a8c">31</text>
+<text x="350" y="234.6" text-anchor="middle" font-size="13" fill="#3a5a8c">31</text>
+<text x="390" y="234.6" text-anchor="middle" font-size="13" fill="#3a5a8c">31</text>
+<text x="430" y="234.6" text-anchor="middle" font-size="13" fill="#3a5a8c">31</text>
+<text x="120" y="234.2" text-anchor="end" font-size="12" fill="#222">移 1 位再加</text>
+</svg>

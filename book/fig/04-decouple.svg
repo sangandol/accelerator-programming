@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="576" height="282" viewBox="-4 -2 576 282" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="-4" y="-2" width="576" height="282" rx="8" fill="#ffffff"/>
+<rect x="20" y="100" width="120" height="44" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="230" y="10" width="120" height="40" rx="6" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<rect x="230" y="100" width="120" height="44" rx="6" fill="#dff3f1" stroke="#00796b" stroke-width="1.6"/>
+<rect x="440" y="100" width="120" height="44" rx="6" fill="#fff5cc" stroke="#8a6d00" stroke-width="1.6"/>
+<rect x="230" y="200" width="120" height="44" rx="6" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<rect x="440" y="200" width="120" height="44" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<polyline points="140,122 230,122" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="290,50 290,100" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="350,122 440,122" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="290,144 290,200" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="350,222 440,222" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="500,144 500,200" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<text x="80" y="126.9" text-anchor="middle" font-size="14" fill="#b45f06">访存流</text>
+<text x="290" y="34.9" text-anchor="middle" font-size="14" fill="#555555">HBM</text>
+<text x="290" y="126.9" text-anchor="middle" font-size="14" fill="#00796b">DMA 引擎</text>
+<text x="500" y="126.9" text-anchor="middle" font-size="14" fill="#8a6d00">片上存储</text>
+<text x="290" y="226.9" text-anchor="middle" font-size="14" fill="#555555">完成计数器</text>
+<text x="500" y="226.9" text-anchor="middle" font-size="14" fill="#3a5a8c">计算流</text>
+<text x="185" y="114.2" text-anchor="middle" font-size="12" fill="#666">描述符</text>
+<text x="395" y="114.2" text-anchor="middle" font-size="12" fill="#666">数据</text>
+<text x="298" y="176.2" text-anchor="start" font-size="12" fill="#666">完成时加数</text>
+<text x="395" y="214.2" text-anchor="middle" font-size="12" fill="#666">等待</text>
+<text x="80" y="164.2" text-anchor="middle" font-size="12" fill="#666">算地址、发拷贝，跑在前面</text>
+<text x="500" y="264.2" text-anchor="middle" font-size="12" fill="#666">按序计算已到达的块</text>
+</svg>

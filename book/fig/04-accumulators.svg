@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="290" viewBox="28 -13 480 290" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-666-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#666"/></marker></defs>
+<rect x="28" y="-13" width="480" height="290" rx="8" fill="#ffffff"/>
+<rect x="90" y="24" width="96" height="24" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="186" y="24" width="96" height="24" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="282" y="24" width="96" height="24" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="90" y="120" width="96" height="24" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="114" y="150" width="96" height="24" rx="3" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="138" y="180" width="96" height="24" rx="3" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="162" y="210" width="96" height="24" rx="3" fill="#efe6f8" stroke="#6a3d9a" stroke-width="1.6"/>
+<rect x="186" y="120" width="96" height="24" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="210" y="150" width="96" height="24" rx="3" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="234" y="180" width="96" height="24" rx="3" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="258" y="210" width="96" height="24" rx="3" fill="#efe6f8" stroke="#6a3d9a" stroke-width="1.6"/>
+<rect x="282" y="120" width="96" height="24" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="306" y="150" width="96" height="24" rx="3" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="330" y="180" width="96" height="24" rx="3" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="354" y="210" width="96" height="24" rx="3" fill="#efe6f8" stroke="#6a3d9a" stroke-width="1.6"/>
+<polyline points="90,58 468,58" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-666-10)"/>
+<polyline points="90,55 90,61" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="186,55 186,61" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="282,55 282,61" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="378,55 378,61" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="90,244 468,244" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-666-10)"/>
+<polyline points="90,241 90,247" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="186,241 186,247" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="282,241 282,247" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="378,241 378,247" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="40" y="12.6" text-anchor="start" font-size="13" fill="#222">(a) 一个累加器：每次加法等上一次的结果</text>
+<text x="80" y="40.6" text-anchor="end" font-size="13" fill="#222"><tspan font-style="italic">s</tspan></text>
+<text x="138" y="40.6" text-anchor="middle" font-size="13" fill="#3a5a8c">+<tspan font-style="italic">x</tspan><tspan dy="3.9" font-size="9.4">0</tspan></text>
+<text x="234" y="40.6" text-anchor="middle" font-size="13" fill="#3a5a8c">+<tspan font-style="italic">x</tspan><tspan dy="3.9" font-size="9.4">1</tspan></text>
+<text x="330" y="40.6" text-anchor="middle" font-size="13" fill="#3a5a8c">+<tspan font-style="italic">x</tspan><tspan dy="3.9" font-size="9.4">2</tspan></text>
+<text x="90" y="75.2" text-anchor="middle" font-size="12" fill="#666">0</text>
+<text x="186" y="75.2" text-anchor="middle" font-size="12" fill="#666">4</text>
+<text x="282" y="75.2" text-anchor="middle" font-size="12" fill="#666">8</text>
+<text x="378" y="75.2" text-anchor="middle" font-size="12" fill="#666">12</text>
+<text x="472" y="62.2" text-anchor="start" font-size="12" fill="#666">周期</text>
+<text x="40" y="108.6" text-anchor="start" font-size="13" fill="#222">(b) 四个累加器轮流使用：每个周期都有一次加法开始</text>
+<text x="80" y="136.6" text-anchor="end" font-size="13" fill="#222"><tspan font-style="italic">s</tspan><tspan dy="3.9" font-size="9.4">0</tspan></text>
+<text x="80" y="166.6" text-anchor="end" font-size="13" fill="#222"><tspan font-style="italic">s</tspan><tspan dy="3.9" font-size="9.4">1</tspan></text>
+<text x="80" y="196.6" text-anchor="end" font-size="13" fill="#222"><tspan font-style="italic">s</tspan><tspan dy="3.9" font-size="9.4">2</tspan></text>
+<text x="80" y="226.6" text-anchor="end" font-size="13" fill="#222"><tspan font-style="italic">s</tspan><tspan dy="3.9" font-size="9.4">3</tspan></text>
+<text x="138" y="136.6" text-anchor="middle" font-size="13" fill="#3a5a8c">+<tspan font-style="italic">x</tspan><tspan dy="3.9" font-size="9.4">0</tspan></text>
+<text x="162" y="166.6" text-anchor="middle" font-size="13" fill="#b45f06">+<tspan font-style="italic">x</tspan><tspan dy="3.9" font-size="9.4">1</tspan></text>
+<text x="186" y="196.6" text-anchor="middle" font-size="13" fill="#2e7d32">+<tspan font-style="italic">x</tspan><tspan dy="3.9" font-size="9.4">2</tspan></text>
+<text x="210" y="226.6" text-anchor="middle" font-size="13" fill="#6a3d9a">+<tspan font-style="italic">x</tspan><tspan dy="3.9" font-size="9.4">3</tspan></text>
+<text x="234" y="136.6" text-anchor="middle" font-size="13" fill="#3a5a8c">+<tspan font-style="italic">x</tspan><tspan dy="3.9" font-size="9.4">4</tspan></text>
+<text x="258" y="166.6" text-anchor="middle" font-size="13" fill="#b45f06">+<tspan font-style="italic">x</tspan><tspan dy="3.9" font-size="9.4">5</tspan></text>
+<text x="282" y="196.6" text-anchor="middle" font-size="13" fill="#2e7d32">+<tspan font-style="italic">x</tspan><tspan dy="3.9" font-size="9.4">6</tspan></text>
+<text x="306" y="226.6" text-anchor="middle" font-size="13" fill="#6a3d9a">+<tspan font-style="italic">x</tspan><tspan dy="3.9" font-size="9.4">7</tspan></text>
+<text x="330" y="136.6" text-anchor="middle" font-size="13" fill="#3a5a8c">+<tspan font-style="italic">x</tspan><tspan dy="3.9" font-size="9.4">8</tspan></text>
+<text x="354" y="166.6" text-anchor="middle" font-size="13" fill="#b45f06">+<tspan font-style="italic">x</tspan><tspan dy="3.9" font-size="9.4">9</tspan></text>
+<text x="378" y="196.6" text-anchor="middle" font-size="13" fill="#2e7d32">+<tspan font-style="italic">x</tspan><tspan dy="3.9" font-size="9.4">10</tspan></text>
+<text x="402" y="226.6" text-anchor="middle" font-size="13" fill="#6a3d9a">+<tspan font-style="italic">x</tspan><tspan dy="3.9" font-size="9.4">11</tspan></text>
+<text x="90" y="261.2" text-anchor="middle" font-size="12" fill="#666">0</text>
+<text x="186" y="261.2" text-anchor="middle" font-size="12" fill="#666">4</text>
+<text x="282" y="261.2" text-anchor="middle" font-size="12" fill="#666">8</text>
+<text x="378" y="261.2" text-anchor="middle" font-size="12" fill="#666">12</text>
+<text x="472" y="248.2" text-anchor="start" font-size="12" fill="#666">周期</text>
+</svg>

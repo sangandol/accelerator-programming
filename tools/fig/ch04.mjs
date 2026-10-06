@@ -164,4 +164,85 @@ export default {
       ],
     });
   },
+
+  // 图：一个累加器与四个累加器（L = 4）
+  '04-accumulators'(f) {
+    f.note(40, 8, '(a) 一个累加器：每次加法等上一次的结果', { anchor: 'start', color: '#222', size: 13 });
+    f.timeline(90, 24, { lanes: ['$s$'], bars: [0, 1, 2].map((k) => [0, 4 * k, 4 * k + 4, `$+x_${k}$`, OPS[0]]), unit: 24, lh: 24, end: 15, ticks: 4, axisLabel: '周期' });
+    f.note(40, 104, '(b) 四个累加器轮流使用：每个周期都有一次加法开始', { anchor: 'start', color: '#222', size: 13 });
+    const bars = Array.from({ length: 12 }, (_, i) => [i % 4, i, i + 4, `$+x_{${i}}$`, OPS[i % 4]]);
+    f.timeline(90, 120, { lanes: ['$s_0$', '$s_1$', '$s_2$', '$s_3$'], bars, unit: 24, lh: 24, gap: 6, ticks: 4, axisLabel: '周期' });
+  },
+
+  // 图：按点存放与按分量存放（SIMD 宽度 4）
+  '04-aos-soa'(f) {
+    const C = { x: 'blue', y: 'green', z: 'orange' };
+    const cells = (x0, y0, names, label) => {
+      const g = f.grid(x0, y0, { rows: 1, cols: names.length, cw: 34, ch: 24, size: 12, fill: (r, c) => C[names[c][0]], label: (r, c) => `$${names[c][0]}_${names[c][1]}$` });
+      if (label) f.text(x0 - 10, y0 + 12, label, { anchor: 'end', size: 12 });
+      return g;
+    };
+    const aos = ['x0', 'y0', 'z0', 'x1', 'y1', 'z1', 'x2', 'y2', 'z2', 'x3', 'y3', 'z3'];
+    f.note(110, 12, '按点存放（结构的数组）', { anchor: 'start', color: '#222', size: 13 });
+    cells(110, 26, aos, '存储');
+    [0, 1, 2].forEach((k) => cells(110 + k * 150, 76, aos.slice(4 * k, 4 * k + 4), k ? '' : '寄存器'));
+    f.note(110, 116, '每个寄存器里混着 $x, y, z$，要先重新排列', { anchor: 'start' });
+    const soa = ['x0', 'x1', 'x2', 'x3', 'y0', 'y1', 'y2', 'y3', 'z0', 'z1', 'z2', 'z3'];
+    f.note(110, 152, '按分量存放（数组的结构）', { anchor: 'start', color: '#222', size: 13 });
+    cells(110, 166, soa, '存储');
+    [0, 1, 2].forEach((k) => cells(110 + k * 150, 216, soa.slice(4 * k, 4 * k + 4), k ? '' : '寄存器'));
+    [0, 1].forEach((k) => f.text(110 + k * 150 + 143, 228, '+', { size: 16 }));
+    f.note(110, 256, '逐通道相加：两条向量加法算出 4 个点的 $x + y + z$', { anchor: 'start' });
+  },
+
+  // 图：用循环移位在 8 个通道上求和
+  '04-lane-sum'(f) {
+    const rows = [[3, 1, 4, 1, 5, 9, 2, 6], [8, 10, 6, 7, 8, 10, 6, 7], [14, 17, 14, 17, 14, 17, 14, 17], [31, 31, 31, 31, 31, 31, 31, 31]];
+    const names = ['开始', '移 4 位再加', '移 2 位再加', '移 1 位再加'];
+    const G = rows.map((v, r) => {
+      const g = f.grid(130, 30 + r * 62, { rows: 1, cols: 8, cw: 40, ch: 28, size: 13, fill: (_, c) => (c === 0 ? 'orange' : 'blue'), label: (_, c) => v[c], colLabels: r === 0 ? (c) => `通道 ${c}` : undefined });
+      f.text(120, 30 + r * 62 + 14, names[r], { anchor: 'end', size: 12 });
+      return g;
+    });
+    [4, 2, 1].forEach((d, r) => {
+      f.line([G[r].cell(0, 0).B(), G[r + 1].cell(0, 0).T()], { color: 'red', width: 2 });
+      f.line([G[r].cell(0, d).B(), G[r + 1].cell(0, 0).T()], { color: 'red', width: 2 });
+    });
+  },
+
+  // 图：DMA 的二维拷贝：大矩阵中的一块拷到片上并紧密排列
+  '04-dma-tile'(f) {
+    const inBlock = (r, c) => r >= 3 && r <= 8 && c >= 4 && c <= 11;
+    const A = f.grid(40, 40, { rows: 12, cols: 16, cw: 14, ch: 14, stroke: '#ccc', fill: (r, c) => (inBlock(r, c) ? 'orange' : null) });
+    f.note(A.cx, 18, 'HBM：按行存放的大矩阵', { color: '#222', size: 13 });
+    f.brace(A.cell(3, 4).x, A.y + A.h + 8, A.cell(3, 11).x + 14, '每段 1024 字节，连续');
+    f.brace(A.cell(3, 0).y, A.x + A.w + 8, A.cell(4, 0).y, '源步长：一整行', { vertical: true });
+    const B = f.grid(430, 82, { rows: 6, cols: 8, cw: 14, ch: 14, stroke: '#999', fill: () => 'orange' });
+    f.note(B.cx, 60, '片上存储：紧密排列', { color: '#222', size: 13 });
+    f.brace(B.y, B.x + B.w + 8, B.y + 14, '目的步长：一段', { vertical: true });
+    f.arrow([A.x + A.w + 110, B.cy], [B.x - 12, B.cy], { color: 'teal', width: 2 });
+    f.note(A.x + A.w + 110 + (B.x - 12 - A.x - A.w - 110) / 2, B.cy - 14, 'DMA', { color: 'teal' });
+  },
+
+  // 图：解耦访存与执行
+  '04-decouple'(f) {
+    const acc = f.box(20, 100, 120, 44, '访存流', { color: 'orange' });
+    const hbm = f.box(230, 10, 120, 40, 'HBM', { color: 'gray' });
+    const dma = f.box(230, 100, 120, 44, 'DMA 引擎', { color: 'teal' });
+    const sram = f.box(440, 100, 120, 44, '片上存储', { color: 'yellow' });
+    const cnt = f.box(230, 200, 120, 44, '完成计数器', { color: 'gray' });
+    const cmp = f.box(440, 200, 120, 44, '计算流', { color: 'blue' });
+    f.arrow(acc.R(), dma.L());
+    f.note((acc.x + acc.w + dma.x) / 2, acc.cy - 12, '描述符');
+    f.arrow(hbm.B(), dma.T());
+    f.arrow(dma.R(), sram.L());
+    f.note((dma.x + dma.w + sram.x) / 2, dma.cy - 12, '数据');
+    f.arrow(dma.B(), cnt.T());
+    f.note(dma.cx + 8, (dma.y + dma.h + cnt.y) / 2, '完成时加数', { anchor: 'start' });
+    f.arrow(cnt.R(), cmp.L());
+    f.note((cnt.x + cnt.w + cmp.x) / 2, cnt.cy - 12, '等待');
+    f.arrow(sram.B(), cmp.T());
+    f.note(acc.cx, acc.y + acc.h + 16, '算地址、发拷贝，跑在前面');
+    f.note(cmp.cx, cmp.y + cmp.h + 16, '按序计算已到达的块');
+  },
 };

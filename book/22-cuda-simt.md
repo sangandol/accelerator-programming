@@ -46,7 +46,7 @@ __global__ void add(const float* x, const float* y, float* z, int n) {
 线程之间要协作，就需要同步。CUDA 提供四类手段：
 
 - **块内屏障** `__syncthreads()`：块内所有线程都到达之后才继续；它也保证屏障之前对共享内存的写对屏障之后的读可见。**块内所有线程都必须执行到同一个** `__syncthreads()`；把它放在只有部分线程会进入的分支中，行为未定义，通常是死锁。
-- **warp 级原语**：`__shfl_sync(mask, v, src)` 让每个线程取得同一 warp 中第 `src` 个线程的 `v`；`__shfl_xor_sync(mask, v, k)` 取得第 `lane ^ k` 个线程的 `v`；`__shfl_up_sync`、`__shfl_down_sync` 取得相距 $k$ 的线程的值。它们是在寄存器之间进行的、warp 内的数据置换（4.3 节），不经过共享内存。`mask` 列出参与的线程，通常是全部 32 个（`0xffffffff`）。`__ballot_sync` 把 32 个线程的条件收集成一个 32 位整数。
+- **warp 级原语**：`__shfl_sync(mask, v, src)` 让每个线程取得同一 warp 中第 `src` 个线程的 `v`；`__shfl_xor_sync(mask, v, k)` 取得第 `lane ^ k` 个线程的 `v`；`__shfl_up_sync`、`__shfl_down_sync` 取得相距 $k$ 的线程的值。它们是在寄存器之间进行的、warp 内的数据置换（4.4 节），不经过共享内存。`mask` 列出参与的线程，通常是全部 32 个（`0xffffffff`）。`__ballot_sync` 把 32 个线程的条件收集成一个 32 位整数。
 - **原子操作** `atomicAdd` 等：对全局或共享内存中一个位置的读—改—写不可分割。多个线程的原子加法以运行时决定的次序进行，浮点结果因此不确定（命题 10.11）。
 - **栅栏** `__threadfence()`：保证本线程之前的写在其后的写之前对整个设备可见（22.7 节）。
 

@@ -38,9 +38,10 @@
 | 高带宽存储 | high-bandwidth memory (HBM) | 3.4 |
 | 存储层次、缓存、缓存行、便签存储 | memory hierarchy, cache, cache line, scratchpad | 3.6 |
 | 延迟、发射间隔 | latency, issue interval | 4.1 |
-| 通道、掩码 | lane, mask | 4.3 |
-| 超长指令字、指令包、槽 | VLIW, bundle, slot | 4.4 |
-| 记分板 | scoreboard | 4.4 |
+| 通道、掩码、向量寄存器 | lane, mask, vector register | 4.3 |
+| 循环移位 | rotation | 4.4 |
+| 静态调度、超长指令字、指令包、槽 | static scheduling, VLIW, bundle, slot | 4.6 |
+| 记分板、线程 | scoreboard, thread | 4.7 |
 | 完成计数器（同步标志、信号量） | completion counter (sync flag, semaphore) | 4.5 |
 | 一致递推、时空映射 | uniform recurrence, space-time mapping | 5.2 |
 | 输出驻留、权重驻留、输入驻留 | output / weight / input stationary | 5.2 |
