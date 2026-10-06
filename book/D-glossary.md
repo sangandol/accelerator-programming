@@ -43,10 +43,11 @@
 | 静态调度、超长指令字、指令包、槽 | static scheduling, VLIW, bundle, slot | 4.6 |
 | 记分板、线程 | scoreboard, thread | 4.7 |
 | 完成计数器（同步标志、信号量） | completion counter (sync flag, semaphore) | 4.5 |
-| 一致递推、时空映射 | uniform recurrence, space-time mapping | 5.2 |
-| 输出驻留、权重驻留、输入驻留 | output / weight / input stationary | 5.2 |
-| 脉动阵列 | systolic array | 5.3 |
-| 结构化稀疏 | structured sparsity (2:4) | 5.5 |
+| 脉动阵列、斜排 | systolic array, skew | 5.2 |
+| 一致递推、时空映射、广播 | uniform recurrence, space-time mapping, broadcast | 5.3 |
+| 输出驻留、权重驻留、输入驻留 | output / weight / input stationary | 5.3 |
+| MMA 操作、点积单元 | matrix multiply-accumulate (MMA), dot-product unit | 5.5 |
+| 结构化稀疏 | structured sparsity (2:4) | 5.6 |
 | 算术强度、屋顶线、拐点 | arithmetic intensity, roofline, ridge point | 6.2 |
 | 融合 | fusion | 6.2 |
 | 波次量化 | wave quantization | 6.6 |

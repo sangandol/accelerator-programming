@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="674" height="209" viewBox="18 -8 674 209" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<rect x="18" y="-8" width="674" height="209" rx="8" fill="#ffffff"/>
+<rect x="74" y="64" width="42" height="36" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="128" y="64" width="42" height="36" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="74" y="114" width="42" height="36" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="128" y="114" width="42" height="36" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="244" y="64" width="42" height="36" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="298" y="64" width="42" height="36" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="244" y="114" width="42" height="36" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="298" y="114" width="42" height="36" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="414" y="64" width="42" height="36" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="468" y="64" width="42" height="36" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="414" y="114" width="42" height="36" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="468" y="114" width="42" height="36" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="584" y="64" width="42" height="36" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="638" y="64" width="42" height="36" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="584" y="114" width="42" height="36" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="638" y="114" width="42" height="36" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<text x="95" y="86.6" text-anchor="middle" font-size="13" fill="#b45f06">5</text>
+<text x="149" y="86.6" text-anchor="middle" font-size="13" fill="#3a5a8c">0</text>
+<text x="95" y="136.6" text-anchor="middle" font-size="13" fill="#3a5a8c">0</text>
+<text x="149" y="136.6" text-anchor="middle" font-size="13" fill="#3a5a8c">0</text>
+<text x="56" y="86.6" text-anchor="middle" font-size="13" fill="#b45f06">1</text>
+<text x="95" y="50.6" text-anchor="middle" font-size="13" fill="#2e7d32">5</text>
+<text x="122" y="184.6" text-anchor="middle" font-size="13" fill="#222">第 0 拍</text>
+<text x="265" y="86.6" text-anchor="middle" font-size="13" fill="#b45f06">19</text>
+<text x="319" y="86.6" text-anchor="middle" font-size="13" fill="#b45f06">6</text>
+<text x="265" y="136.6" text-anchor="middle" font-size="13" fill="#b45f06">15</text>
+<text x="319" y="136.6" text-anchor="middle" font-size="13" fill="#3a5a8c">0</text>
+<text x="226" y="86.6" text-anchor="middle" font-size="13" fill="#b45f06">2</text>
+<text x="226" y="136.6" text-anchor="middle" font-size="13" fill="#b45f06">3</text>
+<text x="265" y="50.6" text-anchor="middle" font-size="13" fill="#2e7d32">7</text>
+<text x="319" y="50.6" text-anchor="middle" font-size="13" fill="#2e7d32">6</text>
+<text x="292" y="184.6" text-anchor="middle" font-size="13" fill="#222">第 1 拍</text>
+<text x="435" y="86.6" text-anchor="middle" font-size="13" fill="#3a5a8c">19</text>
+<text x="489" y="86.6" text-anchor="middle" font-size="13" fill="#b45f06">22</text>
+<text x="435" y="136.6" text-anchor="middle" font-size="13" fill="#b45f06">43</text>
+<text x="489" y="136.6" text-anchor="middle" font-size="13" fill="#b45f06">18</text>
+<text x="396" y="136.6" text-anchor="middle" font-size="13" fill="#b45f06">4</text>
+<text x="489" y="50.6" text-anchor="middle" font-size="13" fill="#2e7d32">8</text>
+<text x="462" y="184.6" text-anchor="middle" font-size="13" fill="#222">第 2 拍</text>
+<text x="605" y="86.6" text-anchor="middle" font-size="13" fill="#3a5a8c">19</text>
+<text x="659" y="86.6" text-anchor="middle" font-size="13" fill="#3a5a8c">22</text>
+<text x="605" y="136.6" text-anchor="middle" font-size="13" fill="#3a5a8c">43</text>
+<text x="659" y="136.6" text-anchor="middle" font-size="13" fill="#b45f06">50</text>
+<text x="632" y="184.6" text-anchor="middle" font-size="13" fill="#222">第 3 拍</text>
+<text x="30" y="16.2" text-anchor="start" font-size="12" fill="#666">方框中是这一拍结束时的累加器；左边是这一拍进入的 <tspan font-style="italic">A</tspan> 元素，上边是进入的 <tspan font-style="italic">B</tspan> 元素</text>
+</svg>

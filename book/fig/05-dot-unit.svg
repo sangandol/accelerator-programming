@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="534" height="311" viewBox="31 -3 534 311" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="31" y="-3" width="534" height="311" rx="8" fill="#ffffff"/>
+<circle cx="60" cy="66" r="15" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="150" cy="66" r="15" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="240" cy="66" r="15" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="330" cy="66" r="15" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="105" cy="126" r="15" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="285" cy="126" r="15" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="195" cy="186" r="15" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="195" cy="246" r="15" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="290" y="230" width="110" height="32" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<polyline points="60,30 60,51" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="150,30 150,51" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="240,30 240,51" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="330,30 330,51" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="69,78 96,114" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="141,78 114,114" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="249,78 276,114" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="321,78 294,114" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="117.5,134.3 182.5,177.7" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="272.5,134.3 207.5,177.7" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="195,201 195,231" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="290,246 210,246" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="195,261 195,296 345,296 345,262" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<text x="60" y="22.6" text-anchor="middle" font-size="13" fill="#222"><tspan font-style="italic">a</tspan><tspan dy="3.9" font-size="9.4">0</tspan><tspan dy="-3.9">, </tspan><tspan font-style="italic">b</tspan><tspan dy="3.9" font-size="9.4">0</tspan></text>
+<text x="60" y="71.6" text-anchor="middle" font-size="16" fill="#3a5a8c">×</text>
+<text x="150" y="22.6" text-anchor="middle" font-size="13" fill="#222"><tspan font-style="italic">a</tspan><tspan dy="3.9" font-size="9.4">1</tspan><tspan dy="-3.9">, </tspan><tspan font-style="italic">b</tspan><tspan dy="3.9" font-size="9.4">1</tspan></text>
+<text x="150" y="71.6" text-anchor="middle" font-size="16" fill="#3a5a8c">×</text>
+<text x="240" y="22.6" text-anchor="middle" font-size="13" fill="#222"><tspan font-style="italic">a</tspan><tspan dy="3.9" font-size="9.4">2</tspan><tspan dy="-3.9">, </tspan><tspan font-style="italic">b</tspan><tspan dy="3.9" font-size="9.4">2</tspan></text>
+<text x="240" y="71.6" text-anchor="middle" font-size="16" fill="#3a5a8c">×</text>
+<text x="330" y="22.6" text-anchor="middle" font-size="13" fill="#222"><tspan font-style="italic">a</tspan><tspan dy="3.9" font-size="9.4">3</tspan><tspan dy="-3.9">, </tspan><tspan font-style="italic">b</tspan><tspan dy="3.9" font-size="9.4">3</tspan></text>
+<text x="330" y="71.6" text-anchor="middle" font-size="16" fill="#3a5a8c">×</text>
+<text x="105" y="131.6" text-anchor="middle" font-size="16" fill="#3a5a8c">+</text>
+<text x="285" y="131.6" text-anchor="middle" font-size="16" fill="#3a5a8c">+</text>
+<text x="195" y="191.6" text-anchor="middle" font-size="16" fill="#3a5a8c">+</text>
+<text x="195" y="251.6" text-anchor="middle" font-size="16" fill="#b45f06">+</text>
+<text x="345" y="250.2" text-anchor="middle" font-size="12" fill="#b45f06">累加器 <tspan font-style="italic">c</tspan></text>
+<text x="430" y="70.2" text-anchor="start" font-size="12" fill="#666">4 个乘法器同时工作</text>
+<text x="430" y="160.2" text-anchor="start" font-size="12" fill="#666">加法树：log<tspan dy="3.6" font-size="8.6">2</tspan><tspan dy="-3.6"> 4 = 2 级</tspan></text>
+<text x="430" y="250.2" text-anchor="start" font-size="12" fill="#666">再加到累加器上</text>
+</svg>

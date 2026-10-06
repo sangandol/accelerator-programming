@@ -108,4 +108,73 @@ export default {
     f.box(250, 120, 14, 14, '', { color: 'gray', rx: 2 });
     f.text(270, 127, '补零（浪费）', { anchor: 'start', size: 12 });
   },
+
+  // 图：2 × 2 输出驻留阵列的四拍（A = [[1,2],[3,4]]，B = [[5,6],[7,8]]）
+  '05-os-snapshots'(f) {
+    const A = [[1, 2], [3, 4]];
+    const B = [[5, 6], [7, 8]];
+    const c = [[0, 0], [0, 0]];
+    for (let t = 0; t < 4; t++) {
+      const x0 = 30 + t * 170;
+      for (let i = 0; i < 2; i++)
+        for (let j = 0; j < 2; j++) {
+          const k = t - i - j;
+          const active = k >= 0 && k < 2;
+          if (active) c[i][j] += A[i][k] * B[k][j];
+          f.box(x0 + 44 + j * 54, 64 + i * 50, 42, 36, String(c[i][j]), { color: active ? 'orange' : 'blue', size: 13 });
+        }
+      for (let i = 0; i < 2; i++) {
+        const k = t - i;
+        if (k >= 0 && k < 2) f.text(x0 + 26, 64 + i * 50 + 18, String(A[i][k]), { size: 13, color: '#b45f06' });
+      }
+      for (let j = 0; j < 2; j++) {
+        const k = t - j;
+        if (k >= 0 && k < 2) f.text(x0 + 44 + j * 54 + 21, 46, String(B[k][j]), { size: 13, color: '#2e7d32' });
+      }
+      f.note(x0 + 92, 180, `第 ${t} 拍`, { color: '#222', size: 13 });
+    }
+    f.note(30, 12, '方框中是这一拍结束时的累加器；左边是这一拍进入的 $A$ 元素，上边是进入的 $B$ 元素', { anchor: 'start' });
+  },
+
+  // 图：点积单元算一个输出元素（k = 4）
+  '05-dot-unit'(f) {
+    const xs = [60, 150, 240, 330];
+    const muls = xs.map((x, t) => {
+      f.text(x, 18, `$a_${t}, b_${t}$`, { size: 13 });
+      const n = f.node(x, 66, '×', { r: 15 });
+      f.arrow([x, 30], [x, 51]);
+      return n;
+    });
+    const s1 = [f.node(105, 126, '+', { r: 15 }), f.node(285, 126, '+', { r: 15 })];
+    [0, 1].forEach((h) => { f.link(muls[2 * h], s1[h]); f.link(muls[2 * h + 1], s1[h]); });
+    const s2 = f.node(195, 186, '+', { r: 15 });
+    s1.forEach((n) => f.link(n, s2));
+    const acc = f.node(195, 246, '+', { r: 15, color: 'orange' });
+    f.link(s2, acc);
+    const reg = f.box(290, 230, 110, 32, '累加器 $c$', { color: 'orange', size: 12 });
+    f.link(reg, acc, { arrow: 'end' });
+    f.line([[195, 261], [195, 296], [345, 296], [345, reg.y + reg.h]], { arrow: 'end' });
+    f.note(430, 66, '4 个乘法器同时工作', { anchor: 'start' });
+    f.note(430, 156, '加法树：$\\log_2 4 = 2$ 级', { anchor: 'start' });
+    f.note(430, 246, '再加到累加器上', { anchor: 'start' });
+  },
+
+  // 图：2:4 稀疏
+  '05-sparse'(f) {
+    const row = [0, 3, 0, -1, 2, 0, 0, 5];
+    const g = f.grid(60, 34, { rows: 1, cols: 8, cw: 36, ch: 28, size: 13, fill: (r, c) => (row[c] ? 'blue' : 'gray'), label: (r, c) => row[c] });
+    f.line([[g.cell(0, 4).x, g.y - 6], [g.cell(0, 4).x, g.y + g.h + 6]], { color: 'red', width: 2 });
+    f.note(g.cx, 18, '$A$ 的一行：每 4 个元素中至多 2 个非零', { color: '#222' });
+    const vals = [3, -1, 2, 5];
+    const pos = [1, 3, 0, 3];
+    const v = f.grid(110, 110, { rows: 1, cols: 4, cw: 36, ch: 28, size: 13, fill: () => 'blue', label: (r, c) => vals[c] });
+    const p = f.grid(110, 150, { rows: 1, cols: 4, cw: 36, ch: 28, size: 13, fill: () => 'yellow', label: (r, c) => pos[c] });
+    f.text(v.x - 10, v.y + 14, '非零值', { anchor: 'end', size: 12 });
+    f.text(p.x + p.w + 10, p.y + 14, '组内位置（每个 2 位）', { anchor: 'start', size: 12 });
+    const pick = [1, 3, 4, 7];
+    const Bg = f.grid(440, 20, { rows: 8, cols: 4, cw: 22, ch: 20, stroke: '#bbb', fill: (r) => (pick.includes(r) ? 'orange' : null) });
+    for (let r = 0; r < 8; r++) f.note(Bg.x + Bg.w + 10, Bg.cell(r, 0).cy, `第 ${r} 行`, { anchor: 'start' });
+    f.note(Bg.cx, Bg.y + Bg.h + 16, '$B$：只取 4 行', { color: '#222' });
+    vals.forEach((_, c) => f.line([v.cell(0, c).T(), [Bg.x, Bg.cell(pick[c], 0).cy]], { color: 'orange', width: 1.4, arrow: 'end' }));
+  },
 };
