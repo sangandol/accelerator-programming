@@ -90,7 +90,7 @@ def column_sum(x_blk):                                   # x_blk 是本设备的
 
 若全局输入的形状是 $(8, 4)$、沿 $x$（大小 2）分片，函数收到的 `x_blk` 是 $(4, 4)$。`in_specs` 说明全局数组怎样切成局部块，`out_specs` 说明局部输出怎样拼成全局数组。
 
-集合原语以轴名指定参与的设备（定义 7.4）：
+集合原语以轴名指定参与的设备（定义 7.8）：
 
 | 原语 | 集合操作 |
 | --- | --- |
@@ -105,7 +105,7 @@ def column_sum(x_blk):                                   # x_blk 是本设备的
 
 **一个常见的错误**：对一个本来就复制的值做 `psum`，结果是它的 $\lvert x \rvert$ 倍，因为每台设备都贡献了同一个值（习题 14.3）。
 
-> **例 14.2（通信与计算重叠的矩阵乘法）** 计算 $Y[N, F_x] = X[N_x, D] \cdot W[D, F_x]$：直接的做法是先 all-gather $X$ 再相乘。按命题 7.10，可以把 all-gather 拆成环形的 $p - 1$ 次置换，每收到一块就先乘这一块：
+> **例 14.2（通信与计算重叠的矩阵乘法）** 计算 $Y[N, F_x] = X[N_x, D] \cdot W[D, F_x]$：直接的做法是先 all-gather $X$ 再相乘。按命题 7.18，可以把 all-gather 拆成环形的 $p - 1$ 次置换，每收到一块就先乘这一块：
 >
 > ```python
 > @jax.jit
@@ -218,7 +218,7 @@ def total(w):
 
 <details><summary>提示</summary>
 
-命题 7.5。
+命题 7.9。
 
 </details>
 <details><summary>答案</summary>
@@ -229,7 +229,7 @@ def all_reduce(x):                         # x: 本地的完整向量，形状 (
     return jax.lax.all_gather(part, "x", tiled=True)                        # (n,)
 ```
 
-由命题 7.5，结果与 `psum(x, "x")` 相同；编译器对 `psum` 通常也是这样实现的。显式拆开的好处是可以在两步之间插入计算，例如序列并行中在 reduce-scatter 与 all-gather 之间做归一化（12.4 节），使这部分计算只在 $1/p$ 的数据上进行。
+由命题 7.9，结果与 `psum(x, "x")` 相同；编译器对 `psum` 通常也是这样实现的。显式拆开的好处是可以在两步之间插入计算，例如序列并行中在 reduce-scatter 与 all-gather 之间做归一化（12.4 节），使这部分计算只在 $1/p$ 的数据上进行。
 
 </details>
 
@@ -242,7 +242,7 @@ def all_reduce(x):                         # x: 本地的完整向量，形状 (
 </details>
 <details><summary>答案</summary>
 
-计算 $2 \times 1024 \times 8192 \times 1024 \approx 1.7 \times 10^{10}$ FLOP，约 66 µs；通信 $1024 \times 8192 \times 2 = 16$ MiB，约 168 µs。通信比计算慢，不能完全掩盖，总时间约为 $7 \times 168 + 66 \approx 1.24$ ms（命题 7.10），而不重叠时约 $7 \times 168 + 8 \times 66 \approx 1.70$ ms。要完全掩盖，需要每块的计算更多（例如更大的 $F/p$），即张量并行的规模更小（命题 12.5）。
+计算 $2 \times 1024 \times 8192 \times 1024 \approx 1.7 \times 10^{10}$ FLOP，约 66 µs；通信 $1024 \times 8192 \times 2 = 16$ MiB，约 168 µs。通信比计算慢，不能完全掩盖，总时间约为 $7 \times 168 + 66 \approx 1.24$ ms（命题 7.18），而不重叠时约 $7 \times 168 + 8 \times 66 \approx 1.70$ ms。要完全掩盖，需要每块的计算更多（例如更大的 $F/p$），即张量并行的规模更小（命题 12.5）。
 
 </details>
 

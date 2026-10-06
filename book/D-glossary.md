@@ -52,8 +52,10 @@
 | 访存受限、计算受限 | memory-bound, compute-bound | 6.2 |
 | 融合 | fusion | 6.3 |
 | 波次量化 | wave quantization | 6.8 |
-| 链路、拓扑、环面、二分带宽 | link, topology, torus, bisection bandwidth | 7.1 |
-| 集合操作 | collective operation | 7.2 |
+| 链路 | link | 7.1 |
+| 拓扑、环面、直径、二分带宽 | topology, torus, diameter, bisection bandwidth | 7.2 |
+| 集合操作 | collective operation | 7.3 |
+| 信用 | credit | 7.9 |
 
 ## 第二部分　计算的共同结构
 

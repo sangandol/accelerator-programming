@@ -120,7 +120,7 @@ TensorCore 擅长规则的稠密计算，不擅长数据依赖的不规则访存
 
 ## 15.8 芯片间互联
 
-最后走出芯片。TPU 芯片之间用 **ICI**（inter-chip interconnect）直接相连，组成环面（定义 7.2）：
+最后走出芯片。TPU 芯片之间用 **ICI**（inter-chip interconnect）直接相连，组成环面（定义 7.3）：
 
 - **v4、v5p**：三维环面；v4 用光路交换机（OCS）把 $4 \times 4 \times 4$ 的立方体连成更大的切片，并可重新配置。v4 每条链路每方向约 45 GB/s。
 - **v5e、v6e**：二维环面，最大 256 颗芯片（$16 \times 16$）；v6e 每颗芯片 4 个 ICI 端口，双向合计 800 GB/s。
@@ -227,7 +227,7 @@ $T(S) = 484 + 1.1 K$ 周期。
 
 <details><summary>提示</summary>
 
-命题 7.9 推广到三维、双向：逐维做 reduce-scatter 与 all-gather，每一维的环可以双向使用，带宽项约为 $2n / \beta_{\text{inj}}$，$\beta_{\text{inj}}$ 是每颗芯片在一个阶段中实际使用的注入带宽。
+命题 7.17 推广到三维、双向：逐维做 reduce-scatter 与 all-gather，每一维的环可以双向使用，带宽项约为 $2n / \beta_{\text{inj}}$，$\beta_{\text{inj}}$ 是每颗芯片在一个阶段中实际使用的注入带宽。
 
 </details>
 <details><summary>答案</summary>

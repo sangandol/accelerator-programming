@@ -108,4 +108,38 @@ export default {
     f.arrow(r.L(0.75), s.R(0.75), { color: 'orange' });
     f.text(275, 106, '② 用完缓冲后，回送"信用"：可以再写了', { size: 12, color: 'orange' });
   },
+
+  // 图：例 7.x 中 all-reduce 的时间随数据量变化（64 个 rank，α = 5 µs，β = 100 GB/s）
+  '07-crossover'(f) {
+    const a = 5e-6;
+    const beta = 1e11;
+    const ns = Array.from({ length: 31 }, (_, k) => 10 ** (3 + k / 5));
+    const band = (n) => (2 * 63 / 64) * n / beta;
+    const ring = (n) => (126 * a + band(n)) * 1e6;
+    const dbl = (n) => (12 * a + band(n)) * 1e6;
+    f.plot(80, 30, {
+      w: 400, h: 230,
+      x: { min: 1e3, max: 1e9, log: true, label: '数据量 $n$（字节）', ticks: [1e3, 1e5, 1e7, 1e9] },
+      y: { min: 10, max: 1e5, log: true, label: '时间（µs）', ticks: [10, 100, 1e3, 1e4, 1e5] },
+      series: [
+        { pts: ns.map((n) => [n, ring(n)]), color: 'red', label: '环形', at: 5, dx: 6, dy: -12 },
+        { pts: ns.map((n) => [n, dbl(n)]), color: 'blue', label: '倍增', at: 20, dx: -10, dy: 16 },
+      ],
+    });
+  },
+
+  // 图：缓冲被覆盖与信用（上：错误；下：正确）
+  '07-overwrite'(f) {
+    f.note(40, 8, '(a) 发送方不等待：块 $D$ 覆盖了还在使用的块 $A$', { anchor: 'start', color: '#222', size: 13 });
+    f.timeline(80, 26, {
+      lanes: ['发送方', '接收方的缓冲', '接收方'], unit: 40, lh: 24, gap: 6, ticks: 1, axisLabel: '时间',
+      bars: [[0, 0, 1, '写 $A$', 'orange'], [0, 1, 2, '写 $D$', 'red'], [1, 1, 2, '$A$', 'blue'], [1, 2, 3, '$D$', 'red'], [2, 1, 3, '用 $A$ 计算', 'green']],
+    });
+    f.note(40, 188, '(b) 接收方用完后回送信用，发送方才写入', { anchor: 'start', color: '#222', size: 13 });
+    f.timeline(80, 206, {
+      lanes: ['发送方', '接收方的缓冲', '接收方'], unit: 40, lh: 24, gap: 6, ticks: 1, axisLabel: '时间',
+      bars: [[0, 0, 1, '写 $A$', 'orange'], [0, 3, 4, '写 $D$', 'orange'], [1, 1, 3, '$A$', 'blue'], [1, 4, 5, '$D$', 'blue'], [2, 1, 3, '用 $A$ 计算', 'green'], [2, 3, 4, '信用', 'yellow']],
+      deps: [[4, 5]],
+    });
+  },
 };
