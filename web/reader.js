@@ -185,10 +185,10 @@
   // ---- reader settings ------------------------------------------------------------------------
   // Stored as rd-<key>; only values that differ from the default are kept (the page head applies them before paint).
   const CHOICES = [
-    ['font', '字体', 'song', [['song', '宋体', 'sample-song'], ['hei', '黑体', 'sample-hei'], ['kai', '楷体', 'sample-kai']]],
+    ['font', '字体', 'kai', [['song', '宋体', 'sample-song'], ['hei', '黑体', 'sample-hei'], ['kai', '楷体', 'sample-kai']]],
     ['width', '行宽', 'wide', [['narrow', '窄'], ['medium', '中'], ['wide', '宽'], ['full', '满']]],
     ['lh', '行距', 'normal', [['tight', '紧'], ['normal', '中'], ['loose', '松']]],
-    ['theme', '背景', 'auto', [['auto', '跟随系统'], ['light', '白'], ['sepia', '米黄'], ['dark', '黑']]],
+    ['theme', '背景', 'sepia', [['auto', '跟随系统'], ['light', '白'], ['sepia', '米黄'], ['dark', '黑']]],
   ];
   const FS = { min: 14, max: 24, def: 18 };
   const setChoice = (key, value, def) => {

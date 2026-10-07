@@ -1,29 +1,8 @@
 /* Reader styles. Few colors: text, gray rules, one link color; figures keep their own accent.
    Reader settings live on <html>: data-font (song | hei | kai), data-width (narrow | medium | wide | full),
-   data-lh (tight | normal | loose), data-theme (light | sepia | dark; absent = follow the system), --fs (px). */
+   data-lh (tight | normal | loose), data-theme (auto | light | sepia | dark; absent = sepia), --fs (px).
+   The default body font is 楷体. */
 :root {
-  --fg: #222220;
-  --bg: #fdfdfb;
-  --bg-elev: #ffffff;
-  --muted: #6e6e6a;
-  --rule: #dcdcd7;
-  --rule-strong: #a3a39d;
-  --code-bg: #f3f3ef;
-  --link: #2a5aa8;
-  --hit: #fff0a8;
-  --shadow: rgba(0, 0, 0, 0.14);
-  --w-on: #b23a2c;
-  --w-soft: #f1efe9;
-  --fs: 18px;
-  --measure: 52em;
-  --lh: 1.85;
-  --font-song: "Noto Serif SC", "Source Han Serif SC", "Noto Serif CJK SC", "Songti SC", "STSong", Cambria, "SimSun", serif;
-  --font-hei: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
-  --font-kai: "LXGW WenKai Screen", "Kaiti SC", "STKaiti", Cambria, "KaiTi", serif;
-  --font-ui: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
-  --font-body: var(--font-song);
-}
-:root[data-theme="sepia"] {
   --fg: #3a3127;
   --bg: #f5efe2;
   --bg-elev: #fbf7ee;
@@ -33,11 +12,34 @@
   --code-bg: #ede4d2;
   --link: #2e5b88;
   --hit: #f3dc96;
+  --shadow: rgba(0, 0, 0, 0.14);
+  --w-on: #b23a2c;
   --w-soft: #ebe1cc;
+  color-scheme: light;
+  --fs: 18px;
+  --measure: 52em;
+  --lh: 1.85;
+  --font-song: "Noto Serif SC", "Source Han Serif SC", "Noto Serif CJK SC", "Songti SC", "STSong", Cambria, "SimSun", serif;
+  --font-hei: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+  --font-kai: "LXGW WenKai Screen", "Kaiti SC", "STKaiti", Cambria, "KaiTi", serif;
+  --font-ui: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-body: var(--font-kai);
 }
-/* Dark palette: follows the system unless the page root names another theme; data-theme="dark" forces it. */
+:root[data-theme="light"], :root[data-theme="auto"] {
+  --fg: #222220;
+  --bg: #fdfdfb;
+  --bg-elev: #ffffff;
+  --muted: #6e6e6a;
+  --rule: #dcdcd7;
+  --rule-strong: #a3a39d;
+  --code-bg: #f3f3ef;
+  --link: #2a5aa8;
+  --hit: #fff0a8;
+  --w-soft: #f1efe9;
+}
+/* Follow the system only when explicitly selected; data-theme="dark" forces the dark palette. */
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme]) {
+  :root[data-theme="auto"] {
     --fg: #dadad6;
     --bg: #19191b;
     --bg-elev: #222326;
@@ -68,6 +70,7 @@
   --w-soft: #2a2b2f;
   color-scheme: dark;
 }
+:root[data-font="song"] { --font-body: var(--font-song); }
 :root[data-font="hei"] { --font-body: var(--font-hei); }
 :root[data-font="kai"] { --font-body: var(--font-kai); }
 :root[data-width="narrow"] { --measure: 34em; }

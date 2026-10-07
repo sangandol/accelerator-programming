@@ -2,7 +2,7 @@
 
 一本按数学书体例写的中文教程，从逻辑门出发自底向上讲到 TPU 与 GPU 上的 kernel 和分布式程序。正文在 [`book/`](book/README.md)，在 GitHub 上可以直接阅读（公式由 GitHub 渲染）。
 
-在线阅读：<https://sangandol.github.io/accelerator-programming/>。包含公式、章节导航、引用与术语预览、版式设置和互动图。
+在线阅读：<https://sangandol.github.io/accelerator-programming/>。包含公式、章节导航、引用与术语预览、版式设置和互动图。默认使用米黄色背景和霞鹜文楷，可在「版式」中调整。
 
 ## 本地阅读
 
