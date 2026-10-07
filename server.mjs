@@ -1,7 +1,7 @@
 // Local reader for the book in book/: renders Markdown + KaTeX on request and adds the reading aids
 // (boxed definitions and theorems, cross-reference and term previews, outline; see web/reader.js).
 import { createServer } from 'node:http';
-import { readFile, readdir, stat, writeFile } from 'node:fs/promises';
+import { cp, mkdir, readFile, readdir, stat, writeFile } from 'node:fs/promises';
 import { dirname, extname, join, normalize, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import MarkdownIt from 'markdown-it';
@@ -268,7 +268,10 @@ md.core.ruler.push('book_structure', (state) => {
     } else if (t.type === 'paragraph_open' && !boxed.has(i)) {
       const head = leading(tokens[i + 1], 'strong_open');
       const m = head?.match(LABEL);
-      if (m && m[1] !== '图') {
+      if (m?.[1] === '图') {
+        // Preserve the caption label until figure wrapping, which runs after reference linking.
+        tokens[i + 1].children[0].attrSet('class', 'figure-name');
+      } else if (m) {
         t.attrJoin('class', `label-para label-${KINDS[m[1]]}`);
         mark(t, tokens[i + 1].children[0], head, m);
       }
@@ -597,11 +600,63 @@ async function exportChapter(name, out) {
   console.log(`${out}: ${(html.length / 1024).toFixed(0)} KiB`);
 }
 
+// --build dist --base-path /repo/: the same reader, rendered ahead of time for static hosting.
+async function buildSite(out, basePath) {
+  const destination = resolve(out);
+  const base = `/${basePath.split('/').filter(Boolean).join('/')}/`.replace(/\/+/g, '/');
+  if (!/^\/(?:[A-Za-z0-9._~-]+\/)*$/.test(base) || base.split('/').includes('..')) {
+    throw new Error(`invalid base path: ${basePath}`);
+  }
+  const siteLink = (value) => {
+    if (/^(?:[a-z][a-z0-9+.-]*:|\/\/)/i.test(value)) return value;
+    const at = value.search(/[?#]/);
+    const path = at < 0 ? value : value.slice(0, at);
+    const suffix = at < 0 ? '' : value.slice(at);
+    return path.replace(/^\/(assets|book)\//, `${base}$1/`).replace(/\.md$/, '.html') + suffix;
+  };
+  const staticHtml = (html) => html.replace(/\b(href|src|data-file|data-ref|data-cited)="([^"]*)"/g, (_, attr, encoded) => {
+    const value = md.utils.unescapeAll(encoded);
+    const rewritten = attr === 'data-cited'
+      ? JSON.stringify(JSON.parse(value).map(([href, text]) => [siteLink(href), text]))
+      : siteLink(value);
+    return `${attr}="${escapeHtml(rewritten)}"`;
+  });
+  await mkdir(join(destination, 'book'), { recursive: true });
+  await cp(WEB, join(destination, 'assets'), { recursive: true });
+  await cp(KATEX, join(destination, 'assets', 'katex'), { recursive: true });
+  await cp(join(BOOK, 'fig'), join(destination, 'book', 'fig'), { recursive: true });
+  const files = (await readdir(BOOK)).filter((file) => file.endsWith('.md')).sort();
+  for (const file of files) {
+    const chapter = await renderChapter(file);
+    const html = staticHtml(chapter.html);
+    await writeFile(join(destination, 'book', file.replace(/\.md$/, '.html')), html);
+    if (file === 'README.md') await writeFile(join(destination, 'book', 'index.html'), html);
+  }
+  const figures = (await readdir(join(BOOK, 'fig'))).filter((file) => file.endsWith('.svg')).sort();
+  const gallery = '<h1>插图</h1>\n' + figures.map((file) =>
+    `<section data-figure="${escapeHtml(file)}"><h3>${escapeHtml(file)}</h3><p><img src="/book/fig/${escapeHtml(file)}" alt="${escapeHtml(file)}"></p></section>`
+  ).join('\n') + `<script>
+const prefix = new URLSearchParams(location.search).get('f') || '';
+for (const figure of document.querySelectorAll('[data-figure]')) figure.hidden = !figure.dataset.figure.startsWith(prefix);
+</script>`;
+  await writeFile(join(destination, 'book', 'fig', 'index.html'), staticHtml(page('插图', gallery, '<a href="/book/">目录</a>')));
+  await writeFile(join(destination, 'index.html'), `<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>加速器编程：TPU、GPU、CUDA 与 JAX</title><meta http-equiv="refresh" content="0; url=book/"></head>
+<body><a href="book/">开始阅读《加速器编程：TPU、GPU、CUDA 与 JAX》</a></body></html>\n`);
+  await writeFile(join(destination, '.nojekyll'), '');
+  console.log(`${files.length} files built in ${destination}, base path: ${base}`);
+}
+
 if (process.argv.includes('--check')) {
   await check();
 } else if (process.argv.includes('--export')) {
   const at = process.argv.indexOf('--export');
   await exportChapter(process.argv[at + 1], process.argv[at + 2] ?? process.argv[at + 1].replace(/\.md$/, '.html'));
+} else if (process.argv.includes('--build')) {
+  const at = process.argv.indexOf('--build');
+  const baseArg = process.argv.indexOf('--base-path');
+  await buildSite(process.argv[at + 1] ?? 'dist', baseArg < 0 ? '/' : process.argv[baseArg + 1]);
 } else {
   const portArg = process.argv.indexOf('--port');
   const port = Number(portArg > 0 ? process.argv[portArg + 1] : process.env.PORT ?? 43202);

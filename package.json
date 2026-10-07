@@ -7,6 +7,8 @@
   "scripts": {
     "start": "node server.mjs",
     "check": "node server.mjs --check",
+    "build": "node server.mjs --build dist",
+    "check:site": "node tools/check-site.mjs dist",
     "fig": "node tools/figures.mjs"
   },
   "engines": {

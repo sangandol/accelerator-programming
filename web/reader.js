@@ -5,6 +5,7 @@
 (() => {
   const main = document.querySelector('main');
   if (!main) return;
+  const widgetSrc = new URL('widgets.js', document.currentScript?.src || new URL('/assets/reader.js', location.href)).href;
   // This page's chapter file (as in data-ref="01-x.md#…"), also when the page is an exported copy.
   const file = main.dataset.file || decodeURIComponent(location.pathname.split('/').pop() || 'README.md');
   const root = document.documentElement;
@@ -388,5 +389,5 @@
   addEventListener('resize', barHeight);
 
   // ---- interactive figures --------------------------------------------------------------------
-  if (main.querySelector('[data-widget]') && !window.bookWidgets) document.head.append(h('script', { src: '/assets/widgets.js', defer: '' }));
+  if (main.querySelector('[data-widget]') && !window.bookWidgets) document.head.append(h('script', { src: widgetSrc, defer: '' }));
 })();
