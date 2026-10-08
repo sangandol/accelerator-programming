@@ -35,4 +35,10 @@ export default {
     for(let i=0;i<4;i++) {f.box(25,40+i*65,140,42,rows[i],{color:'blue'});f.box(230,40+i*65,260,42,labels[i],{color:'orange'});f.arrow([165,61+i*65],[230,61+i*65]);}
     f.note(25,335,'迁移保留算法与不变量；按目标代际重填四列参数',{anchor:'start'});
   },
+  "15-cmem-paths": function(f) {
+    const a=f.box(25,100,120,65,'共享 CMEM',{color:'orange'}), b=f.box(240,30,145,55,'DMA → VMEM',{color:'blue'}), c=f.box(240,195,145,55,'cld → crf',{color:'purple'}),d=f.box(480,100,135,65,'向量寄存器',{color:'green'});
+    f.link(a,b,{arrow:'end'});f.link(a,c,{arrow:'end'});f.link(b,d,{arrow:'end'});f.link(c,d,{arrow:'end'});
+    f.note(390,65,'vld');f.note(445,220,'vpop');
+    f.note(320,325,'v4 的两条读路径；直接读仍受专用槽、队列和延迟约束');
+  },
 };

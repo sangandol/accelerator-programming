@@ -23,4 +23,13 @@ export default {
     }
     f.arrow([305,115],[360,115],{arrow:'both'});f.note(335,230,'全局 mesh 和集合调用跨两主机');
   },
+  "14-replication-budget": function(f) {
+    f.text(280,20,'全局 8×16，mesh {x:2, y:4}');
+    for(let k=0;k<2;k++) {
+      const x=25+k*300; f.text(x+120,70,k?'P(x,None)：只切行':'P(x,y)：切行与列');
+      f.grid(x,100,{rows:2,cols:4,cw:60,ch:65,label:(i,j)=>k?`${i}:64`:`${i},${j}:16`,fill:(i,j)=>k?(i?'green':'blue'):['blue','orange','green','purple'][j]});
+      f.note(x+120,270,k?'每设备 64，总 512 元素':'每设备 16，总 128 元素');
+    }
+    f.note(300,320,'只切行时四个 y 坐标复制同一行块，物理总量增为四倍');
+  },
 };

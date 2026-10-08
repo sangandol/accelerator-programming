@@ -28,4 +28,11 @@ export default {
     f.timeline(95,30,{lanes:['段 0','段 1','段 2','段 3'],bars,unit:48,ticks:Array.from({length:12},(_,i)=>i)});
     f.note(95,320,'每段工作 8 个单位，总跨度 11；空泡占 3/11',{anchor:'start'});
   },
+  "12-pipeline-bubbles": function(f) {
+    const bars=[];
+    for(let i=0;i<4;i++)for(let j=0;j<4;j++)bars.push([i,i+j,i+j+1,`${j}`,'blue']);
+    f.timeline(100,45,{lanes:['阶段 0','阶段 1','阶段 2','阶段 3'],bars,unit:68,ticks:[0,1,2,3,4,5,6,7]});
+    f.note(340,320,'4 段、4 个等长任务：用时 7，空泡比例 3/7');
+    f.note(340,355,'图是单向抽象任务，训练的前后向需另行排程');
+  },
 };

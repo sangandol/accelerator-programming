@@ -22,4 +22,10 @@ export default {
     f.brace(90,320,522,'每头 16 段：共 128 个独立任务');
     f.box(135,390,340,45,'每头合并 16 份 (m,ℓ,u)，输出仍按头排列',{color:'orange',size:13});
   },
+  "26-merge-split-kv": function(f) {
+    const a=f.box(25,40,245,65,'KV 分片 0 → (m₀,ℓ₀,u₀)',{color:'blue',size:13}),b=f.box(350,40,245,65,'KV 分片 1 → (m₁,ℓ₁,u₁)',{color:'orange',size:13});
+    const c=f.box(180,210,265,60,'同一参考点下合并 ℓ 与 u',{color:'green'});f.link(a,c,{arrow:'end'});f.link(b,c,{arrow:'end'});
+    const d=f.box(180,335,265,50,'最终输出 u / ℓ',{color:'purple'});f.link(c,d,{arrow:'end'});
+    f.note(320,435,'直接平均两份已归一化输出，会丢失各分片的权重总量');
+  },
 };

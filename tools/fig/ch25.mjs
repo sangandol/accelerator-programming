@@ -21,4 +21,9 @@ export default {
     f.grid(120,65,{rows:4,cols:4,cw:115,ch:58,rowLabels:['载入 / 掩码','减最大值','求指数','写回'],label:(i,j)=>rows[i][j],fill:(i,j)=>j===3?'gray':'blue'});
     f.note(120,360,'填充值须分别适合最大值、指数和写回的语义',{anchor:'start'});
   },
+  "25-budget-spaces": function(f) {
+    const a=f.box(25,55,220,70,'共享内存：多份 A、B 块',{color:'blue',size:13}),b=f.box(355,55,260,70,'寄存器 / 矩阵存储：累加值',{color:'orange',size:13});
+    f.box(125,240,390,65,'分别检查容量，再看复用与驻留块数',{color:'green'});
+    f.note(320,390,'更大的输出块省输入流量，却增加累加状态；不能合并两种存储预算');
+  },
 };

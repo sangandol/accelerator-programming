@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="584" height="407" viewBox="13 18 584 407" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="13" y="18" width="584" height="407" rx="8" fill="#ffffff"/>
+<rect x="25" y="30" width="560" height="45" rx="6" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<rect x="25" y="145" width="150" height="65" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="230" y="145" width="150" height="65" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="435" y="145" width="150" height="65" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="160" y="285" width="290" height="60" rx="6" fill="#efe6f8" stroke="#6a3d9a" stroke-width="1.6"/>
+<polyline points="148.5,210 260.3,285" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="305,210 305,285" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="461.5,210 349.7,285" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<text x="305" y="57.4" text-anchor="middle" font-size="14" fill="#555555">固定查询 Q；键值按块进入</text>
+<text x="100" y="182.1" text-anchor="middle" font-size="13" fill="#3a5a8c">K₀,V₀ → 状态 s₀</text>
+<text x="305" y="182.1" text-anchor="middle" font-size="13" fill="#b45f06">K₁,V₁ → 状态 s₁</text>
+<text x="510" y="182.1" text-anchor="middle" font-size="13" fill="#2e7d32">K₂,V₂ → 状态 s₂</text>
+<text x="305" y="319.9" text-anchor="middle" font-size="14" fill="#6a3d9a">合并 (m,ℓ,u)，最后 u/ℓ</text>
+<text x="305" y="409.2" text-anchor="middle" font-size="12" fill="#666">保持未归一化的分子与分母，不存完整概率矩阵</text>
+</svg>

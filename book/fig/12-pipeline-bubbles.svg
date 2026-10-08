@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="594" height="342" viewBox="40 33 594 342" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-666-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#666"/></marker></defs>
+<rect x="40" y="33" width="594" height="342" rx="8" fill="#ffffff"/>
+<rect x="100" y="45" width="68" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="168" y="45" width="68" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="236" y="45" width="68" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="304" y="45" width="68" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="168" y="85" width="68" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="236" y="85" width="68" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="304" y="85" width="68" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="372" y="85" width="68" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="236" y="125" width="68" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="304" y="125" width="68" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="372" y="125" width="68" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="440" y="125" width="68" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="304" y="165" width="68" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="372" y="165" width="68" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="440" y="165" width="68" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="508" y="165" width="68" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<polyline points="100,205 594,205" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-666-10)"/>
+<polyline points="100,202 100,208" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="90" y="64.6" text-anchor="end" font-size="13" fill="#222">阶段 0</text>
+<text x="90" y="104.6" text-anchor="end" font-size="13" fill="#222">阶段 1</text>
+<text x="90" y="144.6" text-anchor="end" font-size="13" fill="#222">阶段 2</text>
+<text x="90" y="184.6" text-anchor="end" font-size="13" fill="#222">阶段 3</text>
+<text x="134" y="64.6" text-anchor="middle" font-size="13" fill="#3a5a8c">0</text>
+<text x="202" y="64.6" text-anchor="middle" font-size="13" fill="#3a5a8c">1</text>
+<text x="270" y="64.6" text-anchor="middle" font-size="13" fill="#3a5a8c">2</text>
+<text x="338" y="64.6" text-anchor="middle" font-size="13" fill="#3a5a8c">3</text>
+<text x="202" y="104.6" text-anchor="middle" font-size="13" fill="#3a5a8c">0</text>
+<text x="270" y="104.6" text-anchor="middle" font-size="13" fill="#3a5a8c">1</text>
+<text x="338" y="104.6" text-anchor="middle" font-size="13" fill="#3a5a8c">2</text>
+<text x="406" y="104.6" text-anchor="middle" font-size="13" fill="#3a5a8c">3</text>
+<text x="270" y="144.6" text-anchor="middle" font-size="13" fill="#3a5a8c">0</text>
+<text x="338" y="144.6" text-anchor="middle" font-size="13" fill="#3a5a8c">1</text>
+<text x="406" y="144.6" text-anchor="middle" font-size="13" fill="#3a5a8c">2</text>
+<text x="474" y="144.6" text-anchor="middle" font-size="13" fill="#3a5a8c">3</text>
+<text x="338" y="184.6" text-anchor="middle" font-size="13" fill="#3a5a8c">0</text>
+<text x="406" y="184.6" text-anchor="middle" font-size="13" fill="#3a5a8c">1</text>
+<text x="474" y="184.6" text-anchor="middle" font-size="13" fill="#3a5a8c">2</text>
+<text x="542" y="184.6" text-anchor="middle" font-size="13" fill="#3a5a8c">3</text>
+<text x="100" y="222.2" text-anchor="middle" font-size="12" fill="#666">0</text>
+<text x="598" y="209.2" text-anchor="start" font-size="12" fill="#666">时间</text>
+<text x="340" y="324.2" text-anchor="middle" font-size="12" fill="#666">4 段、4 个等长任务：用时 7，空泡比例 3/7</text>
+<text x="340" y="359.2" text-anchor="middle" font-size="12" fill="#666">图是单向抽象任务，训练的前后向需另行排程</text>
+</svg>

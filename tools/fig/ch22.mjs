@@ -21,4 +21,9 @@ export default {
     const bs=labels.map((s,i)=>f.box(20+i*145,65,115,52,s,{color:i===1||i===3?'orange':'blue'}));for(let i=0;i<4;i++)f.link(bs[i],bs[i+1],{arrow:'end'});
     f.note(20,195,'第一个屏障保护本轮读取；第二个保护下一轮覆盖',{anchor:'start'});
   },
+  "22-resource-min": function(f) {
+    f.bars(185,45,{items:[['寄存器上限',4,'blue'],['共享内存上限',2,'orange'],['线程 / warp 上限',8,'green'],['块数上限',16,'purple']],w:360,fmt:v=>`${v} 块`});
+    f.note(340,245,'取最小值：2 块 × 8 warp = 16 warp，算术占用率 25%');
+    f.note(340,285,'假设 256 线程/块、64 寄存器/线程、80 KiB 共享/块');
+  },
 };

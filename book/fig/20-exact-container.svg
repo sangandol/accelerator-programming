@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="604" height="407" viewBox="13 18 604 407" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="13" y="18" width="604" height="407" rx="8" fill="#ffffff"/>
+<rect x="25" y="30" width="185" height="55" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="355" y="30" width="250" height="55" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="25" y="200" width="185" height="55" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="280" y="190" width="325" height="150" rx="6" fill="none" stroke="#555555" stroke-width="1.6"/>
+<polyline points="210,57.5 355,57.5" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="480,85 480,150 120,150 117.5,200" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<text x="117.5" y="62.4" text-anchor="middle" font-size="14" fill="#3a5a8c">机器映像 I</text>
+<text x="480" y="62.1" text-anchor="middle" font-size="13" fill="#b45f06">精确清单 D(I) + 编码约束</text>
+<text x="117.5" y="232.4" text-anchor="middle" font-size="14" fill="#2e7d32">A(D(I)) = I</text>
+<text x="442" y="224.9" text-anchor="middle" font-size="14" fill="#222">可执行容器</text>
+<text x="442" y="267.2" text-anchor="middle" font-size="12" fill="#666">映像 + 分配 + 调用约定</text>
+<text x="442" y="307.2" text-anchor="middle" font-size="12" fill="#666">入口 + 程序身份 + 元数据</text>
+<text x="320" y="409.2" text-anchor="middle" font-size="12" fill="#666">恢复字节是表示正确；调度、同步与调用约定还要独立证明</text>
+</svg>

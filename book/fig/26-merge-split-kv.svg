@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="594" height="427" viewBox="13 28 594 427" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="13" y="28" width="594" height="427" rx="8" fill="#ffffff"/>
+<rect x="25" y="40" width="245" height="65" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="350" y="40" width="245" height="65" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="180" y="210" width="265" height="60" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="180" y="335" width="265" height="50" rx="6" fill="#efe6f8" stroke="#6a3d9a" stroke-width="1.6"/>
+<polyline points="179.5,105 282.9,210" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="441.5,105 341.2,210" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="312.5,270 312.5,335" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<text x="147.5" y="77.1" text-anchor="middle" font-size="13" fill="#3a5a8c">KV 分片 0 → (m₀,ℓ₀,u₀)</text>
+<text x="472.5" y="77.1" text-anchor="middle" font-size="13" fill="#b45f06">KV 分片 1 → (m₁,ℓ₁,u₁)</text>
+<text x="312.5" y="244.9" text-anchor="middle" font-size="14" fill="#2e7d32">同一参考点下合并 ℓ 与 u</text>
+<text x="312.5" y="364.9" text-anchor="middle" font-size="14" fill="#6a3d9a">最终输出 u / ℓ</text>
+<text x="320" y="439.2" text-anchor="middle" font-size="12" fill="#666">直接平均两份已归一化输出，会丢失各分片的权重总量</text>
+</svg>

@@ -19,4 +19,14 @@ export default {
     f.grid(335,115,{rows:1,cols:6,cw:43,ch:55,label:(i,j)=>j<2?'源 0':'源 2',fill:(i,j)=>j<2?'blue':'green'});f.text(464,75,'设备 1 的接收区：6 行');
     f.note(335,225,'源 0： [0,2)；源 2： [2,6)',{anchor:'start'});
   },
+  "19-storage-endpoints": function(f) {
+    for(let k=0;k<2;k++) {
+      const x=25+k*350;f.box(x,35,290,220,'',{hollow:true,color:'gray'});f.text(x+145,58,`芯片 ${k}`);
+      f.box(x+20,100,112,55,'TC0 VMEM',{color:'blue'});f.box(x+158,100,112,55,'TC1 VMEM',{color:'blue'});
+      f.box(x+20,190,250,40,'共享 CMEM / HBM',{color:'orange'});
+    }
+    f.arrow([315,210],[375,210]);
+    f.box(210,340,270,55,'主机 pinned memory',{color:'green'});
+    f.note(350,465,'目的存储、路由接收者与完成信号归属要分别确定');
+  },
 };

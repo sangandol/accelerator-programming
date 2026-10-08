@@ -110,6 +110,10 @@
 | 芯粒 | chiplet | 15.6 |
 | 切片 | slice | 15.8 |
 | 下标映射 | index map | 16.1 |
+| 收集；散布 | gather; scatter | 定义 16.14 |
+| 有状态生成器；计数器式生成器 | stateful PRNG; counter-based PRNG | 定义 16.19 |
+| 精确往返 | exact round trip | 定义 20.8 |
+| 局部周期计数器；全局时间计数器 | local cycle counter (LCC); global time counter (GTC) | 定义 20.13 |
 | 维度语义 | dimension semantics | 16.5 |
 | 标量预取 | scalar prefetch | 16.7 |
 | 解释器 | interpreter (interpret mode) | 16.8 |

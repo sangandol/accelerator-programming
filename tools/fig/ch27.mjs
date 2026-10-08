@@ -24,4 +24,9 @@ export default {
     f.link(src,recv,{arrow:'end'});f.link(recv,a,{arrow:'end'});f.link(recv,b,{arrow:'end'});
     f.note(220,95,'跨网卡');f.note(505,190,'域内复制');f.note(25,350,'路由和返回仍保留词元编号、专家身份与权重',{anchor:'start'});
   },
+  "27-ring-provenance": function(f) {
+    f.text(320,18,'四 GPU 的 all-gather：每轮只转发新收到的源块');
+    f.grid(100,65,{rows:4,cols:4,cw:100,ch:55,rowLabels:['设备 0','设备 1','设备 2','设备 3'],colLabels:['初始','轮 1','轮 2','轮 3'],label:(d,r)=>(d-r+4)%4,fill:(d,r)=>['blue','orange','green','purple'][(d-r+4)%4]});
+    f.note(320,355,'格中数字为该轮新收到的源块号；三轮后每设备齐备');
+  },
 };

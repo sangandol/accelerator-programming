@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="465" height="379" viewBox="47 -4 465 379" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<rect x="47" y="-4" width="465" height="379" rx="8" fill="#ffffff"/>
+<rect x="100" y="65" width="100" height="55" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="200" y="65" width="100" height="55" rx="0" fill="#efe6f8" stroke="#999" stroke-width="0.8"/>
+<rect x="300" y="65" width="100" height="55" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="400" y="65" width="100" height="55" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="100" y="120" width="100" height="55" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="200" y="120" width="100" height="55" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="300" y="120" width="100" height="55" rx="0" fill="#efe6f8" stroke="#999" stroke-width="0.8"/>
+<rect x="400" y="120" width="100" height="55" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="100" y="175" width="100" height="55" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="200" y="175" width="100" height="55" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="300" y="175" width="100" height="55" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="400" y="175" width="100" height="55" rx="0" fill="#efe6f8" stroke="#999" stroke-width="0.8"/>
+<rect x="100" y="230" width="100" height="55" rx="0" fill="#efe6f8" stroke="#999" stroke-width="0.8"/>
+<rect x="200" y="230" width="100" height="55" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="300" y="230" width="100" height="55" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="400" y="230" width="100" height="55" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<text x="320" y="22.9" text-anchor="middle" font-size="14" fill="#222">四 GPU 的 all-gather：每轮只转发新收到的源块</text>
+<text x="150" y="96.7" text-anchor="middle" font-size="12" fill="#3a5a8c">0</text>
+<text x="250" y="96.7" text-anchor="middle" font-size="12" fill="#6a3d9a">3</text>
+<text x="350" y="96.7" text-anchor="middle" font-size="12" fill="#2e7d32">2</text>
+<text x="450" y="96.7" text-anchor="middle" font-size="12" fill="#b45f06">1</text>
+<text x="150" y="151.7" text-anchor="middle" font-size="12" fill="#b45f06">1</text>
+<text x="250" y="151.7" text-anchor="middle" font-size="12" fill="#3a5a8c">0</text>
+<text x="350" y="151.7" text-anchor="middle" font-size="12" fill="#6a3d9a">3</text>
+<text x="450" y="151.7" text-anchor="middle" font-size="12" fill="#2e7d32">2</text>
+<text x="150" y="206.7" text-anchor="middle" font-size="12" fill="#2e7d32">2</text>
+<text x="250" y="206.7" text-anchor="middle" font-size="12" fill="#b45f06">1</text>
+<text x="350" y="206.7" text-anchor="middle" font-size="12" fill="#3a5a8c">0</text>
+<text x="450" y="206.7" text-anchor="middle" font-size="12" fill="#6a3d9a">3</text>
+<text x="150" y="261.7" text-anchor="middle" font-size="12" fill="#6a3d9a">3</text>
+<text x="250" y="261.7" text-anchor="middle" font-size="12" fill="#2e7d32">2</text>
+<text x="350" y="261.7" text-anchor="middle" font-size="12" fill="#b45f06">1</text>
+<text x="450" y="261.7" text-anchor="middle" font-size="12" fill="#3a5a8c">0</text>
+<text x="94" y="96.7" text-anchor="end" font-size="12" fill="#666">设备 0</text>
+<text x="94" y="151.7" text-anchor="end" font-size="12" fill="#666">设备 1</text>
+<text x="94" y="206.7" text-anchor="end" font-size="12" fill="#666">设备 2</text>
+<text x="94" y="261.7" text-anchor="end" font-size="12" fill="#666">设备 3</text>
+<text x="150" y="59.2" text-anchor="middle" font-size="12" fill="#666">初始</text>
+<text x="250" y="59.2" text-anchor="middle" font-size="12" fill="#666">轮 1</text>
+<text x="350" y="59.2" text-anchor="middle" font-size="12" fill="#666">轮 2</text>
+<text x="450" y="59.2" text-anchor="middle" font-size="12" fill="#666">轮 3</text>
+<text x="320" y="359.2" text-anchor="middle" font-size="12" fill="#666">格中数字为该轮新收到的源块号；三轮后每设备齐备</text>
+</svg>

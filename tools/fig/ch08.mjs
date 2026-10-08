@@ -50,4 +50,14 @@ export default {
     }
     f.note(20,330,'格是 32 字节段；段内有用字节以橙色表示',{anchor:'start'});
   },
+  "08-layout-compose": function(f) {
+    const labels=['逻辑下标 j','布局 L：旧位置','目标布局：新位置'];
+    const maps=[[0,1,2,3],[0,2,1,3],[3,2,1,0]];
+    for(let k=0;k<3;k++) {
+      f.text(70,71+k*130,labels[k],{anchor:'end',size:12});
+      f.grid(80,50+k*130,{rows:1,cols:4,cw:90,ch:42,label:(_,j)=>maps[k][j],fill:(_,j)=>['blue','orange','green','purple'][j]});
+      if(k<2) for(let j=0;j<4;j++) f.arrow([125+j*90,94+k*130],[125+j*90,174+k*130]);
+    }
+    f.note(260,400,'同色对应同一逻辑元素；转换是目标布局与旧布局逆映射的复合');
+  },
 };

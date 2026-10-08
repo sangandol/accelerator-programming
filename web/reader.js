@@ -180,6 +180,9 @@
   }
 
   // ---- English names after terms ----------------------------------------------------------------
+  for (const term of main.querySelectorAll('.term')) {
+    if (/^\s*（[A-Za-z]/.test(term.nextSibling?.textContent ?? '')) term.classList.add('term-inline-en');
+  }
   if (main.querySelector('.term, .term-def')) toggle('show-en', 'show-en', tool('英文', '在术语后面显示英文名'));
 
   // ---- reader settings ------------------------------------------------------------------------
@@ -389,5 +392,13 @@
   addEventListener('resize', barHeight);
 
   // ---- interactive figures --------------------------------------------------------------------
-  if (main.querySelector('[data-widget]') && !window.bookWidgets) document.head.append(h('script', { src: widgetSrc, defer: '' }));
+  if (main.querySelector('[data-widget]') && !window.bookWidgets) {
+    const loadWidgets = () => document.head.append(h('script', { src: widgetSrc }));
+    if (window.bookWidgetModels) loadWidgets();
+    else {
+      const models = h('script', { src: new URL('widget-models.js', widgetSrc).href });
+      models.addEventListener('load', loadWidgets, { once: true });
+      document.head.append(models);
+    }
+  }
 })();

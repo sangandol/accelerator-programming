@@ -14,4 +14,10 @@ export default {
     f.grid(30,50,{rows:4,cols:2,cw:230,ch:62,label:(i,j)=>rows[i][j],fill:(i,j)=>i%2?'orange':'blue'});
     f.note(30,355,'下降一层是增加控制能力，也增加需要证明的条件',{anchor:'start'});
   },
+  "24-lowering-contract": function(f) {
+    const a=f.box(25,40,190,65,'数学 tile：形状与掩码',{color:'blue',size:13});
+    const b=f.box(330,40,270,65,'后端：线程、布局、搬运、MMA',{color:'orange',size:13});f.link(a,b,{arrow:'end'});
+    const c=f.box(330,215,270,65,'机器程序：资源与同步约束',{color:'green'});f.link(b,c,{arrow:'end'});
+    f.note(290,360,'抽象省去映射细节，但数学覆盖、精度和依赖仍由规格确定');
+  },
 };

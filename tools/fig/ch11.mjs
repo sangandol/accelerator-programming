@@ -32,4 +32,9 @@ export default {
     f.note(20,195,'每份保留原词元编号和路由权重',{anchor:'start'});
     f.note(20,220,'最终仍输出 6 个词元的隐藏向量',{anchor:'start'});
   },
+  "11-kv-budget": function(f) {
+    f.text(330,18,'32 层、头维度 128、bf16：KV 的容量乘法');
+    f.bars(230,65,{items:[['B=1, T=8192, KV头=8',1,'blue'],['B=4, T=8192, KV头=8',4,'orange'],['B=1, T=32768, KV头=8',4,'green'],['B=1, T=8192, KV头=32',4,'purple']],w:330,fmt:v=>`${v} GiB`});
+    f.note(330,245,'基准为 1 GiB；任一因子扩大四倍，载荷也扩大四倍');
+  },
 };

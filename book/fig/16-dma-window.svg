@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="464" height="454" viewBox="18 -4 464 454" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<rect x="18" y="-4" width="464" height="454" rx="8" fill="#ffffff"/>
+<rect x="30" y="55" width="170" height="18" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="30" y="73" width="170" height="18" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="30" y="91" width="170" height="18" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="30" y="109" width="170" height="18" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="30" y="127" width="170" height="18" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="30" y="145" width="170" height="18" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="30" y="163" width="170" height="18" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="30" y="181" width="170" height="18" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="30" y="199" width="170" height="18" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="30" y="217" width="170" height="18" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="30" y="235" width="170" height="18" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="30" y="253" width="170" height="18" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="30" y="271" width="170" height="18" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="30" y="289" width="170" height="18" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="30" y="307" width="170" height="18" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="30" y="325" width="170" height="18" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="300" y="55" width="170" height="18" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="300" y="73" width="170" height="18" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="300" y="91" width="170" height="18" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="300" y="109" width="170" height="18" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="300" y="127" width="170" height="18" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="300" y="145" width="170" height="18" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="300" y="163" width="170" height="18" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="300" y="181" width="170" height="18" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="300" y="199" width="170" height="18" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="300" y="217" width="170" height="18" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="300" y="235" width="170" height="18" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="300" y="253" width="170" height="18" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="300" y="271" width="170" height="18" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="300" y="289" width="170" height="18" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="300" y="307" width="170" height="18" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="300" y="325" width="170" height="18" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="30" y="109" width="170" height="90" rx="2" fill="none" stroke="#3a5a8c" stroke-width="2.5"/>
+<rect x="30" y="199" width="170" height="54" rx="2" fill="none" stroke="#b45f06" stroke-width="2.5"/>
+<rect x="300" y="109" width="170" height="90" rx="2" fill="none" stroke="#3a5a8c" stroke-width="2.5"/>
+<rect x="300" y="199" width="170" height="54" rx="2" fill="none" stroke="#b45f06" stroke-width="2.5"/>
+<text x="140" y="22.9" text-anchor="middle" font-size="14" fill="#222">列 tile 0</text>
+<text x="115" y="68.2" text-anchor="middle" font-size="12" fill="#222">0</text>
+<text x="115" y="86.2" text-anchor="middle" font-size="12" fill="#222">1</text>
+<text x="115" y="104.2" text-anchor="middle" font-size="12" fill="#222">2</text>
+<text x="115" y="122.2" text-anchor="middle" font-size="12" fill="#3a5a8c">3</text>
+<text x="115" y="140.2" text-anchor="middle" font-size="12" fill="#3a5a8c">4</text>
+<text x="115" y="158.2" text-anchor="middle" font-size="12" fill="#3a5a8c">5</text>
+<text x="115" y="176.2" text-anchor="middle" font-size="12" fill="#3a5a8c">6</text>
+<text x="115" y="194.2" text-anchor="middle" font-size="12" fill="#3a5a8c">7</text>
+<text x="115" y="212.2" text-anchor="middle" font-size="12" fill="#b45f06">8</text>
+<text x="115" y="230.2" text-anchor="middle" font-size="12" fill="#b45f06">9</text>
+<text x="115" y="248.2" text-anchor="middle" font-size="12" fill="#b45f06">10</text>
+<text x="115" y="266.2" text-anchor="middle" font-size="12" fill="#222">11</text>
+<text x="115" y="284.2" text-anchor="middle" font-size="12" fill="#222">12</text>
+<text x="115" y="302.2" text-anchor="middle" font-size="12" fill="#222">13</text>
+<text x="115" y="320.2" text-anchor="middle" font-size="12" fill="#222">14</text>
+<text x="115" y="338.2" text-anchor="middle" font-size="12" fill="#222">15</text>
+<text x="410" y="22.9" text-anchor="middle" font-size="14" fill="#222">列 tile 1</text>
+<text x="385" y="68.2" text-anchor="middle" font-size="12" fill="#222">0</text>
+<text x="385" y="86.2" text-anchor="middle" font-size="12" fill="#222">1</text>
+<text x="385" y="104.2" text-anchor="middle" font-size="12" fill="#222">2</text>
+<text x="385" y="122.2" text-anchor="middle" font-size="12" fill="#3a5a8c">3</text>
+<text x="385" y="140.2" text-anchor="middle" font-size="12" fill="#3a5a8c">4</text>
+<text x="385" y="158.2" text-anchor="middle" font-size="12" fill="#3a5a8c">5</text>
+<text x="385" y="176.2" text-anchor="middle" font-size="12" fill="#3a5a8c">6</text>
+<text x="385" y="194.2" text-anchor="middle" font-size="12" fill="#3a5a8c">7</text>
+<text x="385" y="212.2" text-anchor="middle" font-size="12" fill="#b45f06">8</text>
+<text x="385" y="230.2" text-anchor="middle" font-size="12" fill="#b45f06">9</text>
+<text x="385" y="248.2" text-anchor="middle" font-size="12" fill="#b45f06">10</text>
+<text x="385" y="266.2" text-anchor="middle" font-size="12" fill="#222">11</text>
+<text x="385" y="284.2" text-anchor="middle" font-size="12" fill="#222">12</text>
+<text x="385" y="302.2" text-anchor="middle" font-size="12" fill="#222">13</text>
+<text x="385" y="320.2" text-anchor="middle" font-size="12" fill="#222">14</text>
+<text x="385" y="338.2" text-anchor="middle" font-size="12" fill="#222">15</text>
+<text x="255" y="399.2" text-anchor="middle" font-size="12" fill="#666">蓝段：5 行 × 2 列 tile = 10 个 granule</text>
+<text x="255" y="434.2" text-anchor="middle" font-size="12" fill="#666">橙段：3 行 × 2 列 tile = 6 个 granule；总 8192 bytes</text>
+</svg>

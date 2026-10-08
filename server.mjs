@@ -594,7 +594,7 @@ async function exportChapter(name, out) {
   for (const [tag, src] of [...html.matchAll(/<img src="(fig\/[^"]+\.svg)"/g)].map((m) => [m[0], m[1]])) {
     html = html.replace(tag, `<img src="${await data(join(BOOK, src), 'image/svg+xml')}"`);
   }
-  const scripts = await Promise.all(['widgets.js', 'reader.js'].map((f) => readFile(join(WEB, f), 'utf8')));
+  const scripts = await Promise.all(['widget-models.js', 'widgets.js', 'reader.js'].map((f) => readFile(join(WEB, f), 'utf8')));
   html = html.replace('</body>', `${scripts.map((js) => `<script>${js.replace(/<\/script/g, '<\\/script')}</script>`).join('\n')}\n</body>`);
   await writeFile(out, html);
   console.log(`${out}: ${(html.length / 1024).toFixed(0)} KiB`);

@@ -104,3 +104,51 @@ Pallas GPU：BlockSpec 级的 `pl.pallas_call` 可以经 Triton 后端运行；M
 | NVSHMEM 单边操作 | 由库规定 fence 的次序、quiet 的完成和信号的可见性 | 按库协议的目标消费确认，不可仅观察本地普通标志 |
 
 > **现状（2026-10-07）**：参见 [NCCL 的 stream 语义](https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/usage/streams.html) 与 [Using NVSHMEM](https://docs.nvidia.com/nvshmem/api/latest/using.html)。`fence` 用于次序并不等于交付已完成；普通 CUDA 原子操作也不能自动跟踪一次网络 put。选择路径之后，再证明第 9 章的读前与覆盖前两条边。
+
+## B.7 Pallas 与 tpuasm 的来源快照
+
+本节于 **2026-10-08** 核对。教程使用 TPU v4、JAX `0.12.0.dev20261002+7fc69a22c2`、jaxlib `0.12.0.dev20261002`、libtpu `0.0.49`；这与正文已有示例的 CPU 解释器环境 JAX 0.11.2 是两套环境。以下是阅读索引，不声称这些新接口在本机运行过。
+
+| 任务 | 来源中的接口或字段 | 正文使用 |
+| --- | --- | --- |
+| 显式 kernel 与设备核心轴 | `pl.kernel`、`pltpu.TensorCoreMesh`、`scratch_types` | 与定义 16.1 同样先写块、状态与所有权；不整体迁移已有 API |
+| 循环、局部可变状态、对齐承诺 | `pl.loop`、JAX Ref、`ref.at[pl.ds(...)]`、`pl.multiple_of` | 16.3、16.9 节；对齐承诺必须由实际索引保证 |
+| 更新既有缓冲的局部窗口 | `jax.new_ref`，把 Ref 传入显式 kernel | 16.9 节；旧状态、写区间及所有权显式给出，与数组的函数式更新分开 |
+| 有状态随机数 | `pltpu.prng_seed`、`pltpu.prng_random_bits`、`stateful_uniform`、`stateful_bernoulli` | 16.10 节；比特、种子混合与分布变换分开计账 |
+| 按块随机数 | Pallas key、`sample_block`；普通 `jax.random` 的 threefry key | 固定全局计数器映射；不同 key 实现不承诺序列相同 |
+| 导出与精确往返 | `executable_programs`、`dump_compiled`、`dump_executable`、`format_assembly(..., encoding='exact')`、`assemble_listing` | 定义 20.8；raw image 需显式 target |
+| 修改机器程序 | `replace_executable_programs`、`insert_executable_bundles`、`BundleInsertion`、`load_executable` | 命题 20.10；保留调用约定、分配与程序身份 |
+| 编译来源 | `compiler_source_mapping`、`executable_source_maps` | 20.6 节；按 (PC, slot) 追溯，未知保持未知 |
+| 局部计时 | `srdreg.lcclo`、`srdreg.lcchi`、`sfence` | 定义 20.11；先等完成，再跨栅栏边界读数 |
+| 全局事件 | `srdreg.gtclo`、`srdreg.gtchi`、`vtrace` | 定义 20.13；不能与 LCC 或原始低位直接混算 |
+
+tpuasm 还绑定 Python、libtpu 的 GNU build-id 和原生桥接后端，只有 `.target` 相同不能保证可用。其当前兼容性表列 Linux x86-64、CPython 3.14t 与特定 libtpu 0.0.48/0.0.49 组合；编解码可离线进行，实际装载仍需要相应设备与运行时。具体组合以[兼容性表](https://github.com/ayaka14732/tpuasm/blob/a6e3d927deb1dc5a906574e6b6bbfc8bc175d30d/docs/compatibility.md)为准。
+
+| target | 执行对象 | 格式中的关键差别 |
+| --- | --- | --- |
+| `tpu-v4-tc` | TensorCore | 12 槽；完整映像包数为 10 的正整数倍；`.align 10` |
+| `tpu-v4-bcs` | BarnaCore Sequencer | 两个标量槽；完整映像包数为 16 的正整数倍；semantic protobuf 与机器字节可互转 |
+| `tpu-v6e-tc` | TensorCore | 15 槽，四个向量算术槽、两个向量读槽；包数为 8 的正整数倍；DMA 与标量槽不能任意同包 |
+| `tpu-v6e-tec` | SparseCore 向量子核 | 12 槽，含 stream；不要求包数对齐；导出需显式 target，当前只支持等长替换，无来源注释 |
+
+这张表是工具的格式约束，不是吞吐表。v6e 的向量整数乘法形式还会占邻槽，不能把 v4“没有向量整数乘法器”的分析搬过去。汇编器会联合求解共享立即数、选择字段与端口，但不重排指令、不补分支延迟或同步。
+
+## B.8 教程报告的能力与接口边界
+
+以下均是 **2026-10-08 核对的来源报告**，没有本书的真机复测。目的是在审查时知道该查哪一层；特定版本的失败不写成永久定理。
+
+| 操作 | 教程报告的边界 | 本书的处理 |
+| --- | --- | --- |
+| 非对齐多列 tile 行窗口 | Mosaic 的单窗口降低拒绝；可拆跨步 DMA | 例 16.17 同时写源、目的布局和总载荷 |
+| 数值转换与位型重解释 | 窄格式需打包；浮点到整数有舍入/饱和语义 | 16.9 节要求规格给转换规则；bitcast 不代替数值转换 |
+| 整数逐元素运算 | v4 向量整数乘法需合成；部分无符号比较降低受限 | 16.10 节按机器操作计数，不按算法轮数估时 |
+| 子通道 gather 与 scatter | 子通道 gather 可移位选择合成；重复 scatter 需冲突语义 | 命题 16.15、例 16.16 |
+| 转置、拼接、扫描 | 打包转置的提交间隔不同；拼接跨边界要合并；cumsum 降低受限 | 16.9 节给数学构造，20.2 节限定参数适用形式 |
+| 显式 MXU FIFO | v4 的 `matmul_push_rhs`/`matmul_lhs_fifo` 路径曾选择错误权重来源；int8 路径受限 | 20.6 节核对实际 selector；保留已有 dot 示例 |
+| top-k | 有效项不足时，用值清除可能重复下标 | 例 16.18 独立维护有效性、选择历史与 tie-break |
+| CMEM | 硬件有 staging、直接读与远端路径；公开 scratch 分配受限 | 15.5、19.8 节分开可达性、分配、路由、完成 |
+| pinned host / 持久主机流 | 动态主机窗口和并发主机访问含公开接口限制或私有依赖 | 19.8 节只建立端点与信用协议，不提供未经验证的运行代码 |
+| 随机数、随机舍入 | 硬件状态作用域、Pallas/JAX key 差别；v4 stochastic_round 降低受限 | 16.10 节规定重放、端点、特殊值与生成代价 |
+| v6e selector 与 formatter | 字段宽度、显示常量和实际消费位宽未必相同；部分 encoder 槽形式受限 | 20.6 节分开文本、字节与执行证据；具体观察查附录 E 的执行语义文档 |
+
+逐节来源与审计范围见附录 E。

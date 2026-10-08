@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="564" height="342" viewBox="13 -2 564 342" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<rect x="13" y="-2" width="564" height="342" rx="8" fill="#ffffff"/>
+<rect x="25" y="100" width="60" height="65" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="85" y="100" width="60" height="65" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="145" y="100" width="60" height="65" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="205" y="100" width="60" height="65" rx="0" fill="#efe6f8" stroke="#999" stroke-width="0.8"/>
+<rect x="25" y="165" width="60" height="65" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="85" y="165" width="60" height="65" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="145" y="165" width="60" height="65" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="205" y="165" width="60" height="65" rx="0" fill="#efe6f8" stroke="#999" stroke-width="0.8"/>
+<rect x="325" y="100" width="60" height="65" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="385" y="100" width="60" height="65" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="445" y="100" width="60" height="65" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="505" y="100" width="60" height="65" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="325" y="165" width="60" height="65" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="385" y="165" width="60" height="65" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="445" y="165" width="60" height="65" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="505" y="165" width="60" height="65" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<text x="280" y="24.9" text-anchor="middle" font-size="14" fill="#222">全局 8×16，mesh {x:2, y:4}</text>
+<text x="145" y="74.9" text-anchor="middle" font-size="14" fill="#222">P(x,y)：切行与列</text>
+<text x="55" y="136.7" text-anchor="middle" font-size="12" fill="#3a5a8c">0,0:16</text>
+<text x="115" y="136.7" text-anchor="middle" font-size="12" fill="#b45f06">0,1:16</text>
+<text x="175" y="136.7" text-anchor="middle" font-size="12" fill="#2e7d32">0,2:16</text>
+<text x="235" y="136.7" text-anchor="middle" font-size="12" fill="#6a3d9a">0,3:16</text>
+<text x="55" y="201.7" text-anchor="middle" font-size="12" fill="#3a5a8c">1,0:16</text>
+<text x="115" y="201.7" text-anchor="middle" font-size="12" fill="#b45f06">1,1:16</text>
+<text x="175" y="201.7" text-anchor="middle" font-size="12" fill="#2e7d32">1,2:16</text>
+<text x="235" y="201.7" text-anchor="middle" font-size="12" fill="#6a3d9a">1,3:16</text>
+<text x="145" y="274.2" text-anchor="middle" font-size="12" fill="#666">每设备 16，总 128 元素</text>
+<text x="445" y="74.9" text-anchor="middle" font-size="14" fill="#222">P(x,None)：只切行</text>
+<text x="355" y="136.7" text-anchor="middle" font-size="12" fill="#3a5a8c">0:64</text>
+<text x="415" y="136.7" text-anchor="middle" font-size="12" fill="#3a5a8c">0:64</text>
+<text x="475" y="136.7" text-anchor="middle" font-size="12" fill="#3a5a8c">0:64</text>
+<text x="535" y="136.7" text-anchor="middle" font-size="12" fill="#3a5a8c">0:64</text>
+<text x="355" y="201.7" text-anchor="middle" font-size="12" fill="#2e7d32">1:64</text>
+<text x="415" y="201.7" text-anchor="middle" font-size="12" fill="#2e7d32">1:64</text>
+<text x="475" y="201.7" text-anchor="middle" font-size="12" fill="#2e7d32">1:64</text>
+<text x="535" y="201.7" text-anchor="middle" font-size="12" fill="#2e7d32">1:64</text>
+<text x="445" y="274.2" text-anchor="middle" font-size="12" fill="#666">每设备 64，总 512 元素</text>
+<text x="300" y="324.2" text-anchor="middle" font-size="12" fill="#666">只切行时四个 y 坐标复制同一行块，物理总量增为四倍</text>
+</svg>

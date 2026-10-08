@@ -177,7 +177,7 @@ a.xref { text-decoration: none; }
 a.xref:hover { text-decoration: underline; }
 .term { border-bottom: 1px dotted var(--rule-strong); cursor: help; }
 .term:hover, .term:focus { background: var(--hit); outline: none; }
-.show-en .term::after { content: " " attr(data-en); margin-left: 0.15em; font: 0.72em var(--font-ui); color: var(--muted); }
+.show-en .term:not(.term-inline-en)::after { content: " " attr(data-en); margin-left: 0.15em; font: 0.72em var(--font-ui); color: var(--muted); }
 .hit { background: var(--hit); }
 
 /* ---- previews and panels ---- */

@@ -16,7 +16,9 @@
 
 [前言](00-preface.md)
 
-### 第一部分　硬件：从逻辑门到多芯片
+### 第一部分　硬件：从逻辑门到多芯片（Hardware: From Logic Gates to Multiple Chips）
+
+从门电路的状态与延迟开始，把加法、乘法、存储、控制与矩阵阵列逐层组合成芯片，再把芯片组合成互联系统。读完能由工作量、关键路径、容量和带宽推导一个程序的资源下界。
 
 1. [逻辑门与加法器](01-circuits-adders.md)：逻辑门与组合电路；规模、深度与代价模型；全加器与行波进位；寄存器与时钟周期；进位函数与结合运算；前缀问题与并行前缀网络；超前进位加法器；进位保留加法；工作量、深度与 Brent 定理。
 2. [乘法器与浮点运算](02-multipliers-floats.md)：部分积与 3:2 压缩；浮点数的表示与舍入；浮点运算单元；求和的误差；机器学习的数值格式；低精度相乘、高精度累加；块缩放；用低精度拼出高精度；随机舍入。
@@ -26,37 +28,45 @@
 6. [一颗芯片：屋顶线与数据复用](06-chip-model.md)：抽象芯片与参考芯片 X；屋顶线与开销受限；融合；矩阵乘法的分块；Loomis–Whitney 不等式与传输下界；多级分块；小批量的矩阵乘法；多核心的分解。
 7. [多颗芯片：互联与集合通信](07-interconnect.md)：链路模型；环、环面、交换机与二分带宽；集合操作的数值例子与代数；带宽下界；环形与倍增算法；多维环面上的集合通信；通信与计算的重叠；远程搬运与信用。
 
-### 第二部分　计算的共同结构
+### 第二部分　计算的共同结构（Common Structures of Computation）
 
-8. [布局](08-layouts.md)：布局即函数、分块与打包、存储体冲突、XOR 交错、$\mathbb{F}_2$ 上的线性布局。
-9. [异步程序与软件流水线](09-async.md)：先行发生关系、信号量、多缓冲、软件流水线、内存一致性。
-10. [归约、扫描与在线算法](10-reductions.md)：在线 softmax、Welford、top-k、线性递推、可复现的归约。
-11. [Transformer 的算术](11-transformer.md)：各算子的 FLOPs 与字节、训练、prefill 与 decode、KV cache、MoE、量化。
-12. [并行策略](12-parallelism.md)：分片矩阵乘法的代数；DP、FSDP、TP、SP/CP、PP、EP；通信与计算重叠；估算一步训练和一步解码。
+第一部分给出了机器能做的操作与代价；本部分说明怎样把数学计算放到这种机器上：下标落在哪里，数据何时可以读或覆盖，局部状态怎样合并，一个模型究竟有多少算术、存储与通信。读完能先写出布局、依赖、不变量和性能预算，再审查 AI 生成的程序。布局、输入槽、在线归约、KV 预算和流水线空泡都配有可改参数的互动。
 
-### 第三部分　JAX
+8. [布局](08-layouts.md)（Layouts）：布局作为下标到物理位置的函数；步长与转置视图（strides / views）；分块布局（tiled layout）；寄存器布局与窄类型打包（packing）；存储体冲突（bank conflict）与 XOR 交错（swizzle）；$\mathbb{F}_2$ 线性布局；访存合并与对齐（coalescing / alignment）；布局转换的置换与代价。
+9. [异步程序与软件流水线](09-async.md)（Asynchronous Programs and Software Pipelines）：事件与先行发生（happens-before）；读前等待与覆盖前等待；计数信号量（counting semaphore）及完成身份；多缓冲（multibuffering）；延迟、吞吐与所需输入槽；序幕、稳态和尾声（prologue / steady state / epilogue）；死锁与进展；释放、获取和作用域（release / acquire / scope）。
+10. [归约、扫描与在线算法](10-reductions.md)（Reductions, Scans and Online Algorithms）：映射—归约—收尾；可合并状态与结合律；在线 softmax 的最大值、分母和重缩放；注意力的未归一化加权和；Welford/Chan 方差；top-k 的状态合并；仿射递推与前缀扫描（prefix scan）；浮点归约次序与可复现性（reproducibility）。
+11. [Transformer 的算术](11-transformer.md)（Transformer Arithmetic）：张量形状与参数量；投影、注意力、MLP 的 FLOPs 和字节；前向、反向与训练状态；提示处理与逐步解码（prefill / decode）；KV cache、MQA/GQA 的容量与带宽；混合专家（Mixture of Experts, MoE）的实际活跃工作量；量化格式、尺度与端到端估算。
+12. [并行策略](12-parallelism.md)（Parallelization Strategies）：逻辑 mesh 与复制；分片矩阵乘法的输出块和 K 部分和；数据并行（DP）与全分片数据并行（FSDP）；张量并行（TP）；序列/上下文并行（SP/CP）；流水线并行（PP）的微批量与空泡；专家并行（EP）的分发与回收；通信重叠、训练一步和解码一步的资源账。
 
-13. [JAX 的计算模型](13-jax.md)：追踪与 jaxpr、jit、自动微分、vmap、控制流、随机数、精度。
-14. [JAX 的分布式编程](14-jax-sharding.md)：mesh 与 PartitionSpec、Explicit/Auto/Manual 三种模式、shard_map 与集合原语、内存。
+### 第三部分　JAX（JAX Programming）
 
-### 第四部分　TPU
+把第二部分的计算规格写成有类型的程序。先理解追踪与函数变换，再给数组指定分片；全局数学形状、每设备局部形状、复制与集合通信分别核对。读完能解释编译缓存、自动微分与显式分布式程序的行为。缓存键和分片容量的互动帮助区分“值变了”“类型变了”和“存储归属变了”。
 
-15. [TPU 的结构](15-tpu-architecture.md)：TensorCore（标量单元、向量单元、MXU）、存储、DMA、SparseCore、ICI，v4 到第八代。
-16. [Pallas TPU 编程](16-pallas-tpu.md)：grid 与下标映射、BlockSpec 与自动流水线、内存空间、手动 DMA、标量预取、布局约束。
-17. [TPU kernel：矩阵乘法与访存受限算子](17-tpu-matmul.md)：分块矩阵乘法、量化、结尾融合、归一化与 softmax、分组矩阵乘法。
-18. [TPU kernel：注意力](18-tpu-attention.md)：flash attention、块稀疏掩码、分页 KV 的解码注意力、反向传播。
-19. [TPU 多芯片编程](19-tpu-multichip.md)：远程 DMA、在 Pallas 中写集合通信、集合矩阵乘法、all-to-all。
-20. [TPU 性能的静态分析](20-tpu-static-analysis.md)：指令包与发射槽、由清单推算周期、性能剖析工具的读法。
+13. [JAX 的计算模型](13-jax.md)（JAX Computation Model）：数组、pytree 与纯函数（pure function）；抽象值、追踪（tracing）与 jaxpr；jit、降低（lowering）与编译缓存；正向/反向自动微分（JVP/VJP）；残差、重计算（checkpointing）与自定义反向；vmap 的批处理规则；设备控制流与 scan；显式随机 key、全局计数器和精度规格。
+14. [JAX 的分布式编程](14-jax-sharding.md)（Distributed JAX）：mesh 与 PartitionSpec；全局数组、本地分片和复制倍数；Explicit、Auto、Manual 三种轴类型；shard_map 的局部视角；psum、all-gather、reduce-scatter 等集合原语；张量并行与 FSDP 的程序形式；存储捐赠（donation）、重算与主机卸载（offloading）；多主机输入和共同调用顺序。
 
-### 第五部分　GPU
+### 第四部分　TPU（TPU Architecture and Programming）
 
-21. [GPU 的结构](21-gpu-architecture.md)：SM、SIMT、存储层次、延迟隐藏、Tensor Core 与 TMA 的演变、互联，Ampere 到 Rubin。
-22. [CUDA 编程：SIMT 模型](22-cuda-simt.md)：线程层级、内存空间、同步、warp 级原语、归约与扫描、分块矩阵乘法、占用率。
-23. [CUDA 编程：现代 GPU 的 kernel 结构](23-cuda-modern.md)：异步拷贝与 mbarrier、TMA、wgmma、warp 专门化、tcgen05 与 TMEM、持久化 kernel、CuTe。
-24. [GPU 上的 tile 语言](24-gpu-tile-languages.md)：tile 模型、Triton、cuTile、Pallas GPU、如何选择抽象层级。
-25. [GPU kernel：矩阵乘法与访存受限算子](25-gpu-matmul.md)：GEMM 的逐级优化、FP8/FP4 块缩放 GEMM、分组 GEMM、归一化与 softmax。
-26. [GPU kernel：注意力](26-gpu-attention.md)：FlashAttention 2/3/4 的结构、解码注意力、分页 KV。
-27. [多 GPU 编程](27-multi-gpu.md)：NCCL 与拓扑、对称内存与设备端通信、通信与计算重叠、MoE 的 all-to-all。
+从 TensorCore 的局部状态与通路出发，把 grid、块映射、DMA 和流水线对应到 Pallas，再构造矩阵乘法、注意力和跨芯片程序。最后用实际指令包检查资源瓶颈、机器编码和计时边界。读完能沿数学规格、布局、存储、同步与发射模型审查 TPU kernel；grid 遍历、随机计数器、VMEM 预算、在线注意力、环形通信和发射时间都有互动。
+
+15. [TPU 的结构](15-tpu-architecture.md)（TPU Architecture）：TensorCore 与 MXU 的边界；标量、向量、EUP/XLU 和 VLIW 指令包；向量布局与打包；权重推入、装入、乘法和取回；VMEM/SMEM/HBM 与共享 CMEM 的两条读路径；megacore 与芯粒；SparseCore、ICI 与拓扑；v4 到第八代的现状和迁移预算。
+16. [Pallas TPU 编程](16-pallas-tpu.md)（Pallas TPU Programming）：grid、块坐标与元素坐标；BlockSpec 的驻留与数据量；Ref 和值、f32 累加状态；内存空间、scratch、维度语义与多核心；自动/手动 DMA、标量预取、页表和布局约束；gather/scatter、非对齐窗口、扫描与 top-k；有状态/计数器式 PRNG、全局随机身份、重放与分布端点。
+17. [TPU kernel：矩阵乘法与访存受限算子](17-tpu-matmul.md)（TPU GEMM and Memory-bound Kernels）：块强度、VMEM 缓冲预算与 DMA/MXU 重叠；结尾融合（epilogue fusion）的线性与非线性边界；量化与块尺度；归一化、方差和 softmax 的归约轴；分组 GEMM（grouped GEMM）的专家区间、动态下标与嵌套流水线；DMA 发起次序、内部 dot 块、权重准备摊销与写回尾巴；性能和正确性审查。
+18. [TPU kernel：注意力](18-tpu-attention.md)（TPU Attention Kernels）：注意力的算术强度；QK 与 PV 的矩阵通路；在线状态与重缩放；FlashAttention 的局部存储；因果掩码（causal mask）和块稀疏（block sparsity）；分页 KV（paged KV）与解码分片；反向重计算、梯度累加和状态合并。
+19. [TPU 多芯片编程](19-tpu-multichip.md)（Multi-chip TPU Programming）：远程 DMA（remote DMA）的发送/接收完成；入口屏障（entry barrier）；环形 all-gather 与 reduce-scatter 的源块不变量；通信—矩阵计算重叠；all-to-all 的计数与接收区间；多维 mesh；跨核心、远端 CMEM 与主机内存的端点归属；持久循环（persistent loop）的版本与槽位信用。
+20. [TPU 性能的静态分析](20-tpu-static-analysis.md)（Static Analysis of TPU Performance）：Pallas/Mosaic 到机器指令；标量与向量两级发射、VIF、依赖与服务间隔；MXU 交错、归约和向量到标量的代价；XProf 与 vtrace 的证据边界；实际槽位与共享编码资源；精确往返（exact round trip）、PC 重定位与可执行容器；来源映射（source mapping）；计时边界、sfence、LCC 与 GTC。
+
+### 第五部分　GPU（GPU Architecture and Programming）
+
+在共同底座上独立建立 SM/SIMT 模型，再从线程、warp 与共享内存推进到异步搬运和矩阵指令，最后写矩阵乘法、注意力与多 GPU 通信。读完能选择线程或 tile 抽象，检查访存合并、寄存器与共享容量、参与者和完成关系。访存段数、资源上限、生产者/消费者槽、GEMM 预算、注意力状态合并与环形通信配有互动；本路线的论证不要求 TPU 各章。
+
+21. [GPU 的结构](21-gpu-architecture.md)（GPU Architecture）：SM、线程和 warp；SIMT 发射、分化（divergence）与就绪调度；寄存器、共享内存和缓存；占用率（occupancy）与在途请求；Tensor Core 的 MMA、warpgroup 与矩阵存储；cp.async/TMA、块簇（thread block cluster）与互联；Ampere 到 Rubin 的现状。
+22. [CUDA 编程：SIMT 模型](22-cuda-simt.md)（CUDA SIMT Programming）：网格—块—线程的覆盖映射；地址、访存合并与内存空间；块屏障、原子操作和 warp shuffle；warp/块/跨块归约及扫描；共享内存与寄存器分块 GEMM；资源上限和占用率；release/acquire、作用域与进展；流、事件和 CUDA Graph 的依赖。
+23. [CUDA 编程：现代 GPU 的 kernel 结构](23-cuda-modern.md)（Modern CUDA Kernel Structures）：cp.async 的提交与等待；mbarrier 的到达、字节与 phase；TMA 描述符和代理可见性；wgmma 的参与者与完成；warp 专门化（warp specialization）的满/空槽协议；tcgen05、TMEM 与结尾读者；持久化 kernel（persistent kernel）和 Stream-K；CuTe 的布局与分层分块。
+24. [GPU 上的 tile 语言](24-gpu-tile-languages.md)（GPU Tile Languages）：tile 的形状、索引与掩码；Triton 的指针块和 tl.dot；cuTile 的块坐标与 ct.mma；Pallas GPU 的后端边界；CuTe DSL 的布局控制；由数学对象到线程、存储和机器程序的降低；按所需控制权选择抽象层级。
+25. [GPU kernel：矩阵乘法与访存受限算子](25-gpu-matmul.md)（GPU GEMM and Memory-bound Kernels）：从朴素 GEMM 到共享、寄存器与 Tensor Core 分块；多槽容量、累加状态与复用；FP8/FP4 块缩放和尺度位置；分组 GEMM、持久任务与 MoE；结尾融合的正确位置；归一化、softmax 和宽行归约；资源与数值规格审查。
+26. [GPU kernel：注意力](26-gpu-attention.md)（GPU Attention Kernels）：注意力屋顶线与 Q/KV 复用；FlashAttention 的 query 分工与在线状态；指数通路的吞吐；FlashAttention 2/3/4 的流水线结构；Hopper/Blackwell 的异步与 ping-pong；解码、split-KV 与分页缓存；局部状态合并；反向重计算与梯度归约。
+27. [多 GPU 编程](27-multi-gpu.md)（Multi-GPU Programming）：NCCL 的集合语义与物理拓扑；环形和分层通信；对称内存（symmetric memory）与设备端通信；单边操作（one-sided communication）的完成和可见性；张量并行中的分块重叠；MoE 的 all-to-all、计数与排列；缓冲复用、信用及执行进展。
 
 ### 附录
 

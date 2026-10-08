@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="682" height="177" viewBox="13 53 682 177" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="13" y="53" width="682" height="177" rx="8" fill="#ffffff"/>
+<rect x="25" y="65" width="118" height="64" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="160" y="65" width="118" height="64" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="295" y="65" width="118" height="64" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="430" y="65" width="118" height="64" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="565" y="65" width="118" height="64" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<polyline points="143,97 160,97" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="278,97 295,97" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="413,97 430,97" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="548,97 565,97" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<text x="84" y="101.2" text-anchor="middle" font-size="12" fill="#3a5a8c">生产者写入</text>
+<text x="219" y="101.2" text-anchor="middle" font-size="12" fill="#2e7d32">满：写入完成</text>
+<text x="354" y="101.2" text-anchor="middle" font-size="12" fill="#b45f06">消费者 / MMA 读取</text>
+<text x="489" y="101.2" text-anchor="middle" font-size="12" fill="#2e7d32">空：全部读完</text>
+<text x="624" y="101.2" text-anchor="middle" font-size="12" fill="#3a5a8c">下一轮覆盖</text>
+<text x="350" y="214.2" text-anchor="middle" font-size="12" fill="#666">“满”授权消费，“空”授权复用；提交 MMA 还不等于共享块读完</text>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="599" height="372" viewBox="13 -2 599 372" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="13" y="-2" width="599" height="372" rx="8" fill="#ffffff"/>
+<rect x="25" y="70" width="240" height="60" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="360" y="70" width="240" height="60" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="165" y="220" width="285" height="65" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<polyline points="177,130 272.9,220" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="446.1,130 344.3,220" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<text x="320" y="24.9" text-anchor="middle" font-size="14" fill="#222">全局 16×128；第 0 列的计数器 c = 128i</text>
+<text x="145" y="104.9" text-anchor="middle" font-size="14" fill="#3a5a8c">行 0–7：c=0,…,896</text>
+<text x="480" y="104.9" text-anchor="middle" font-size="14" fill="#b45f06">行 8–15：c=1024,…,1920</text>
+<text x="307.5" y="257.4" text-anchor="middle" font-size="14" fill="#2e7d32">固定 key：rᵢ=F(key,cᵢ)</text>
+<text x="320" y="354.2" text-anchor="middle" font-size="12" fill="#666">改变块大小不改逻辑身份；第二块从零计数会重用随机样本</text>
+</svg>

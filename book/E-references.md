@@ -72,8 +72,8 @@
 
 - R. Frostig, M. Johnson, C. Leary. Compiling machine learning programs via high-level tracing. *SysML*, 2018.
 - JAX 文档：*Distributed arrays and automatic parallelization*（mesh、Explicit/Auto/Manual）、*Pallas* 与 *Pallas TPU*、*Mosaic GPU*。
-- ayaka14732. *Pallas TPU Kernel 开发教程*，GitHub，2026.（TPU v4 的实测数据与静态分析的方法）
-- ayaka14732. *tpuasm*：TPU 指令包的汇编器与反汇编器，GitHub，2026.
+- ayaka14732. [*Pallas TPU Kernel 开发教程*](https://github.com/ayaka14732/pallas-tpu-tutorial)，GitHub，2026.（来源报告的 TPU v4 硬件观察与静态分析）
+- ayaka14732. [*tpuasm*](https://github.com/ayaka14732/tpuasm)：TPU 指令包的汇编器与反汇编器，GitHub，2026.
 
 ## TPU（第 15 章）
 
@@ -115,3 +115,22 @@
 | Triton，[Matrix Multiplication](https://triton-lang.org/main/getting-started/tutorials/03-matrix-multiplication.html)；NVIDIA，[cuTile Python](https://docs.nvidia.com/cuda/cutile-python/) | 指针块、tile 坐标与编译器分工；第 24 章 |
 | Shah 等，[FlashAttention-3](https://arxiv.org/abs/2407.08608)；[FlashAttention-4](https://arxiv.org/abs/2603.05451) | 异步流水线与不均衡硬件扩展的算法设计；26.3、26.4 节 |
 | NVIDIA，[NCCL CUDA Stream Semantics](https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/usage/streams.html)、[Using NVSHMEM](https://docs.nvidia.com/nvshmem/api/latest/using.html) | 提交与完成的区别、单边通信次序与可见性；第 27 章、附录 B |
+
+## Pallas 教程与 tpuasm 的覆盖核对（2026-10-08）
+
+这次按教程的四章 **36 个主题小节**与 tpuasm 的公开格式、设计及兼容性文档核对。教程固定为 `b4fc5b11713aa34eef1fa824cadf994c9d67edb0`，tpuasm 固定为 `a6e3d927deb1dc5a906574e6b6bbfc8bc175d30d`；后续更新应重新核对，不能把 main 的新内容冒充这个快照。
+
+| 原来欠缺或需修正的内容 | 固定快照的出处 | 补入位置 |
+| --- | --- | --- |
+| 数据移动原语与接口限制 | [DMA](https://github.com/ayaka14732/pallas-tpu-tutorial/blob/b4fc5b11713aa34eef1fa824cadf994c9d67edb0/chapter01/03_local_dma/README.md)、[gather/scatter](https://github.com/ayaka14732/pallas-tpu-tutorial/blob/b4fc5b11713aa34eef1fa824cadf994c9d67edb0/chapter01/08_gather_scatter/README.md)、[扫描](https://github.com/ayaka14732/pallas-tpu-tutorial/blob/b4fc5b11713aa34eef1fa824cadf994c9d67edb0/chapter01/12_prefix_scan/README.md)、[top-k](https://github.com/ayaka14732/pallas-tpu-tutorial/blob/b4fc5b11713aa34eef1fa824cadf994c9d67edb0/chapter01/14_top_k/README.md) | 16.9 节与附录 B 的边界表 |
+| CMEM 的直接读、共享与远端路由 | [CMEM](https://github.com/ayaka14732/pallas-tpu-tutorial/blob/b4fc5b11713aa34eef1fa824cadf994c9d67edb0/chapter02/03_cmem/README.md)、[远端 CMEM](https://github.com/ayaka14732/pallas-tpu-tutorial/blob/b4fc5b11713aa34eef1fa824cadf994c9d67edb0/chapter02/06_remote_cmem/README.md) | 15.5、19.8 节 |
+| 主机内存与持久循环协议 | [主机内存](https://github.com/ayaka14732/pallas-tpu-tutorial/blob/b4fc5b11713aa34eef1fa824cadf994c9d67edb0/chapter02/08_host_memory/README.md) | 19.8 节；私有接口限制留在附录 B |
+| 共享带宽下的发起顺序、内部 dot 与写回尾巴 | [大矩阵乘法](https://github.com/ayaka14732/pallas-tpu-tutorial/blob/b4fc5b11713aa34eef1fa824cadf994c9d67edb0/chapter02/09_large_matmul/README.md) | 17.7 节 |
+| 时间边界、sfence 与两种时钟 | [五种时间](https://github.com/ayaka14732/pallas-tpu-tutorial/blob/b4fc5b11713aa34eef1fa824cadf994c9d67edb0/chapter03/01_five_times/README.md)、[sfence/VIF](https://github.com/ayaka14732/pallas-tpu-tutorial/blob/b4fc5b11713aa34eef1fa824cadf994c9d67edb0/chapter03/04_sfence_vif/README.md)、[GTC](https://github.com/ayaka14732/pallas-tpu-tutorial/blob/b4fc5b11713aa34eef1fa824cadf994c9d67edb0/chapter03/06_gtc/README.md) | 20.2、20.7 节 |
+| XProf 跟踪事件确有 GTC 时间戳；不是全部插值 | [XProf/vtrace](https://github.com/ayaka14732/pallas-tpu-tutorial/blob/b4fc5b11713aa34eef1fa824cadf994c9d67edb0/chapter03/07_xprof_vtrace/README.md) | 修正 20.4 节与接口小结 |
+| 硬件随机状态、key、计数器、分布、代价 | [随机数全章](https://github.com/ayaka14732/pallas-tpu-tutorial/tree/b4fc5b11713aa34eef1fa824cadf994c9d67edb0/chapter04) | 13.7、16.10 节与附录 B |
+| 精确编码与 TC/BCS/TEC 目标差别 | [v4 TC](https://github.com/ayaka14732/tpuasm/blob/a6e3d927deb1dc5a906574e6b6bbfc8bc175d30d/docs/references/tpu_v4_tc.md)、[v4 BCS](https://github.com/ayaka14732/tpuasm/blob/a6e3d927deb1dc5a906574e6b6bbfc8bc175d30d/docs/references/tpu_v4_bcs.md)、[v6e TC](https://github.com/ayaka14732/tpuasm/blob/a6e3d927deb1dc5a906574e6b6bbfc8bc175d30d/docs/references/tpu_v6e_tc.md)、[v6e TEC](https://github.com/ayaka14732/tpuasm/blob/a6e3d927deb1dc5a906574e6b6bbfc8bc175d30d/docs/references/tpu_v6e_tec.md) | 20.6 节与附录 B |
+| 来源映射、回灌、插入与兼容性 | [来源映射](https://github.com/ayaka14732/tpuasm/blob/a6e3d927deb1dc5a906574e6b6bbfc8bc175d30d/docs/design/tc_source_mapping.md)、[回灌](https://github.com/ayaka14732/tpuasm/blob/a6e3d927deb1dc5a906574e6b6bbfc8bc175d30d/docs/design/executable_replacement.md)、[兼容性](https://github.com/ayaka14732/tpuasm/blob/a6e3d927deb1dc5a906574e6b6bbfc8bc175d30d/docs/compatibility.md) | 20.6 节与附录 B |
+| 编码往返与设备语义是不同证据 | [v6e 执行语义核对](https://github.com/ayaka14732/tpuasm/blob/a6e3d927deb1dc5a906574e6b6bbfc8bc175d30d/docs/design/tpu_v6e_execution.md) | 20.6、20.7 节的证据与计时边界；附录 B |
+
+本书按接口和代价模型重新构造证明、算例与图，没有复制教程文字、代码或图。安装、实验载体、基准输出、工具内部 ABI 偏移和全助记符索引没有逐条搬进正文：它们不参与本书的线性推导，需使用工具时从上述固定来源查阅。接口失败与逆向得到的参数均注明来源环境，不列为跨代保证。

@@ -20,4 +20,10 @@ export default {
     const b=[0,1,2,3].map(i=>f.box(20+i*170,130,140,50,`段 ${i} → (m,ℓ,u)`,{color:'green',size:12}));b.forEach(v=>f.link(q,v,{arrow:'end'}));
     const out=f.box(230,285,170,50,'合并状态 → u/ℓ',{color:'orange'});b.forEach(v=>f.link(v,out,{arrow:'end'}));
   },
+  "18-softmax-state": function(f) {
+    const q=f.box(25,30,560,45,'固定查询 Q；键值按块进入',{color:'gray'});
+    const a=f.box(25,145,150,65,'K₀,V₀ → 状态 s₀',{color:'blue',size:13}),b=f.box(230,145,150,65,'K₁,V₁ → 状态 s₁',{color:'orange',size:13}),c=f.box(435,145,150,65,'K₂,V₂ → 状态 s₂',{color:'green',size:13});
+    const d=f.box(160,285,290,60,'合并 (m,ℓ,u)，最后 u/ℓ',{color:'purple'});[a,b,c].forEach(x=>f.link(x,d,{arrow:'end'}));
+    f.note(305,405,'保持未归一化的分子与分母，不存完整概率矩阵');
+  },
 };

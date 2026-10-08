@@ -26,4 +26,8 @@ export default {
     f.grid(25,70,{rows:3,cols:4,cw:175,ch:68,colLabels:['代际','发起者','操作数来源','累加位置'],label:(i,j)=>data[i][j],fill:(i,j)=>j===3?'orange':'blue'});
     f.note(25,330,'发起粒度改变后，操作数布局、完成协议和输出所有权都要重查',{anchor:'start'});
   },
+  "21-warp-readiness": function(f) {
+    f.timeline(105,40,{lanes:['warp 0','warp 1','warp 2','warp 3'],bars:[[0,0,1,'发读','orange'],[0,1,5,'等待','gray'],[0,5,6,'算','blue'],[1,1,2,'算','blue'],[2,2,3,'算','blue'],[3,3,4,'算','blue']],unit:72,ticks:[0,1,2,3,4,5,6]});
+    f.note(300,325,'warp 0 等数据时发射其他就绪 warp；驻留不等于此刻就绪');
+  },
 };

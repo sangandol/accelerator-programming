@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="523" height="272" viewBox="70 33 523 272" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<rect x="70" y="33" width="523" height="272" rx="8" fill="#ffffff"/>
+<rect x="185" y="45" width="90" height="18" rx="2" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="185" y="70" width="45" height="18" rx="2" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="185" y="95" width="180" height="18" rx="2" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="185" y="120" width="360" height="18" rx="2" fill="#efe6f8" stroke="#6a3d9a" stroke-width="1.6"/>
+<text x="177" y="58.2" text-anchor="end" font-size="12" fill="#222">寄存器上限</text>
+<text x="281" y="58.2" text-anchor="start" font-size="12" fill="#666">4 块</text>
+<text x="177" y="83.2" text-anchor="end" font-size="12" fill="#222">共享内存上限</text>
+<text x="236" y="83.2" text-anchor="start" font-size="12" fill="#666">2 块</text>
+<text x="177" y="108.2" text-anchor="end" font-size="12" fill="#222">线程 / warp 上限</text>
+<text x="371" y="108.2" text-anchor="start" font-size="12" fill="#666">8 块</text>
+<text x="177" y="133.2" text-anchor="end" font-size="12" fill="#222">块数上限</text>
+<text x="551" y="133.2" text-anchor="start" font-size="12" fill="#666">16 块</text>
+<text x="340" y="249.2" text-anchor="middle" font-size="12" fill="#666">取最小值：2 块 × 8 warp = 16 warp，算术占用率 25%</text>
+<text x="340" y="289.2" text-anchor="middle" font-size="12" fill="#666">假设 256 线程/块、64 寄存器/线程、80 KiB 共享/块</text>
+</svg>

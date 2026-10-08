@@ -25,4 +25,14 @@ export default {
     f.grid(125,65,{rows:4,cols:3,cw:155,ch:48,rowLabels:rows,colLabels:['迭代 0','迭代 1','迭代 2'],label:(i,j)=>texts[i][j],fill:(i,j)=>i<2?'blue':'orange'});
     f.note(125,290,'输入和输出是不同的存储；两种等待各保护自己的槽',{anchor:'start'});
   },
+  "09-latency-slots": function(f) {
+    f.text(330,20,'读入延迟 7，计算每块 2，需要 1 + ceil(7/2) = 5 槽');
+    const labels=['算块 0','读块 1','读块 2','读块 3','准备块 4'];
+    for(let i=0;i<5;i++) {
+      f.text(82+i*130,63,`槽 ${i}`);
+      f.box(25+i*130,88,114,54,labels[i],{color:i===0?'green':i===4?'gray':'blue'});
+      f.note(82+i*130,173,i===0?'7–9 占用':i===4?'8 发起':`${2*i} 发起`);
+    }
+    f.note(330,225,'时刻 7 的截面；输入槽从发起读入到消费者结束一直存活');
+  },
 };

@@ -19,4 +19,11 @@ export default {
     f.grid(100,55,{rows:3,cols:3,cw:125,ch:50,rowLabels:['专家 0','专家 1','专家 2'],colLabels:['真实行','补齐后行','额外行'],label:(i,j)=>[[5,128,123],[130,256,126],[0,0,0]][i][j],fill:(i,j)=>j===2?'gray':'orange'});
     f.text(285,260,'135 行 → 384 行，约 2.84 倍');
   },
+  "17-buffer-budget": function(f) {
+    f.text(320,20,'bf16 的 A、B、输出块；f32 的累加器');
+    f.grid(30,75,{rows:3,cols:2,cw:140,ch:48,rowLabels:['A 输入','B 输入','C 输出'],colLabels:['槽 0','槽 1'],label:(i,j)=>['A','B','C'][i]+j,fill:i=>['blue','orange','green'][i]});
+    f.box(410,105,180,75,'f32 累加 scratch',{color:'purple',size:13});
+    f.note(320,285,'显式字节 = 4(bM·bK+bK·bN) + 8bM·bN（双缓冲）');
+    f.note(320,325,'还需临时值与布局填充；增大 K 块增容量，不提高输入复用强度');
+  },
 };

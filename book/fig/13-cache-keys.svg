@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="604" height="417" viewBox="18 23 604 417" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="18" y="23" width="604" height="417" rx="8" fill="#ffffff"/>
+<rect x="30" y="35" width="260" height="55" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="365" y="35" width="245" height="55" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="30" y="170" width="260" height="55" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="365" y="170" width="245" height="55" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="30" y="305" width="260" height="55" rx="6" fill="#efe6f8" stroke="#6a3d9a" stroke-width="1.6"/>
+<rect x="365" y="305" width="245" height="55" rx="6" fill="#efe6f8" stroke="#6a3d9a" stroke-width="1.6"/>
+<polyline points="290,62.5 365,62.5" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="290,197.5 365,197.5" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="290,332.5 365,332.5" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<text x="160" y="67.4" text-anchor="middle" font-size="14" fill="#3a5a8c">值变：f32[4]，a=2</text>
+<text x="487.5" y="67.4" text-anchor="middle" font-size="14" fill="#2e7d32">复用同一个已编译程序</text>
+<text x="160" y="202.4" text-anchor="middle" font-size="14" fill="#b45f06">形状变：f32[8]，a=2</text>
+<text x="487.5" y="202.4" text-anchor="middle" font-size="14" fill="#b45f06">新的抽象类型 → 新程序</text>
+<text x="160" y="337.4" text-anchor="middle" font-size="14" fill="#6a3d9a">静态参数变：f32[4]，a=3</text>
+<text x="487.5" y="337.4" text-anchor="middle" font-size="14" fill="#6a3d9a">新的静态参数 → 新程序</text>
+<text x="320" y="424.2" text-anchor="middle" font-size="12" fill="#666">固定函数与目标的缓存示意；程序输出为 a·x</text>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="664" height="462" viewBox="13 23 664 462" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="13" y="23" width="664" height="462" rx="8" fill="#ffffff"/>
+<rect x="25" y="35" width="290" height="220" rx="6" fill="none" stroke="#555555" stroke-width="1.6"/>
+<rect x="45" y="100" width="112" height="55" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="183" y="100" width="112" height="55" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="45" y="190" width="250" height="40" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="375" y="35" width="290" height="220" rx="6" fill="none" stroke="#555555" stroke-width="1.6"/>
+<rect x="395" y="100" width="112" height="55" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="533" y="100" width="112" height="55" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="395" y="190" width="250" height="40" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="210" y="340" width="270" height="55" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<polyline points="315,210 375,210" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<text x="170" y="62.9" text-anchor="middle" font-size="14" fill="#222">芯片 0</text>
+<text x="101" y="132.4" text-anchor="middle" font-size="14" fill="#3a5a8c">TC0 VMEM</text>
+<text x="239" y="132.4" text-anchor="middle" font-size="14" fill="#3a5a8c">TC1 VMEM</text>
+<text x="170" y="214.9" text-anchor="middle" font-size="14" fill="#b45f06">共享 CMEM / HBM</text>
+<text x="520" y="62.9" text-anchor="middle" font-size="14" fill="#222">芯片 1</text>
+<text x="451" y="132.4" text-anchor="middle" font-size="14" fill="#3a5a8c">TC0 VMEM</text>
+<text x="589" y="132.4" text-anchor="middle" font-size="14" fill="#3a5a8c">TC1 VMEM</text>
+<text x="520" y="214.9" text-anchor="middle" font-size="14" fill="#b45f06">共享 CMEM / HBM</text>
+<text x="345" y="372.4" text-anchor="middle" font-size="14" fill="#2e7d32">主机 pinned memory</text>
+<text x="350" y="469.2" text-anchor="middle" font-size="12" fill="#666">目的存储、路由接收者与完成信号归属要分别确定</text>
+</svg>

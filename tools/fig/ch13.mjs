@@ -25,4 +25,13 @@ export default {
     f.link(bs[0],bs[1],{arrow:'end'});f.link(bs[1],bs[2],{arrow:'end'});
     f.note(242,95,'c₁');f.note(437,95,'c₂');f.note(80,320,'携带状态类型固定；各 yᵢ 按已知长度堆叠',{anchor:'start'});
   },
+  "13-cache-keys": function(f) {
+    const a=f.box(30,35,260,55,'值变：f32[4]，a=2',{color:'blue'});
+    const b=f.box(365,35,245,55,'复用同一个已编译程序',{color:'green'});f.link(a,b,{arrow:'end'});
+    const c=f.box(30,170,260,55,'形状变：f32[8]，a=2',{color:'orange'});
+    const d=f.box(365,170,245,55,'新的抽象类型 → 新程序',{color:'orange'});f.link(c,d,{arrow:'end'});
+    const e=f.box(30,305,260,55,'静态参数变：f32[4]，a=3',{color:'purple'});
+    const g=f.box(365,305,245,55,'新的静态参数 → 新程序',{color:'purple'});f.link(e,g,{arrow:'end'});
+    f.note(320,420,'固定函数与目标的缓存示意；程序输出为 a·x');
+  },
 };

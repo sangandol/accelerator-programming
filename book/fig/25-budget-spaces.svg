@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="614" height="367" viewBox="13 43 614 367" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<rect x="13" y="43" width="614" height="367" rx="8" fill="#ffffff"/>
+<rect x="25" y="55" width="220" height="70" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="355" y="55" width="260" height="70" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="125" y="240" width="390" height="65" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<text x="135" y="94.6" text-anchor="middle" font-size="13" fill="#3a5a8c">共享内存：多份 A、B 块</text>
+<text x="485" y="94.6" text-anchor="middle" font-size="13" fill="#b45f06">寄存器 / 矩阵存储：累加值</text>
+<text x="320" y="277.4" text-anchor="middle" font-size="14" fill="#2e7d32">分别检查容量，再看复用与驻留块数</text>
+<text x="320" y="394.2" text-anchor="middle" font-size="12" fill="#666">更大的输出块省输入流量，却增加累加状态；不能合并两种存储预算</text>
+</svg>

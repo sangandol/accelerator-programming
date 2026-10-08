@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="499" height="427" viewBox="14 -2 499 427" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<rect x="14" y="-2" width="499" height="427" rx="8" fill="#ffffff"/>
+<rect x="100" y="55" width="70" height="45" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="170" y="55" width="70" height="45" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="240" y="55" width="70" height="45" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="310" y="55" width="70" height="45" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="100" y="135" width="70" height="45" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="170" y="135" width="70" height="45" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="240" y="135" width="70" height="45" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="310" y="135" width="70" height="45" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="100" y="215" width="70" height="45" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="170" y="215" width="70" height="45" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="240" y="215" width="70" height="45" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="310" y="215" width="70" height="45" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="100" y="295" width="70" height="45" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="170" y="295" width="70" height="45" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="240" y="295" width="70" height="45" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="310" y="295" width="70" height="45" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<text x="285" y="24.9" text-anchor="middle" font-size="14" fill="#222">四子通道缩小模型：目标位置 0 想读取源位置 2</text>
+<text x="40" y="84.9" text-anchor="middle" font-size="14" fill="#222">k=0</text>
+<text x="135" y="81.7" text-anchor="middle" font-size="12" fill="#555555">x0</text>
+<text x="205" y="81.7" text-anchor="middle" font-size="12" fill="#555555">x1</text>
+<text x="275" y="81.7" text-anchor="middle" font-size="12" fill="#555555">x2</text>
+<text x="345" y="81.7" text-anchor="middle" font-size="12" fill="#555555">x3</text>
+<text x="40" y="164.9" text-anchor="middle" font-size="14" fill="#222">k=1</text>
+<text x="135" y="161.7" text-anchor="middle" font-size="12" fill="#555555">x1</text>
+<text x="205" y="161.7" text-anchor="middle" font-size="12" fill="#555555">x2</text>
+<text x="275" y="161.7" text-anchor="middle" font-size="12" fill="#555555">x3</text>
+<text x="345" y="161.7" text-anchor="middle" font-size="12" fill="#555555">x0</text>
+<text x="40" y="244.9" text-anchor="middle" font-size="14" fill="#222">k=2</text>
+<text x="135" y="241.7" text-anchor="middle" font-size="12" fill="#2e7d32">x2</text>
+<text x="205" y="241.7" text-anchor="middle" font-size="12" fill="#555555">x3</text>
+<text x="275" y="241.7" text-anchor="middle" font-size="12" fill="#555555">x0</text>
+<text x="345" y="241.7" text-anchor="middle" font-size="12" fill="#555555">x1</text>
+<text x="40" y="324.9" text-anchor="middle" font-size="14" fill="#222">k=3</text>
+<text x="135" y="321.7" text-anchor="middle" font-size="12" fill="#555555">x3</text>
+<text x="205" y="321.7" text-anchor="middle" font-size="12" fill="#555555">x0</text>
+<text x="275" y="321.7" text-anchor="middle" font-size="12" fill="#555555">x1</text>
+<text x="345" y="321.7" text-anchor="middle" font-size="12" fill="#555555">x2</text>
+<text x="460" y="244.2" text-anchor="middle" font-size="12" fill="#666">第 2 轮选中 x₂</text>
+<text x="285" y="409.2" text-anchor="middle" font-size="12" fill="#666">循环移位产生候选，选择掩码决定每个位置在哪一轮更新</text>
+</svg>

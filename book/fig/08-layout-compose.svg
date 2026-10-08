@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="490" height="382" viewBox="-38 38 490 382" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="-38" y="38" width="490" height="382" rx="8" fill="#ffffff"/>
+<rect x="80" y="50" width="90" height="42" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="170" y="50" width="90" height="42" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="260" y="50" width="90" height="42" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="350" y="50" width="90" height="42" rx="0" fill="#efe6f8" stroke="#999" stroke-width="0.8"/>
+<rect x="80" y="180" width="90" height="42" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="170" y="180" width="90" height="42" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="260" y="180" width="90" height="42" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="350" y="180" width="90" height="42" rx="0" fill="#efe6f8" stroke="#999" stroke-width="0.8"/>
+<rect x="80" y="310" width="90" height="42" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="170" y="310" width="90" height="42" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="260" y="310" width="90" height="42" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="350" y="310" width="90" height="42" rx="0" fill="#efe6f8" stroke="#999" stroke-width="0.8"/>
+<polyline points="125,94 125,174" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="215,94 215,174" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="305,94 305,174" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="395,94 395,174" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="125,224 125,304" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="215,224 215,304" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="305,224 305,304" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="395,224 395,304" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<text x="70" y="75.2" text-anchor="end" font-size="12" fill="#222">逻辑下标 j</text>
+<text x="125" y="75.2" text-anchor="middle" font-size="12" fill="#3a5a8c">0</text>
+<text x="215" y="75.2" text-anchor="middle" font-size="12" fill="#b45f06">1</text>
+<text x="305" y="75.2" text-anchor="middle" font-size="12" fill="#2e7d32">2</text>
+<text x="395" y="75.2" text-anchor="middle" font-size="12" fill="#6a3d9a">3</text>
+<text x="70" y="205.2" text-anchor="end" font-size="12" fill="#222">布局 L：旧位置</text>
+<text x="125" y="205.2" text-anchor="middle" font-size="12" fill="#3a5a8c">0</text>
+<text x="215" y="205.2" text-anchor="middle" font-size="12" fill="#b45f06">2</text>
+<text x="305" y="205.2" text-anchor="middle" font-size="12" fill="#2e7d32">1</text>
+<text x="395" y="205.2" text-anchor="middle" font-size="12" fill="#6a3d9a">3</text>
+<text x="70" y="335.2" text-anchor="end" font-size="12" fill="#222">目标布局：新位置</text>
+<text x="125" y="335.2" text-anchor="middle" font-size="12" fill="#3a5a8c">3</text>
+<text x="215" y="335.2" text-anchor="middle" font-size="12" fill="#b45f06">2</text>
+<text x="305" y="335.2" text-anchor="middle" font-size="12" fill="#2e7d32">1</text>
+<text x="395" y="335.2" text-anchor="middle" font-size="12" fill="#6a3d9a">0</text>
+<text x="260" y="404.2" text-anchor="middle" font-size="12" fill="#666">同色对应同一逻辑元素；转换是目标布局与旧布局逆映射的复合</text>
+</svg>

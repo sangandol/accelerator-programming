@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="538" height="269" viewBox="74 -4 538 269" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<rect x="74" y="-4" width="538" height="269" rx="8" fill="#ffffff"/>
+<rect x="230" y="65" width="82.5" height="18" rx="2" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="230" y="90" width="330" height="18" rx="2" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="230" y="115" width="330" height="18" rx="2" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="230" y="140" width="330" height="18" rx="2" fill="#efe6f8" stroke="#6a3d9a" stroke-width="1.6"/>
+<text x="330" y="22.9" text-anchor="middle" font-size="14" fill="#222">32 层、头维度 128、bf16：KV 的容量乘法</text>
+<text x="222" y="78.2" text-anchor="end" font-size="12" fill="#222">B=1, T=8192, KV头=8</text>
+<text x="318.5" y="78.2" text-anchor="start" font-size="12" fill="#666">1 GiB</text>
+<text x="222" y="103.2" text-anchor="end" font-size="12" fill="#222">B=4, T=8192, KV头=8</text>
+<text x="566" y="103.2" text-anchor="start" font-size="12" fill="#666">4 GiB</text>
+<text x="222" y="128.2" text-anchor="end" font-size="12" fill="#222">B=1, T=32768, KV头=8</text>
+<text x="566" y="128.2" text-anchor="start" font-size="12" fill="#666">4 GiB</text>
+<text x="222" y="153.2" text-anchor="end" font-size="12" fill="#222">B=1, T=8192, KV头=32</text>
+<text x="566" y="153.2" text-anchor="start" font-size="12" fill="#666">4 GiB</text>
+<text x="330" y="249.2" text-anchor="middle" font-size="12" fill="#666">基准为 1 GiB；任一因子扩大四倍，载荷也扩大四倍</text>
+</svg>

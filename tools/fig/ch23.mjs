@@ -19,4 +19,10 @@ export default {
     f.box(130,280,480,45,'Stream-K：按 15000 个 K 迭代平均分配',{color:'orange'});
     f.note(130,360,'减少半满尾波，但部分输出需额外合并',{anchor:'start'});
   },
+  "23-full-empty-cycle": function(f) {
+    const labels=['生产者写入','满：写入完成','消费者 / MMA 读取','空：全部读完','下一轮覆盖'];
+    const boxes=labels.map((s,i)=>f.box(25+i*135,65,118,64,s,{color:['blue','green','orange','green','blue'][i],size:12}));
+    for(let i=0;i<4;i++)f.link(boxes[i],boxes[i+1],{arrow:'end'});
+    f.note(350,210,'“满”授权消费，“空”授权复用；提交 MMA 还不等于共享块读完');
+  },
 };

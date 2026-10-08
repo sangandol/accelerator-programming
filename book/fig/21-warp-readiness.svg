@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="553" height="317" viewBox="42 28 553 317" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-666-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#666"/></marker></defs>
+<rect x="42" y="28" width="553" height="317" rx="8" fill="#ffffff"/>
+<rect x="105" y="40" width="72" height="30" rx="3" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="177" y="40" width="288" height="30" rx="3" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<rect x="465" y="40" width="72" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="177" y="80" width="72" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="249" y="120" width="72" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="321" y="160" width="72" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<polyline points="105,200 555,200" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-666-10)"/>
+<polyline points="105,197 105,203" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="95" y="59.6" text-anchor="end" font-size="13" fill="#222">warp 0</text>
+<text x="95" y="99.6" text-anchor="end" font-size="13" fill="#222">warp 1</text>
+<text x="95" y="139.6" text-anchor="end" font-size="13" fill="#222">warp 2</text>
+<text x="95" y="179.6" text-anchor="end" font-size="13" fill="#222">warp 3</text>
+<text x="141" y="59.6" text-anchor="middle" font-size="13" fill="#b45f06">发读</text>
+<text x="321" y="59.6" text-anchor="middle" font-size="13" fill="#555555">等待</text>
+<text x="501" y="59.6" text-anchor="middle" font-size="13" fill="#3a5a8c">算</text>
+<text x="213" y="99.6" text-anchor="middle" font-size="13" fill="#3a5a8c">算</text>
+<text x="285" y="139.6" text-anchor="middle" font-size="13" fill="#3a5a8c">算</text>
+<text x="357" y="179.6" text-anchor="middle" font-size="13" fill="#3a5a8c">算</text>
+<text x="105" y="217.2" text-anchor="middle" font-size="12" fill="#666">0</text>
+<text x="559" y="204.2" text-anchor="start" font-size="12" fill="#666">时间</text>
+<text x="300" y="329.2" text-anchor="middle" font-size="12" fill="#666">warp 0 等数据时发射其他就绪 warp；驻留不等于此刻就绪</text>
+</svg>

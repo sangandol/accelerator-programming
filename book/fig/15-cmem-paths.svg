@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="614" height="327" viewBox="13 18 614 327" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="13" y="18" width="614" height="327" rx="8" fill="#ffffff"/>
+<rect x="25" y="100" width="120" height="65" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="240" y="30" width="145" height="55" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="240" y="195" width="145" height="55" rx="6" fill="#efe6f8" stroke="#6a3d9a" stroke-width="1.6"/>
+<rect x="480" y="100" width="135" height="65" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<polyline points="145,112.7 240,81.4" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="145,156.2 243,195" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="385,80.6 480,111" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="384.3,195 480,158.4" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<text x="85" y="137.4" text-anchor="middle" font-size="14" fill="#b45f06">共享 CMEM</text>
+<text x="312.5" y="62.4" text-anchor="middle" font-size="14" fill="#3a5a8c">DMA → VMEM</text>
+<text x="312.5" y="227.4" text-anchor="middle" font-size="14" fill="#6a3d9a">cld → crf</text>
+<text x="547.5" y="137.4" text-anchor="middle" font-size="14" fill="#2e7d32">向量寄存器</text>
+<text x="390" y="69.2" text-anchor="middle" font-size="12" fill="#666">vld</text>
+<text x="445" y="224.2" text-anchor="middle" font-size="12" fill="#666">vpop</text>
+<text x="320" y="329.2" text-anchor="middle" font-size="12" fill="#666">v4 的两条读路径；直接读仍受专用槽、队列和延迟约束</text>
+</svg>
