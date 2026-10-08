@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="536" height="282" viewBox="13 8 536 282" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<rect x="13" y="8" width="536" height="282" rx="8" fill="#ffffff"/>
+<rect x="25" y="65" width="32" height="34" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="57" y="65" width="32" height="34" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="89" y="65" width="32" height="34" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="121" y="65" width="32" height="34" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="153" y="65" width="32" height="34" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="185" y="65" width="32" height="34" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="217" y="65" width="32" height="34" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="249" y="65" width="32" height="34" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="281" y="65" width="32" height="34" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="313" y="65" width="32" height="34" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="345" y="65" width="32" height="34" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="377" y="65" width="32" height="34" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="409" y="65" width="32" height="34" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="441" y="65" width="32" height="34" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="473" y="65" width="32" height="34" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="505" y="65" width="32" height="34" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="25" y="180" width="32" height="34" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="57" y="180" width="32" height="34" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="89" y="180" width="32" height="34" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="121" y="180" width="32" height="34" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="153" y="180" width="32" height="34" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="185" y="180" width="32" height="34" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="217" y="180" width="32" height="34" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="249" y="180" width="32" height="34" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="281" y="180" width="32" height="34" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="313" y="180" width="32" height="34" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="345" y="180" width="32" height="34" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="377" y="180" width="32" height="34" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="409" y="180" width="32" height="34" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="441" y="180" width="32" height="34" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="473" y="180" width="32" height="34" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="505" y="180" width="32" height="34" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<text x="25" y="34.9" text-anchor="start" font-size="14" fill="#222">偶数分支：3 条</text>
+<text x="41" y="86.2" text-anchor="middle" font-size="12" fill="#b45f06">0</text>
+<text x="73" y="86.2" text-anchor="middle" font-size="12" fill="#555555">1</text>
+<text x="105" y="86.2" text-anchor="middle" font-size="12" fill="#b45f06">2</text>
+<text x="137" y="86.2" text-anchor="middle" font-size="12" fill="#555555">3</text>
+<text x="169" y="86.2" text-anchor="middle" font-size="12" fill="#b45f06">4</text>
+<text x="201" y="86.2" text-anchor="middle" font-size="12" fill="#555555">5</text>
+<text x="233" y="86.2" text-anchor="middle" font-size="12" fill="#b45f06">6</text>
+<text x="265" y="86.2" text-anchor="middle" font-size="12" fill="#555555">7</text>
+<text x="297" y="86.2" text-anchor="middle" font-size="12" fill="#b45f06">8</text>
+<text x="329" y="86.2" text-anchor="middle" font-size="12" fill="#555555">9</text>
+<text x="361" y="86.2" text-anchor="middle" font-size="12" fill="#b45f06">10</text>
+<text x="393" y="86.2" text-anchor="middle" font-size="12" fill="#555555">11</text>
+<text x="425" y="86.2" text-anchor="middle" font-size="12" fill="#b45f06">12</text>
+<text x="457" y="86.2" text-anchor="middle" font-size="12" fill="#555555">13</text>
+<text x="489" y="86.2" text-anchor="middle" font-size="12" fill="#b45f06">14</text>
+<text x="521" y="86.2" text-anchor="middle" font-size="12" fill="#555555">15</text>
+<text x="25" y="149.9" text-anchor="start" font-size="14" fill="#222">奇数分支：5 条</text>
+<text x="41" y="201.2" text-anchor="middle" font-size="12" fill="#555555">0</text>
+<text x="73" y="201.2" text-anchor="middle" font-size="12" fill="#b45f06">1</text>
+<text x="105" y="201.2" text-anchor="middle" font-size="12" fill="#555555">2</text>
+<text x="137" y="201.2" text-anchor="middle" font-size="12" fill="#b45f06">3</text>
+<text x="169" y="201.2" text-anchor="middle" font-size="12" fill="#555555">4</text>
+<text x="201" y="201.2" text-anchor="middle" font-size="12" fill="#b45f06">5</text>
+<text x="233" y="201.2" text-anchor="middle" font-size="12" fill="#555555">6</text>
+<text x="265" y="201.2" text-anchor="middle" font-size="12" fill="#b45f06">7</text>
+<text x="297" y="201.2" text-anchor="middle" font-size="12" fill="#555555">8</text>
+<text x="329" y="201.2" text-anchor="middle" font-size="12" fill="#b45f06">9</text>
+<text x="361" y="201.2" text-anchor="middle" font-size="12" fill="#555555">10</text>
+<text x="393" y="201.2" text-anchor="middle" font-size="12" fill="#b45f06">11</text>
+<text x="425" y="201.2" text-anchor="middle" font-size="12" fill="#555555">12</text>
+<text x="457" y="201.2" text-anchor="middle" font-size="12" fill="#b45f06">13</text>
+<text x="489" y="201.2" text-anchor="middle" font-size="12" fill="#555555">14</text>
+<text x="521" y="201.2" text-anchor="middle" font-size="12" fill="#b45f06">15</text>
+<text x="25" y="274.2" text-anchor="start" font-size="12" fill="#666">画前 16 个通道；实际 warp 有 32 个。灰色通道被屏蔽</text>
+</svg>

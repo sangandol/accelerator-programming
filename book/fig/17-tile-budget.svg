@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="429" height="347" viewBox="13 18 429 347" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<rect x="13" y="18" width="429" height="347" rx="8" fill="#ffffff"/>
+<rect x="25" y="30" width="170" height="80" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="260" y="30" width="170" height="80" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="142" y="165" width="170" height="80" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<text x="110" y="74.9" text-anchor="middle" font-size="14" fill="#3a5a8c">A：512×256 bf16</text>
+<text x="345" y="74.9" text-anchor="middle" font-size="14" fill="#2e7d32">B：256×512 bf16</text>
+<text x="227" y="209.9" text-anchor="middle" font-size="14" fill="#b45f06">累加：512×512 f32</text>
+<text x="227" y="304.9" text-anchor="middle" font-size="14" fill="#222">输入双缓冲 1 MiB + 累加 1 MiB + 输出双缓冲 1 MiB</text>
+<text x="25" y="349.2" text-anchor="start" font-size="12" fill="#666">只是显式预算；为后端临时值与对齐另留余量</text>
+</svg>

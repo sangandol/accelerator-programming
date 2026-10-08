@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="537" height="292" viewBox="-35 18 537 292" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-b45f06-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b45f06"/></marker></defs>
+<rect x="-35" y="18" width="537" height="292" rx="8" fill="#ffffff"/>
+<rect x="30" y="60" width="105" height="46" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="30" y="106" width="105" height="46" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="30" y="152" width="105" height="46" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="320" y="30" width="170" height="34" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="320" y="64" width="170" height="34" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="320" y="98" width="170" height="34" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="320" y="132" width="170" height="34" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="320" y="166" width="170" height="34" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="320" y="200" width="170" height="34" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<polyline points="135,83 205,83 205,149 320,149" fill="none" stroke="#b45f06" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-b45f06-10)"/>
+<polyline points="135,129 227,129 227,47 320,47" fill="none" stroke="#b45f06" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-b45f06-10)"/>
+<polyline points="135,175 249,175 249,217 320,217" fill="none" stroke="#b45f06" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-b45f06-10)"/>
+<text x="82.5" y="87.2" text-anchor="middle" font-size="12" fill="#b45f06">3</text>
+<text x="82.5" y="133.2" text-anchor="middle" font-size="12" fill="#b45f06">0</text>
+<text x="82.5" y="179.2" text-anchor="middle" font-size="12" fill="#b45f06">5</text>
+<text x="24" y="87.2" text-anchor="end" font-size="12" fill="#666">逻辑页 0</text>
+<text x="24" y="133.2" text-anchor="end" font-size="12" fill="#666">逻辑页 1</text>
+<text x="24" y="179.2" text-anchor="end" font-size="12" fill="#666">逻辑页 2</text>
+<text x="405" y="51.2" text-anchor="middle" font-size="12" fill="#3a5a8c">物理页 0</text>
+<text x="405" y="85.2" text-anchor="middle" font-size="12" fill="#222">物理页 1</text>
+<text x="405" y="119.2" text-anchor="middle" font-size="12" fill="#222">物理页 2</text>
+<text x="405" y="153.2" text-anchor="middle" font-size="12" fill="#3a5a8c">物理页 3</text>
+<text x="405" y="187.2" text-anchor="middle" font-size="12" fill="#222">物理页 4</text>
+<text x="405" y="221.2" text-anchor="middle" font-size="12" fill="#3a5a8c">物理页 5</text>
+<text x="30" y="294.2" text-anchor="start" font-size="12" fill="#666">页表预取到 SMEM；页池数据通过 DMA 搬进 VMEM</text>
+</svg>

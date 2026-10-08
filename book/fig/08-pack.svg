@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="384" height="332" viewBox="-2 -4 384 332" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-b45f06-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b45f06"/></marker><marker id="ah-2e7d32-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2e7d32"/></marker></defs>
+<rect x="-2" y="-4" width="384" height="332" rx="8" fill="#ffffff"/>
+<rect x="40" y="50" width="75" height="32" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="115" y="50" width="75" height="32" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="190" y="50" width="75" height="32" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="265" y="50" width="75" height="32" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="40" y="82" width="75" height="32" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="115" y="82" width="75" height="32" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="190" y="82" width="75" height="32" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="265" y="82" width="75" height="32" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="40" y="205" width="300" height="38" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="40" y="278" width="300" height="38" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<polyline points="40,135 40,141 340,141 340,135" fill="none" stroke="#666" stroke-width="1.2" stroke-linejoin="round"/>
+<polyline points="40,66 10,66 10,224 40,224" fill="none" stroke="#b45f06" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-b45f06-10)"/>
+<polyline points="340,98 370,98 370,297 340,297" fill="none" stroke="#2e7d32" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-2e7d32-10)"/>
+<text x="215" y="22.9" text-anchor="middle" font-size="14" fill="#222">bf16：上下两行共用四个 32 位位置</text>
+<text x="77.5" y="70.2" text-anchor="middle" font-size="12" fill="#b45f06"><tspan font-style="italic">x</tspan><tspan dy="3.6" font-size="8.6">00</tspan></text>
+<text x="152.5" y="70.2" text-anchor="middle" font-size="12" fill="#b45f06"><tspan font-style="italic">x</tspan><tspan dy="3.6" font-size="8.6">01</tspan></text>
+<text x="227.5" y="70.2" text-anchor="middle" font-size="12" fill="#b45f06"><tspan font-style="italic">x</tspan><tspan dy="3.6" font-size="8.6">02</tspan></text>
+<text x="302.5" y="70.2" text-anchor="middle" font-size="12" fill="#b45f06"><tspan font-style="italic">x</tspan><tspan dy="3.6" font-size="8.6">03</tspan></text>
+<text x="77.5" y="102.2" text-anchor="middle" font-size="12" fill="#2e7d32"><tspan font-style="italic">x</tspan><tspan dy="3.6" font-size="8.6">10</tspan></text>
+<text x="152.5" y="102.2" text-anchor="middle" font-size="12" fill="#2e7d32"><tspan font-style="italic">x</tspan><tspan dy="3.6" font-size="8.6">11</tspan></text>
+<text x="227.5" y="102.2" text-anchor="middle" font-size="12" fill="#2e7d32"><tspan font-style="italic">x</tspan><tspan dy="3.6" font-size="8.6">12</tspan></text>
+<text x="302.5" y="102.2" text-anchor="middle" font-size="12" fill="#2e7d32"><tspan font-style="italic">x</tspan><tspan dy="3.6" font-size="8.6">13</tspan></text>
+<text x="190" y="157.2" text-anchor="middle" font-size="12" fill="#666">四个 32 位位置</text>
+<text x="190" y="228.9" text-anchor="middle" font-size="14" fill="#b45f06">f32 的 R₀：x₀₀  x₀₁  x₀₂  x₀₃</text>
+<text x="190" y="301.9" text-anchor="middle" font-size="14" fill="#2e7d32">f32 的 R₁：x₁₀  x₁₁  x₁₂  x₁₃</text>
+</svg>

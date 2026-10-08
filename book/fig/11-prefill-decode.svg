@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="554" height="277" viewBox="13 -2 554 277" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="13" y="-2" width="554" height="277" rx="8" fill="#ffffff"/>
+<rect x="25" y="65" width="28" height="25" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="53" y="65" width="28" height="25" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="81" y="65" width="28" height="25" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="25" y="90" width="28" height="25" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="53" y="90" width="28" height="25" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="81" y="90" width="28" height="25" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="25" y="115" width="28" height="25" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="53" y="115" width="28" height="25" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="81" y="115" width="28" height="25" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="25" y="140" width="28" height="25" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="53" y="140" width="28" height="25" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="81" y="140" width="28" height="25" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="25" y="165" width="28" height="25" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="53" y="165" width="28" height="25" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="81" y="165" width="28" height="25" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="25" y="190" width="28" height="25" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="53" y="190" width="28" height="25" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="81" y="190" width="28" height="25" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="175" y="65" width="80" height="150" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="325" y="65" width="28" height="25" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="353" y="65" width="28" height="25" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="381" y="65" width="28" height="25" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="475" y="65" width="80" height="150" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<polyline points="109,140 175,140" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="396.6,90 475,123.1" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<text x="140" y="24.9" text-anchor="middle" font-size="14" fill="#222">prefill：许多词元</text>
+<text x="215" y="144.9" text-anchor="middle" font-size="14" fill="#b45f06">权重 W</text>
+<text x="25" y="259.2" text-anchor="start" font-size="12" fill="#666">同样的权重，摊到很多行</text>
+<text x="440" y="24.9" text-anchor="middle" font-size="14" fill="#222">decode：少量新词元</text>
+<text x="515" y="144.9" text-anchor="middle" font-size="14" fill="#b45f06">权重 W</text>
+<text x="325" y="259.2" text-anchor="start" font-size="12" fill="#666">同样的权重，摊到很少行</text>
+</svg>

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="470" height="250" viewBox="18 -2 470 250" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<rect x="18" y="-2" width="470" height="250" rx="8" fill="#ffffff"/>
+<rect x="30" y="50" width="44" height="38" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="74" y="50" width="44" height="38" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="118" y="50" width="44" height="38" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="162" y="50" width="44" height="38" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="30" y="88" width="44" height="38" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="74" y="88" width="44" height="38" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="118" y="88" width="44" height="38" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="162" y="88" width="44" height="38" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="30" y="126" width="44" height="38" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="74" y="126" width="44" height="38" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="118" y="126" width="44" height="38" rx="0" fill="#efe6f8" stroke="#999" stroke-width="0.8"/>
+<rect x="162" y="126" width="44" height="38" rx="0" fill="#efe6f8" stroke="#999" stroke-width="0.8"/>
+<rect x="30" y="164" width="44" height="38" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="74" y="164" width="44" height="38" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="118" y="164" width="44" height="38" rx="0" fill="#efe6f8" stroke="#999" stroke-width="0.8"/>
+<rect x="162" y="164" width="44" height="38" rx="0" fill="#efe6f8" stroke="#999" stroke-width="0.8"/>
+<rect x="300" y="50" width="44" height="38" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="344" y="50" width="44" height="38" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="388" y="50" width="44" height="38" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="432" y="50" width="44" height="38" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="300" y="88" width="44" height="38" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="344" y="88" width="44" height="38" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="388" y="88" width="44" height="38" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="432" y="88" width="44" height="38" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="300" y="126" width="44" height="38" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="344" y="126" width="44" height="38" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="388" y="126" width="44" height="38" rx="0" fill="#efe6f8" stroke="#999" stroke-width="0.8"/>
+<rect x="432" y="126" width="44" height="38" rx="0" fill="#efe6f8" stroke="#999" stroke-width="0.8"/>
+<rect x="300" y="164" width="44" height="38" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="344" y="164" width="44" height="38" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="388" y="164" width="44" height="38" rx="0" fill="#efe6f8" stroke="#999" stroke-width="0.8"/>
+<rect x="432" y="164" width="44" height="38" rx="0" fill="#efe6f8" stroke="#999" stroke-width="0.8"/>
+<text x="118" y="24.9" text-anchor="middle" font-size="14" fill="#222">行优先</text>
+<text x="52" y="73.2" text-anchor="middle" font-size="12" fill="#b45f06">0</text>
+<text x="96" y="73.2" text-anchor="middle" font-size="12" fill="#b45f06">1</text>
+<text x="140" y="73.2" text-anchor="middle" font-size="12" fill="#3a5a8c">2</text>
+<text x="184" y="73.2" text-anchor="middle" font-size="12" fill="#3a5a8c">3</text>
+<text x="52" y="111.2" text-anchor="middle" font-size="12" fill="#b45f06">4</text>
+<text x="96" y="111.2" text-anchor="middle" font-size="12" fill="#b45f06">5</text>
+<text x="140" y="111.2" text-anchor="middle" font-size="12" fill="#3a5a8c">6</text>
+<text x="184" y="111.2" text-anchor="middle" font-size="12" fill="#3a5a8c">7</text>
+<text x="52" y="149.2" text-anchor="middle" font-size="12" fill="#2e7d32">8</text>
+<text x="96" y="149.2" text-anchor="middle" font-size="12" fill="#2e7d32">9</text>
+<text x="140" y="149.2" text-anchor="middle" font-size="12" fill="#6a3d9a">10</text>
+<text x="184" y="149.2" text-anchor="middle" font-size="12" fill="#6a3d9a">11</text>
+<text x="52" y="187.2" text-anchor="middle" font-size="12" fill="#2e7d32">12</text>
+<text x="96" y="187.2" text-anchor="middle" font-size="12" fill="#2e7d32">13</text>
+<text x="140" y="187.2" text-anchor="middle" font-size="12" fill="#6a3d9a">14</text>
+<text x="184" y="187.2" text-anchor="middle" font-size="12" fill="#6a3d9a">15</text>
+<text x="388" y="24.9" text-anchor="middle" font-size="14" fill="#222">T(2,2) 分块</text>
+<text x="322" y="73.2" text-anchor="middle" font-size="12" fill="#b45f06">0</text>
+<text x="366" y="73.2" text-anchor="middle" font-size="12" fill="#b45f06">1</text>
+<text x="410" y="73.2" text-anchor="middle" font-size="12" fill="#3a5a8c">4</text>
+<text x="454" y="73.2" text-anchor="middle" font-size="12" fill="#3a5a8c">5</text>
+<text x="322" y="111.2" text-anchor="middle" font-size="12" fill="#b45f06">2</text>
+<text x="366" y="111.2" text-anchor="middle" font-size="12" fill="#b45f06">3</text>
+<text x="410" y="111.2" text-anchor="middle" font-size="12" fill="#3a5a8c">6</text>
+<text x="454" y="111.2" text-anchor="middle" font-size="12" fill="#3a5a8c">7</text>
+<text x="322" y="149.2" text-anchor="middle" font-size="12" fill="#2e7d32">8</text>
+<text x="366" y="149.2" text-anchor="middle" font-size="12" fill="#2e7d32">9</text>
+<text x="410" y="149.2" text-anchor="middle" font-size="12" fill="#6a3d9a">12</text>
+<text x="454" y="149.2" text-anchor="middle" font-size="12" fill="#6a3d9a">13</text>
+<text x="322" y="187.2" text-anchor="middle" font-size="12" fill="#2e7d32">10</text>
+<text x="366" y="187.2" text-anchor="middle" font-size="12" fill="#2e7d32">11</text>
+<text x="410" y="187.2" text-anchor="middle" font-size="12" fill="#6a3d9a">14</text>
+<text x="454" y="187.2" text-anchor="middle" font-size="12" fill="#6a3d9a">15</text>
+<text x="30" y="232.2" text-anchor="start" font-size="12" fill="#666">每格的数字是偏移；颜色是逻辑块</text>
+</svg>

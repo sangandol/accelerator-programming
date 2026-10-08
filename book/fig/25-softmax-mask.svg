@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="555" height="327" viewBox="37 53 555 327" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<rect x="37" y="53" width="555" height="327" rx="8" fill="#ffffff"/>
+<rect x="120" y="65" width="115" height="58" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="235" y="65" width="115" height="58" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="350" y="65" width="115" height="58" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="465" y="65" width="115" height="58" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="120" y="123" width="115" height="58" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="235" y="123" width="115" height="58" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="350" y="123" width="115" height="58" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="465" y="123" width="115" height="58" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="120" y="181" width="115" height="58" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="235" y="181" width="115" height="58" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="350" y="181" width="115" height="58" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="465" y="181" width="115" height="58" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="120" y="239" width="115" height="58" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="235" y="239" width="115" height="58" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="350" y="239" width="115" height="58" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="465" y="239" width="115" height="58" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<text x="177.5" y="98.2" text-anchor="middle" font-size="12" fill="#3a5a8c">−5</text>
+<text x="292.5" y="98.2" text-anchor="middle" font-size="12" fill="#3a5a8c">−3</text>
+<text x="407.5" y="98.2" text-anchor="middle" font-size="12" fill="#3a5a8c">−4</text>
+<text x="522.5" y="98.2" text-anchor="middle" font-size="12" fill="#555555">−∞</text>
+<text x="177.5" y="156.2" text-anchor="middle" font-size="12" fill="#3a5a8c">−2</text>
+<text x="292.5" y="156.2" text-anchor="middle" font-size="12" fill="#3a5a8c">0</text>
+<text x="407.5" y="156.2" text-anchor="middle" font-size="12" fill="#3a5a8c">−1</text>
+<text x="522.5" y="156.2" text-anchor="middle" font-size="12" fill="#555555">−∞</text>
+<text x="177.5" y="214.2" text-anchor="middle" font-size="12" fill="#3a5a8c">exp(−2)</text>
+<text x="292.5" y="214.2" text-anchor="middle" font-size="12" fill="#3a5a8c">1</text>
+<text x="407.5" y="214.2" text-anchor="middle" font-size="12" fill="#3a5a8c">exp(−1)</text>
+<text x="522.5" y="214.2" text-anchor="middle" font-size="12" fill="#555555">0</text>
+<text x="177.5" y="272.2" text-anchor="middle" font-size="12" fill="#3a5a8c">输出</text>
+<text x="292.5" y="272.2" text-anchor="middle" font-size="12" fill="#3a5a8c">输出</text>
+<text x="407.5" y="272.2" text-anchor="middle" font-size="12" fill="#3a5a8c">输出</text>
+<text x="522.5" y="272.2" text-anchor="middle" font-size="12" fill="#555555">不写</text>
+<text x="114" y="98.2" text-anchor="end" font-size="12" fill="#666">载入 / 掩码</text>
+<text x="114" y="156.2" text-anchor="end" font-size="12" fill="#666">减最大值</text>
+<text x="114" y="214.2" text-anchor="end" font-size="12" fill="#666">求指数</text>
+<text x="114" y="272.2" text-anchor="end" font-size="12" fill="#666">写回</text>
+<text x="120" y="364.2" text-anchor="start" font-size="12" fill="#666">填充值须分别适合最大值、指数和写回的语义</text>
+</svg>

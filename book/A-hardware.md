@@ -77,3 +77,17 @@
 - ayaka14732，*Pallas TPU Kernel 开发教程*（2026），TPU v4 的实测数据。
 
 完整的文献信息见[附录 E](E-references.md)。
+
+## A.6 怎样把参数表代入书中的模型
+
+参数表给的是某种硬件口径，公式需要的是所用资源的口径。代入前先确定三件事：按芯片还是按核心、按单向还是按双向、按稠密还是按稀疏。GB 为 $10^9$ 字节，GiB 为 $2^{30}$ 字节；GB/s 与 GiB/s 也要作相同换算。
+
+> **现状（2026-10-07）**：JAX 的 [TPU Hardware Reference](https://docs.jax.dev/en/latest/pallas/tpu/hardware.html) 按 TensorCore 给数，列 v5e 的 VMEM 为 128 MiB、HBM 带宽为 820 GB/s。本书 v5e 的 $0.82$ TB/s 算例使用这组后端参考值。Google Cloud 的 [v5e 产品文档](https://docs.cloud.google.com/tpu/docs/v5e) 列 800 GiB/s，换成十进制约为 0.859 TB/s；两份资料的口径有差异，不应把数字无说明地混用。实际部署以目标设备与后端报告为准。
+
+例如按本书参考值，v5e 的 bf16 拐点为 $197/0.82\approx240$ FLOP/字节；正方形 tile 的强度为 $b/2$，故取 $b=512$ 的候选略高于这个拐点。它只说明该理想模型的计算与输入带宽主项可能平衡，不保证 DMA、向量单元、输出流量和首尾开销都被掩盖。
+
+> **现状（2026-10-07）**：NVIDIA 的 [H100 产品表](https://www.nvidia.com/en-us/data-center/h100/) 给 SXM 的 bf16 1979 TFLOP/s，并注明使用稀疏；本书的稠密例子取其一半，约 990 TFLOP/s。使用 3.35 TB/s HBM 时，稠密拐点约 296 FLOP/字节。产品表中的 900 GB/s NVLink 是双向合计，不能直接作为单方向的 $\beta$。
+
+更新数字时要把衍生量一起更新：$P/B$ 决定块强度，$BL$ 决定在途量，$\alpha+S/\beta$ 决定搬运延迟，容量决定缓冲数。每项数字都应保留单位、对象、日期和来源；假设的延迟须标为假设，不能与厂商公开参数混列。
+
+> **现状（2026-10-07）**：第八代 TPU 的系统级参数来自 Google 的 [TPU 8t/8i 技术介绍](https://cloud.google.com/blog/products/compute/tpu-8t-and-tpu-8i-technical-deep-dive/)；Rubin 的 HBM、互联与单元组织来自 NVIDIA 的 [Rubin 架构介绍](https://developer.nvidia.com/blog/inside-nvidia-rubin-gpu-architecture-powering-the-era-of-agentic-ai/)。这里的参数表示公开设计与标称能力，不表示本书做过真机测量。

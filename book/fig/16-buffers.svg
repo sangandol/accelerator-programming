@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="386" height="305" viewBox="76 30 386 305" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<rect x="76" y="30" width="386" height="305" rx="8" fill="#ffffff"/>
+<rect x="130" y="60" width="160" height="70" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="290" y="60" width="160" height="70" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="130" y="130" width="160" height="70" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="290" y="130" width="160" height="70" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="130" y="200" width="160" height="70" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="290" y="200" width="160" height="70" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<text x="210" y="99.2" text-anchor="middle" font-size="12" fill="#3a5a8c">128 KiB</text>
+<text x="370" y="99.2" text-anchor="middle" font-size="12" fill="#3a5a8c">128 KiB</text>
+<text x="210" y="169.2" text-anchor="middle" font-size="12" fill="#2e7d32">128 KiB</text>
+<text x="370" y="169.2" text-anchor="middle" font-size="12" fill="#2e7d32">128 KiB</text>
+<text x="210" y="239.2" text-anchor="middle" font-size="12" fill="#b45f06">128 KiB</text>
+<text x="370" y="239.2" text-anchor="middle" font-size="12" fill="#b45f06">128 KiB</text>
+<text x="124" y="99.2" text-anchor="end" font-size="12" fill="#666">输入 X</text>
+<text x="124" y="169.2" text-anchor="end" font-size="12" fill="#666">输入 Y</text>
+<text x="124" y="239.2" text-anchor="end" font-size="12" fill="#666">输出 O</text>
+<text x="210" y="54.2" text-anchor="middle" font-size="12" fill="#666">槽 0</text>
+<text x="370" y="54.2" text-anchor="middle" font-size="12" fill="#666">槽 1</text>
+<text x="130" y="319.2" text-anchor="start" font-size="12" fill="#666">六块 × 128 KiB = 768 KiB，尚未计临时值与填充</text>
+</svg>

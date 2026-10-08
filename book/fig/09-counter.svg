@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="367" viewBox="51 18 480 367" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-666-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#666"/></marker></defs>
+<rect x="51" y="18" width="480" height="367" rx="8" fill="#ffffff"/>
+<rect x="125" y="30" width="348" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="183" y="70" width="116" height="30" rx="3" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="299" y="110" width="58" height="30" rx="3" fill="#fbe4e1" stroke="#c0392b" stroke-width="1.6"/>
+<rect x="125" y="300" width="160" height="40" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="325" y="300" width="160" height="40" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<polyline points="125,150 491,150" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-666-10)"/>
+<polyline points="125,147 125,153" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="115" y="49.6" text-anchor="end" font-size="13" fill="#222">DMA A</text>
+<text x="115" y="89.6" text-anchor="end" font-size="13" fill="#222">DMA B</text>
+<text x="115" y="129.6" text-anchor="end" font-size="13" fill="#222">共用等待</text>
+<text x="299" y="49.6" text-anchor="middle" font-size="13" fill="#3a5a8c">A：慢</text>
+<text x="241" y="89.6" text-anchor="middle" font-size="13" fill="#b45f06">B：先完成</text>
+<text x="328" y="129.6" text-anchor="middle" font-size="13" fill="#c0392b">已返回</text>
+<text x="125" y="167.2" text-anchor="middle" font-size="12" fill="#666">0</text>
+<text x="495" y="154.2" text-anchor="start" font-size="12" fill="#666">时间</text>
+<text x="125" y="254.2" text-anchor="start" font-size="12" fill="#666">t=3 计数已满 4096，却不能证明 A 的数据到了</text>
+<text x="205" y="324.9" text-anchor="middle" font-size="14" fill="#3a5a8c">A → 完成对象 A</text>
+<text x="405" y="324.9" text-anchor="middle" font-size="14" fill="#b45f06">B → 完成对象 B</text>
+<text x="125" y="369.2" text-anchor="start" font-size="12" fill="#666">分开等待：完成身份与数据块一一对应</text>
+</svg>

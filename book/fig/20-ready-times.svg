@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="624" height="247" viewBox="35 18 624 247" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-666-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#666"/></marker></defs>
+<rect x="35" y="18" width="624" height="247" rx="8" fill="#ffffff"/>
+<rect x="95" y="30" width="322" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="187" y="70" width="322" height="30" rx="3" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="279" y="110" width="322" height="30" rx="3" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<polyline points="95,150 619,150" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-666-10)"/>
+<polyline points="95,147 95,153" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="85" y="49.6" text-anchor="end" font-size="13" fill="#222">指数 0</text>
+<text x="85" y="89.6" text-anchor="end" font-size="13" fill="#222">指数 1</text>
+<text x="85" y="129.6" text-anchor="end" font-size="13" fill="#222">指数 2</text>
+<text x="256" y="49.6" text-anchor="middle" font-size="13" fill="#3a5a8c">延迟 7</text>
+<text x="348" y="89.6" text-anchor="middle" font-size="13" fill="#2e7d32">延迟 7</text>
+<text x="440" y="129.6" text-anchor="middle" font-size="13" fill="#b45f06">延迟 7</text>
+<text x="95" y="167.2" text-anchor="middle" font-size="12" fill="#666">0</text>
+<text x="623" y="154.2" text-anchor="start" font-size="12" fill="#666">时间</text>
+<text x="95" y="249.2" text-anchor="start" font-size="12" fill="#666">发射：0、2、4；结果就绪：7、9、11</text>
+</svg>

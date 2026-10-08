@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="629" height="147" viewBox="8 43 629 147" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="8" y="43" width="629" height="147" rx="8" fill="#ffffff"/>
+<rect x="20" y="55" width="125" height="55" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="180" y="55" width="125" height="55" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="340" y="55" width="125" height="55" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="500" y="55" width="125" height="55" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<polyline points="145,82.5 180,82.5" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="305,82.5 340,82.5" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="465,82.5 500,82.5" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<text x="82.5" y="87.4" text-anchor="middle" font-size="14" fill="#3a5a8c">清零 + A₀B₀</text>
+<text x="242.5" y="87.4" text-anchor="middle" font-size="14" fill="#3a5a8c">加 A₁B₁</text>
+<text x="402.5" y="87.4" text-anchor="middle" font-size="14" fill="#3a5a8c">加 A₂B₂</text>
+<text x="562.5" y="87.4" text-anchor="middle" font-size="14" fill="#b45f06">舍入并写出</text>
+<text x="20" y="174.2" text-anchor="start" font-size="12" fill="#666">同一输出块：(i,j) 固定；K 维状态按序传递</text>
+</svg>

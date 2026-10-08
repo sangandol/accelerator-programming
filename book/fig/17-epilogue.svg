@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="609" height="142" viewBox="8 38 609 142" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="8" y="38" width="609" height="142" rx="8" fill="#ffffff"/>
+<rect x="20" y="50" width="120" height="50" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="175" y="50" width="120" height="50" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="330" y="50" width="120" height="50" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="485" y="50" width="120" height="50" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<polyline points="140,75 175,75" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="295,75 330,75" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="450,75 485,75" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<text x="80" y="79.9" text-anchor="middle" font-size="14" fill="#3a5a8c">K 部分积之和</text>
+<text x="235" y="79.9" text-anchor="middle" font-size="14" fill="#2e7d32">加一次偏置</text>
+<text x="390" y="79.9" text-anchor="middle" font-size="14" fill="#2e7d32">激活</text>
+<text x="545" y="79.9" text-anchor="middle" font-size="14" fill="#2e7d32">舍入 / 写回</text>
+<text x="20" y="164.2" text-anchor="start" font-size="12" fill="#666">非线性在完整和上执行，不能对每个部分积分别执行</text>
+</svg>

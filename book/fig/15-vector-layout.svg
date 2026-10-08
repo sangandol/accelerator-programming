@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="564" height="287" viewBox="23 33 564 287" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="23" y="33" width="564" height="287" rx="8" fill="#ffffff"/>
+<rect x="35" y="45" width="200" height="75" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="235" y="45" width="200" height="75" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="35" y="120" width="200" height="75" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="235" y="120" width="200" height="75" rx="0" fill="#efe6f8" stroke="#999" stroke-width="0.8"/>
+<polyline points="35,240 35,246 435,246 435,240" fill="none" stroke="#666" stroke-width="1.2" stroke-linejoin="round"/>
+<polyline points="435,82 470,82" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="435,157 470,157" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<text x="135" y="86.7" text-anchor="middle" font-size="12" fill="#3a5a8c">R0：8×128 f32</text>
+<text x="335" y="86.7" text-anchor="middle" font-size="12" fill="#b45f06">R1：8×128 f32</text>
+<text x="135" y="161.7" text-anchor="middle" font-size="12" fill="#2e7d32">R2：8×128 f32</text>
+<text x="335" y="161.7" text-anchor="middle" font-size="12" fill="#6a3d9a">R3：8×128 f32</text>
+<text x="235" y="262.2" text-anchor="middle" font-size="12" fill="#666">逻辑块：16×256</text>
+<text x="545" y="79.9" text-anchor="middle" font-size="14" fill="#222">R₀ + R₁</text>
+<text x="545" y="154.9" text-anchor="middle" font-size="14" fill="#222">R₂ + R₃</text>
+<text x="35" y="304.2" text-anchor="start" font-size="12" fill="#666">先把两列块按对应位置相加，再跨 128 通道归约</text>
+</svg>

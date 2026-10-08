@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="628" height="362" viewBox="8 -10 628 362" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="8" y="-10" width="628" height="362" rx="8" fill="#ffffff"/>
+<rect x="20" y="30" width="65" height="45" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="97" y="30" width="65" height="45" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="174" y="30" width="65" height="45" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="251" y="30" width="65" height="45" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="328" y="30" width="65" height="45" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="405" y="30" width="65" height="45" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="482" y="30" width="65" height="45" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="559" y="30" width="65" height="45" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="145" y="175" width="360" height="50" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="245" y="295" width="160" height="45" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<polyline points="52.5,75 52.5,145 167.5,175" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="129.5,75 129.5,145 212.5,175" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="206.5,75 206.5,145 257.5,175" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="283.5,75 283.5,145 302.5,175" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="360.5,75 360.5,145 347.5,175" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="437.5,75 437.5,145 392.5,175" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="514.5,75 514.5,145 437.5,175" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="591.5,75 591.5,145 482.5,175" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="325,225 325,295" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<text x="52.5" y="56.7" text-anchor="middle" font-size="12" fill="#3a5a8c">warp 0</text>
+<text x="129.5" y="56.7" text-anchor="middle" font-size="12" fill="#3a5a8c">warp 1</text>
+<text x="206.5" y="56.7" text-anchor="middle" font-size="12" fill="#3a5a8c">warp 2</text>
+<text x="283.5" y="56.7" text-anchor="middle" font-size="12" fill="#3a5a8c">warp 3</text>
+<text x="360.5" y="56.7" text-anchor="middle" font-size="12" fill="#3a5a8c">warp 4</text>
+<text x="437.5" y="56.7" text-anchor="middle" font-size="12" fill="#3a5a8c">warp 5</text>
+<text x="514.5" y="56.7" text-anchor="middle" font-size="12" fill="#3a5a8c">warp 6</text>
+<text x="591.5" y="56.7" text-anchor="middle" font-size="12" fill="#3a5a8c">warp 7</text>
+<text x="52.5" y="16.9" text-anchor="middle" font-size="14" fill="#222">32</text>
+<text x="129.5" y="16.9" text-anchor="middle" font-size="14" fill="#222">32</text>
+<text x="206.5" y="16.9" text-anchor="middle" font-size="14" fill="#222">32</text>
+<text x="283.5" y="16.9" text-anchor="middle" font-size="14" fill="#222">32</text>
+<text x="360.5" y="16.9" text-anchor="middle" font-size="14" fill="#222">32</text>
+<text x="437.5" y="16.9" text-anchor="middle" font-size="14" fill="#222">32</text>
+<text x="514.5" y="16.9" text-anchor="middle" font-size="14" fill="#222">32</text>
+<text x="591.5" y="16.9" text-anchor="middle" font-size="14" fill="#222">32</text>
+<text x="325" y="204.6" text-anchor="middle" font-size="13" fill="#b45f06">共享部分和：32,32,32,32,32,32,32,32</text>
+<text x="325" y="322.4" text-anchor="middle" font-size="14" fill="#2e7d32">首 warp：总和 256</text>
+<text x="540" y="204.2" text-anchor="start" font-size="12" fill="#666">屏障后才读</text>
+</svg>

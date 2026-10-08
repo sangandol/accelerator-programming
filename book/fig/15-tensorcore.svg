@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="644" height="622" viewBox="8 8 644 622" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="8" y="8" width="644" height="622" rx="8" fill="#ffffff"/>
+<rect x="20" y="20" width="620" height="350" rx="6" fill="none" stroke="#555555" stroke-width="1.6"/>
+<rect x="240" y="65" width="180" height="40" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="60" y="155" width="130" height="48" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="240" y="155" width="180" height="48" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="465" y="155" width="130" height="48" rx="6" fill="#efe6f8" stroke="#6a3d9a" stroke-width="1.6"/>
+<rect x="240" y="280" width="180" height="48" rx="6" fill="#fff5cc" stroke="#8a6d00" stroke-width="1.6"/>
+<rect x="240" y="435" width="180" height="48" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="240" y="570" width="180" height="48" rx="6" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<polyline points="190,179 240,179" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)" marker-start="url(#ah-222-10)"/>
+<polyline points="420,179 465,179" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)" marker-start="url(#ah-222-10)"/>
+<polyline points="330,105 330,155" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="4 3" marker-end="url(#ah-222-10)"/>
+<polyline points="330,280 330,203" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)" marker-start="url(#ah-222-10)"/>
+<polyline points="330,570 330,483" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)" marker-start="url(#ah-222-10)"/>
+<polyline points="330,435 330,328" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)" marker-start="url(#ah-222-10)"/>
+<text x="330" y="44.9" text-anchor="middle" font-size="14" fill="#222">一个 TPU TensorCore</text>
+<text x="330" y="89.9" text-anchor="middle" font-size="14" fill="#b45f06">标量控制 / SMEM</text>
+<text x="125" y="183.2" text-anchor="middle" font-size="12" fill="#2e7d32">VPU / EUP / XLU</text>
+<text x="330" y="183.9" text-anchor="middle" font-size="14" fill="#3a5a8c">向量寄存器</text>
+<text x="530" y="183.9" text-anchor="middle" font-size="14" fill="#6a3d9a">MXU × 4</text>
+<text x="330" y="308.9" text-anchor="middle" font-size="14" fill="#8a6d00">VMEM：操作数块</text>
+<text x="330" y="463.9" text-anchor="middle" font-size="14" fill="#b45f06">DMA + 完成对象</text>
+<text x="330" y="598.9" text-anchor="middle" font-size="14" fill="#555555">HBM：全数组</text>
+<text x="25" y="534.2" text-anchor="start" font-size="12" fill="#666">实线是数据；虚线是控制</text>
+</svg>

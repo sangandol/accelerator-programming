@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="653" height="257" viewBox="5 18 653 257" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-666-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#666"/></marker></defs>
+<rect x="5" y="18" width="653" height="257" rx="8" fill="#ffffff"/>
+<rect x="105" y="30" width="220" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="215" y="70" width="275" height="30" rx="3" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="490" y="110" width="110" height="30" rx="3" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<polyline points="105,150 618,150" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-666-10)"/>
+<polyline points="105,147 105,153" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="95" y="49.6" text-anchor="end" font-size="13" fill="#222">组 0</text>
+<text x="95" y="89.6" text-anchor="end" font-size="13" fill="#222">组 1</text>
+<text x="95" y="129.6" text-anchor="end" font-size="13" fill="#222">读取最终累加</text>
+<text x="215" y="49.6" text-anchor="middle" font-size="13" fill="#3a5a8c">在途</text>
+<text x="352.5" y="89.6" text-anchor="middle" font-size="13" fill="#b45f06">在途</text>
+<text x="545" y="129.6" text-anchor="middle" font-size="13" fill="#2e7d32">读取</text>
+<text x="105" y="167.2" text-anchor="middle" font-size="12" fill="#666">0</text>
+<text x="622" y="154.2" text-anchor="start" font-size="12" fill="#666">时间</text>
+<text x="105" y="259.2" text-anchor="start" font-size="12" fill="#666">t=4 可保留一组未完成；t=7 才能读取最终累加结果</text>
+</svg>

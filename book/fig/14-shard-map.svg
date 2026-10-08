@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="484" height="314" viewBox="8 23 484 314" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="8" y="23" width="484" height="314" rx="8" fill="#ffffff"/>
+<rect x="20" y="35" width="150" height="50" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="330" y="35" width="150" height="50" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="175" y="155" width="150" height="50" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="20" y="275" width="150" height="50" rx="6" fill="#efe6f8" stroke="#6a3d9a" stroke-width="1.6"/>
+<rect x="330" y="275" width="150" height="50" rx="6" fill="#efe6f8" stroke="#6a3d9a" stroke-width="1.6"/>
+<polyline points="127.3,85 217.7,155" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="372.7,85 282.3,155" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="217.7,205 127.3,275" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="282.3,205 372.7,275" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<text x="95" y="64.9" text-anchor="middle" font-size="14" fill="#3a5a8c">设备 0：1,2 → 3</text>
+<text x="405" y="64.9" text-anchor="middle" font-size="14" fill="#2e7d32">设备 1：3,4 → 7</text>
+<text x="250" y="184.9" text-anchor="middle" font-size="14" fill="#b45f06">psum：3+7=10</text>
+<text x="95" y="304.9" text-anchor="middle" font-size="14" fill="#6a3d9a">设备 0：10</text>
+<text x="405" y="304.9" text-anchor="middle" font-size="14" fill="#6a3d9a">设备 1：10</text>
+</svg>

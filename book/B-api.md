@@ -38,7 +38,7 @@
 | 标量预取 | `pltpu.PrefetchScalarGridSpec(num_scalar_prefetch=k, grid=..., in_specs=..., out_specs=...)` | 16.7 节 |
 | 远程 DMA | `pltpu.make_async_remote_copy(src, dst, send_sem, recv_sem, device_id=(...), device_id_type=pl.DeviceIdType.MESH)` 的 `.start()`、`.wait_send()`、`.wait_recv()` | 19.1 节 |
 | 信号与屏障 | `pl.semaphore_signal(sem, n, device_id=...)`、`pl.semaphore_wait(sem, n)`、`pltpu.get_barrier_semaphore()` 配合 `CompilerParams(collective_id=0)` | 19.1、19.2 节 |
-| 解释器 | `interpret=pltpu.InterpretParams(detect_races=..., dma_execution_mode="on_wait" 或 "eager")` | 16.8 节、例 19.3 |
+| 解释器 | `interpret=pltpu.InterpretParams(detect_races=..., dma_execution_mode="on_wait" 或 "eager")` | 16.8 节、例 19.5 |
 | 硬件信息 | `pltpu.get_tpu_info()`（只在 TPU 上可用） | 15.4 节 |
 
 注意：JAX 0.11 中 `DeviceIdType`、`semaphore_signal`、`semaphore_wait` 已从 `pltpu` 移到 `pl`；旧代码中的 `pltpu.DeviceIdType` 等会报错。
@@ -72,3 +72,35 @@ Pallas GPU：BlockSpec 级的 `pl.pallas_call` 可以经 Triton 后端运行；M
 | 置换 | `lax.ppermute` | 远程 DMA | `ncclSend`、`ncclRecv` |
 | all-to-all | `lax.all_to_all` | 每个目标一个远程 DMA（19.6 节） | 用发送与接收组成；或专门的库（27.4 节） |
 | 设备端直接访问 | — | 远程 DMA | 对称内存、NVSHMEM 的放与取（27.2 节） |
+
+## B.5 从源运算到指令与硬件
+
+本节按第 22 章的 ISA 区分编程接口、虚拟指令和物理单元。表中的指令族是阅读索引；具体类型、目标架构、参与者和完成规则都必须查对应 ISA。GPU 的 PTX 会继续降低为目标机器程序，不承诺逐条对应。TPU 的完整机器 ISA 未在本书中作为公开稳定接口给出，下面用操作含义描述它，避免把 Pallas API 名当成机器指令。
+
+| 数学或程序操作 | 数据与硬件路径 | 指令或完成接口 | 应审查的条件 |
+| --- | --- | --- | --- |
+| TPU 块载入 | HBM → DMA → VMEM | Pallas 自动流水线，或 `make_async_copy` 的 start/wait | 块号、字节数、完成身份、复用前的全部读者 |
+| TPU 逐元素运算 | VMEM → 向量寄存器 → VPU/EUP → VMEM | 向量 ALU 或一元流水线操作 | 打包、通道位置、源寄存器就绪、发射槽 |
+| TPU 矩阵乘法 | 权重暂存 → MXU 活动权重；左输入 → 结果队列 → 寄存器 | 推权重、装入、乘法、取回四类操作 | 在途量、权重生命周期、K 部分积的 f32 合并 |
+| GPU 普通加载/算术/存储 | 每线程寄存器与全局存储路径 | `ld.global`、`add`/`fma`、`st.global` 指令族 | warp 请求是否合并、dtype、寄存器溢出 |
+| GPU warp 数据交换 | 同一 warp 的寄存器通道之间 | `shfl.sync` 指令族 | mask 中参与者一致、源 lane 有效 |
+| Ampere 异步载入 | 全局 → 共享内存，不经过数值寄存器 | `cp.async`、commit/wait group | 发起线程完成自己的组后，其他消费者还需合适的协作同步 |
+| warp MMA | 寄存器片段 → Tensor Core → 寄存器 | `mma.sync`，如 `m16n8k16` | 整 warp 参与、片段布局、输入与累加类型 |
+| Hopper 张量载入 | TMA 描述符 → 共享内存交错块 | `cp.async.bulk.tensor` 指令族 + mbarrier | 描述符、预期字节、到达计数、代理可见性 |
+| Hopper 矩阵乘法 | 共享内存/寄存器 → Tensor Core → 寄存器累加 | `wgmma.mma_async`、commit/wait group | 整 warpgroup 参与、等待相关组后才能读取或复用 |
+| Blackwell 矩阵乘法 | 共享内存/TMEM → Tensor Core → TMEM | `tcgen05.mma`、`tcgen05.commit` + mbarrier | 目标支持、TMEM 分配、完成绑定、结尾读者的生命周期 |
+
+> **现状（2026-10-07）**：GPU 指令形态与目标限制据 [PTX ISA](https://docs.nvidia.com/cuda/parallel-thread-execution/)；Hopper、Blackwell 资源与调优分别查 [Hopper Tuning Guide](https://docs.nvidia.com/cuda/hopper-tuning-guide/index.html) 和 [Blackwell Tuning Guide](https://docs.nvidia.com/cuda/blackwell-tuning-guide/index.html)。本次扩写的指令示意用于推理，没有 CUDA Toolkit 的编译验证。
+
+“等数据到齐”和“让某类异步执行器看见之前的写”还可能是两项操作。不同代理（普通线程访存、TMA、矩阵执行器）之间的可见性按 ISA 的 fence/proxy 规则处理；高层库通常封装这些细节，低层示意省略的规则不能直接从代码中删去。
+
+## B.6 通信中的完成与可见性
+
+| 路径 | 完成对象的含义 | 覆盖缓冲前还缺什么 |
+| --- | --- | --- |
+| Pallas 远程 DMA | send 表示源读完；recv 表示目的写完 | 目的消费者读完后的信用 |
+| CUDA stream 上的 NCCL | 操作已提交到指定 stream；完成由该 stream/事件依赖建立 | 下一次覆盖必须在通信读完与消费者用完之后 |
+| 直接对等访问 | 受支持映射上的读写；发布使用合适的系统作用域同步 | 原子能力与双方执行进展保证、消费确认 |
+| NVSHMEM 单边操作 | 由库规定 fence 的次序、quiet 的完成和信号的可见性 | 按库协议的目标消费确认，不可仅观察本地普通标志 |
+
+> **现状（2026-10-07）**：参见 [NCCL 的 stream 语义](https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/usage/streams.html) 与 [Using NVSHMEM](https://docs.nvidia.com/nvshmem/api/latest/using.html)。`fence` 用于次序并不等于交付已完成；普通 CUDA 原子操作也不能自动跟踪一次网络 put。选择路径之后，再证明第 9 章的读前与覆盖前两条边。

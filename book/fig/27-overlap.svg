@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="633" height="222" viewBox="26 18 633 222" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-666-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#666"/></marker></defs>
+<rect x="26" y="18" width="633" height="222" rx="8" fill="#ffffff"/>
+<rect x="100" y="30" width="110" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="210" y="30" width="110" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="320" y="30" width="110" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="430" y="30" width="110" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="210" y="70" width="60.5" height="30" rx="3" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="320" y="70" width="60.5" height="30" rx="3" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="430" y="70" width="60.5" height="30" rx="3" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="540" y="70" width="60.5" height="30" rx="3" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<polyline points="100,110 618.5,110" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-666-10)"/>
+<polyline points="100,107 100,113" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="90" y="49.6" text-anchor="end" font-size="13" fill="#222">GEMM 块</text>
+<text x="90" y="89.6" text-anchor="end" font-size="13" fill="#222">通信块</text>
+<text x="155" y="49.6" text-anchor="middle" font-size="13" fill="#3a5a8c">0</text>
+<text x="265" y="49.6" text-anchor="middle" font-size="13" fill="#3a5a8c">1</text>
+<text x="375" y="49.6" text-anchor="middle" font-size="13" fill="#3a5a8c">2</text>
+<text x="485" y="49.6" text-anchor="middle" font-size="13" fill="#3a5a8c">3</text>
+<text x="240.3" y="89.6" text-anchor="middle" font-size="13" fill="#b45f06">0</text>
+<text x="350.3" y="89.6" text-anchor="middle" font-size="13" fill="#b45f06">1</text>
+<text x="460.3" y="89.6" text-anchor="middle" font-size="13" fill="#b45f06">2</text>
+<text x="570.3" y="89.6" text-anchor="middle" font-size="13" fill="#b45f06">3</text>
+<text x="100" y="127.2" text-anchor="middle" font-size="12" fill="#666">0</text>
+<text x="622.5" y="114.2" text-anchor="start" font-size="12" fill="#666">时间</text>
+<text x="100" y="224.2" text-anchor="start" font-size="12" fill="#666">每块算完才能通信，四块总时间 9.1 ms（不计争用）</text>
+</svg>

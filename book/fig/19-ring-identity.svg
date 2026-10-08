@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="298" viewBox="22 27 600 298" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="22" y="27" width="600" height="298" rx="8" fill="#ffffff"/>
+<circle cx="150" cy="55" r="16" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="250" cy="155" r="16" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="150" cy="255" r="16" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<circle cx="50" cy="155" r="16" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="340" y="80" width="90" height="55" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="430" y="80" width="90" height="55" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="520" y="80" width="90" height="55" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="340" y="135" width="90" height="55" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="430" y="135" width="90" height="55" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="520" y="135" width="90" height="55" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="340" y="190" width="90" height="55" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="430" y="190" width="90" height="55" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="520" y="190" width="90" height="55" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<polyline points="161.3,66.3 238.7,143.7" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="238.7,166.3 161.3,243.7" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="138.7,243.7 61.3,166.3" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="61.3,143.7 138.7,66.3" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="161.3,66.3 238.7,143.7" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="238.7,166.3 161.3,243.7" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="138.7,243.7 61.3,166.3" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="61.3,143.7 138.7,66.3" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<text x="150" y="59.6" text-anchor="middle" font-size="13" fill="#3a5a8c">0</text>
+<text x="250" y="159.6" text-anchor="middle" font-size="13" fill="#3a5a8c">1</text>
+<text x="150" y="259.6" text-anchor="middle" font-size="13" fill="#3a5a8c">2</text>
+<text x="50" y="159.6" text-anchor="middle" font-size="13" fill="#3a5a8c">3</text>
+<text x="385" y="111.7" text-anchor="middle" font-size="12" fill="#3a5a8c">1</text>
+<text x="475" y="111.7" text-anchor="middle" font-size="12" fill="#3a5a8c">2</text>
+<text x="565" y="111.7" text-anchor="middle" font-size="12" fill="#b45f06">1</text>
+<text x="385" y="166.7" text-anchor="middle" font-size="12" fill="#3a5a8c">2</text>
+<text x="475" y="166.7" text-anchor="middle" font-size="12" fill="#3a5a8c">1</text>
+<text x="565" y="166.7" text-anchor="middle" font-size="12" fill="#b45f06">0</text>
+<text x="385" y="221.7" text-anchor="middle" font-size="12" fill="#3a5a8c">3</text>
+<text x="475" y="221.7" text-anchor="middle" font-size="12" fill="#3a5a8c">0</text>
+<text x="565" y="221.7" text-anchor="middle" font-size="12" fill="#b45f06">3</text>
+<text x="385" y="74.2" text-anchor="middle" font-size="12" fill="#666">步</text>
+<text x="475" y="74.2" text-anchor="middle" font-size="12" fill="#666">发送块</text>
+<text x="565" y="74.2" text-anchor="middle" font-size="12" fill="#666">收到块</text>
+<text x="340" y="309.2" text-anchor="start" font-size="12" fill="#666">固定观察设备 2</text>
+</svg>

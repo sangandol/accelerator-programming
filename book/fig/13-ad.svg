@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="594" height="272" viewBox="13 28 594 272" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="13" y="28" width="594" height="272" rx="8" fill="#ffffff"/>
+<rect x="25" y="40" width="125" height="48" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="235" y="40" width="160" height="48" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="470" y="40" width="125" height="48" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="25" y="190" width="125" height="48" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="235" y="190" width="160" height="48" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="470" y="190" width="125" height="48" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<polyline points="150,64 235,64" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="395,64 470,64" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="150,214 235,214" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="395,214 470,214" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<text x="87.5" y="68.9" text-anchor="middle" font-size="14" fill="#b45f06">输入切向量 v</text>
+<text x="315" y="68.9" text-anchor="middle" font-size="14" fill="#3a5a8c">局部线性规则</text>
+<text x="532.5" y="68.9" text-anchor="middle" font-size="14" fill="#2e7d32">输出切向量 Jv</text>
+<text x="25" y="134.2" text-anchor="start" font-size="12" fill="#666">JVP：前向传播变化量</text>
+<text x="87.5" y="218.9" text-anchor="middle" font-size="14" fill="#b45f06">输出余切 u</text>
+<text x="315" y="218.9" text-anchor="middle" font-size="14" fill="#3a5a8c">转置局部线性规则</text>
+<text x="532.5" y="218.9" text-anchor="middle" font-size="14" fill="#2e7d32">输入余切 Jᵀu</text>
+<text x="25" y="284.2" text-anchor="start" font-size="12" fill="#666">VJP：反向应用转置规则</text>
+</svg>

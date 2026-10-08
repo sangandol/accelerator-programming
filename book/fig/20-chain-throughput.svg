@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="735" height="392" viewBox="39 18 735 392" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-666-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#666"/></marker></defs>
+<rect x="39" y="18" width="735" height="392" rx="8" fill="#ffffff"/>
+<rect x="100" y="30" width="154" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="144" y="70" width="154" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="188" y="110" width="154" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="232" y="150" width="154" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="100" y="190" width="154" height="30" rx="3" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="254" y="190" width="154" height="30" rx="3" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="408" y="190" width="154" height="30" rx="3" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="562" y="190" width="154" height="30" rx="3" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<polyline points="100,230 734,230" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-666-10)"/>
+<polyline points="100,227 100,233" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="90" y="49.6" text-anchor="end" font-size="13" fill="#222">独立 0</text>
+<text x="90" y="89.6" text-anchor="end" font-size="13" fill="#222">独立 1</text>
+<text x="90" y="129.6" text-anchor="end" font-size="13" fill="#222">独立 2</text>
+<text x="90" y="169.6" text-anchor="end" font-size="13" fill="#222">独立 3</text>
+<text x="90" y="209.6" text-anchor="end" font-size="13" fill="#222">依赖链</text>
+<text x="177" y="49.6" text-anchor="middle" font-size="13" fill="#3a5a8c">0</text>
+<text x="221" y="89.6" text-anchor="middle" font-size="13" fill="#3a5a8c">1</text>
+<text x="265" y="129.6" text-anchor="middle" font-size="13" fill="#3a5a8c">2</text>
+<text x="309" y="169.6" text-anchor="middle" font-size="13" fill="#3a5a8c">3</text>
+<text x="177" y="209.6" text-anchor="middle" font-size="13" fill="#b45f06">0</text>
+<text x="331" y="209.6" text-anchor="middle" font-size="13" fill="#b45f06">1</text>
+<text x="485" y="209.6" text-anchor="middle" font-size="13" fill="#b45f06">2</text>
+<text x="639" y="209.6" text-anchor="middle" font-size="13" fill="#b45f06">3</text>
+<text x="100" y="247.2" text-anchor="middle" font-size="12" fill="#666">0</text>
+<text x="738" y="234.2" text-anchor="start" font-size="12" fill="#666">时间</text>
+<text x="100" y="394.2" text-anchor="start" font-size="12" fill="#666">独立完成于 13；串行依赖完成于 28</text>
+</svg>

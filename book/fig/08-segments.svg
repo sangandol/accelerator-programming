@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="536" height="337" viewBox="8 13 536 337" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<rect x="8" y="13" width="536" height="337" rx="8" fill="#ffffff"/>
+<rect x="20" y="55" width="64" height="30" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="84" y="55" width="64" height="30" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="148" y="55" width="64" height="30" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="212" y="55" width="64" height="30" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="276" y="55" width="64" height="30" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="21" y="57" width="62" height="26" rx="6" fill="#fdebd3" stroke="#222" stroke-width="1.6"/>
+<rect x="85" y="57" width="62" height="26" rx="6" fill="#fdebd3" stroke="#222" stroke-width="1.6"/>
+<rect x="149" y="57" width="62" height="26" rx="6" fill="#fdebd3" stroke="#222" stroke-width="1.6"/>
+<rect x="213" y="57" width="62" height="26" rx="6" fill="#fdebd3" stroke="#222" stroke-width="1.6"/>
+<rect x="20" y="150" width="64" height="30" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="84" y="150" width="64" height="30" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="148" y="150" width="64" height="30" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="212" y="150" width="64" height="30" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="276" y="150" width="64" height="30" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="28" y="152" width="55" height="26" rx="6" fill="#fdebd3" stroke="#222" stroke-width="1.6"/>
+<rect x="85" y="152" width="62" height="26" rx="6" fill="#fdebd3" stroke="#222" stroke-width="1.6"/>
+<rect x="149" y="152" width="62" height="26" rx="6" fill="#fdebd3" stroke="#222" stroke-width="1.6"/>
+<rect x="213" y="152" width="62" height="26" rx="6" fill="#fdebd3" stroke="#222" stroke-width="1.6"/>
+<rect x="277" y="152" width="7" height="26" rx="6" fill="#fdebd3" stroke="#222" stroke-width="1.6"/>
+<rect x="20" y="245" width="64" height="30" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="84" y="245" width="64" height="30" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="148" y="245" width="64" height="30" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="212" y="245" width="64" height="30" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="276" y="245" width="64" height="30" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="340" y="245" width="64" height="30" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="404" y="245" width="64" height="30" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="468" y="245" width="64" height="30" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="21" y="247" width="7" height="26" rx="6" fill="#fdebd3" stroke="#222" stroke-width="1.6"/>
+<rect x="85" y="247" width="7" height="26" rx="6" fill="#fdebd3" stroke="#222" stroke-width="1.6"/>
+<rect x="149" y="247" width="7" height="26" rx="6" fill="#fdebd3" stroke="#222" stroke-width="1.6"/>
+<rect x="213" y="247" width="7" height="26" rx="6" fill="#fdebd3" stroke="#222" stroke-width="1.6"/>
+<rect x="277" y="247" width="7" height="26" rx="6" fill="#fdebd3" stroke="#222" stroke-width="1.6"/>
+<rect x="341" y="247" width="7" height="26" rx="6" fill="#fdebd3" stroke="#222" stroke-width="1.6"/>
+<rect x="405" y="247" width="7" height="26" rx="6" fill="#fdebd3" stroke="#222" stroke-width="1.6"/>
+<rect x="469" y="247" width="7" height="26" rx="6" fill="#fdebd3" stroke="#222" stroke-width="1.6"/>
+<text x="20" y="39.9" text-anchor="start" font-size="14" fill="#222">起点 0：4 段</text>
+<text x="52" y="74.2" text-anchor="middle" font-size="12" fill="#555555">0</text>
+<text x="116" y="74.2" text-anchor="middle" font-size="12" fill="#555555">1</text>
+<text x="180" y="74.2" text-anchor="middle" font-size="12" fill="#555555">2</text>
+<text x="244" y="74.2" text-anchor="middle" font-size="12" fill="#555555">3</text>
+<text x="308" y="74.2" text-anchor="middle" font-size="12" fill="#222">4</text>
+<text x="20" y="134.9" text-anchor="start" font-size="14" fill="#222">起点 4：5 段</text>
+<text x="52" y="169.2" text-anchor="middle" font-size="12" fill="#555555">0</text>
+<text x="116" y="169.2" text-anchor="middle" font-size="12" fill="#555555">1</text>
+<text x="180" y="169.2" text-anchor="middle" font-size="12" fill="#555555">2</text>
+<text x="244" y="169.2" text-anchor="middle" font-size="12" fill="#555555">3</text>
+<text x="308" y="169.2" text-anchor="middle" font-size="12" fill="#555555">4</text>
+<text x="20" y="229.9" text-anchor="start" font-size="14" fill="#222">跨步：32 段（画前 8 段）</text>
+<text x="52" y="264.2" text-anchor="middle" font-size="12" fill="#555555">0</text>
+<text x="116" y="264.2" text-anchor="middle" font-size="12" fill="#555555">1</text>
+<text x="180" y="264.2" text-anchor="middle" font-size="12" fill="#555555">2</text>
+<text x="244" y="264.2" text-anchor="middle" font-size="12" fill="#555555">3</text>
+<text x="308" y="264.2" text-anchor="middle" font-size="12" fill="#555555">4</text>
+<text x="372" y="264.2" text-anchor="middle" font-size="12" fill="#555555">5</text>
+<text x="436" y="264.2" text-anchor="middle" font-size="12" fill="#555555">6</text>
+<text x="500" y="264.2" text-anchor="middle" font-size="12" fill="#555555">7</text>
+<text x="20" y="334.2" text-anchor="start" font-size="12" fill="#666">格是 32 字节段；段内有用字节以橙色表示</text>
+</svg>

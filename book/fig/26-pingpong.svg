@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="684" height="327" viewBox="26 18 684 327" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-666-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#666"/></marker></defs>
+<rect x="26" y="18" width="684" height="327" rx="8" fill="#ffffff"/>
+<rect x="120" y="30" width="76" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="196" y="70" width="76" height="30" rx="3" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="196" y="110" width="76" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="272" y="150" width="76" height="30" rx="3" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="272" y="30" width="76" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="348" y="70" width="76" height="30" rx="3" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="348" y="110" width="76" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="424" y="150" width="76" height="30" rx="3" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="424" y="30" width="76" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="500" y="70" width="76" height="30" rx="3" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="500" y="110" width="76" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="576" y="150" width="76" height="30" rx="3" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<polyline points="120,190 670,190" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-666-10)"/>
+<polyline points="120,187 120,193" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="110" y="49.6" text-anchor="end" font-size="13" fill="#222">A：矩阵</text>
+<text x="110" y="89.6" text-anchor="end" font-size="13" fill="#222">B：矩阵</text>
+<text x="110" y="129.6" text-anchor="end" font-size="13" fill="#222">A：softmax</text>
+<text x="110" y="169.6" text-anchor="end" font-size="13" fill="#222">B：softmax</text>
+<text x="158" y="49.6" text-anchor="middle" font-size="13" fill="#3a5a8c">A0</text>
+<text x="234" y="89.6" text-anchor="middle" font-size="13" fill="#2e7d32">B0</text>
+<text x="234" y="129.6" text-anchor="middle" font-size="13" fill="#3a5a8c">A0</text>
+<text x="310" y="169.6" text-anchor="middle" font-size="13" fill="#2e7d32">B0</text>
+<text x="310" y="49.6" text-anchor="middle" font-size="13" fill="#3a5a8c">A1</text>
+<text x="386" y="89.6" text-anchor="middle" font-size="13" fill="#2e7d32">B1</text>
+<text x="386" y="129.6" text-anchor="middle" font-size="13" fill="#3a5a8c">A1</text>
+<text x="462" y="169.6" text-anchor="middle" font-size="13" fill="#2e7d32">B1</text>
+<text x="462" y="49.6" text-anchor="middle" font-size="13" fill="#3a5a8c">A2</text>
+<text x="538" y="89.6" text-anchor="middle" font-size="13" fill="#2e7d32">B2</text>
+<text x="538" y="129.6" text-anchor="middle" font-size="13" fill="#3a5a8c">A2</text>
+<text x="614" y="169.6" text-anchor="middle" font-size="13" fill="#2e7d32">B2</text>
+<text x="120" y="207.2" text-anchor="middle" font-size="12" fill="#666">0</text>
+<text x="674" y="194.2" text-anchor="start" font-size="12" fill="#666">时间</text>
+<text x="120" y="329.2" text-anchor="start" font-size="12" fill="#666">不同查询组可重叠；同组的状态更新顺序不变</text>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="614" height="234" viewBox="8 28 614 234" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="8" y="28" width="614" height="234" rx="8" fill="#ffffff"/>
+<rect x="20" y="40" width="130" height="70" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="230" y="40" width="170" height="70" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="480" y="40" width="130" height="70" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="480" y="195" width="130" height="55" rx="6" fill="#efe6f8" stroke="#6a3d9a" stroke-width="1.6"/>
+<polyline points="150,75 230,75" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="400,75 480,75" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="545,110 545,195" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<text x="85" y="79.9" text-anchor="middle" font-size="14" fill="#3a5a8c">6 个词元</text>
+<text x="315" y="79.9" text-anchor="middle" font-size="14" fill="#b45f06">各选 2 专家：12 份</text>
+<text x="545" y="79.9" text-anchor="middle" font-size="14" fill="#2e7d32">按专家计算</text>
+<text x="545" y="227.4" text-anchor="middle" font-size="14" fill="#6a3d9a">还原并加权</text>
+<text x="20" y="199.2" text-anchor="start" font-size="12" fill="#666">每份保留原词元编号和路由权重</text>
+<text x="20" y="224.2" text-anchor="start" font-size="12" fill="#666">最终仍输出 6 个词元的隐藏向量</text>
+</svg>

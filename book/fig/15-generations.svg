@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="489" height="327" viewBox="13 28 489 327" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="13" y="28" width="489" height="327" rx="8" fill="#ffffff"/>
+<rect x="25" y="40" width="140" height="42" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="230" y="40" width="260" height="42" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="25" y="105" width="140" height="42" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="230" y="105" width="260" height="42" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="25" y="170" width="140" height="42" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="230" y="170" width="260" height="42" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="25" y="235" width="140" height="42" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="230" y="235" width="260" height="42" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<polyline points="165,61 230,61" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="165,126 230,126" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="165,191 230,191" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="165,256 230,256" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<text x="95" y="65.9" text-anchor="middle" font-size="14" fill="#3a5a8c">矩阵单元</text>
+<text x="360" y="65.9" text-anchor="middle" font-size="14" fill="#b45f06">形状、格式、数量</text>
+<text x="95" y="130.9" text-anchor="middle" font-size="14" fill="#3a5a8c">片上 / HBM</text>
+<text x="360" y="130.9" text-anchor="middle" font-size="14" fill="#b45f06">容量、带宽、布局</text>
+<text x="95" y="195.9" text-anchor="middle" font-size="14" fill="#3a5a8c">设备边界</text>
+<text x="360" y="195.9" text-anchor="middle" font-size="14" fill="#b45f06">TC / 芯粒 / device</text>
+<text x="95" y="260.9" text-anchor="middle" font-size="14" fill="#3a5a8c">互联</text>
+<text x="360" y="260.9" text-anchor="middle" font-size="14" fill="#b45f06">拓扑、方向、注入</text>
+<text x="25" y="339.2" text-anchor="start" font-size="12" fill="#666">迁移保留算法与不变量；按目标代际重填四列参数</text>
+</svg>

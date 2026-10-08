@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="359" height="350" viewBox="44 40 359 350" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<rect x="44" y="40" width="359" height="350" rx="8" fill="#ffffff"/>
+<rect x="70" y="70" width="72" height="62" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="142" y="70" width="72" height="62" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="214" y="70" width="72" height="62" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="286" y="70" width="72" height="62" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="70" y="132" width="72" height="62" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="142" y="132" width="72" height="62" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="214" y="132" width="72" height="62" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="286" y="132" width="72" height="62" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="70" y="194" width="72" height="62" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="142" y="194" width="72" height="62" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="214" y="194" width="72" height="62" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="286" y="194" width="72" height="62" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="70" y="256" width="72" height="62" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="142" y="256" width="72" height="62" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="214" y="256" width="72" height="62" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="286" y="256" width="72" height="62" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<text x="106" y="105.2" text-anchor="middle" font-size="12" fill="#b45f06">部分</text>
+<text x="178" y="105.2" text-anchor="middle" font-size="12" fill="#222">跳过</text>
+<text x="250" y="105.2" text-anchor="middle" font-size="12" fill="#222">跳过</text>
+<text x="322" y="105.2" text-anchor="middle" font-size="12" fill="#222">跳过</text>
+<text x="106" y="167.2" text-anchor="middle" font-size="12" fill="#2e7d32">全部</text>
+<text x="178" y="167.2" text-anchor="middle" font-size="12" fill="#b45f06">部分</text>
+<text x="250" y="167.2" text-anchor="middle" font-size="12" fill="#222">跳过</text>
+<text x="322" y="167.2" text-anchor="middle" font-size="12" fill="#222">跳过</text>
+<text x="106" y="229.2" text-anchor="middle" font-size="12" fill="#2e7d32">全部</text>
+<text x="178" y="229.2" text-anchor="middle" font-size="12" fill="#2e7d32">全部</text>
+<text x="250" y="229.2" text-anchor="middle" font-size="12" fill="#b45f06">部分</text>
+<text x="322" y="229.2" text-anchor="middle" font-size="12" fill="#222">跳过</text>
+<text x="106" y="291.2" text-anchor="middle" font-size="12" fill="#2e7d32">全部</text>
+<text x="178" y="291.2" text-anchor="middle" font-size="12" fill="#2e7d32">全部</text>
+<text x="250" y="291.2" text-anchor="middle" font-size="12" fill="#2e7d32">全部</text>
+<text x="322" y="291.2" text-anchor="middle" font-size="12" fill="#b45f06">部分</text>
+<text x="64" y="105.2" text-anchor="end" font-size="12" fill="#666">0</text>
+<text x="64" y="167.2" text-anchor="end" font-size="12" fill="#666">1</text>
+<text x="64" y="229.2" text-anchor="end" font-size="12" fill="#666">2</text>
+<text x="64" y="291.2" text-anchor="end" font-size="12" fill="#666">3</text>
+<text x="106" y="64.2" text-anchor="middle" font-size="12" fill="#666">0</text>
+<text x="178" y="64.2" text-anchor="middle" font-size="12" fill="#666">1</text>
+<text x="250" y="64.2" text-anchor="middle" font-size="12" fill="#666">2</text>
+<text x="322" y="64.2" text-anchor="middle" font-size="12" fill="#666">3</text>
+<text x="70" y="374.2" text-anchor="start" font-size="12" fill="#666">行：查询块；列：键块。10 个非空块中只有 4 个需元素掩码</text>
+</svg>

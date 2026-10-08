@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="544" height="327" viewBox="68 13 544 327" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="68" y="13" width="544" height="327" rx="8" fill="#ffffff"/>
+<rect x="80" y="110" width="130" height="50" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="275" y="110" width="130" height="50" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="470" y="110" width="130" height="50" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="100" y="25" width="90" height="35" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="100" y="235" width="90" height="35" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="295" y="25" width="90" height="35" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="295" y="235" width="90" height="35" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="490" y="25" width="90" height="35" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="490" y="235" width="90" height="35" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<polyline points="145,60 145,110" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="145,160 145,235" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="340,60 340,110" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="340,160 340,235" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="535,60 535,110" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="535,160 535,235" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="210,135 275,135" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="405,135 470,135" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<text x="145" y="139.9" text-anchor="middle" font-size="14" fill="#3a5a8c">循环体 f：步 0</text>
+<text x="340" y="139.9" text-anchor="middle" font-size="14" fill="#3a5a8c">循环体 f：步 1</text>
+<text x="535" y="139.9" text-anchor="middle" font-size="14" fill="#3a5a8c">循环体 f：步 2</text>
+<text x="145" y="47.4" text-anchor="middle" font-size="14" fill="#b45f06">x0</text>
+<text x="145" y="257.4" text-anchor="middle" font-size="14" fill="#2e7d32">y0</text>
+<text x="340" y="47.4" text-anchor="middle" font-size="14" fill="#b45f06">x1</text>
+<text x="340" y="257.4" text-anchor="middle" font-size="14" fill="#2e7d32">y1</text>
+<text x="535" y="47.4" text-anchor="middle" font-size="14" fill="#b45f06">x2</text>
+<text x="535" y="257.4" text-anchor="middle" font-size="14" fill="#2e7d32">y2</text>
+<text x="242" y="99.2" text-anchor="middle" font-size="12" fill="#666">c₁</text>
+<text x="437" y="99.2" text-anchor="middle" font-size="12" fill="#666">c₂</text>
+<text x="80" y="324.2" text-anchor="start" font-size="12" fill="#666">携带状态类型固定；各 yᵢ 按已知长度堆叠</text>
+</svg>

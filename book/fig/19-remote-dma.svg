@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="539" height="345" viewBox="-2 15 539 345" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker><marker id="ah-b45f06-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b45f06"/></marker></defs>
+<rect x="-2" y="15" width="539" height="345" rx="8" fill="#ffffff"/>
+<rect x="30" y="65" width="150" height="55" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="340" y="65" width="150" height="55" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="30" y="190" width="150" height="40" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="340" y="190" width="150" height="40" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<polyline points="180,92.5 340,92.5" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="490,92.5 525,92 525,300 10,300 10,92 30,92.5" fill="none" stroke="#b45f06" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-b45f06-10)"/>
+<text x="105" y="97.4" text-anchor="middle" font-size="14" fill="#3a5a8c">发送设备 0：A</text>
+<text x="415" y="97.4" text-anchor="middle" font-size="14" fill="#2e7d32">接收设备 1：B</text>
+<text x="255" y="39.2" text-anchor="middle" font-size="12" fill="#666">远程 DMA</text>
+<text x="105" y="214.9" text-anchor="middle" font-size="14" fill="#3a5a8c">send：A 可复用</text>
+<text x="415" y="214.9" text-anchor="middle" font-size="14" fill="#2e7d32">recv：B 可读取</text>
+<text x="255" y="344.2" text-anchor="middle" font-size="12" fill="#666">B 的所有读者结束，再回送信用</text>
+</svg>

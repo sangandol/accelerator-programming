@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="519" height="516" viewBox="8 13 519 516" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker><marker id="ah-b45f06-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b45f06"/></marker></defs>
+<rect x="8" y="13" width="519" height="516" rx="8" fill="#ffffff"/>
+<rect x="180" y="25" width="160" height="42" rx="6" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<rect x="180" y="100" width="160" height="42" rx="6" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<rect x="180" y="175" width="160" height="42" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="180" y="250" width="160" height="42" rx="6" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<rect x="180" y="325" width="160" height="42" rx="6" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<rect x="180" y="400" width="160" height="42" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="180" y="475" width="160" height="42" rx="6" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<polyline points="260,67 260,100" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="260,142 260,175" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="260,217 260,250" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="260,292 260,325" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="260,367 260,400" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="260,442 260,475" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="180,46 65,46 65,271 180,271" fill="none" stroke="#b45f06" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-b45f06-10)"/>
+<polyline points="340,271 455,271 455,496 340,496" fill="none" stroke="#b45f06" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-b45f06-10)"/>
+<text x="260" y="50.9" text-anchor="middle" font-size="14" fill="#555555">X [N,D]</text>
+<text x="260" y="125.9" text-anchor="middle" font-size="14" fill="#555555">RMSNorm</text>
+<text x="260" y="200.9" text-anchor="middle" font-size="14" fill="#3a5a8c">注意力</text>
+<text x="260" y="275.9" text-anchor="middle" font-size="14" fill="#555555">加残差</text>
+<text x="260" y="350.9" text-anchor="middle" font-size="14" fill="#555555">RMSNorm</text>
+<text x="260" y="425.9" text-anchor="middle" font-size="14" fill="#3a5a8c">门控 MLP</text>
+<text x="260" y="500.9" text-anchor="middle" font-size="14" fill="#555555">加残差</text>
+<text x="380" y="200.2" text-anchor="start" font-size="12" fill="#666">Q、K、V → softmax → O</text>
+<text x="20" y="425.2" text-anchor="start" font-size="12" fill="#666">两次上投影 [N,F]</text>
+<text x="20" y="450.2" text-anchor="start" font-size="12" fill="#666">门控后下投影 [N,D]</text>
+</svg>

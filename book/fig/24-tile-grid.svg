@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="459" height="307" viewBox="18 43 459 307" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<rect x="18" y="43" width="459" height="307" rx="8" fill="#ffffff"/>
+<rect x="30" y="55" width="145" height="85" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="175" y="55" width="145" height="85" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="320" y="55" width="145" height="85" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="30" y="140" width="145" height="85" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="175" y="140" width="145" height="85" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="320" y="140" width="145" height="85" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<polyline points="30,270 30,276 465,276 465,270" fill="none" stroke="#666" stroke-width="1.2" stroke-linejoin="round"/>
+<text x="102.5" y="101.7" text-anchor="middle" font-size="12" fill="#3a5a8c">实例 (0,0)</text>
+<text x="247.5" y="101.7" text-anchor="middle" font-size="12" fill="#3a5a8c">实例 (0,1)</text>
+<text x="392.5" y="101.7" text-anchor="middle" font-size="12" fill="#3a5a8c">实例 (0,2)</text>
+<text x="102.5" y="186.7" text-anchor="middle" font-size="12" fill="#3a5a8c">实例 (1,0)</text>
+<text x="247.5" y="186.7" text-anchor="middle" font-size="12" fill="#3a5a8c">实例 (1,1)</text>
+<text x="392.5" y="186.7" text-anchor="middle" font-size="12" fill="#b45f06">实例 (1,2)</text>
+<text x="247.5" y="292.2" text-anchor="middle" font-size="12" fill="#666">C：256×384，每实例输出 128×128</text>
+<text x="30" y="334.2" text-anchor="start" font-size="12" fill="#666">块内线程、寄存器与流水线由后端分配</text>
+</svg>

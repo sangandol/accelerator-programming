@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="669" height="387" viewBox="13 13 669 387" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="13" y="13" width="669" height="387" rx="8" fill="#ffffff"/>
+<rect x="25" y="45" width="150" height="65" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="260" y="25" width="155" height="48" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="260" y="110" width="155" height="48" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="260" y="195" width="155" height="48" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="260" y="280" width="155" height="48" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="500" y="120" width="170" height="65" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<polyline points="260,58.3 175,68.5" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="260,115.6 175,95.3" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="297.2,195 154.5,110" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="312.3,280 134.1,110" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="175,89.1 500,139.4" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<text x="100" y="82.4" text-anchor="middle" font-size="14" fill="#3a5a8c">驻留 Q + 状态</text>
+<text x="337.5" y="53.9" text-anchor="middle" font-size="14" fill="#2e7d32">键值块 0</text>
+<text x="337.5" y="138.9" text-anchor="middle" font-size="14" fill="#2e7d32">键值块 1</text>
+<text x="337.5" y="223.9" text-anchor="middle" font-size="14" fill="#2e7d32">键值块 2</text>
+<text x="337.5" y="308.9" text-anchor="middle" font-size="14" fill="#2e7d32">键值块 3</text>
+<text x="585" y="157.4" text-anchor="middle" font-size="14" fill="#b45f06">片上临时 S / P</text>
+<text x="25" y="384.2" text-anchor="start" font-size="12" fill="#666">换一个查询块后，可能再次读取全部 K/V</text>
+</svg>

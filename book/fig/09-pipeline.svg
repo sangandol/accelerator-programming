@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="743" height="252" viewBox="35 18 743 252" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-666-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#666"/></marker></defs>
+<rect x="35" y="18" width="743" height="252" rx="8" fill="#ffffff"/>
+<rect x="95" y="30" width="75" height="30" rx="3" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="170" y="70" width="125" height="30" rx="3" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="295" y="110" width="50" height="30" rx="3" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="220" y="30" width="75" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="295" y="70" width="125" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="420" y="110" width="50" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="345" y="30" width="75" height="30" rx="3" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="420" y="70" width="125" height="30" rx="3" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="545" y="110" width="50" height="30" rx="3" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="470" y="30" width="75" height="30" rx="3" fill="#efe6f8" stroke="#6a3d9a" stroke-width="1.6"/>
+<rect x="545" y="70" width="125" height="30" rx="3" fill="#efe6f8" stroke="#6a3d9a" stroke-width="1.6"/>
+<rect x="670" y="110" width="50" height="30" rx="3" fill="#efe6f8" stroke="#6a3d9a" stroke-width="1.6"/>
+<polyline points="95,150 738,150" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-666-10)"/>
+<polyline points="95,147 95,153" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="85" y="49.6" text-anchor="end" font-size="13" fill="#222">读入 3</text>
+<text x="85" y="89.6" text-anchor="end" font-size="13" fill="#222">计算 5</text>
+<text x="85" y="129.6" text-anchor="end" font-size="13" fill="#222">写回 2</text>
+<text x="132.5" y="49.6" text-anchor="middle" font-size="13" fill="#b45f06">L0</text>
+<text x="232.5" y="89.6" text-anchor="middle" font-size="13" fill="#b45f06">C0</text>
+<text x="320" y="129.6" text-anchor="middle" font-size="13" fill="#b45f06">S0</text>
+<text x="257.5" y="49.6" text-anchor="middle" font-size="13" fill="#3a5a8c">L1</text>
+<text x="357.5" y="89.6" text-anchor="middle" font-size="13" fill="#3a5a8c">C1</text>
+<text x="445" y="129.6" text-anchor="middle" font-size="13" fill="#3a5a8c">S1</text>
+<text x="382.5" y="49.6" text-anchor="middle" font-size="13" fill="#2e7d32">L2</text>
+<text x="482.5" y="89.6" text-anchor="middle" font-size="13" fill="#2e7d32">C2</text>
+<text x="570" y="129.6" text-anchor="middle" font-size="13" fill="#2e7d32">S2</text>
+<text x="507.5" y="49.6" text-anchor="middle" font-size="13" fill="#6a3d9a">L3</text>
+<text x="607.5" y="89.6" text-anchor="middle" font-size="13" fill="#6a3d9a">C3</text>
+<text x="695" y="129.6" text-anchor="middle" font-size="13" fill="#6a3d9a">S3</text>
+<text x="95" y="167.2" text-anchor="middle" font-size="12" fill="#666">0</text>
+<text x="742" y="154.2" text-anchor="start" font-size="12" fill="#666">时间</text>
+<text x="95" y="254.2" text-anchor="start" font-size="12" fill="#666">首块用 10，之后每 5 完成一块</text>
+</svg>

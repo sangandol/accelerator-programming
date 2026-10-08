@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="634" height="207" viewBox="13 33 634 207" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="13" y="33" width="634" height="207" rx="8" fill="#ffffff"/>
+<rect x="25" y="45" width="120" height="50" rx="6" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<rect x="250" y="45" width="160" height="50" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="515" y="45" width="120" height="50" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<polyline points="145,70 250,70" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="410,70 515,70" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<text x="85" y="74.9" text-anchor="middle" font-size="14" fill="#555555">HBM / L2</text>
+<text x="330" y="74.9" text-anchor="middle" font-size="14" fill="#3a5a8c">共享内存</text>
+<text x="575" y="74.9" text-anchor="middle" font-size="14" fill="#b45f06">寄存器</text>
+<text x="196" y="154.2" text-anchor="middle" font-size="12" fill="#666">请求合并：段数</text>
+<text x="464" y="154.2" text-anchor="middle" font-size="12" fill="#666">bank 冲突：映射</text>
+<text x="25" y="224.2" text-anchor="start" font-size="12" fill="#666">每一条传输边分别分析，修好一条不会自动修好另一条</text>
+</svg>

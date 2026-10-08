@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="689" height="342" viewBox="13 28 689 342" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="13" y="28" width="689" height="342" rx="8" fill="#ffffff"/>
+<rect x="25" y="130" width="145" height="60" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="280" y="130" width="155" height="60" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="545" y="40" width="145" height="55" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="545" y="245" width="145" height="55" rx="6" fill="#efe6f8" stroke="#6a3d9a" stroke-width="1.6"/>
+<polyline points="170,160 280,160" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="435,132.4 545,93.3" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="426.8,190 553.9,245" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<text x="97.5" y="164.9" text-anchor="middle" font-size="14" fill="#3a5a8c">词元隐藏向量 X</text>
+<text x="357.5" y="164.9" text-anchor="middle" font-size="14" fill="#b45f06">远端域：一份 X</text>
+<text x="617.5" y="72.4" text-anchor="middle" font-size="14" fill="#2e7d32">专家 A</text>
+<text x="617.5" y="277.4" text-anchor="middle" font-size="14" fill="#6a3d9a">专家 B</text>
+<text x="220" y="99.2" text-anchor="middle" font-size="12" fill="#666">跨网卡</text>
+<text x="505" y="194.2" text-anchor="middle" font-size="12" fill="#666">域内复制</text>
+<text x="25" y="354.2" text-anchor="start" font-size="12" fill="#666">路由和返回仍保留词元编号、专家身份与权重</text>
+</svg>

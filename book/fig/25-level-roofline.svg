@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="689" height="249" viewBox="13 53 689 249" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="13" y="53" width="689" height="249" rx="8" fill="#ffffff"/>
+<rect x="25" y="65" width="140" height="60" rx="6" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<rect x="200" y="65" width="140" height="60" rx="6" fill="#efe6f8" stroke="#6a3d9a" stroke-width="1.6"/>
+<rect x="375" y="65" width="140" height="60" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="550" y="65" width="140" height="60" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<polyline points="165,95 200,95" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="340,95 375,95" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="515,95 550,95" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<text x="95" y="99.9" text-anchor="middle" font-size="14" fill="#555555">HBM</text>
+<text x="270" y="99.9" text-anchor="middle" font-size="14" fill="#6a3d9a">L2</text>
+<text x="445" y="99.9" text-anchor="middle" font-size="14" fill="#3a5a8c">共享内存</text>
+<text x="620" y="99.9" text-anchor="middle" font-size="14" fill="#b45f06">寄存器 / 矩阵单元</text>
+<text x="180" y="189.2" text-anchor="middle" font-size="12" fill="#666">块间复用</text>
+<text x="360" y="189.2" text-anchor="middle" font-size="12" fill="#666">块内复用</text>
+<text x="545" y="189.2" text-anchor="middle" font-size="12" fill="#666">片段复用</text>
+<text x="360" y="284.9" text-anchor="middle" font-size="14" fill="#222">T ≥ max(F/P, Q_H/B_H, Q_L2/B_L2, Q_S/B_S)</text>
+</svg>

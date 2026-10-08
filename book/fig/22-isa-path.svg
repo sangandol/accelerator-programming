@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="450" height="339" viewBox="48 13 450 339" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="48" y="13" width="450" height="339" rx="8" fill="#ffffff"/>
+<rect x="60" y="25" width="310" height="45" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="60" y="115" width="310" height="45" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="60" y="205" width="310" height="45" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="60" y="295" width="310" height="45" rx="6" fill="#efe6f8" stroke="#6a3d9a" stroke-width="1.6"/>
+<polyline points="215,70 215,115" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="215,160 215,205" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="215,250 215,295" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<text x="215" y="52.4" text-anchor="middle" font-size="14" fill="#3a5a8c">CUDA：一线程 z=x+y</text>
+<text x="215" y="142.4" text-anchor="middle" font-size="14" fill="#2e7d32">PTX：载入、加法、存储</text>
+<text x="215" y="232.4" text-anchor="middle" font-size="14" fill="#b45f06">目标代码：分配寄存器</text>
+<text x="215" y="322.4" text-anchor="middle" font-size="14" fill="#6a3d9a">硬件：warp 请求与数值单元</text>
+<text x="410" y="141.7" text-anchor="start" font-size="12" fill="#666">公开虚拟 ISA</text>
+<text x="410" y="231.7" text-anchor="start" font-size="12" fill="#666">与目标相关</text>
+</svg>

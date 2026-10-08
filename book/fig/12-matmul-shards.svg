@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="479" height="257" viewBox="13 23 479 257" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="13" y="23" width="479" height="257" rx="8" fill="#ffffff"/>
+<rect x="25" y="35" width="175" height="52" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="300" y="35" width="180" height="52" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="25" y="160" width="175" height="52" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="300" y="160" width="180" height="52" rx="6" fill="#efe6f8" stroke="#6a3d9a" stroke-width="1.6"/>
+<polyline points="200,61 300,61" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="200,186 300,186" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<text x="112.5" y="65.9" text-anchor="middle" font-size="14" fill="#3a5a8c">切输出行：各算一半行</text>
+<text x="390" y="65.9" text-anchor="middle" font-size="14" fill="#2e7d32">拼接即完整 C</text>
+<text x="112.5" y="190.9" text-anchor="middle" font-size="14" fill="#b45f06">切 K：各算半个点积</text>
+<text x="390" y="190.9" text-anchor="middle" font-size="14" fill="#6a3d9a">50 + 250 = 300</text>
+<text x="220" y="129.2" text-anchor="middle" font-size="12" fill="#666">切求和下标，需要合并贡献</text>
+<text x="25" y="264.2" text-anchor="start" font-size="12" fill="#666">两块部分和覆盖同一输出位置，不是两块完整输出</text>
+</svg>

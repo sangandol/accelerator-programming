@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="454" height="277" viewBox="8 23 454 277" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="8" y="23" width="454" height="277" rx="8" fill="#ffffff"/>
+<rect x="20" y="35" width="170" height="55" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="280" y="35" width="170" height="55" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="280" y="165" width="170" height="55" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="20" y="165" width="170" height="55" rx="6" fill="#efe6f8" stroke="#6a3d9a" stroke-width="1.6"/>
+<polyline points="190,62.5 280,62.5" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="365,90 365,165" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="190,192.5 280,192.5" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<text x="105" y="67.4" text-anchor="middle" font-size="14" fill="#3a5a8c">Python f + f32[4]</text>
+<text x="365" y="67.4" text-anchor="middle" font-size="14" fill="#2e7d32">jaxpr：乘、加</text>
+<text x="365" y="197.4" text-anchor="middle" font-size="14" fill="#b45f06">设备执行同一程序</text>
+<text x="105" y="197.4" text-anchor="middle" font-size="14" fill="#6a3d9a">实际值：1,2,3,4</text>
+<text x="20" y="284.2" text-anchor="start" font-size="12" fill="#666">类型用于构造与缓存；数值用于执行</text>
+</svg>

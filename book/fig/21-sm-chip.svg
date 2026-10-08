@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="624" height="464" viewBox="13 13 624 464" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="13" y="13" width="624" height="464" rx="8" fill="#ffffff"/>
+<rect x="25" y="25" width="180" height="205" rx="6" fill="none" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="40" y="75" width="150" height="40" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="40" y="130" width="150" height="35" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="40" y="178" width="150" height="35" rx="6" fill="#fff5cc" stroke="#8a6d00" stroke-width="1.6"/>
+<rect x="235" y="25" width="180" height="205" rx="6" fill="none" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="250" y="75" width="150" height="40" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="250" y="130" width="150" height="35" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="250" y="178" width="150" height="35" rx="6" fill="#fff5cc" stroke="#8a6d00" stroke-width="1.6"/>
+<rect x="445" y="25" width="180" height="205" rx="6" fill="none" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="460" y="75" width="150" height="40" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="460" y="130" width="150" height="35" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="460" y="178" width="150" height="35" rx="6" fill="#fff5cc" stroke="#8a6d00" stroke-width="1.6"/>
+<rect x="210" y="310" width="230" height="45" rx="6" fill="#efe6f8" stroke="#6a3d9a" stroke-width="1.6"/>
+<rect x="210" y="420" width="230" height="45" rx="6" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<polyline points="141.8,213 290.5,310" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)" marker-start="url(#ah-222-10)"/>
+<polyline points="325,213 325,310" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)" marker-start="url(#ah-222-10)"/>
+<polyline points="508.2,213 359.5,310" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)" marker-start="url(#ah-222-10)"/>
+<polyline points="325,355 325,420" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)" marker-start="url(#ah-222-10)"/>
+<text x="115" y="52.9" text-anchor="middle" font-size="14" fill="#222">SM 0</text>
+<text x="115" y="99.9" text-anchor="middle" font-size="14" fill="#2e7d32">warp 调度与运算</text>
+<text x="115" y="152.4" text-anchor="middle" font-size="14" fill="#b45f06">每线程寄存器</text>
+<text x="115" y="200.4" text-anchor="middle" font-size="14" fill="#8a6d00">共享内存 / L1</text>
+<text x="325" y="52.9" text-anchor="middle" font-size="14" fill="#222">SM 1</text>
+<text x="325" y="99.9" text-anchor="middle" font-size="14" fill="#2e7d32">warp 调度与运算</text>
+<text x="325" y="152.4" text-anchor="middle" font-size="14" fill="#b45f06">每线程寄存器</text>
+<text x="325" y="200.4" text-anchor="middle" font-size="14" fill="#8a6d00">共享内存 / L1</text>
+<text x="535" y="52.9" text-anchor="middle" font-size="14" fill="#222">SM 2</text>
+<text x="535" y="99.9" text-anchor="middle" font-size="14" fill="#2e7d32">warp 调度与运算</text>
+<text x="535" y="152.4" text-anchor="middle" font-size="14" fill="#b45f06">每线程寄存器</text>
+<text x="535" y="200.4" text-anchor="middle" font-size="14" fill="#8a6d00">共享内存 / L1</text>
+<text x="325" y="337.4" text-anchor="middle" font-size="14" fill="#6a3d9a">全芯片 L2</text>
+<text x="325" y="447.4" text-anchor="middle" font-size="14" fill="#555555">全芯片 HBM</text>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="257" viewBox="47 25 440 257" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<rect x="47" y="25" width="440" height="257" rx="8" fill="#ffffff"/>
+<rect x="100" y="55" width="125" height="50" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="225" y="55" width="125" height="50" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="350" y="55" width="125" height="50" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="100" y="105" width="125" height="50" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="225" y="105" width="125" height="50" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="350" y="105" width="125" height="50" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="100" y="155" width="125" height="50" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="225" y="155" width="125" height="50" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="350" y="155" width="125" height="50" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<text x="162.5" y="84.2" text-anchor="middle" font-size="12" fill="#b45f06">5</text>
+<text x="287.5" y="84.2" text-anchor="middle" font-size="12" fill="#b45f06">128</text>
+<text x="412.5" y="84.2" text-anchor="middle" font-size="12" fill="#555555">123</text>
+<text x="162.5" y="134.2" text-anchor="middle" font-size="12" fill="#b45f06">130</text>
+<text x="287.5" y="134.2" text-anchor="middle" font-size="12" fill="#b45f06">256</text>
+<text x="412.5" y="134.2" text-anchor="middle" font-size="12" fill="#555555">126</text>
+<text x="162.5" y="184.2" text-anchor="middle" font-size="12" fill="#b45f06">0</text>
+<text x="287.5" y="184.2" text-anchor="middle" font-size="12" fill="#b45f06">0</text>
+<text x="412.5" y="184.2" text-anchor="middle" font-size="12" fill="#555555">0</text>
+<text x="94" y="84.2" text-anchor="end" font-size="12" fill="#666">专家 0</text>
+<text x="94" y="134.2" text-anchor="end" font-size="12" fill="#666">专家 1</text>
+<text x="94" y="184.2" text-anchor="end" font-size="12" fill="#666">专家 2</text>
+<text x="162.5" y="49.2" text-anchor="middle" font-size="12" fill="#666">真实行</text>
+<text x="287.5" y="49.2" text-anchor="middle" font-size="12" fill="#666">补齐后行</text>
+<text x="412.5" y="49.2" text-anchor="middle" font-size="12" fill="#666">额外行</text>
+<text x="285" y="264.9" text-anchor="middle" font-size="14" fill="#222">135 行 → 384 行，约 2.84 倍</text>
+</svg>

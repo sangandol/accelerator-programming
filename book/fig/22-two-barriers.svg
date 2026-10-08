@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="719" height="162" viewBox="8 53 719 162" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="8" y="53" width="719" height="162" rx="8" fill="#ffffff"/>
+<rect x="20" y="65" width="115" height="52" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="165" y="65" width="115" height="52" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="310" y="65" width="115" height="52" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="455" y="65" width="115" height="52" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="600" y="65" width="115" height="52" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<polyline points="135,91 165,91" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="280,91 310,91" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="425,91 455,91" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="570,91 600,91" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<text x="77.5" y="95.9" text-anchor="middle" font-size="14" fill="#3a5a8c">协作载入</text>
+<text x="222.5" y="95.9" text-anchor="middle" font-size="14" fill="#b45f06">满：全部写好</text>
+<text x="367.5" y="95.9" text-anchor="middle" font-size="14" fill="#3a5a8c">计算读取</text>
+<text x="512.5" y="95.9" text-anchor="middle" font-size="14" fill="#b45f06">空：全部读完</text>
+<text x="657.5" y="95.9" text-anchor="middle" font-size="14" fill="#3a5a8c">下一轮覆盖</text>
+<text x="20" y="199.2" text-anchor="start" font-size="12" fill="#666">第一个屏障保护本轮读取；第二个保护下一轮覆盖</text>
+</svg>

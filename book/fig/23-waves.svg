@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="549" height="332" viewBox="73 48 549 332" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<rect x="73" y="48" width="549" height="332" rx="8" fill="#ffffff"/>
+<rect x="130" y="60" width="48" height="45" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="178" y="60" width="48" height="45" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="226" y="60" width="48" height="45" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="274" y="60" width="48" height="45" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="322" y="60" width="48" height="45" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="370" y="60" width="48" height="45" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="418" y="60" width="48" height="45" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="466" y="60" width="48" height="45" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="514" y="60" width="48" height="45" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="562" y="60" width="48" height="45" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="130" y="105" width="48" height="45" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="178" y="105" width="48" height="45" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="226" y="105" width="48" height="45" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="274" y="105" width="48" height="45" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="322" y="105" width="48" height="45" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="370" y="105" width="48" height="45" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="418" y="105" width="48" height="45" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="466" y="105" width="48" height="45" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="514" y="105" width="48" height="45" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="562" y="105" width="48" height="45" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="130" y="280" width="480" height="45" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<text x="154" y="86.7" text-anchor="middle" font-size="12" fill="#3a5a8c">工作</text>
+<text x="202" y="86.7" text-anchor="middle" font-size="12" fill="#3a5a8c">工作</text>
+<text x="250" y="86.7" text-anchor="middle" font-size="12" fill="#3a5a8c">工作</text>
+<text x="298" y="86.7" text-anchor="middle" font-size="12" fill="#3a5a8c">工作</text>
+<text x="346" y="86.7" text-anchor="middle" font-size="12" fill="#3a5a8c">工作</text>
+<text x="394" y="86.7" text-anchor="middle" font-size="12" fill="#3a5a8c">工作</text>
+<text x="442" y="86.7" text-anchor="middle" font-size="12" fill="#3a5a8c">工作</text>
+<text x="490" y="86.7" text-anchor="middle" font-size="12" fill="#3a5a8c">工作</text>
+<text x="538" y="86.7" text-anchor="middle" font-size="12" fill="#3a5a8c">工作</text>
+<text x="586" y="86.7" text-anchor="middle" font-size="12" fill="#3a5a8c">工作</text>
+<text x="154" y="131.7" text-anchor="middle" font-size="12" fill="#3a5a8c">工作</text>
+<text x="202" y="131.7" text-anchor="middle" font-size="12" fill="#3a5a8c">工作</text>
+<text x="250" y="131.7" text-anchor="middle" font-size="12" fill="#3a5a8c">工作</text>
+<text x="298" y="131.7" text-anchor="middle" font-size="12" fill="#3a5a8c">工作</text>
+<text x="346" y="131.7" text-anchor="middle" font-size="12" fill="#3a5a8c">工作</text>
+<text x="394" y="131.7" text-anchor="middle" font-size="12" fill="#555555">空闲</text>
+<text x="442" y="131.7" text-anchor="middle" font-size="12" fill="#555555">空闲</text>
+<text x="490" y="131.7" text-anchor="middle" font-size="12" fill="#555555">空闲</text>
+<text x="538" y="131.7" text-anchor="middle" font-size="12" fill="#555555">空闲</text>
+<text x="586" y="131.7" text-anchor="middle" font-size="12" fill="#555555">空闲</text>
+<text x="124" y="86.7" text-anchor="end" font-size="12" fill="#666">第 1 波</text>
+<text x="124" y="131.7" text-anchor="end" font-size="12" fill="#666">第 2 波</text>
+<text x="370" y="209.9" text-anchor="middle" font-size="14" fill="#222">每格代表 10 个工作单元，共 100 个</text>
+<text x="370" y="307.4" text-anchor="middle" font-size="14" fill="#b45f06">Stream-K：按 15000 个 K 迭代平均分配</text>
+<text x="130" y="364.2" text-anchor="start" font-size="12" fill="#666">减少半满尾波，但部分输出需额外合并</text>
+</svg>

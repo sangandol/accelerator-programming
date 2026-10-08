@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="434" height="337" viewBox="18 -7 434 337" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker><marker id="ah-3a5a8c-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3a5a8c"/></marker></defs>
+<rect x="18" y="-7" width="434" height="337" rx="8" fill="#ffffff"/>
+<rect x="30" y="35" width="48" height="36" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="78" y="35" width="48" height="36" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="126" y="35" width="48" height="36" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="30" y="71" width="48" height="36" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="78" y="71" width="48" height="36" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="126" y="71" width="48" height="36" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="310" y="35" width="48" height="36" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="358" y="35" width="48" height="36" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="310" y="71" width="48" height="36" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="358" y="71" width="48" height="36" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="310" y="107" width="48" height="36" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="358" y="107" width="48" height="36" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="80" y="210" width="48" height="36" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="128" y="210" width="48" height="36" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="176" y="210" width="48" height="36" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="224" y="210" width="48" height="36" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="272" y="210" width="48" height="36" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="320" y="210" width="48" height="36" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<polyline points="195,75 282,75" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="310,53 282,53 282,170 104,170 104,210" fill="none" stroke="#3a5a8c" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-3a5a8c-10)"/>
+<polyline points="406,53 440,53 440,185 248,185 248,210" fill="none" stroke="#3a5a8c" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-3a5a8c-10)"/>
+<text x="54" y="57.2" text-anchor="middle" font-size="12" fill="#b45f06">a</text>
+<text x="102" y="57.2" text-anchor="middle" font-size="12" fill="#b45f06">b</text>
+<text x="150" y="57.2" text-anchor="middle" font-size="12" fill="#b45f06">c</text>
+<text x="54" y="93.2" text-anchor="middle" font-size="12" fill="#2e7d32">d</text>
+<text x="102" y="93.2" text-anchor="middle" font-size="12" fill="#2e7d32">e</text>
+<text x="150" y="93.2" text-anchor="middle" font-size="12" fill="#2e7d32">f</text>
+<text x="334" y="57.2" text-anchor="middle" font-size="12" fill="#b45f06">a</text>
+<text x="382" y="57.2" text-anchor="middle" font-size="12" fill="#2e7d32">d</text>
+<text x="334" y="93.2" text-anchor="middle" font-size="12" fill="#b45f06">b</text>
+<text x="382" y="93.2" text-anchor="middle" font-size="12" fill="#2e7d32">e</text>
+<text x="334" y="129.2" text-anchor="middle" font-size="12" fill="#b45f06">c</text>
+<text x="382" y="129.2" text-anchor="middle" font-size="12" fill="#2e7d32">f</text>
+<text x="102" y="19.9" text-anchor="middle" font-size="14" fill="#222">原数组 (2,3)</text>
+<text x="358" y="19.9" text-anchor="middle" font-size="14" fill="#222">转置视图 (3,2)</text>
+<text x="238" y="60.2" text-anchor="middle" font-size="12" fill="#666">交换步长</text>
+<text x="104" y="232.2" text-anchor="middle" font-size="12" fill="#b45f06">a</text>
+<text x="152" y="232.2" text-anchor="middle" font-size="12" fill="#b45f06">b</text>
+<text x="200" y="232.2" text-anchor="middle" font-size="12" fill="#b45f06">c</text>
+<text x="248" y="232.2" text-anchor="middle" font-size="12" fill="#2e7d32">d</text>
+<text x="296" y="232.2" text-anchor="middle" font-size="12" fill="#2e7d32">e</text>
+<text x="344" y="232.2" text-anchor="middle" font-size="12" fill="#2e7d32">f</text>
+<text x="224" y="270.9" text-anchor="middle" font-size="14" fill="#222">存储始终为 a b c d e f</text>
+<text x="32" y="314.2" text-anchor="start" font-size="12" fill="#666">转置后的第 0 行：偏移 0 和 3</text>
+</svg>

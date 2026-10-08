@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="599" height="317" viewBox="13 48 599 317" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<rect x="13" y="48" width="599" height="317" rx="8" fill="#ffffff"/>
+<rect x="25" y="60" width="45" height="45" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="70" y="60" width="45" height="45" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="115" y="60" width="45" height="45" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="160" y="60" width="45" height="45" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="205" y="60" width="45" height="45" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="250" y="60" width="45" height="45" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="295" y="60" width="45" height="45" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="340" y="60" width="45" height="45" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="455" y="60" width="145" height="45" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="105" y="245" width="410" height="50" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<polyline points="25,155 25,161 385,161 385,155" fill="none" stroke="#666" stroke-width="1.2" stroke-linejoin="round"/>
+<text x="47.5" y="86.7" text-anchor="middle" font-size="12" fill="#3a5a8c">0</text>
+<text x="92.5" y="86.7" text-anchor="middle" font-size="12" fill="#3a5a8c">1</text>
+<text x="137.5" y="86.7" text-anchor="middle" font-size="12" fill="#3a5a8c">2</text>
+<text x="182.5" y="86.7" text-anchor="middle" font-size="12" fill="#3a5a8c">3</text>
+<text x="227.5" y="86.7" text-anchor="middle" font-size="12" fill="#3a5a8c">4</text>
+<text x="272.5" y="86.7" text-anchor="middle" font-size="12" fill="#3a5a8c">5</text>
+<text x="317.5" y="86.7" text-anchor="middle" font-size="12" fill="#3a5a8c">6</text>
+<text x="362.5" y="86.7" text-anchor="middle" font-size="12" fill="#3a5a8c">7</text>
+<text x="205" y="177.2" text-anchor="middle" font-size="12" fill="#666">缩画 32 个 FP4：共 16 字节</text>
+<text x="527.5" y="87.4" text-anchor="middle" font-size="14" fill="#b45f06">缩放：另 1 字节</text>
+<text x="310" y="274.9" text-anchor="middle" font-size="14" fill="#2e7d32">平均 17/32 = 0.53125 字节 / 元素</text>
+<text x="25" y="349.2" text-anchor="start" font-size="12" fill="#666">量化 payload 与缩放元数据分别计账</text>
+</svg>

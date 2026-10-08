@@ -139,3 +139,15 @@
 | 结尾 | epilogue | 25.4 |
 | 分页 KV cache、页表 | paged KV cache, block table | 26.5 |
 | 对称内存 | symmetric memory | 27.2 |
+
+## 读代码时要区分的层次
+
+| 对象 | 意义 | 首见或复查位置 |
+| --- | --- | --- |
+| 指令集体系结构 | instruction set architecture (ISA)：规定可见状态、操作和执行约束 | 定义 22.3 |
+| PTX、目标机器指令 | virtual ISA、target machine instructions (SASS)：公开虚拟操作与目标实现 | 22.2、B.5 节 |
+| grid 坐标、块坐标、元素偏移 | program index、block index、element offset：单位不同的三次定位 | 16.1、24.1 节 |
+| 数组布局、执行者到数据映射 | layout、ownership mapping：物理位置与谁负责该元素 | 8.1、22.1 节 |
+| 发起、传输完成、消费完成 | issue、transfer completion、consumer completion：三个不同事件 | 9.1、19.1、23.4 节 |
+| 有用载荷、请求流量、HBM 流量 | useful payload、request traffic、HBM traffic：缓存或粒度造成差异 | 8.7、25.1 节 |
+| 逻辑大小、物理预算 | logical size、physical footprint：布局填充与同时活跃对象分别计入 | 16.2、18.2 节 |

@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="444" height="261" viewBox="18 -4 444 261" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<rect x="18" y="-4" width="444" height="261" rx="8" fill="#ffffff"/>
+<rect x="30" y="50" width="40" height="38" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="70" y="50" width="40" height="38" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="110" y="50" width="40" height="38" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="150" y="50" width="40" height="38" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="30" y="88" width="40" height="38" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="70" y="88" width="40" height="38" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="110" y="88" width="40" height="38" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="150" y="88" width="40" height="38" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="30" y="126" width="40" height="38" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="70" y="126" width="40" height="38" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="110" y="126" width="40" height="38" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="150" y="126" width="40" height="38" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="30" y="164" width="40" height="38" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="70" y="164" width="40" height="38" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="110" y="164" width="40" height="38" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="150" y="164" width="40" height="38" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="290" y="50" width="40" height="38" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="330" y="50" width="40" height="38" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="370" y="50" width="40" height="38" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="410" y="50" width="40" height="38" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="290" y="88" width="40" height="38" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="330" y="88" width="40" height="38" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="370" y="88" width="40" height="38" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="410" y="88" width="40" height="38" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="290" y="126" width="40" height="38" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="330" y="126" width="40" height="38" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="370" y="126" width="40" height="38" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="410" y="126" width="40" height="38" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="290" y="164" width="40" height="38" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="330" y="164" width="40" height="38" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="370" y="164" width="40" height="38" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="410" y="164" width="40" height="38" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="70" y="50" width="40" height="152" rx="2" fill="none" stroke="#c0392b" stroke-width="2.5"/>
+<rect x="330" y="50" width="40" height="152" rx="2" fill="none" stroke="#c0392b" stroke-width="2.5"/>
+<text x="110" y="22.9" text-anchor="middle" font-size="14" fill="#222">行优先：bank = j</text>
+<text x="50" y="73.2" text-anchor="middle" font-size="12" fill="#222">0</text>
+<text x="90" y="73.2" text-anchor="middle" font-size="12" fill="#b45f06">1</text>
+<text x="130" y="73.2" text-anchor="middle" font-size="12" fill="#222">2</text>
+<text x="170" y="73.2" text-anchor="middle" font-size="12" fill="#222">3</text>
+<text x="50" y="111.2" text-anchor="middle" font-size="12" fill="#222">0</text>
+<text x="90" y="111.2" text-anchor="middle" font-size="12" fill="#b45f06">1</text>
+<text x="130" y="111.2" text-anchor="middle" font-size="12" fill="#222">2</text>
+<text x="170" y="111.2" text-anchor="middle" font-size="12" fill="#222">3</text>
+<text x="50" y="149.2" text-anchor="middle" font-size="12" fill="#222">0</text>
+<text x="90" y="149.2" text-anchor="middle" font-size="12" fill="#b45f06">1</text>
+<text x="130" y="149.2" text-anchor="middle" font-size="12" fill="#222">2</text>
+<text x="170" y="149.2" text-anchor="middle" font-size="12" fill="#222">3</text>
+<text x="50" y="187.2" text-anchor="middle" font-size="12" fill="#222">0</text>
+<text x="90" y="187.2" text-anchor="middle" font-size="12" fill="#b45f06">1</text>
+<text x="130" y="187.2" text-anchor="middle" font-size="12" fill="#222">2</text>
+<text x="170" y="187.2" text-anchor="middle" font-size="12" fill="#222">3</text>
+<text x="110" y="239.9" text-anchor="middle" font-size="14" fill="#222">读列：1, 1, 1, 1</text>
+<text x="370" y="22.9" text-anchor="middle" font-size="14" fill="#222">XOR：bank = i XOR j</text>
+<text x="310" y="73.2" text-anchor="middle" font-size="12" fill="#222">0</text>
+<text x="350" y="73.2" text-anchor="middle" font-size="12" fill="#b45f06">1</text>
+<text x="390" y="73.2" text-anchor="middle" font-size="12" fill="#222">2</text>
+<text x="430" y="73.2" text-anchor="middle" font-size="12" fill="#222">3</text>
+<text x="310" y="111.2" text-anchor="middle" font-size="12" fill="#222">1</text>
+<text x="350" y="111.2" text-anchor="middle" font-size="12" fill="#b45f06">0</text>
+<text x="390" y="111.2" text-anchor="middle" font-size="12" fill="#222">3</text>
+<text x="430" y="111.2" text-anchor="middle" font-size="12" fill="#222">2</text>
+<text x="310" y="149.2" text-anchor="middle" font-size="12" fill="#222">2</text>
+<text x="350" y="149.2" text-anchor="middle" font-size="12" fill="#b45f06">3</text>
+<text x="390" y="149.2" text-anchor="middle" font-size="12" fill="#222">0</text>
+<text x="430" y="149.2" text-anchor="middle" font-size="12" fill="#222">1</text>
+<text x="310" y="187.2" text-anchor="middle" font-size="12" fill="#222">3</text>
+<text x="350" y="187.2" text-anchor="middle" font-size="12" fill="#b45f06">2</text>
+<text x="390" y="187.2" text-anchor="middle" font-size="12" fill="#222">1</text>
+<text x="430" y="187.2" text-anchor="middle" font-size="12" fill="#222">0</text>
+<text x="370" y="239.9" text-anchor="middle" font-size="14" fill="#222">读列：1, 0, 3, 2</text>
+</svg>

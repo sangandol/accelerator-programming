@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="724" height="310" viewBox="13 40 724 310" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<rect x="13" y="40" width="724" height="310" rx="8" fill="#ffffff"/>
+<rect x="25" y="70" width="175" height="68" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="200" y="70" width="175" height="68" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="375" y="70" width="175" height="68" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="550" y="70" width="175" height="68" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="25" y="138" width="175" height="68" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="200" y="138" width="175" height="68" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="375" y="138" width="175" height="68" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="550" y="138" width="175" height="68" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="25" y="206" width="175" height="68" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="200" y="206" width="175" height="68" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="375" y="206" width="175" height="68" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="550" y="206" width="175" height="68" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<text x="112.5" y="108.2" text-anchor="middle" font-size="12" fill="#3a5a8c">Ampere</text>
+<text x="287.5" y="108.2" text-anchor="middle" font-size="12" fill="#3a5a8c">32 线程 warp</text>
+<text x="462.5" y="108.2" text-anchor="middle" font-size="12" fill="#3a5a8c">寄存器片段</text>
+<text x="637.5" y="108.2" text-anchor="middle" font-size="12" fill="#b45f06">寄存器</text>
+<text x="112.5" y="176.2" text-anchor="middle" font-size="12" fill="#3a5a8c">Hopper</text>
+<text x="287.5" y="176.2" text-anchor="middle" font-size="12" fill="#3a5a8c">128 线程组</text>
+<text x="462.5" y="176.2" text-anchor="middle" font-size="12" fill="#3a5a8c">共享内存 / 寄存器</text>
+<text x="637.5" y="176.2" text-anchor="middle" font-size="12" fill="#b45f06">寄存器</text>
+<text x="112.5" y="244.2" text-anchor="middle" font-size="12" fill="#3a5a8c">Blackwell</text>
+<text x="287.5" y="244.2" text-anchor="middle" font-size="12" fill="#3a5a8c">单线程发起</text>
+<text x="462.5" y="244.2" text-anchor="middle" font-size="12" fill="#3a5a8c">共享内存 / TMEM</text>
+<text x="637.5" y="244.2" text-anchor="middle" font-size="12" fill="#b45f06">TMEM</text>
+<text x="112.5" y="64.2" text-anchor="middle" font-size="12" fill="#666">代际</text>
+<text x="287.5" y="64.2" text-anchor="middle" font-size="12" fill="#666">发起者</text>
+<text x="462.5" y="64.2" text-anchor="middle" font-size="12" fill="#666">操作数来源</text>
+<text x="637.5" y="64.2" text-anchor="middle" font-size="12" fill="#666">累加位置</text>
+<text x="25" y="334.2" text-anchor="start" font-size="12" fill="#666">发起粒度改变后，操作数布局、完成协议和输出所有权都要重查</text>
+</svg>

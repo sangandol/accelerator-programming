@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="542" height="314" viewBox="60 -4 542 314" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<rect x="60" y="-4" width="542" height="314" rx="8" fill="#ffffff"/>
+<rect x="125" y="65" width="155" height="48" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="280" y="65" width="155" height="48" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="435" y="65" width="155" height="48" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="125" y="113" width="155" height="48" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="280" y="113" width="155" height="48" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="435" y="113" width="155" height="48" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="125" y="161" width="155" height="48" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="280" y="161" width="155" height="48" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="435" y="161" width="155" height="48" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="125" y="209" width="155" height="48" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="280" y="209" width="155" height="48" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="435" y="209" width="155" height="48" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<text x="230" y="22.9" text-anchor="middle" font-size="14" fill="#222">同一槽位在不同时刻属于不同块</text>
+<text x="202.5" y="93.2" text-anchor="middle" font-size="12" fill="#3a5a8c">块 0</text>
+<text x="357.5" y="93.2" text-anchor="middle" font-size="12" fill="#3a5a8c">空闲</text>
+<text x="512.5" y="93.2" text-anchor="middle" font-size="12" fill="#3a5a8c">块 2</text>
+<text x="202.5" y="141.2" text-anchor="middle" font-size="12" fill="#3a5a8c">预取块 1</text>
+<text x="357.5" y="141.2" text-anchor="middle" font-size="12" fill="#3a5a8c">块 1</text>
+<text x="512.5" y="141.2" text-anchor="middle" font-size="12" fill="#3a5a8c">空闲</text>
+<text x="202.5" y="189.2" text-anchor="middle" font-size="12" fill="#b45f06">算块 0</text>
+<text x="357.5" y="189.2" text-anchor="middle" font-size="12" fill="#b45f06">写回块 0</text>
+<text x="512.5" y="189.2" text-anchor="middle" font-size="12" fill="#b45f06">等写回后算块 2</text>
+<text x="202.5" y="237.2" text-anchor="middle" font-size="12" fill="#b45f06">空闲</text>
+<text x="357.5" y="237.2" text-anchor="middle" font-size="12" fill="#b45f06">算块 1</text>
+<text x="512.5" y="237.2" text-anchor="middle" font-size="12" fill="#b45f06">写回块 1</text>
+<text x="119" y="93.2" text-anchor="end" font-size="12" fill="#666">输入槽 0</text>
+<text x="119" y="141.2" text-anchor="end" font-size="12" fill="#666">输入槽 1</text>
+<text x="119" y="189.2" text-anchor="end" font-size="12" fill="#666">输出槽 0</text>
+<text x="119" y="237.2" text-anchor="end" font-size="12" fill="#666">输出槽 1</text>
+<text x="202.5" y="59.2" text-anchor="middle" font-size="12" fill="#666">迭代 0</text>
+<text x="357.5" y="59.2" text-anchor="middle" font-size="12" fill="#666">迭代 1</text>
+<text x="512.5" y="59.2" text-anchor="middle" font-size="12" fill="#666">迭代 2</text>
+<text x="125" y="294.2" text-anchor="start" font-size="12" fill="#666">输入和输出是不同的存储；两种等待各保护自己的槽</text>
+</svg>

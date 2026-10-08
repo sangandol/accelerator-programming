@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="494" height="274" viewBox="13 38 494 274" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="13" y="38" width="494" height="274" rx="8" fill="#ffffff"/>
+<rect x="25" y="50" width="210" height="56" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="285" y="50" width="210" height="56" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="120" y="205" width="280" height="48" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<polyline points="25,145 25,151 495,151 495,145" fill="none" stroke="#666" stroke-width="1.2" stroke-linejoin="round"/>
+<polyline points="130,106 130,185 176,205" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="390,106 390,185 344,205" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<text x="130" y="82.9" text-anchor="middle" font-size="14" fill="#3a5a8c">K：T × Hkv × dh</text>
+<text x="390" y="82.9" text-anchor="middle" font-size="14" fill="#2e7d32">V：T × Hkv × dh</text>
+<text x="260" y="167.2" text-anchor="middle" font-size="12" fill="#666">一层、一序列：两份键值</text>
+<text x="260" y="233.9" text-anchor="middle" font-size="14" fill="#b45f06">再乘层数 nL、批量 B、字节 skv</text>
+<text x="25" y="296.2" text-anchor="start" font-size="12" fill="#666">查询头共享键值时，不额外复制 KV</text>
+</svg>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="606" height="220" viewBox="-1 25 606 220" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<rect x="-1" y="25" width="606" height="220" rx="8" fill="#ffffff"/>
+<rect x="40" y="55" width="60" height="52" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="100" y="55" width="60" height="52" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="160" y="55" width="60" height="52" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="40" y="107" width="60" height="52" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="100" y="107" width="60" height="52" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="160" y="107" width="60" height="52" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="40" y="159" width="60" height="52" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="100" y="159" width="60" height="52" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="160" y="159" width="60" height="52" rx="0" fill="#fff" stroke="#999" stroke-width="0.8"/>
+<rect x="335" y="115" width="43" height="55" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="378" y="115" width="43" height="55" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="421" y="115" width="43" height="55" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="464" y="115" width="43" height="55" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="507" y="115" width="43" height="55" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="550" y="115" width="43" height="55" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<text x="70" y="85.2" text-anchor="middle" font-size="12" fill="#222">0</text>
+<text x="130" y="85.2" text-anchor="middle" font-size="12" fill="#b45f06">2</text>
+<text x="190" y="85.2" text-anchor="middle" font-size="12" fill="#222">1</text>
+<text x="70" y="137.2" text-anchor="middle" font-size="12" fill="#222">3</text>
+<text x="130" y="137.2" text-anchor="middle" font-size="12" fill="#b45f06">0</text>
+<text x="190" y="137.2" text-anchor="middle" font-size="12" fill="#222">1</text>
+<text x="70" y="189.2" text-anchor="middle" font-size="12" fill="#222">1</text>
+<text x="130" y="189.2" text-anchor="middle" font-size="12" fill="#b45f06">4</text>
+<text x="190" y="189.2" text-anchor="middle" font-size="12" fill="#222">0</text>
+<text x="34" y="85.2" text-anchor="end" font-size="12" fill="#666">源 0</text>
+<text x="34" y="137.2" text-anchor="end" font-size="12" fill="#666">源 1</text>
+<text x="34" y="189.2" text-anchor="end" font-size="12" fill="#666">源 2</text>
+<text x="70" y="49.2" text-anchor="middle" font-size="12" fill="#666">目标 0</text>
+<text x="130" y="49.2" text-anchor="middle" font-size="12" fill="#666">目标 1</text>
+<text x="190" y="49.2" text-anchor="middle" font-size="12" fill="#666">目标 2</text>
+<text x="356.5" y="146.7" text-anchor="middle" font-size="12" fill="#3a5a8c">源 0</text>
+<text x="399.5" y="146.7" text-anchor="middle" font-size="12" fill="#3a5a8c">源 0</text>
+<text x="442.5" y="146.7" text-anchor="middle" font-size="12" fill="#2e7d32">源 2</text>
+<text x="485.5" y="146.7" text-anchor="middle" font-size="12" fill="#2e7d32">源 2</text>
+<text x="528.5" y="146.7" text-anchor="middle" font-size="12" fill="#2e7d32">源 2</text>
+<text x="571.5" y="146.7" text-anchor="middle" font-size="12" fill="#2e7d32">源 2</text>
+<text x="464" y="79.9" text-anchor="middle" font-size="14" fill="#222">设备 1 的接收区：6 行</text>
+<text x="335" y="229.2" text-anchor="start" font-size="12" fill="#666">源 0： [0,2)；源 2： [2,6)</text>
+</svg>

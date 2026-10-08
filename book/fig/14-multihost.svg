@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="639" height="232" viewBox="13 18 639 232" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="13" y="18" width="639" height="232" rx="8" fill="#ffffff"/>
+<rect x="25" y="30" width="280" height="145" rx="6" fill="none" stroke="#555555" stroke-width="1.6"/>
+<rect x="40" y="95" width="55" height="40" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="105" y="95" width="55" height="40" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="170" y="95" width="55" height="40" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="235" y="95" width="55" height="40" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="360" y="30" width="280" height="145" rx="6" fill="none" stroke="#555555" stroke-width="1.6"/>
+<rect x="375" y="95" width="55" height="40" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="440" y="95" width="55" height="40" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="505" y="95" width="55" height="40" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="570" y="95" width="55" height="40" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<polyline points="305,115 360,115" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)" marker-start="url(#ah-222-10)"/>
+<text x="165" y="56.9" text-anchor="middle" font-size="14" fill="#222">主机 0：同一全局函数</text>
+<text x="67.5" y="119.2" text-anchor="middle" font-size="12" fill="#3a5a8c">设备 0</text>
+<text x="132.5" y="119.2" text-anchor="middle" font-size="12" fill="#3a5a8c">设备 1</text>
+<text x="197.5" y="119.2" text-anchor="middle" font-size="12" fill="#3a5a8c">设备 2</text>
+<text x="262.5" y="119.2" text-anchor="middle" font-size="12" fill="#3a5a8c">设备 3</text>
+<text x="165" y="156.2" text-anchor="middle" font-size="12" fill="#666">本地装入行 0–511</text>
+<text x="500" y="56.9" text-anchor="middle" font-size="14" fill="#222">主机 1：同一全局函数</text>
+<text x="402.5" y="119.2" text-anchor="middle" font-size="12" fill="#2e7d32">设备 4</text>
+<text x="467.5" y="119.2" text-anchor="middle" font-size="12" fill="#2e7d32">设备 5</text>
+<text x="532.5" y="119.2" text-anchor="middle" font-size="12" fill="#2e7d32">设备 6</text>
+<text x="597.5" y="119.2" text-anchor="middle" font-size="12" fill="#2e7d32">设备 7</text>
+<text x="500" y="156.2" text-anchor="middle" font-size="12" fill="#666">本地装入行 512–1023</text>
+<text x="335" y="234.2" text-anchor="middle" font-size="12" fill="#666">全局 mesh 和集合调用跨两主机</text>
+</svg>

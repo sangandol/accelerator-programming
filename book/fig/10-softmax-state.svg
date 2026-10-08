@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="514" height="316" viewBox="8 18 514 316" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="8" y="18" width="514" height="316" rx="8" fill="#ffffff"/>
+<rect x="20" y="30" width="205" height="55" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="305" y="30" width="205" height="55" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="20" y="150" width="205" height="55" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="305" y="150" width="205" height="55" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="155" y="270" width="220" height="52" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<polyline points="122.5,85 122.5,150" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="407.5,85 407.5,150" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="155.6,205 233.7,270" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="374.4,205 296.3,270" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<text x="122.5" y="62.4" text-anchor="middle" font-size="14" fill="#3a5a8c">m=log 2，ℓ=3/2，u=25</text>
+<text x="407.5" y="62.4" text-anchor="middle" font-size="14" fill="#2e7d32">m=log 4，ℓ=1，u=30</text>
+<text x="122.5" y="182.4" text-anchor="middle" font-size="14" fill="#3a5a8c">m=log 4，ℓ=3/4，u=25/2</text>
+<text x="407.5" y="182.4" text-anchor="middle" font-size="14" fill="#2e7d32">参考点不变</text>
+<text x="240" y="124.2" text-anchor="middle" font-size="12" fill="#666">ℓ 和 u 都乘 1/2</text>
+<text x="265" y="300.6" text-anchor="middle" font-size="13" fill="#b45f06">ℓ=7/4，u=85/2 → o=170/7</text>
+</svg>

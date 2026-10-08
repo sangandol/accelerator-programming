@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="633" height="322" viewBox="48 18 633 322" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-666-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#666"/></marker></defs>
+<rect x="48" y="18" width="633" height="322" rx="8" fill="#ffffff"/>
+<rect x="95" y="30" width="48" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="143" y="30" width="48" height="30" rx="3" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="191" y="30" width="48" height="30" rx="3" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="239" y="30" width="48" height="30" rx="3" fill="#efe6f8" stroke="#6a3d9a" stroke-width="1.6"/>
+<rect x="287" y="30" width="48" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="335" y="30" width="48" height="30" rx="3" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="383" y="30" width="48" height="30" rx="3" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="431" y="30" width="48" height="30" rx="3" fill="#efe6f8" stroke="#6a3d9a" stroke-width="1.6"/>
+<rect x="143" y="70" width="48" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="191" y="70" width="48" height="30" rx="3" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="239" y="70" width="48" height="30" rx="3" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="287" y="70" width="48" height="30" rx="3" fill="#efe6f8" stroke="#6a3d9a" stroke-width="1.6"/>
+<rect x="335" y="70" width="48" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="383" y="70" width="48" height="30" rx="3" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="431" y="70" width="48" height="30" rx="3" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="479" y="70" width="48" height="30" rx="3" fill="#efe6f8" stroke="#6a3d9a" stroke-width="1.6"/>
+<rect x="191" y="110" width="48" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="239" y="110" width="48" height="30" rx="3" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="287" y="110" width="48" height="30" rx="3" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="335" y="110" width="48" height="30" rx="3" fill="#efe6f8" stroke="#6a3d9a" stroke-width="1.6"/>
+<rect x="383" y="110" width="48" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="431" y="110" width="48" height="30" rx="3" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="479" y="110" width="48" height="30" rx="3" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="527" y="110" width="48" height="30" rx="3" fill="#efe6f8" stroke="#6a3d9a" stroke-width="1.6"/>
+<rect x="239" y="150" width="48" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="287" y="150" width="48" height="30" rx="3" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="335" y="150" width="48" height="30" rx="3" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="383" y="150" width="48" height="30" rx="3" fill="#efe6f8" stroke="#6a3d9a" stroke-width="1.6"/>
+<rect x="431" y="150" width="48" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="479" y="150" width="48" height="30" rx="3" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="527" y="150" width="48" height="30" rx="3" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="575" y="150" width="48" height="30" rx="3" fill="#efe6f8" stroke="#6a3d9a" stroke-width="1.6"/>
+<polyline points="95,190 641,190" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-666-10)"/>
+<polyline points="95,187 95,193" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="85" y="49.6" text-anchor="end" font-size="13" fill="#222">段 0</text>
+<text x="85" y="89.6" text-anchor="end" font-size="13" fill="#222">段 1</text>
+<text x="85" y="129.6" text-anchor="end" font-size="13" fill="#222">段 2</text>
+<text x="85" y="169.6" text-anchor="end" font-size="13" fill="#222">段 3</text>
+<text x="119" y="49.6" text-anchor="middle" font-size="13" fill="#3a5a8c">0</text>
+<text x="167" y="49.6" text-anchor="middle" font-size="13" fill="#b45f06">1</text>
+<text x="215" y="49.6" text-anchor="middle" font-size="13" fill="#2e7d32">2</text>
+<text x="263" y="49.6" text-anchor="middle" font-size="13" fill="#6a3d9a">3</text>
+<text x="311" y="49.6" text-anchor="middle" font-size="13" fill="#3a5a8c">4</text>
+<text x="359" y="49.6" text-anchor="middle" font-size="13" fill="#b45f06">5</text>
+<text x="407" y="49.6" text-anchor="middle" font-size="13" fill="#2e7d32">6</text>
+<text x="455" y="49.6" text-anchor="middle" font-size="13" fill="#6a3d9a">7</text>
+<text x="167" y="89.6" text-anchor="middle" font-size="13" fill="#3a5a8c">0</text>
+<text x="215" y="89.6" text-anchor="middle" font-size="13" fill="#b45f06">1</text>
+<text x="263" y="89.6" text-anchor="middle" font-size="13" fill="#2e7d32">2</text>
+<text x="311" y="89.6" text-anchor="middle" font-size="13" fill="#6a3d9a">3</text>
+<text x="359" y="89.6" text-anchor="middle" font-size="13" fill="#3a5a8c">4</text>
+<text x="407" y="89.6" text-anchor="middle" font-size="13" fill="#b45f06">5</text>
+<text x="455" y="89.6" text-anchor="middle" font-size="13" fill="#2e7d32">6</text>
+<text x="503" y="89.6" text-anchor="middle" font-size="13" fill="#6a3d9a">7</text>
+<text x="215" y="129.6" text-anchor="middle" font-size="13" fill="#3a5a8c">0</text>
+<text x="263" y="129.6" text-anchor="middle" font-size="13" fill="#b45f06">1</text>
+<text x="311" y="129.6" text-anchor="middle" font-size="13" fill="#2e7d32">2</text>
+<text x="359" y="129.6" text-anchor="middle" font-size="13" fill="#6a3d9a">3</text>
+<text x="407" y="129.6" text-anchor="middle" font-size="13" fill="#3a5a8c">4</text>
+<text x="455" y="129.6" text-anchor="middle" font-size="13" fill="#b45f06">5</text>
+<text x="503" y="129.6" text-anchor="middle" font-size="13" fill="#2e7d32">6</text>
+<text x="551" y="129.6" text-anchor="middle" font-size="13" fill="#6a3d9a">7</text>
+<text x="263" y="169.6" text-anchor="middle" font-size="13" fill="#3a5a8c">0</text>
+<text x="311" y="169.6" text-anchor="middle" font-size="13" fill="#b45f06">1</text>
+<text x="359" y="169.6" text-anchor="middle" font-size="13" fill="#2e7d32">2</text>
+<text x="407" y="169.6" text-anchor="middle" font-size="13" fill="#6a3d9a">3</text>
+<text x="455" y="169.6" text-anchor="middle" font-size="13" fill="#3a5a8c">4</text>
+<text x="503" y="169.6" text-anchor="middle" font-size="13" fill="#b45f06">5</text>
+<text x="551" y="169.6" text-anchor="middle" font-size="13" fill="#2e7d32">6</text>
+<text x="599" y="169.6" text-anchor="middle" font-size="13" fill="#6a3d9a">7</text>
+<text x="95" y="207.2" text-anchor="middle" font-size="12" fill="#666">0</text>
+<text x="645" y="194.2" text-anchor="start" font-size="12" fill="#666">时间</text>
+<text x="95" y="324.2" text-anchor="start" font-size="12" fill="#666">每段工作 8 个单位，总跨度 11；空泡占 3/11</text>
+</svg>

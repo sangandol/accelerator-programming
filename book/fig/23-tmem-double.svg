@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="533" height="255" viewBox="74 35 533 255" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<rect x="74" y="35" width="533" height="255" rx="8" fill="#ffffff"/>
+<rect x="145" y="65" width="150" height="70" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="295" y="65" width="150" height="70" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="445" y="65" width="150" height="70" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="145" y="135" width="150" height="70" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<rect x="295" y="135" width="150" height="70" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="445" y="135" width="150" height="70" rx="0" fill="#fdebd3" stroke="#999" stroke-width="0.8"/>
+<text x="220" y="104.2" text-anchor="middle" font-size="12" fill="#3a5a8c">MMA 写</text>
+<text x="370" y="104.2" text-anchor="middle" font-size="12" fill="#b45f06">结尾读</text>
+<text x="520" y="104.2" text-anchor="middle" font-size="12" fill="#3a5a8c">下一块 MMA</text>
+<text x="220" y="174.2" text-anchor="middle" font-size="12" fill="#b45f06">结尾读</text>
+<text x="370" y="174.2" text-anchor="middle" font-size="12" fill="#3a5a8c">MMA 写</text>
+<text x="520" y="174.2" text-anchor="middle" font-size="12" fill="#b45f06">结尾读</text>
+<text x="139" y="104.2" text-anchor="end" font-size="12" fill="#666">TMEM C₀</text>
+<text x="139" y="174.2" text-anchor="end" font-size="12" fill="#666">TMEM C₁</text>
+<text x="220" y="59.2" text-anchor="middle" font-size="12" fill="#666">时段 0</text>
+<text x="370" y="59.2" text-anchor="middle" font-size="12" fill="#666">时段 1</text>
+<text x="520" y="59.2" text-anchor="middle" font-size="12" fill="#666">时段 2</text>
+<text x="145" y="274.2" text-anchor="start" font-size="12" fill="#666">复用 C₀ 或 C₁ 前等待其结尾读者结束</text>
+</svg>

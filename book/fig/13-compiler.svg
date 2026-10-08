@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="450" height="342" viewBox="38 13 450 342" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="38" y="13" width="450" height="342" rx="8" fill="#ffffff"/>
+<rect x="50" y="25" width="285" height="48" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="50" y="115" width="285" height="48" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="50" y="205" width="285" height="48" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="50" y="295" width="285" height="48" rx="6" fill="#efe6f8" stroke="#6a3d9a" stroke-width="1.6"/>
+<polyline points="192.5,73 192.5,115" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="192.5,163 192.5,205" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="192.5,253 192.5,295" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<text x="192.5" y="53.9" text-anchor="middle" font-size="14" fill="#3a5a8c">jaxpr：原语与类型</text>
+<text x="192.5" y="143.9" text-anchor="middle" font-size="14" fill="#2e7d32">StableHLO：张量运算</text>
+<text x="192.5" y="233.9" text-anchor="middle" font-size="14" fill="#b45f06">后端：布局、分块、调度</text>
+<text x="192.5" y="323.9" text-anchor="middle" font-size="14" fill="#6a3d9a">机器程序：资源操作</text>
+<text x="380" y="53.2" text-anchor="start" font-size="12" fill="#666">决定算什么</text>
+<text x="380" y="233.2" text-anchor="start" font-size="12" fill="#666">决定怎样送到硬件</text>
+</svg>
