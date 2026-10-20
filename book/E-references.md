@@ -103,6 +103,26 @@
 - Sakana AI. The AI CUDA Engineer（2025 年 2 月）及其后对评测漏洞的更正；EvoEngineer 等后续复现研究，2025.（注 25.8、C.9 节）
 - METR. Recent frontier models are reward hacking. 2025 年 6 月.（C.9 节）
 
+以下是 2026 年 10 月补入的论文，内容在正文中有完整的讲解（附录 F.3 有导读）。数字据各论文的 arXiv 版本，2026-10-20 核对。
+
+- H. He, Thinking Machines Lab. Defeating nondeterminism in LLM inference. *Thinking Machines Lab: Connectionism*, 2025 年 9 月. 代码：[batch_invariant_ops](https://github.com/thinking-machines-lab/batch_invariant_ops)。（10.6 节、11.8 节）
+- P. Qi, Z. Liu 等. Defeating the training-inference mismatch via FP16. arXiv:2510.26788, 2025.（注 11.18）
+- Y. Leviathan, M. Kalman, Y. Matias. Fast inference from Transformers via speculative decoding. *ICML*, 2023（arXiv:2211.17192）.（11.7 节）
+- C. Chen 等. Accelerating large language model decoding with speculative sampling. arXiv:2302.01318, 2023.（11.7 节）
+- Y. Zhong 等. DistServe: disaggregating prefill and decoding for goodput-optimized large language model serving. *OSDI*, 2024（arXiv:2401.09670）.（11.8 节）
+- R. Qin 等. Mooncake: a KVCache-centric disaggregated architecture for LLM serving. *FAST*, 2025（arXiv:2407.00079）.（11.8 节）
+- C. Zhao 等（DeepSeek-AI）. Insights into DeepSeek-V3: scaling challenges and reflections on hardware for AI architectures. *ISCA*, 2025（arXiv:2505.09343）.（11.4 节现状框、12.7 节、例 12.15）
+- DeepSeek-AI. DeepSeek-V4: towards highly efficient million-token context intelligence. arXiv:2606.19348, 2026；DeepSeek-V4.1-Flash, arXiv:2609.19969, 2026.（11.4、11.7、11.8 节，命题 12.16，24.8、28.4 节，注 27.10）
+- J. Jiang, Y. Chen, B. Hechtman, F. Zhang, Y. Mu. Ragged paged attention: a high-performance and flexible LLM inference kernel for TPU. arXiv:2604.15464, 2026. 代码在 vLLM 的 tpu-inference 仓库。（18.6 节）
+- Z. Ye 等. FlashInfer: efficient and customizable attention engine for LLM inference serving. *MLSys*, 2025（arXiv:2501.01005）.（27.7 节）
+- B. Spector, J. Juravsky 等. Look ma, no bubbles! Designing a low-latency megakernel for Llama-1B. Hazy Research 博客, 2025 年 5 月.（24.8 节）
+- X. Cheng 等. MPK: a compiler and runtime for mega-kernelizing tensor programs. arXiv:2512.22219, 2025.（24.8 节）
+- Chowdhary 等（AMD Research）. Fleet: hierarchical task-based abstraction for megakernels on multi-die GPUs. arXiv:2604.15379, 2026.（24.8 节）
+- A. Novikov 等（Google DeepMind）. AlphaEvolve: a coding agent for scientific and algorithmic discovery. arXiv:2506.13131, 2025.（17.1 节、C.9 节）
+- A. Tschand, C. Hong 等. JAXBench: benchmarking autonomous TPU kernel optimization. arXiv:2607.20466, 2026.（18.6 节、C.9 节）
+- S. Wang, N. Cai 等. MaxKernel: agentic kernel generation for TPUs. arXiv:2609.04523, 2026.（18.6 节、C.9 节）
+- Y. Zhang 等. KernelBench-Verified: do LLM-generated kernels actually beat PyTorch? arXiv:2607.16241, 2026.（注 25.8、C.9 节）
+
 ## GPU 与 CUDA（第 22–28 章）
 
 - NVIDIA. *CUDA C++ Programming Guide*（含 tile kernel 一章）；*PTX ISA*；*CUTLASS* 与 *CuTe* 文档；*cuTile Python* 文档。
