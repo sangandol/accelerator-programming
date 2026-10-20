@@ -32,7 +32,7 @@
 | ICI 拓扑 | 3D 环面 + OCS | 2D 环面 | 3D 环面 | 2D 环面，至多 256 芯片 | 3D 环面（$4^3$ 立方体）+ OCS，至多 9216 芯片 | 3D 环面，超级节点 9600 芯片 | Boardfly，1152 芯片 |
 | 每芯片 ICI | 6 链路，每链路每方向约 45 GB/s | — | — | 4 端口，双向合计 800 GB/s | 双向合计 1200 GB/s | — | — |
 
-**TPU v4 的微架构参数**（第 15、20 章；来自 ayaka14732 的 pallas-tpu-tutorial 的实测，时钟约 1.05 GHz）：
+**TPU v4 的微架构参数**（第 15、20、21 章；来自 ayaka14732 的 pallas-tpu-tutorial 与 Zhong 2026 年 top-k 论文的实测，时钟约 1.05 GHz，论文实测 1049.99–1050.01 MHz）：
 
 | 项目 | 值 |
 | --- | --- |
@@ -41,7 +41,7 @@
 | SMEM | 1 MiB/TC |
 | EUP | 延迟 7 周期，发射间隔 2 |
 | MXU | 乘法到取回约 83 周期（部分 MXU 约 101），每 8 周期接收或取回一个寄存器 |
-| XLU | 跨通道归约约 79 周期，通道置换约 69 周期，发射间隔 8 |
+| XLU | 跨通道归约约 79 周期，通道置换约 69 周期，每个队列发射间隔 8，共 2 个队列；分段转置 `vsxpose` 约 126 周期，推入转置之后该队列约 223 周期内不再接收（编译器的延迟表记为 104） |
 | CMEM 直接读取 | `cld` → `crf` 约 53 周期，提交与取回间隔各 2 |
 | 硬件随机比特 | `vrng` 每 8 周期至多提交一次；状态与代价讨论见 16.10 节 |
 | 向量到标量 | 约 43 周期 |
@@ -77,6 +77,7 @@
 - Austin 等，*How to Scale Your Model*（JAX 团队，2025），TPU 与 GPU 两章的参数表；
 - NVIDIA 的产品资料与技术博客（Hopper、Blackwell、Rubin 架构介绍），CUDA C++ Programming Guide 中的计算能力参数表；
 - ayaka14732，*Pallas TPU Kernel 开发教程*（2026），TPU v4 的实测数据。
+- M. Zhong，*Bitwise-Correct and Faster Top-k on TPU v4*（2026），XLU 队列、转置与时钟的实测数据。
 
 完整的文献信息见[附录 E](E-references.md)。
 
