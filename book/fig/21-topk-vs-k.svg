@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="511" height="328" viewBox="14 -14 511 328" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="14" y="-14" width="511" height="328" rx="8" fill="#ffffff"/>
+<polyline points="70,280 502,280" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="70,280 70,18" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="70,280 70,284" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="250,280 250,284" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="310,280 310,284" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="370,280 370,284" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="490,280 490,284" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="66,280 70,280" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="66,171.4 70,171.4" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="66,62.7 70,62.7" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="70,272.6 250,189.2 310,157.5 370,125.3 490,60.3" fill="none" stroke="#c0392b" stroke-width="2.2" stroke-linejoin="round"/>
+<polyline points="70,138.8 250,126.9 310,126.9 370,126.9 490,127" fill="none" stroke="#b45f06" stroke-width="2.2" stroke-linejoin="round"/>
+<polyline points="70,261.2 250,187.1 310,180.1 370,176.6 490,159.8" fill="none" stroke="#3a5a8c" stroke-width="2.2" stroke-linejoin="round"/>
+<text x="70" y="298.2" text-anchor="middle" font-size="12" fill="#666">1</text>
+<text x="250" y="298.2" text-anchor="middle" font-size="12" fill="#666">8</text>
+<text x="310" y="298.2" text-anchor="middle" font-size="12" fill="#666">16</text>
+<text x="370" y="298.2" text-anchor="middle" font-size="12" fill="#666">32</text>
+<text x="490" y="298.2" text-anchor="middle" font-size="12" fill="#666">128</text>
+<text x="62" y="284.2" text-anchor="end" font-size="12" fill="#666">100</text>
+<text x="62" y="175.6" text-anchor="end" font-size="12" fill="#666">1000</text>
+<text x="62" y="66.9" text-anchor="end" font-size="12" fill="#666">10000</text>
+<text x="506" y="284.2" text-anchor="start" font-size="12" fill="#222"><tspan font-style="italic">k</tspan></text>
+<text x="70" y="10.2" text-anchor="middle" font-size="12" fill="#222">周期</text>
+<text x="412" y="52.5" text-anchor="start" font-size="12" fill="#c0392b">官方 Pallas</text>
+<text x="78" y="131" text-anchor="start" font-size="12" fill="#b45f06">原生 XLA</text>
+<text x="420" y="180" text-anchor="start" font-size="12" fill="#3a5a8c">按形状选择</text>
+</svg>

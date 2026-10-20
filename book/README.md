@@ -55,6 +55,7 @@
 18. [TPU kernel：注意力](18-tpu-attention.md)：注意力的算术强度；QK 与 PV 的矩阵通路；在线状态与重缩放；FlashAttention 的局部存储；因果掩码和块稀疏；分页 KV 与解码分片；反向重计算、梯度累加和状态合并。
 19. [TPU 多芯片编程](19-tpu-multichip.md)：远程 DMA 的发送/接收完成；入口屏障；环形 all-gather 与 reduce-scatter 的源块不变量；通信—矩阵计算重叠；all-to-all 的计数与接收区间；多维 mesh；跨核心、远端 CMEM 与主机内存的端点归属；持久循环的版本与槽位信用。
 20. [TPU 性能的静态分析](20-tpu-static-analysis.md)：Pallas/Mosaic 到机器指令；标量与向量两级发射、VIF、依赖与服务间隔；MXU 交错、归约和向量到标量的代价；XProf 与 vtrace 的证据边界；实际槽位与共享编码资源；精确往返、PC 重定位与可执行容器；来源映射；计时边界、sfence、LCC 与 GTC。
+21. [案例研究：TPU v4 上又对又快的 top-k](21-tpu-topk-case.md)：逐位正确的定义与官方实现的三类错误；修复放在依赖链外为什么几乎免费；跨通道往返、发射间隔与向量指令三种代价；按行宽、轴、$k$ 和行数选算法；fold-and-rank 与转置加败者树；编译器与手写的差距在调度；计时边界与近似 top-k。
 
 ### 第五部分　GPU
 
