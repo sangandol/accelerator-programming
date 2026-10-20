@@ -124,34 +124,34 @@
 
 | 中文 | 英文 | 首见 |
 | --- | --- | --- |
-| 流式多处理器 | streaming multiprocessor (SM) | 21.1 |
-| 线程、warp、线程块 | thread, warp, thread block (CTA) | 21.2 |
-| 共享内存、溢出 | shared memory, spill | 21.3 |
-| 占用率 | occupancy | 21.4 |
-| warpgroup、张量存储 | warpgroup, tensor memory (TMEM) | 21.5 |
-| 张量搬运引擎、张量描述符 | TMA, tensor map (descriptor) | 21.6 |
-| 线程块簇、分布式共享内存 | thread block cluster, distributed shared memory | 21.7 |
-| 网格步长循环 | grid-stride loop | 22.1 |
-| 洗牌 | shuffle | 22.3 |
-| 流、事件、图 | stream, event, CUDA graph | 22.8 |
-| 生产者、消费者、warp 专门化 | producer, consumer, warp specialization | 23.4 |
-| 乒乓 | ping-pong | 23.4 |
-| CTA 对 | CTA pair | 23.5 |
-| 持久化 kernel | persistent kernel | 23.6 |
-| 光栅化 | rasterization (tile order) | 23.6 |
-| tile 程序 | tile program | 24.1 |
-| 结尾 | epilogue | 25.4 |
-| 分页 KV cache、页表 | paged KV cache, block table | 26.5 |
-| 对称内存 | symmetric memory | 27.2 |
+| 流式多处理器 | streaming multiprocessor (SM) | 22.1 |
+| 线程、warp、线程块 | thread, warp, thread block (CTA) | 22.2 |
+| 共享内存、溢出 | shared memory, spill | 22.3 |
+| 占用率 | occupancy | 22.4 |
+| warpgroup、张量存储 | warpgroup, tensor memory (TMEM) | 22.5 |
+| 张量搬运引擎、张量描述符 | TMA, tensor map (descriptor) | 22.6 |
+| 线程块簇、分布式共享内存 | thread block cluster, distributed shared memory | 22.7 |
+| 网格步长循环 | grid-stride loop | 23.1 |
+| 洗牌 | shuffle | 23.3 |
+| 流、事件、图 | stream, event, CUDA graph | 23.8 |
+| 生产者、消费者、warp 专门化 | producer, consumer, warp specialization | 24.4 |
+| 乒乓 | ping-pong | 24.4 |
+| CTA 对 | CTA pair | 24.5 |
+| 持久化 kernel | persistent kernel | 24.6 |
+| 光栅化 | rasterization (tile order) | 24.6 |
+| tile 程序 | tile program | 25.1 |
+| 结尾 | epilogue | 26.4 |
+| 分页 KV cache、页表 | paged KV cache, block table | 27.5 |
+| 对称内存 | symmetric memory | 28.2 |
 
 ## 读代码时要区分的层次
 
 | 对象 | 意义 | 首见或复查位置 |
 | --- | --- | --- |
-| 指令集体系结构 | instruction set architecture (ISA)：规定可见状态、操作和执行约束 | 定义 22.3 |
-| PTX、目标机器指令 | virtual ISA、target machine instructions (SASS)：公开虚拟操作与目标实现 | 22.2、B.5 节 |
-| grid 坐标、块坐标、元素偏移 | program index、block index、element offset：单位不同的三次定位 | 16.1、24.1 节 |
-| 数组布局、执行者到数据映射 | layout、ownership mapping：物理位置与谁负责该元素 | 8.1、22.1 节 |
-| 发起、传输完成、消费完成 | issue、transfer completion、consumer completion：三个不同事件 | 9.1、19.1、23.4 节 |
-| 有用载荷、请求流量、HBM 流量 | useful payload、request traffic、HBM traffic：缓存或粒度造成差异 | 8.7、25.1 节 |
+| 指令集体系结构 | instruction set architecture (ISA)：规定可见状态、操作和执行约束 | 定义 23.3 |
+| PTX、目标机器指令 | virtual ISA、target machine instructions (SASS)：公开虚拟操作与目标实现 | 23.2、B.5 节 |
+| grid 坐标、块坐标、元素偏移 | program index、block index、element offset：单位不同的三次定位 | 16.1、25.1 节 |
+| 数组布局、执行者到数据映射 | layout、ownership mapping：物理位置与谁负责该元素 | 8.1、23.1 节 |
+| 发起、传输完成、消费完成 | issue、transfer completion、consumer completion：三个不同事件 | 9.1、19.1、24.4 节 |
+| 有用载荷、请求流量、HBM 流量 | useful payload、request traffic、HBM traffic：缓存或粒度造成差异 | 8.7、26.1 节 |
 | 逻辑大小、物理预算 | logical size、physical footprint：布局填充与同时活跃对象分别计入 | 16.2、18.2 节 |

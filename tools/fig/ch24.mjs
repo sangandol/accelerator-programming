@@ -1,23 +1,28 @@
 export default {
-  '24-tile-grid'(f) {
-    f.grid(30,55,{rows:2,cols:3,cw:145,ch:85,label:(i,j)=>`实例 (${i},${j})`,fill:(i,j)=>i===1&&j===2?'orange':'blue'});
-    f.brace(30,270,465,'C：256×384，每实例输出 128×128');
-    f.note(30,330,'块内线程、寄存器与流水线由后端分配',{anchor:'start'});
+  '24-stage-protocol'(f) {
+    const p=f.box(25,105,150,60,'生产者：TMA',{color:'blue'}),s=f.box(300,105,170,60,'槽 s：数据 + 相位',{color:'orange'}),c=f.box(595,105,150,60,'消费者：MMA',{color:'green'});
+    f.link(p,s,{arrow:'end'});f.link(s,c,{arrow:'end'});
+    f.line([c.B(),[670,280],[100,280],p.B()],{arrow:'end',color:'purple'});f.note(380,320,'MMA 读完 → empty → 允许下一轮写');
+    f.note(380,45,'写入完成 → full → 允许本轮读');
   },
-  '24-pointer-tile'(f) {
-    const a=f.box(25,65,150,50,'行：4,5；步长 8',{color:'blue'}),b=f.box(25,200,150,50,'K：0,1,2；步长 1',{color:'green'});
-    const g=f.grid(335,115,{rows:2,cols:3,cw:65,ch:48,label:(i,j)=>32+8*i+j,fill:()=> 'orange'});
-    f.link(a,g.cell(0,0),{arrow:'end'});f.link(b,g.cell(1,0),{arrow:'end'});f.note(335,260,'偏移 = 行×8 + K',{anchor:'start'});
+  '24-wgmma-groups'(f) {
+    f.timeline(105,30,{lanes:['组 0','组 1','读取最终累加'],bars:[[0,0,4,'在途','blue'],[1,2,7,'在途','orange'],[2,7,9,'读取','green']],unit:55,ticks:[0,2,4,7,9]});
+    f.note(105,255,'t=4 可保留一组未完成；t=7 才能读取最终累加结果',{anchor:'start'});
   },
-  '24-abstraction'(f) {
-    const rows=[['数学函数','输出关系、精度'],['tile 程序','块、网格、K 循环'],['显式 warp / 布局','数据归属、资源预算'],['异步硬件协议','完成身份、相位、所有权']];
-    f.grid(30,50,{rows:4,cols:2,cw:230,ch:62,label:(i,j)=>rows[i][j],fill:(i,j)=>i%2?'orange':'blue'});
-    f.note(30,355,'下降一层是增加控制能力，也增加需要证明的条件',{anchor:'start'});
+  '24-tmem-double'(f) {
+    f.grid(145,65,{rows:2,cols:3,cw:150,ch:70,rowLabels:['TMEM C₀','TMEM C₁'],colLabels:['时段 0','时段 1','时段 2'],label:(i,j)=>[['MMA 写','结尾读','下一块 MMA'],['结尾读','MMA 写','结尾读']][i][j],fill:(i,j)=>i===j%2?'blue':'orange'});
+    f.note(145,270,'复用 C₀ 或 C₁ 前等待其结尾读者结束',{anchor:'start'});
   },
-  "24-lowering-contract": function(f) {
-    const a=f.box(25,40,190,65,'数学 tile：形状与掩码',{color:'blue',size:13});
-    const b=f.box(330,40,270,65,'后端：线程、布局、搬运、MMA',{color:'orange',size:13});f.link(a,b,{arrow:'end'});
-    const c=f.box(330,215,270,65,'机器程序：资源与同步约束',{color:'green'});f.link(b,c,{arrow:'end'});
-    f.note(290,360,'抽象省去映射细节，但数学覆盖、精度和依赖仍由规格确定');
+  '24-waves'(f) {
+    f.grid(130,60,{rows:2,cols:10,cw:48,ch:45,rowLabels:['第 1 波','第 2 波'],label:(i,j)=>i===1&&j>=5?'空闲':'工作',fill:(i,j)=>i===1&&j>=5?'gray':'blue'});
+    f.text(370,205,'每格代表 10 个工作单元，共 100 个');
+    f.box(130,280,480,45,'Stream-K：按 15000 个 K 迭代平均分配',{color:'orange'});
+    f.note(130,360,'减少半满尾波，但部分输出需额外合并',{anchor:'start'});
+  },
+  "24-full-empty-cycle": function(f) {
+    const labels=['生产者写入','满：写入完成','消费者 / MMA 读取','空：全部读完','下一轮覆盖'];
+    const boxes=labels.map((s,i)=>f.box(25+i*135,65,118,64,s,{color:['blue','green','orange','green','blue'][i],size:12}));
+    for(let i=0;i<4;i++)f.link(boxes[i],boxes[i+1],{arrow:'end'});
+    f.note(350,210,'“满”授权消费，“空”授权复用；提交 MMA 还不等于共享块读完');
   },
 };

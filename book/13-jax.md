@@ -277,7 +277,7 @@ $\partial y_i / \partial x_j = y_i(\delta_{ij} - y_j)$。
 </details>
 <details><summary>答案</summary>
 
-$J = \operatorname{diag}(y) - y y^{\mathsf T}$，对称，所以 $\bar{x} = J \bar{y} = y \odot \bar{y} - y\,(y^{\mathsf T}\bar{y}) = y \odot (\bar{y} - \langle y, \bar{y} \rangle)$。只需要一次点积和逐元素运算，不必构造 $n \times n$ 的雅可比矩阵。注意力的反向传播（第 18、26 章）用的就是这个公式。
+$J = \operatorname{diag}(y) - y y^{\mathsf T}$，对称，所以 $\bar{x} = J \bar{y} = y \odot \bar{y} - y\,(y^{\mathsf T}\bar{y}) = y \odot (\bar{y} - \langle y, \bar{y} \rangle)$。只需要一次点积和逐元素运算，不必构造 $n \times n$ 的雅可比矩阵。注意力的反向传播（第 18、27 章）用的就是这个公式。
 
 </details>
 

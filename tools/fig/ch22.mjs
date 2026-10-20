@@ -1,29 +1,33 @@
 export default {
-  '22-thread-map'(f) {
-    f.grid(100,60,{rows:4,cols:4,cw:120,ch:50,rowLabels:['块 0','块 1','块 2','块 3'],label:(i,j)=>`${256*i+64*j}–${256*i+64*j+63}`,fill:(i,j)=>i===3&&j===3?'orange':'blue'});
-    f.text(340,312,'块 3 末尾：有效 960–999；越界 1000–1023');
+  '22-sm-chip'(f) {
+    const sms=[0,1,2].map(i=>{
+      const x=25+i*210;f.box(x,25,180,205,'',{hollow:true,color:'blue'});f.text(x+90,48,`SM ${i}`);
+      f.box(x+15,75,150,40,'warp 调度与运算',{color:'green'});
+      f.box(x+15,130,150,35,'每线程寄存器',{color:'orange'});
+      return f.box(x+15,178,150,35,'共享内存 / L1',{color:'yellow'});
+    });
+    const l2=f.box(210,310,230,45,'全芯片 L2',{color:'purple'}),h=f.box(210,420,230,45,'全芯片 HBM',{color:'gray'});
+    sms.forEach(v=>f.link(v,l2,{arrow:'both'}));f.link(l2,h,{arrow:'both'});
   },
-  '22-isa-path'(f) {
-    const labels=['CUDA：一线程 z=x+y','PTX：载入、加法、存储','目标代码：分配寄存器','硬件：warp 请求与数值单元'];
-    const bs=labels.map((s,i)=>f.box(60,25+i*90,310,45,s,{color:['blue','green','orange','purple'][i]}));for(let i=0;i<3;i++)f.link(bs[i],bs[i+1],{arrow:'end'});
-    f.note(410,bs[1].cy,'公开虚拟 ISA',{anchor:'start'});f.note(410,bs[2].cy,'与目标相关',{anchor:'start'});
+  '22-warp-mask'(f) {
+    for(let i=0;i<2;i++) {
+      f.text(25,30+i*115,i?'奇数分支：5 条':'偶数分支：3 条',{anchor:'start'});
+      f.grid(25,65+i*115,{rows:1,cols:16,cw:32,ch:34,label:(r,j)=>`${j}`,fill:(r,j)=>j%2===i?'orange':'gray'});
+    }
+    f.note(25,270,'画前 16 个通道；实际 warp 有 32 个。灰色通道被屏蔽',{anchor:'start'});
   },
-  '22-reduction'(f) {
-    const ws=[0,1,2,3,4,5,6,7].map(i=>f.box(20+i*77,30,65,45,`warp ${i}`,{color:'blue',size:12}));
-    ws.forEach(v=>f.text(v.cx,12,'32'));
-    const a=f.box(145,175,360,50,'共享部分和：32,32,32,32,32,32,32,32',{color:'orange',size:13});
-    for(let i=0;i<8;i++)f.line([ws[i].B(),[ws[i].cx,145],a.T((i+.5)/8)],{arrow:'end'});
-    const b=f.box(245,295,160,45,'首 warp：总和 256',{color:'green'});f.link(a,b,{arrow:'end'});
-    f.note(540,200,'屏障后才读',{anchor:'start'});
+  '22-memory-path'(f) {
+    const a=f.box(25,45,120,50,'HBM / L2',{color:'gray'}),b=f.box(250,45,160,50,'共享内存',{color:'blue'}),c=f.box(515,45,120,50,'寄存器',{color:'orange'});
+    f.link(a,b,{arrow:'end'});f.link(b,c,{arrow:'end'});f.note(196,150,'请求合并：段数');f.note(464,150,'bank 冲突：映射');
+    f.note(25,220,'每一条传输边分别分析，修好一条不会自动修好另一条',{anchor:'start'});
   },
-  '22-two-barriers'(f) {
-    const labels=['协作载入','满：全部写好','计算读取','空：全部读完','下一轮覆盖'];
-    const bs=labels.map((s,i)=>f.box(20+i*145,65,115,52,s,{color:i===1||i===3?'orange':'blue'}));for(let i=0;i<4;i++)f.link(bs[i],bs[i+1],{arrow:'end'});
-    f.note(20,195,'第一个屏障保护本轮读取；第二个保护下一轮覆盖',{anchor:'start'});
+  '22-mma-interface'(f) {
+    const data=[['Ampere','32 线程 warp','寄存器片段','寄存器'],['Hopper','128 线程组','共享内存 / 寄存器','寄存器'],['Blackwell','单线程发起','共享内存 / TMEM','TMEM']];
+    f.grid(25,70,{rows:3,cols:4,cw:175,ch:68,colLabels:['代际','发起者','操作数来源','累加位置'],label:(i,j)=>data[i][j],fill:(i,j)=>j===3?'orange':'blue'});
+    f.note(25,330,'发起粒度改变后，操作数布局、完成协议和输出所有权都要重查',{anchor:'start'});
   },
-  "22-resource-min": function(f) {
-    f.bars(185,45,{items:[['寄存器上限',4,'blue'],['共享内存上限',2,'orange'],['线程 / warp 上限',8,'green'],['块数上限',16,'purple']],w:360,fmt:v=>`${v} 块`});
-    f.note(340,245,'取最小值：2 块 × 8 warp = 16 warp，算术占用率 25%');
-    f.note(340,285,'假设 256 线程/块、64 寄存器/线程、80 KiB 共享/块');
+  "22-warp-readiness": function(f) {
+    f.timeline(105,40,{lanes:['warp 0','warp 1','warp 2','warp 3'],bars:[[0,0,1,'发读','orange'],[0,1,5,'等待','gray'],[0,5,6,'算','blue'],[1,1,2,'算','blue'],[2,2,3,'算','blue'],[3,3,4,'算','blue']],unit:72,ticks:[0,1,2,3,4,5,6]});
+    f.note(300,325,'warp 0 等数据时发射其他就绪 warp；驻留不等于此刻就绪');
   },
 };

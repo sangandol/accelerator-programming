@@ -9,7 +9,7 @@
 ## 阅读路线
 
 - **TPU 路线**：第一部分 → 第二部分 → 第三部分 → 第四部分。
-- **GPU 路线**：第一部分 → 第二部分 → 第五部分。第三部分（JAX）选读，只在第 24 章讲 Pallas GPU 的一节用到。
+- **GPU 路线**：第一部分 → 第二部分 → 第五部分。第三部分（JAX）选读，只在第 25 章讲 Pallas GPU 的一节用到。
 - 第四部分和第五部分互不依赖。其中偶尔出现的"注（对照）"可以跳过。
 
 ## 目录
@@ -60,13 +60,13 @@
 
 在共同底座上独立建立 SM/SIMT 模型，再从线程、warp 与共享内存推进到异步搬运和矩阵指令，最后写矩阵乘法、注意力与多 GPU 通信。读完能选择线程或 tile 抽象，检查访存合并、寄存器与共享容量、参与者和完成关系。访存段数、资源上限、生产者/消费者槽、GEMM 预算、注意力状态合并与环形通信配有互动；本路线的论证不要求 TPU 各章。
 
-21. [GPU 的结构](21-gpu-architecture.md)：SM、线程和 warp；SIMT 发射、分化与就绪调度；寄存器、共享内存和缓存；占用率与在途请求；Tensor Core 的 MMA、warpgroup 与矩阵存储；cp.async/TMA、块簇与互联；Ampere 到 Rubin 的现状。
-22. [CUDA 编程：SIMT 模型](22-cuda-simt.md)：网格—块—线程的覆盖映射；地址、访存合并与内存空间；块屏障、原子操作和 warp shuffle；warp/块/跨块归约及扫描；共享内存与寄存器分块 GEMM；资源上限和占用率；释放、获取、作用域与进展；流、事件和 CUDA Graph 的依赖。
-23. [CUDA 编程：现代 GPU 的 kernel 结构](23-cuda-modern.md)：cp.async 的提交与等待；mbarrier 的到达、字节与相位；TMA 描述符和代理可见性；wgmma 的参与者与完成；warp 专门化的满/空槽协议；tcgen05、TMEM 与结尾读者；持久化 kernel 和 Stream-K；CuTe 的布局与分层分块。
-24. [GPU 上的 tile 语言](24-gpu-tile-languages.md)：tile 的形状、索引与掩码；Triton 的指针块和 tl.dot；cuTile 的块坐标与 ct.mma；Pallas GPU 的后端边界；CuTe DSL 的布局控制；由数学对象到线程、存储和机器程序的降低；按所需控制权选择抽象层级。
-25. [GPU kernel：矩阵乘法与访存受限算子](25-gpu-matmul.md)：从朴素 GEMM 到共享、寄存器与 Tensor Core 分块；多槽容量、累加状态与复用；FP8/FP4 块缩放和尺度位置；分组 GEMM、持久任务与 MoE；结尾融合的正确位置；归一化、softmax 和宽行归约；资源与数值规格审查。
-26. [GPU kernel：注意力](26-gpu-attention.md)：注意力屋顶线与 Q/KV 复用；FlashAttention 的查询分工与在线状态；指数通路的吞吐；FlashAttention 2/3/4 的流水线结构；Hopper/Blackwell 的异步与 ping-pong；解码、split-KV 与分页缓存；局部状态合并；反向重计算与梯度归约。
-27. [多 GPU 编程](27-multi-gpu.md)：NCCL 的集合语义与物理拓扑；环形和分层通信；对称内存与设备端通信；单边操作的完成和可见性；张量并行中的分块重叠；MoE 的 all-to-all、计数与排列；缓冲复用、信用及执行进展。
+22. [GPU 的结构](22-gpu-architecture.md)：SM、线程和 warp；SIMT 发射、分化与就绪调度；寄存器、共享内存和缓存；占用率与在途请求；Tensor Core 的 MMA、warpgroup 与矩阵存储；cp.async/TMA、块簇与互联；Ampere 到 Rubin 的现状。
+23. [CUDA 编程：SIMT 模型](23-cuda-simt.md)：网格—块—线程的覆盖映射；地址、访存合并与内存空间；块屏障、原子操作和 warp shuffle；warp/块/跨块归约及扫描；共享内存与寄存器分块 GEMM；资源上限和占用率；释放、获取、作用域与进展；流、事件和 CUDA Graph 的依赖。
+24. [CUDA 编程：现代 GPU 的 kernel 结构](24-cuda-modern.md)：cp.async 的提交与等待；mbarrier 的到达、字节与相位；TMA 描述符和代理可见性；wgmma 的参与者与完成；warp 专门化的满/空槽协议；tcgen05、TMEM 与结尾读者；持久化 kernel 和 Stream-K；CuTe 的布局与分层分块。
+25. [GPU 上的 tile 语言](25-gpu-tile-languages.md)：tile 的形状、索引与掩码；Triton 的指针块和 tl.dot；cuTile 的块坐标与 ct.mma；Pallas GPU 的后端边界；CuTe DSL 的布局控制；由数学对象到线程、存储和机器程序的降低；按所需控制权选择抽象层级。
+26. [GPU kernel：矩阵乘法与访存受限算子](26-gpu-matmul.md)：从朴素 GEMM 到共享、寄存器与 Tensor Core 分块；多槽容量、累加状态与复用；FP8/FP4 块缩放和尺度位置；分组 GEMM、持久任务与 MoE；结尾融合的正确位置；归一化、softmax 和宽行归约；资源与数值规格审查。
+27. [GPU kernel：注意力](27-gpu-attention.md)：注意力屋顶线与 Q/KV 复用；FlashAttention 的查询分工与在线状态；指数通路的吞吐；FlashAttention 2/3/4 的流水线结构；Hopper/Blackwell 的异步与 ping-pong；解码、split-KV 与分页缓存；局部状态合并；反向重计算与梯度归约。
+28. [多 GPU 编程](28-multi-gpu.md)：NCCL 的集合语义与物理拓扑；环形和分层通信；对称内存与设备端通信；单边操作的完成和可见性；张量并行中的分块重叠；MoE 的 all-to-all、计数与排列；缓冲复用、信用及执行进展。
 
 ### 附录
 

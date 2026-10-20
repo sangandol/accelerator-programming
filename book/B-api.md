@@ -57,10 +57,10 @@
 | warp 内交换 | `__shfl_sync`、`__shfl_xor_sync`、`__ballot_sync` | 编译器管理 | 编译器管理 |
 | 原子操作 | `atomicAdd`、`cuda::atomic_ref<T, scope>` | `tl.atomic_add` | — |
 | 矩阵乘法 | 经 CUTLASS/CuTe 使用 `mma.sync`、wgmma、tcgen05 | `tl.dot(a, b, acc)` | `ct.mma(a, b, acc)` |
-| 归约 | 手写（22.4 节） | `tl.max`、`tl.sum` | 块上的归约函数（名称见 cuTile 文档） |
+| 归约 | 手写（23.4 节） | `tl.max`、`tl.sum` | 块上的归约函数（名称见 cuTile 文档） |
 | 调试 | `compute-sanitizer`（含竞争检查） | `TRITON_INTERPRET=1` | — |
 
-Pallas GPU：BlockSpec 级的 `pl.pallas_call` 可以经 Triton 后端运行；Mosaic GPU 后端（`from jax.experimental.pallas import mosaic_gpu as plgpu`）提供 `plgpu.kernel`、`plgpu.copy_gmem_to_smem`、`plgpu.Barrier`、`plgpu.barrier_wait`、`plgpu.wgmma`、`plgpu.tcgen05_mma`、`plgpu.emit_pipeline`、`plgpu.emit_pipeline_warp_specialized` 等（24.4 节）。
+Pallas GPU：BlockSpec 级的 `pl.pallas_call` 可以经 Triton 后端运行；Mosaic GPU 后端（`from jax.experimental.pallas import mosaic_gpu as plgpu`）提供 `plgpu.kernel`、`plgpu.copy_gmem_to_smem`、`plgpu.Barrier`、`plgpu.barrier_wait`、`plgpu.wgmma`、`plgpu.tcgen05_mma`、`plgpu.emit_pipeline`、`plgpu.emit_pipeline_warp_specialized` 等（25.4 节）。
 
 ## B.4 通信
 
@@ -70,12 +70,12 @@ Pallas GPU：BlockSpec 级的 `pl.pallas_call` 可以经 Triton 后端运行；M
 | all-gather | `lax.all_gather` | 19.3 节 | `ncclAllGather` |
 | reduce-scatter | `lax.psum_scatter` | 19.4 节 | `ncclReduceScatter` |
 | 置换 | `lax.ppermute` | 远程 DMA | `ncclSend`、`ncclRecv` |
-| all-to-all | `lax.all_to_all` | 每个目标一个远程 DMA（19.6 节） | 用发送与接收组成；或专门的库（27.4 节） |
-| 设备端直接访问 | — | 远程 DMA | 对称内存、NVSHMEM 的放与取（27.2 节） |
+| all-to-all | `lax.all_to_all` | 每个目标一个远程 DMA（19.6 节） | 用发送与接收组成；或专门的库（28.4 节） |
+| 设备端直接访问 | — | 远程 DMA | 对称内存、NVSHMEM 的放与取（28.2 节） |
 
 ## B.5 从源运算到指令与硬件
 
-本节按第 22 章的 ISA 区分编程接口、虚拟指令和物理单元。表中的指令族是阅读索引；具体类型、目标架构、参与者和完成规则都必须查对应 ISA。GPU 的 PTX 会继续降低为目标机器程序，不承诺逐条对应。TPU 的完整机器 ISA 未在本书中作为公开稳定接口给出，下面用操作含义描述它，避免把 Pallas API 名当成机器指令。
+本节按第 23 章的 ISA 区分编程接口、虚拟指令和物理单元。表中的指令族是阅读索引；具体类型、目标架构、参与者和完成规则都必须查对应 ISA。GPU 的 PTX 会继续降低为目标机器程序，不承诺逐条对应。TPU 的完整机器 ISA 未在本书中作为公开稳定接口给出，下面用操作含义描述它，避免把 Pallas API 名当成机器指令。
 
 | 数学或程序操作 | 数据与硬件路径 | 指令或完成接口 | 应审查的条件 |
 | --- | --- | --- | --- |

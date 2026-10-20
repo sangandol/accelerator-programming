@@ -203,7 +203,7 @@ $$
 
 **图 5.8**　2:4 稀疏。上：$A$ 的一行，每 4 个元素中至多 2 个非零；中：只存非零值和组内位置；下：按位置从 $B$ 中挑出对应的行，只做一半的乘加。
 
-> **现状（2026-10）**：TPU 的 MXU 是权重驻留的脉动阵列，v5p 及以前为 $128 \times 128$，v6e（Trillium）起为 $256 \times 256$。NVIDIA 的 Tensor Core 从 Volta 起以 warp 为单位执行小形状的 MMA，Hopper 起改为由一组 warp 发起、操作数直接取自片上共享存储的异步 MMA，Blackwell 起累加结果放在专门的张量存储中。Blackwell 在硬件中支持 MX 与 NVFP4 的块缩放 MMA；2:4 稀疏从 Ampere 起支持。两条路线的细节分别在第 15 章和第 21 章。
+> **现状（2026-10）**：TPU 的 MXU 是权重驻留的脉动阵列，v5p 及以前为 $128 \times 128$，v6e（Trillium）起为 $256 \times 256$。NVIDIA 的 Tensor Core 从 Volta 起以 warp 为单位执行小形状的 MMA，Hopper 起改为由一组 warp 发起、操作数直接取自片上共享存储的异步 MMA，Blackwell 起累加结果放在专门的张量存储中。Blackwell 在硬件中支持 MX 与 NVFP4 的块缩放 MMA；2:4 稀疏从 Ampere 起支持。两条路线的细节分别在第 15 章和第 22 章。
 
 ## 本章小结
 

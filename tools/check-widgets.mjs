@@ -86,7 +86,7 @@ for(const file of (await readdir('tools/fig')).filter(f=>/^ch\w+\.mjs$/.test(f))
 // Branch independence: GPU chapters may use part III only in the explicitly optional §24.4.
 for(const file of (await readdir('book')).filter(f=>/^(2[1-7])-/.test(f))) {
   let source=await readFile(`book/${file}`,'utf8');
-  if(file.startsWith('24-'))source=source.replace(/## 24\.4 [\s\S]*?(?=\n## )/,'');
+  if(file.startsWith('25-'))source=source.replace(/## 25\.4 [\s\S]*?(?=\n## )/,'');
   check(!/(?:定义|命题|定理|引理|推论|例|注)\s?(?:1[3-9]|20)\.\d+/.test(source),`${file}: no required TPU/JAX item dependency`);
 }
 console.log(`${checks} invariant / wiring checks passed; ${mounts} widget mounts, ${seen.size} unique figure specs.`);

@@ -84,7 +84,7 @@
 - N. Jouppi, S. Lakshmanamurthy, C. Young, D. Patterson. Google's training supercomputers from TPU v2 to Ironwood. *IEEE Micro*, 2026.
 - Google Cloud TPU 文档（各代系统架构）；Google Cloud 博客：Ironwood 与 TPU 8t/8i 的技术介绍，2025–2026.
 
-## GPU 与 CUDA（第 21–27 章）
+## GPU 与 CUDA（第 22–28 章）
 
 - NVIDIA. *CUDA C++ Programming Guide*（含 tile kernel 一章）；*PTX ISA*；*CUTLASS* 与 *CuTe* 文档；*cuTile Python* 文档。
 - NVIDIA 技术博客：Hopper、Blackwell、Rubin 架构介绍。
@@ -108,13 +108,13 @@
 | JAX，[Writing TPU kernels with Pallas](https://docs.jax.dev/en/latest/pallas/tpu/details.html)、[TPU Pipelining](https://docs.jax.dev/en/latest/pallas/tpu/pipelining.html) | 块到寄存器、布局与自动流水线的接口；16.1–16.8 节 |
 | JAX，[Manual parallelism with shard_map](https://docs.jax.dev/en/latest/notebooks/shard_map.html) | 全局与本地视角、集合原语与复制声明；第 14 章 |
 | NVIDIA，[H100 产品表](https://www.nvidia.com/en-us/data-center/h100/) | SXM 带宽、稀疏峰值标注与接口口径；附录 A |
-| NVIDIA，[PTX ISA](https://docs.nvidia.com/cuda/parallel-thread-execution/) | 虚拟 ISA、MMA 形态、异步提交等待与目标要求；21.5、22.2、第 23 章、附录 B |
-| NVIDIA，[Hopper Tuning Guide](https://docs.nvidia.com/cuda/hopper-tuning-guide/index.html)、[Blackwell Tuning Guide](https://docs.nvidia.com/cuda/blackwell-tuning-guide/index.html) | SM/块资源上限、代际编程接口；第 21、23 章 |
-| NVIDIA，[Rubin GPU 架构介绍](https://developer.nvidia.com/blog/inside-nvidia-rubin-gpu-architecture-powering-the-era-of-agentic-ai/) | 新一代 HBM、互联与部件组织；21.9 节、附录 A |
-| NVIDIA CUTLASS，[CuTe Layouts](https://docs.nvidia.com/cutlass/latest/media/docs/cpp/cute/01_layout.html) | 形状步长与嵌套坐标，不混同物理连续分块；23.7 节 |
-| Triton，[Matrix Multiplication](https://triton-lang.org/main/getting-started/tutorials/03-matrix-multiplication.html)；NVIDIA，[cuTile Python](https://docs.nvidia.com/cuda/cutile-python/) | 指针块、tile 坐标与编译器分工；第 24 章 |
-| Shah 等，[FlashAttention-3](https://arxiv.org/abs/2407.08608)；[FlashAttention-4](https://arxiv.org/abs/2603.05451) | 异步流水线与不均衡硬件扩展的算法设计；26.3、26.4 节 |
-| NVIDIA，[NCCL CUDA Stream Semantics](https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/usage/streams.html)、[Using NVSHMEM](https://docs.nvidia.com/nvshmem/api/latest/using.html) | 提交与完成的区别、单边通信次序与可见性；第 27 章、附录 B |
+| NVIDIA，[PTX ISA](https://docs.nvidia.com/cuda/parallel-thread-execution/) | 虚拟 ISA、MMA 形态、异步提交等待与目标要求；21.5、22.2、第 24 章、附录 B |
+| NVIDIA，[Hopper Tuning Guide](https://docs.nvidia.com/cuda/hopper-tuning-guide/index.html)、[Blackwell Tuning Guide](https://docs.nvidia.com/cuda/blackwell-tuning-guide/index.html) | SM/块资源上限、代际编程接口；第 22、24 章 |
+| NVIDIA，[Rubin GPU 架构介绍](https://developer.nvidia.com/blog/inside-nvidia-rubin-gpu-architecture-powering-the-era-of-agentic-ai/) | 新一代 HBM、互联与部件组织；22.9 节、附录 A |
+| NVIDIA CUTLASS，[CuTe Layouts](https://docs.nvidia.com/cutlass/latest/media/docs/cpp/cute/01_layout.html) | 形状步长与嵌套坐标，不混同物理连续分块；24.7 节 |
+| Triton，[Matrix Multiplication](https://triton-lang.org/main/getting-started/tutorials/03-matrix-multiplication.html)；NVIDIA，[cuTile Python](https://docs.nvidia.com/cuda/cutile-python/) | 指针块、tile 坐标与编译器分工；第 25 章 |
+| Shah 等，[FlashAttention-3](https://arxiv.org/abs/2407.08608)；[FlashAttention-4](https://arxiv.org/abs/2603.05451) | 异步流水线与不均衡硬件扩展的算法设计；27.3、27.4 节 |
+| NVIDIA，[NCCL CUDA Stream Semantics](https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/usage/streams.html)、[Using NVSHMEM](https://docs.nvidia.com/nvshmem/api/latest/using.html) | 提交与完成的区别、单边通信次序与可见性；第 28 章、附录 B |
 
 ## Pallas 教程与 tpuasm 的覆盖核对（2026-10-08）
 

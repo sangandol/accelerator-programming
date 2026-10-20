@@ -1,28 +1,29 @@
 export default {
-  '23-stage-protocol'(f) {
-    const p=f.box(25,105,150,60,'生产者：TMA',{color:'blue'}),s=f.box(300,105,170,60,'槽 s：数据 + 相位',{color:'orange'}),c=f.box(595,105,150,60,'消费者：MMA',{color:'green'});
-    f.link(p,s,{arrow:'end'});f.link(s,c,{arrow:'end'});
-    f.line([c.B(),[670,280],[100,280],p.B()],{arrow:'end',color:'purple'});f.note(380,320,'MMA 读完 → empty → 允许下一轮写');
-    f.note(380,45,'写入完成 → full → 允许本轮读');
+  '23-thread-map'(f) {
+    f.grid(100,60,{rows:4,cols:4,cw:120,ch:50,rowLabels:['块 0','块 1','块 2','块 3'],label:(i,j)=>`${256*i+64*j}–${256*i+64*j+63}`,fill:(i,j)=>i===3&&j===3?'orange':'blue'});
+    f.text(340,312,'块 3 末尾：有效 960–999；越界 1000–1023');
   },
-  '23-wgmma-groups'(f) {
-    f.timeline(105,30,{lanes:['组 0','组 1','读取最终累加'],bars:[[0,0,4,'在途','blue'],[1,2,7,'在途','orange'],[2,7,9,'读取','green']],unit:55,ticks:[0,2,4,7,9]});
-    f.note(105,255,'t=4 可保留一组未完成；t=7 才能读取最终累加结果',{anchor:'start'});
+  '23-isa-path'(f) {
+    const labels=['CUDA：一线程 z=x+y','PTX：载入、加法、存储','目标代码：分配寄存器','硬件：warp 请求与数值单元'];
+    const bs=labels.map((s,i)=>f.box(60,25+i*90,310,45,s,{color:['blue','green','orange','purple'][i]}));for(let i=0;i<3;i++)f.link(bs[i],bs[i+1],{arrow:'end'});
+    f.note(410,bs[1].cy,'公开虚拟 ISA',{anchor:'start'});f.note(410,bs[2].cy,'与目标相关',{anchor:'start'});
   },
-  '23-tmem-double'(f) {
-    f.grid(145,65,{rows:2,cols:3,cw:150,ch:70,rowLabels:['TMEM C₀','TMEM C₁'],colLabels:['时段 0','时段 1','时段 2'],label:(i,j)=>[['MMA 写','结尾读','下一块 MMA'],['结尾读','MMA 写','结尾读']][i][j],fill:(i,j)=>i===j%2?'blue':'orange'});
-    f.note(145,270,'复用 C₀ 或 C₁ 前等待其结尾读者结束',{anchor:'start'});
+  '23-reduction'(f) {
+    const ws=[0,1,2,3,4,5,6,7].map(i=>f.box(20+i*77,30,65,45,`warp ${i}`,{color:'blue',size:12}));
+    ws.forEach(v=>f.text(v.cx,12,'32'));
+    const a=f.box(145,175,360,50,'共享部分和：32,32,32,32,32,32,32,32',{color:'orange',size:13});
+    for(let i=0;i<8;i++)f.line([ws[i].B(),[ws[i].cx,145],a.T((i+.5)/8)],{arrow:'end'});
+    const b=f.box(245,295,160,45,'首 warp：总和 256',{color:'green'});f.link(a,b,{arrow:'end'});
+    f.note(540,200,'屏障后才读',{anchor:'start'});
   },
-  '23-waves'(f) {
-    f.grid(130,60,{rows:2,cols:10,cw:48,ch:45,rowLabels:['第 1 波','第 2 波'],label:(i,j)=>i===1&&j>=5?'空闲':'工作',fill:(i,j)=>i===1&&j>=5?'gray':'blue'});
-    f.text(370,205,'每格代表 10 个工作单元，共 100 个');
-    f.box(130,280,480,45,'Stream-K：按 15000 个 K 迭代平均分配',{color:'orange'});
-    f.note(130,360,'减少半满尾波，但部分输出需额外合并',{anchor:'start'});
+  '23-two-barriers'(f) {
+    const labels=['协作载入','满：全部写好','计算读取','空：全部读完','下一轮覆盖'];
+    const bs=labels.map((s,i)=>f.box(20+i*145,65,115,52,s,{color:i===1||i===3?'orange':'blue'}));for(let i=0;i<4;i++)f.link(bs[i],bs[i+1],{arrow:'end'});
+    f.note(20,195,'第一个屏障保护本轮读取；第二个保护下一轮覆盖',{anchor:'start'});
   },
-  "23-full-empty-cycle": function(f) {
-    const labels=['生产者写入','满：写入完成','消费者 / MMA 读取','空：全部读完','下一轮覆盖'];
-    const boxes=labels.map((s,i)=>f.box(25+i*135,65,118,64,s,{color:['blue','green','orange','green','blue'][i],size:12}));
-    for(let i=0;i<4;i++)f.link(boxes[i],boxes[i+1],{arrow:'end'});
-    f.note(350,210,'“满”授权消费，“空”授权复用；提交 MMA 还不等于共享块读完');
+  "23-resource-min": function(f) {
+    f.bars(185,45,{items:[['寄存器上限',4,'blue'],['共享内存上限',2,'orange'],['线程 / warp 上限',8,'green'],['块数上限',16,'purple']],w:360,fmt:v=>`${v} 块`});
+    f.note(340,245,'取最小值：2 块 × 8 warp = 16 warp，算术占用率 25%');
+    f.note(340,285,'假设 256 线程/块、64 寄存器/线程、80 KiB 共享/块');
   },
 };

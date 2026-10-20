@@ -1,32 +1,31 @@
 export default {
-  '27-hierarchy'(f) {
-    const nics=[];
+  '27-query-kv'(f) {
+    const q=f.box(25,110,155,65,'Q + 行状态驻留',{color:'blue'});
+    const kv=f.box(300,20,190,55,'K/V 第 j 块',{color:'green'}),s=f.box(300,120,190,55,'临时分数 S / 概率 P',{color:'orange'}),u=f.box(300,230,190,55,'更新 m、ℓ、u',{color:'purple'});
+    f.link(kv,s,{arrow:'end'});f.link(q,s,{arrow:'end'});f.link(s,u,{arrow:'end'});
+    f.line([u.R(),[565,257],[565,47],kv.R()],{arrow:'end'});f.note(25,350,'临时分数块不离开片上存储；下一个 j 继续更新同一状态',{anchor:'start'});
+  },
+  '27-warp-partition'(f) {
     for(let k=0;k<2;k++) {
-      const x=25+k*385;f.box(x,30,330,215,'',{color:'gray',hollow:true});f.text(x+165,53,`NVLink 域 ${k}`);
-      const s=f.box(x+95,85,140,40,'NVSwitch',{color:'purple'});
-      let representative;
-      for(let i=0;i<4;i++) {const g=f.box(x+15+i*77,170,65,42,`GPU ${4*k+i}`,{color:'blue',size:12});f.link(s,g,{arrow:'both'});if(i===1)representative=g;}
-      const nic=f.box(x+55,330,140,42,'GPU 对应网卡',{color:'orange'});nics.push(nic);f.link(representative,nic,{arrow:'both'});
+      const x=25+k*335;f.text(x+128,20,k?'沿键列分：行状态需合并':'沿查询行分：各持完整行');
+      f.grid(x,65,{rows:8,cols:8,cw:32,ch:30,fill:(i,j)=>['blue','orange','green','purple'][Math.floor((k?j:i)/2)]});
     }
-    f.link(nics[0],nics[1],{arrow:'both',color:'orange'});f.note(343,315,'跨域网络');
-    f.note(25,435,'每域只画一条代表性的 GPU / 网卡路径；域内与域间的带宽分别计账',{anchor:'start'});
+    f.note(25,370,'颜色代表四个 warp 的数据归属，不代表四份独立注意力',{anchor:'start'});
   },
-  '27-symmetric'(f) {
-    f.grid(30,65,{rows:4,cols:3,cw:155,ch:50,rowLabels:['GPU 0','GPU 1','GPU 2','GPU 3'],colLabels:['偏移 0','偏移 4096','偏移 8192'],label:(i,j)=>`(设备 ${i}, 偏移 ${j*4096})`,fill:(i,j)=>i===2&&j===1?'orange':'blue'});
-    f.note(30,330,'统一的是逻辑位置；库或对等映射给出实际远端地址',{anchor:'start'});
+  '27-pingpong'(f) {
+    const bars=[];for(let i=0;i<3;i++){bars.push([0,4*i,4*i+2,`A${i}`,'blue'],[1,4*i+2,4*i+4,`B${i}`,'green'],[2,4*i+2,4*i+4,`A${i}`,'blue'],[3,4*i+4,4*i+6,`B${i}`,'green']);}
+    f.timeline(120,30,{lanes:['A：矩阵','B：矩阵','A：softmax','B：softmax'],bars,unit:38,ticks:[0,2,4,6,8,10,12,14]});
+    f.note(120,325,'不同查询组可重叠；同组的状态更新顺序不变',{anchor:'start'});
   },
-  '27-overlap'(f) {
-    f.timeline(100,30,{lanes:['GEMM 块','通信块'],bars:[[0,0,2,'0','blue'],[0,2,4,'1','blue'],[0,4,6,'2','blue'],[0,6,8,'3','blue'],[1,2,3.1,'0','orange'],[1,4,5.1,'1','orange'],[1,6,7.1,'2','orange'],[1,8,9.1,'3','orange']],unit:55,ticks:[0,2,4,6,8,9.1]});
-    f.note(100,220,'每块算完才能通信，四块总时间 9.1 ms（不计争用）',{anchor:'start'});
+  '27-split-kv'(f) {
+    f.grid(90,65,{rows:8,cols:16,cw:27,ch:25,rowLabels:Array.from({length:8},(_,i)=>`KV 头 ${i}`),fill:()=> 'blue'});
+    f.brace(90,320,522,'每头 16 段：共 128 个独立任务');
+    f.box(135,390,340,45,'每头合并 16 份 (m,ℓ,u)，输出仍按头排列',{color:'orange',size:13});
   },
-  '27-moe-routing'(f) {
-    const src=f.box(25,130,145,60,'词元隐藏向量 X',{color:'blue'}),recv=f.box(280,130,155,60,'远端域：一份 X',{color:'orange'}),a=f.box(545,40,145,55,'专家 A',{color:'green'}),b=f.box(545,245,145,55,'专家 B',{color:'purple'});
-    f.link(src,recv,{arrow:'end'});f.link(recv,a,{arrow:'end'});f.link(recv,b,{arrow:'end'});
-    f.note(220,95,'跨网卡');f.note(505,190,'域内复制');f.note(25,350,'路由和返回仍保留词元编号、专家身份与权重',{anchor:'start'});
-  },
-  "27-ring-provenance": function(f) {
-    f.text(320,18,'四 GPU 的 all-gather：每轮只转发新收到的源块');
-    f.grid(100,65,{rows:4,cols:4,cw:100,ch:55,rowLabels:['设备 0','设备 1','设备 2','设备 3'],colLabels:['初始','轮 1','轮 2','轮 3'],label:(d,r)=>(d-r+4)%4,fill:(d,r)=>['blue','orange','green','purple'][(d-r+4)%4]});
-    f.note(320,355,'格中数字为该轮新收到的源块号；三轮后每设备齐备');
+  "27-merge-split-kv": function(f) {
+    const a=f.box(25,40,245,65,'KV 分片 0 → (m₀,ℓ₀,u₀)',{color:'blue',size:13}),b=f.box(350,40,245,65,'KV 分片 1 → (m₁,ℓ₁,u₁)',{color:'orange',size:13});
+    const c=f.box(180,210,265,60,'同一参考点下合并 ℓ 与 u',{color:'green'});f.link(a,c,{arrow:'end'});f.link(b,c,{arrow:'end'});
+    const d=f.box(180,335,265,50,'最终输出 u / ℓ',{color:'purple'});f.link(c,d,{arrow:'end'});
+    f.note(320,435,'直接平均两份已归一化输出，会丢失各分片的权重总量');
   },
 };
