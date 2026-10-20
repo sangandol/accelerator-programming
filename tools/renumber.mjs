@@ -21,9 +21,9 @@ import { join, basename, dirname } from 'node:path';
 
 const KIND = '定义|命题|定理|引理|推论|例|注';
 // Same grammar as server.mjs.
-const REF_LABEL = /(定义|命题|定理|引理|推论|例|注|习题|图)(\s?)((?:\d+|[A-E])\.\d+)((?:\s?[、，,和与及–]\s?(?:\d+|[A-E])\.\d+(?![\d.]|\s?节))*)/gu;
-const REF_SECTION = /(?<![\d.A-Za-z])((?:\d+|[A-E])\.\d+)((?:\s?[、，–—-]\s?(?:\d+|[A-E])\.\d+)*)(\s?节)/gu;
-const NUM = /(?:\d+|[A-E])\.\d+/g;
+const REF_LABEL = /(定义|命题|定理|引理|推论|例|注|习题|图)(\s?)((?:\d+|[A-F])\.\d+)((?:\s?[、，,和与及–]\s?(?:\d+|[A-F])\.\d+(?![\d.]|\s?节))*)/gu;
+const REF_SECTION = /(?<![\d.A-Za-z])((?:\d+|[A-F])\.\d+)((?:\s?[、，–—-]\s?(?:\d+|[A-F])\.\d+)*)(\s?节)/gu;
+const NUM = /(?:\d+|[A-F])\.\d+/g;
 
 if (process.argv[2] === 'label') {
   const [, , , from, to] = process.argv;
@@ -94,7 +94,7 @@ for (const f of files) {
   let after = before.replace(REF_LABEL, (all, kind, sp, first, rest, idx) => {
     if (!ours(first)) return all;
     const type = kind === '图' ? 'fig' : kind === '习题' ? 'ex' : 'item';
-    const nums = [first, ...[...rest.matchAll(/(?:\d+|[A-E])\.\d+/g)].map((x) => x[0])];
+    const nums = [first, ...[...rest.matchAll(/(?:\d+|[A-F])\.\d+/g)].map((x) => x[0])];
     const news = nums.map((n) => map[type].get(n));
     if (news.some((v) => !v)) { problems.push(`${f}:${lineOf(idx)}: ${all} → old item has no new home`); return all; }
     const kinds = new Set(news.map((v) => v.kind));
@@ -104,15 +104,15 @@ for (const f of files) {
     }
     let i = 0;
     const newKind = type === 'item' ? news[0].kind : kind;
-    return `${newKind}${sp}${news[0].n}` + rest.replace(/(?:\d+|[A-E])\.\d+/g, () => news[++i].n);
+    return `${newKind}${sp}${news[0].n}` + rest.replace(/(?:\d+|[A-F])\.\d+/g, () => news[++i].n);
   });
   after = after.replace(REF_SECTION, (all, first, rest, tail, idx) => {
     if (!ours(first)) return all;
-    const nums = [first, ...[...rest.matchAll(/(?:\d+|[A-E])\.\d+/g)].map((x) => x[0])];
+    const nums = [first, ...[...rest.matchAll(/(?:\d+|[A-F])\.\d+/g)].map((x) => x[0])];
     const news = nums.map((n) => map.sec.get(n));
     if (news.some((v) => !v)) { problems.push(`${f}:${lineOf(idx)}: ${all} → old section has no new home`); return all; }
     let i = 0;
-    return news[0].n + rest.replace(/(?:\d+|[A-E])\.\d+/g, () => news[++i].n) + tail;
+    return news[0].n + rest.replace(/(?:\d+|[A-F])\.\d+/g, () => news[++i].n) + tail;
   });
   if (after !== before) {
     await writeFile(path, after);

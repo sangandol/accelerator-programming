@@ -22,7 +22,7 @@
 
 - `book/README.md`：目录。阅读器按其中 `.md` 链接的出现顺序生成"上一章/下一章"。
 - `book/00-preface.md`：前言（读法、路线、记号、习题体例）。
-- `book/NN-slug.md`：第 NN 章；`book/A-*.md` 起为附录。
+- `book/NN-slug.md`：第 NN 章；`book/A-*.md` 起为附录：A 硬件参数，B 概念与 API，C 与 AI 协作，D 术语，E 参考文献，F 论文导读与面试自测（阅读器与工具识别附录字母 A–F）。
 - `book/fig/`：插图（SVG），全部由画图库生成，不要手改 SVG。画图库在 `tools/fig/`：`lib.mjs` 是库，`chNN.mjs` 是各章的插图，`tools/figures.mjs` 负责生成和检查。**画图前读 `tools/fig/README.md`（API 与流程），不必读 lib.mjs。** 阅读器的 `/book/fig/?f=前缀` 页面列出插图。
 - `server.mjs`：本地阅读器（Node 内置 http + markdown-it + @vscode/markdown-it-katex），`--check` 模式检查全书，`--export` 把一章导出为自包含的 HTML。它在服务端识别编号条目、术语、证明、插图、习题（见下文"阅读器的标记"），加上锚点和链接。
 - `web/reader.js`：浏览器端的阅读辅助：顶栏下拉的本章大纲（节与编号条目）、术语表和版式设置（字体：Noto Serif SC / 系统黑体 / 霞鹜文楷，字号、行宽、行距、背景，存在 localStorage 的 `rd-*` 键里，页面 head 里的小脚本在首次绘制前应用）、引用与术语的悬停预览、"被引用"列表、折叠证明（点"证明"二字）、术语后显示英文。`web/widgets.js`：互动图。`web/style.css`：阅读器样式（颜色只有正文、灰线和一种链接色）。`start.ps1`：Windows 启动脚本。

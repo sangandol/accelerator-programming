@@ -21,6 +21,7 @@
 - C. Wallace. A suggestion for a fast multiplier. *IEEE Trans. Electronic Computers*, 1964.
 - R. Brent. The parallel evaluation of general arithmetic expressions. *J. ACM*, 1974.
 - Open Compute Project. *OCP Microscaling Formats (MX) Specification*, v1.0, 2023.
+- IEEE. *IEEE Standard for Floating-Point Arithmetic*, IEEE Std 754-2019, §5.10 totalOrder.（2.11 节的全序）
 - K. Ozaki, T. Ogita, S. Oishi, S. Rump. Error-free transformations of matrix multiplication by using fast routines of matrix multiplication and its applications. *Numerical Algorithms*, 2012.
 
 ## 存储、流水线与矩阵单元（第 3–5 章）
@@ -58,6 +59,8 @@
 - M. Milakov, N. Gimelshein. Online normalizer calculation for softmax. 2018.
 - B. Welford. Note on a method for calculating corrected sums of squares and products. *Technometrics*, 1962.
 - T. Chan, G. Golub, R. LeVeque. Algorithms for computing the sample variance: analysis and recommendations. *The American Statistician*, 1983.
+- K. Batcher. Sorting networks and their applications. *AFIPS Spring Joint Computer Conference*, 1968.（10.4 节与第 21 章的比较网络）
+- D. Knuth. *The Art of Computer Programming*, Vol. 3: *Sorting and Searching*, 2nd ed. Addison-Wesley, 1998.（败者树与多路归并）
 
 ## Transformer 与推理（第 11 章）
 
@@ -68,7 +71,7 @@
 - W. Fedus, B. Zoph, N. Shazeer. Switch transformers. 2021.
 - W. Kwon 等. Efficient memory management for large language model serving with PagedAttention. *SOSP*, 2023.
 
-## JAX 与 Pallas（第 13、14、16–20 章）
+## JAX 与 Pallas（第 13、14、16–21 章）
 
 - R. Frostig, M. Johnson, C. Leary. Compiling machine learning programs via high-level tracing. *SysML*, 2018.
 - JAX 文档：*Distributed arrays and automatic parallelization*（mesh、Explicit/Auto/Manual）、*Pallas* 与 *Pallas TPU*、*Mosaic GPU*。
@@ -83,6 +86,22 @@
 - N. Jouppi 等. TPU v4: an optically reconfigurable supercomputer for machine learning with hardware support for embeddings. *ISCA*, 2023.
 - N. Jouppi, S. Lakshmanamurthy, C. Young, D. Patterson. Google's training supercomputers from TPU v2 to Ironwood. *IEEE Micro*, 2026.
 - Google Cloud TPU 文档（各代系统架构）；Google Cloud 博客：Ironwood 与 TPU 8t/8i 的技术介绍，2025–2026.
+
+## 近期论文与报告
+
+这些论文在正文中被详细讲到或引用了其中的数字，按章排列。面试和读论文时，它们是"现在业界在做什么"的好样本；附录 F 给出了阅读顺序和自测题。
+
+- M. Zhong. Bitwise-correct and faster top-$k$ on TPU v4. 2026. 代码、原始结果与中文版：[github.com/ayaka14732/tpu-v4-top-k](https://github.com/ayaka14732/tpu-v4-top-k)。（2.11 节、10.4 节、15.3 节、第 20、21 章）
+- A. Chowdhery 等. PaLM: scaling language modeling with Pathways. arXiv:2204.02311, 2022.（MFU 的定义与 TPU v4 上的数字，11.3 节）
+- R. Pope 等. Efficiently scaling Transformer inference. *MLSys*, 2023（arXiv:2211.05102）。（prefill 与 decode 的分片，11.4 节）
+- Z. Jiang 等. MegaScale: scaling large language model training to more than 10,000 GPUs. *NSDI*, 2024.（11.3 节）
+- Llama Team, AI @ Meta. The Llama 3 herd of models. arXiv:2407.21783, 2024.（MFU、四维并行与故障统计，11.3 节、第 12 章）
+- DeepSeek-AI. DeepSeek-V3 technical report. arXiv:2412.19437, 2024.（DualPipe，第 12 章；FP8 训练与累加精度，注 26.3）
+- NVIDIA. Pretraining large language models with NVFP4. arXiv:2509.25149, 2025.（注 26.3）
+- SonicMoE（Guo、Mishra、Cheng、Stoica、Dao，*ICLR*, 2026）：MoE 的高效 GPU 实现，含路由 top-$k$ 的专门 kernel。（例 26.5）
+- A. Ouyang 等. KernelBench: can LLMs write efficient GPU kernels? *ICML*, 2025.（注 25.8、C.9 节）
+- Sakana AI. The AI CUDA Engineer（2025 年 2 月）及其后对评测漏洞的更正；EvoEngineer 等后续复现研究，2025.（注 25.8、C.9 节）
+- METR. Recent frontier models are reward hacking. 2025 年 6 月.（C.9 节）
 
 ## GPU 与 CUDA（第 22–28 章）
 

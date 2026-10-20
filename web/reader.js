@@ -19,7 +19,7 @@
     e.append(...kids.flat().filter((k) => k !== null && k !== undefined));
     return e;
   };
-  const LABEL = /^(定义|命题|定理|引理|推论|例|注|习题|图)\s?(\d+|[A-E])\.(\d+)/;
+  const LABEL = /^(定义|命题|定理|引理|推论|例|注|习题|图)\s?(\d+|[A-F])\.(\d+)/;
 
   // Pages from an older server lack the head script and font links that server.mjs now writes: add them here.
   if (!document.querySelector('link[href*="fonts.googleapis.com"]')) {

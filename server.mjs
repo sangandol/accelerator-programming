@@ -55,16 +55,16 @@ md.core.ruler.push('drop_empty_text', (state) => {
 // A term is defined as **术语**（English）. Proofs run from *证明* to the paragraph ending in ∎.
 
 const KINDS = { 定义: 'def', 命题: 'prop', 定理: 'thm', 引理: 'lemma', 推论: 'cor', 例: 'example', 注: 'remark', 习题: 'exercise', 图: 'figure' };
-const LABEL = /^(定义|命题|定理|引理|推论|例|注|习题|图)\s?(\d+|[A-E])\.(\d+)/;
+const LABEL = /^(定义|命题|定理|引理|推论|例|注|习题|图)\s?(\d+|[A-F])\.(\d+)/;
 const BOXES = [[/^在体系中的位置/, 'position-box'], [/^现状/, 'status-box']];
-const REF_LABEL = /(定义|命题|定理|引理|推论|例|注|习题|图)\s?((?:\d+|[A-E])\.\d+)((?:\s?[、，,和与及–]\s?(?:\d+|[A-E])\.\d+(?![\d.]|\s?节))*)/gu;
-const REF_SECTION = /(?<![\d.A-Za-z])((?:\d+|[A-E])\.\d+)((?:\s?[、，–—-]\s?(?:\d+|[A-E])\.\d+)*)\s?节/gu;
+const REF_LABEL = /(定义|命题|定理|引理|推论|例|注|习题|图)\s?((?:\d+|[A-F])\.\d+)((?:\s?[、，,和与及–]\s?(?:\d+|[A-F])\.\d+(?![\d.]|\s?节))*)/gu;
+const REF_SECTION = /(?<![\d.A-Za-z])((?:\d+|[A-F])\.\d+)((?:\s?[、，–—-]\s?(?:\d+|[A-F])\.\d+)*)\s?节/gu;
 const REF_CHAPTER = /第\s?(\d+)((?:\s?[、，和与及–]\s?\d+)*)\s?章/gu;
-const REF_APPENDIX = /附录\s?([A-E])(?![A-Za-z])/gu;
-const NUMBER = /(?:\d+|[A-E])\.\d+/g;
+const REF_APPENDIX = /附录\s?([A-F])(?![A-Za-z])/gu;
+const NUMBER = /(?:\d+|[A-F])\.\d+/g;
 
 function chapterKey(file) {
-  const m = file.match(/^(\d+)-/) ?? file.match(/^([A-E])-/);
+  const m = file.match(/^(\d+)-/) ?? file.match(/^([A-F])-/);
   return m ? (/^\d+$/.test(m[1]) ? String(Number(m[1])) : m[1]) : null;
 }
 
@@ -94,7 +94,7 @@ function* walk(tokens) {
     const t = tokens[i];
     if (t.type === 'heading_open') {
       const title = inlineText(tokens[i + 1]);
-      if (t.tag === 'h2') section = { num: title.match(/^((?:\d+|[A-E])\.\d+)\s/)?.[1] ?? null, id: t.attrGet('id'), title };
+      if (t.tag === 'h2') section = { num: title.match(/^((?:\d+|[A-F])\.\d+)\s/)?.[1] ?? null, id: t.attrGet('id'), title };
       yield { kind: 'heading', i, t, title, section };
     } else if (t.type === 'inline' && tokens[i - 1]?.type !== 'heading_open') {
       yield { kind: 'inline', i, t, section };
