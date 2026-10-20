@@ -108,7 +108,7 @@
 | JAX，[Writing TPU kernels with Pallas](https://docs.jax.dev/en/latest/pallas/tpu/details.html)、[TPU Pipelining](https://docs.jax.dev/en/latest/pallas/tpu/pipelining.html) | 块到寄存器、布局与自动流水线的接口；16.1–16.8 节 |
 | JAX，[Manual parallelism with shard_map](https://docs.jax.dev/en/latest/notebooks/shard_map.html) | 全局与本地视角、集合原语与复制声明；第 14 章 |
 | NVIDIA，[H100 产品表](https://www.nvidia.com/en-us/data-center/h100/) | SXM 带宽、稀疏峰值标注与接口口径；附录 A |
-| NVIDIA，[PTX ISA](https://docs.nvidia.com/cuda/parallel-thread-execution/) | 虚拟 ISA、MMA 形态、异步提交等待与目标要求；21.5、22.2、第 24 章、附录 B |
+| NVIDIA，[PTX ISA](https://docs.nvidia.com/cuda/parallel-thread-execution/) | 虚拟 ISA、MMA 形态、异步提交等待与目标要求；22.5、23.2 节，第 24 章，附录 B |
 | NVIDIA，[Hopper Tuning Guide](https://docs.nvidia.com/cuda/hopper-tuning-guide/index.html)、[Blackwell Tuning Guide](https://docs.nvidia.com/cuda/blackwell-tuning-guide/index.html) | SM/块资源上限、代际编程接口；第 22、24 章 |
 | NVIDIA，[Rubin GPU 架构介绍](https://developer.nvidia.com/blog/inside-nvidia-rubin-gpu-architecture-powering-the-era-of-agentic-ai/) | 新一代 HBM、互联与部件组织；22.9 节、附录 A |
 | NVIDIA CUTLASS，[CuTe Layouts](https://docs.nvidia.com/cutlass/latest/media/docs/cpp/cute/01_layout.html) | 形状步长与嵌套坐标，不混同物理连续分块；24.7 节 |

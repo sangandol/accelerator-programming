@@ -30,6 +30,7 @@
 | 混合精度 | mixed precision | 2.7 |
 | 块缩放 | block scaling (microscaling) | 2.8 |
 | 随机舍入 | stochastic rounding | 2.10 |
+| 全序、整数键 | total order (totalOrder), integer key | 2.11 |
 | 寄存器堆、端口 | register file, port | 3.1 |
 | 译码器、写使能 | decoder, write enable | 3.1 |
 | 字线、位线 | word line, bit line | 3.2 |
@@ -74,6 +75,7 @@
 | 释放、获取、栅栏、作用域 | release, acquire, fence, scope | 9.6 |
 | 幺半群 | monoid | 10.1 |
 | 在线 softmax | online softmax | 10.2 |
+| 名次计数、败者树 | rank counting, loser tree | 10.4 |
 | 可复现 | reproducible | 10.6 |
 | 词元、头 | token, head | 11.1 |
 | 分组查询注意力、多头潜在注意力 | GQA, MLA | 11.1、11.4 |
@@ -129,6 +131,7 @@
 | 共享内存、溢出 | shared memory, spill | 22.3 |
 | 占用率 | occupancy | 22.4 |
 | warpgroup、张量存储 | warpgroup, tensor memory (TMEM) | 22.5 |
+| 片段 | fragment | 22.5 |
 | 张量搬运引擎、张量描述符 | TMA, tensor map (descriptor) | 22.6 |
 | 线程块簇、分布式共享内存 | thread block cluster, distributed shared memory | 22.7 |
 | 网格步长循环 | grid-stride loop | 23.1 |
@@ -142,6 +145,7 @@
 | tile 程序 | tile program | 25.1 |
 | 结尾 | epilogue | 26.4 |
 | 分页 KV cache、页表 | paged KV cache, block table | 27.5 |
+| 沿键值方向切分 | split-KV (flash-decoding) | 27.5 |
 | 对称内存 | symmetric memory | 28.2 |
 
 ## 读代码时要区分的层次
