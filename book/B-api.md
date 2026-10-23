@@ -152,3 +152,22 @@ tpuasm 还绑定 Python、libtpu 的 GNU build-id 和原生桥接后端，只有
 | v6e selector 与 formatter | 字段宽度、显示常量和实际消费位宽未必相同；部分 encoder 槽形式受限 | 20.6 节分开文本、字节与执行证据；具体观察查附录 E 的执行语义文档 |
 
 逐节来源与审计范围见附录 E。
+
+## B.9 推理引擎的参数与名词（第 29–33 章）
+
+同一个概念在不同引擎里的名字。DeepInfer 一列核对自它在 2026-10-20 开源时的源码与 README；vLLM 与 SGLang 两列是这两个项目长期使用的名字，具体拼写和默认值以当时的文档为准。
+
+| 概念 | 本书 | DeepInfer | vLLM | SGLang |
+| --- | --- | --- | --- | --- |
+| 每步词元预算 | 31.4 节 | `max_num_batched_tokens` | `max_num_batched_tokens` | `chunked_prefill_size` |
+| 并发请求上限 | 31.4 节 | `max_num_seqs` | `max_num_seqs` | `max_running_requests` |
+| 页长 | 定义 31.2 | `tokens_per_block` | `block_size` | `page_size` |
+| 显存利用率上限 | 例 31.5 | `gpu_memory_utilization` | `gpu_memory_utilization` | `mem_fraction_static` |
+| 分段 prefill | 11.8、31.4 节 | `chunked_prefill` | `enable_chunked_prefill` | 由 `chunked_prefill_size` 控制 |
+| 前缀缓存 | 32.2 节 | 外部的 KV cache 系统（未开源） | `enable_prefix_caching` | RadixAttention（默认开启） |
+| 被抢占的请求 | 31.4 节 | `stop_preempted_request`（默认结束） | 默认放回队列重算 | 默认放回队列重算 |
+| 抽样参数 | 定义 29.16 | `SamplingParams(temperature, top_p, top_k, seq_seed)` | `SamplingParams(temperature, top_p, top_k, seed)` | `sampling_params` 字典 |
+| 格式约束 | 29.4、31.6 节 | `so_args`（regex、JSON schema、EBNF） | structured outputs | `json_schema`、`regex`、`ebnf` |
+| 批不变与确定性抽样 | 11.8 节、命题 29.19 | 环境变量 `DEEPINFER_BATCH_INVARIANT=1` 加固定的 `seq_seed` | 见文档 | `--enable-deterministic-inference` |
+| 动态验证长度 | 33.5 节 | `DEEPINFER_ENABLE_MTP_VARLEN=1`，`DEEPINFER_USE_NEXTN_DECODE` 为最多草稿数 | `speculative_config` | `speculative_algorithm` 等 |
+| 异步调度 | 定义 31.10 | 默认开启 | `async_scheduling` | 默认开启 |

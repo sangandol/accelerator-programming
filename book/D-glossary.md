@@ -155,6 +155,37 @@
 | 块稀疏矩阵、注意力状态 | block-sparse row (BSR), attention state | 27.7 |
 | 对称内存 | symmetric memory | 28.2 |
 
+## 第六部分　大模型推理系统
+
+| 中文 | 英文 | 首见 |
+| --- | --- | --- |
+| 检查点 | checkpoint (safetensors) | 29.1 |
+| 字节对编码、合并表、预切分 | byte-pair encoding (BPE), merges, pre-tokenization | 29.2 |
+| 对话模板、特殊词元 | chat template, special token | 29.2 |
+| 旋转位置编码 | rotary position embedding (RoPE) | 29.3 |
+| 温度、贪心解码、top-k、top-p | temperature, greedy decoding, top-k, top-p (nucleus) sampling | 29.4 |
+| 逆分布函数法、Gumbel-max | inverse-CDF sampling, Gumbel-max trick | 29.4 |
+| 约束输出 | constrained (structured) decoding | 29.4 |
+| 停止串 | stop sequence | 29.5 |
+| 吸收 | (weight) absorption in MLA | 30.2 |
+| 滑动窗口注意力、环形缓冲、注意力汇 | sliding window attention (SWA), ring buffer, attention sink | 30.3 |
+| 压缩、索引器、稀疏选择 | compression, indexer, sparse selection | 30.4 |
+| 跨层共享、因果编码器—解码器 | cross-layer KV sharing, YOCO, causal encoder-decoder (CED) | 30.5 |
+| 线性注意力、状态、delta 规则 | linear attention, state, delta rule | 30.6 |
+| 推理引擎、接入层 | inference engine, API server | 31.1 |
+| 锁页内存 | pinned (page-locked) memory | 31.2 |
+| 写入槽号 | slot mapping | 31.3 |
+| 抢占 | preemption | 31.4 |
+| 录制、异步调度 | graph capture, asynchronous (zero-overhead) scheduling | 31.5 |
+| 首词元时间、词元间隔、有效吞吐 | time to first token (TTFT), time per output token (TPOT), goodput | 31.7 |
+| 引用计数、写时复制、并行抽样 | reference count, copy-on-write, parallel sampling | 32.1 |
+| 前缀缓存、链式哈希、基数树 | prefix caching, chained hash, radix tree | 32.2 |
+| 持平带宽 | break-even bandwidth | 32.3 |
+| 快照、近似重建 | snapshot, bounded replay | 32.5 |
+| 宽专家并行 | wide expert parallelism (wide EP) | 33.2 |
+| 冗余专家、列表调度、LPT | redundant experts (EPLB), list scheduling, longest processing time first | 33.3 |
+| 置信头 | confidence head | 33.5 |
+
 ## 读代码时要区分的层次
 
 | 对象 | 意义 | 首见或复查位置 |

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="664" height="220" viewBox="8 5 664 220" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<rect x="8" y="5" width="664" height="220" rx="8" fill="#ffffff"/>
+<rect x="20" y="60" width="90" height="46" rx="6" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<rect x="110" y="60" width="190" height="46" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="300" y="60" width="150" height="46" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="450" y="60" width="150" height="46" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="600" y="60" width="60" height="46" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<polyline points="300,140 300,146 660,146 660,140" fill="none" stroke="#666" stroke-width="1.2" stroke-linejoin="round"/>
+<text x="65" y="87.9" text-anchor="middle" font-size="14" fill="#555555">h（8 字节）</text>
+<text x="205" y="87.9" text-anchor="middle" font-size="14" fill="#b45f06">JSON 文件头（h 字节）</text>
+<text x="375" y="87.9" text-anchor="middle" font-size="14" fill="#3a5a8c">张量 A 的字节</text>
+<text x="525" y="87.9" text-anchor="middle" font-size="14" fill="#3a5a8c">张量 B 的字节</text>
+<text x="630" y="87.9" text-anchor="middle" font-size="14" fill="#3a5a8c">…</text>
+<text x="480" y="162.2" text-anchor="middle" font-size="12" fill="#666">数据区：偏移从这里算起</text>
+<text x="205" y="29.2" text-anchor="middle" font-size="12" fill="#666">每个张量：dtype、shape、data_offsets</text>
+<text x="300" y="209.2" text-anchor="start" font-size="12" fill="#666">每个张量按行优先存放，一个接一个</text>
+</svg>

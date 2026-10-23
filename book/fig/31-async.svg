@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="470" height="322" viewBox="8 -7 470 322" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-666-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#666"/></marker></defs>
+<rect x="8" y="-7" width="470" height="322" rx="8" fill="#ffffff"/>
+<rect x="60" y="35" width="36" height="30" rx="3" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="96" y="75" width="108" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="204" y="35" width="36" height="30" rx="3" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="240" y="35" width="36" height="30" rx="3" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="276" y="75" width="108" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="384" y="35" width="36" height="30" rx="3" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="60" y="175" width="36" height="30" rx="3" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="96" y="215" width="108" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="96" y="175" width="36" height="30" rx="3" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="204" y="215" width="108" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="204" y="175" width="36" height="30" rx="3" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="240" y="175" width="36" height="30" rx="3" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="312" y="215" width="108" height="30" rx="3" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="312" y="175" width="36" height="30" rx="3" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="348" y="175" width="36" height="30" rx="3" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<polyline points="60,115 438,115" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-666-10)"/>
+<polyline points="60,255 438,255" fill="none" stroke="#666" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-666-10)"/>
+<text x="20" y="19.9" text-anchor="start" font-size="14" fill="#222">串行：每步用时 <tspan font-style="italic">T</tspan><tspan dy="4.2" font-size="10.1" font-style="italic">g</tspan><tspan dy="-4.2"> + </tspan><tspan font-style="italic">T</tspan><tspan dy="4.2" font-size="10.1" font-style="italic">c</tspan></text>
+<text x="50" y="54.6" text-anchor="end" font-size="13" fill="#222">CPU</text>
+<text x="50" y="94.6" text-anchor="end" font-size="13" fill="#222">设备</text>
+<text x="78" y="54.6" text-anchor="middle" font-size="13" fill="#b45f06">S1</text>
+<text x="150" y="94.6" text-anchor="middle" font-size="13" fill="#3a5a8c">F1+A1</text>
+<text x="222" y="54.6" text-anchor="middle" font-size="13" fill="#2e7d32">P1</text>
+<text x="258" y="54.6" text-anchor="middle" font-size="13" fill="#b45f06">S2</text>
+<text x="330" y="94.6" text-anchor="middle" font-size="13" fill="#3a5a8c">F2+A2</text>
+<text x="402" y="54.6" text-anchor="middle" font-size="13" fill="#2e7d32">P2</text>
+<text x="442" y="119.2" text-anchor="start" font-size="12" fill="#666">时间</text>
+<text x="20" y="159.9" text-anchor="start" font-size="14" fill="#222">异步调度：每步用时 max(<tspan font-style="italic">T</tspan><tspan dy="4.2" font-size="10.1" font-style="italic">g</tspan><tspan dy="-4.2">, </tspan><tspan font-style="italic">T</tspan><tspan dy="4.2" font-size="10.1" font-style="italic">c</tspan><tspan dy="-4.2">)</tspan></text>
+<text x="50" y="194.6" text-anchor="end" font-size="13" fill="#222">CPU</text>
+<text x="50" y="234.6" text-anchor="end" font-size="13" fill="#222">设备</text>
+<text x="78" y="194.6" text-anchor="middle" font-size="13" fill="#b45f06">S1</text>
+<text x="150" y="234.6" text-anchor="middle" font-size="13" fill="#3a5a8c">F1+A1</text>
+<text x="114" y="194.6" text-anchor="middle" font-size="13" fill="#b45f06">S2</text>
+<text x="258" y="234.6" text-anchor="middle" font-size="13" fill="#3a5a8c">F2+A2</text>
+<text x="222" y="194.6" text-anchor="middle" font-size="13" fill="#b45f06">S3</text>
+<text x="258" y="194.6" text-anchor="middle" font-size="13" fill="#2e7d32">P1</text>
+<text x="366" y="234.6" text-anchor="middle" font-size="13" fill="#3a5a8c">F3+A3</text>
+<text x="330" y="194.6" text-anchor="middle" font-size="13" fill="#b45f06">S4</text>
+<text x="366" y="194.6" text-anchor="middle" font-size="13" fill="#2e7d32">P2</text>
+<text x="442" y="259.2" text-anchor="start" font-size="12" fill="#666">时间</text>
+<text x="60" y="299.2" text-anchor="start" font-size="12" fill="#666">S：调度并发起；F+A：前向与抽样；P：处理输出</text>
+</svg>

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="735" height="198" viewBox="8 28 735 198" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="8" y="28" width="735" height="198" rx="8" fill="#ffffff"/>
+<rect x="20" y="40" width="70" height="44" rx="6" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<rect x="118" y="40" width="120" height="44" rx="6" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<rect x="266" y="40" width="90" height="44" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="384" y="40" width="140" height="44" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="552" y="40" width="150" height="44" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="20" y="170" width="70" height="44" rx="6" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<rect x="118" y="170" width="120" height="44" rx="6" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<rect x="266" y="170" width="90" height="44" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="384" y="170" width="140" height="44" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="552" y="170" width="150" height="44" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<polyline points="90,62 118,62" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="238,62 266,62" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="356,62 384,62" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="524,62 552,62" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="552,192 524,192" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="384,192 356,192" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="266,192 238,192" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="118,192 90,192" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="627,84 627,170" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="311,170 311,84" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="5 4" marker-end="url(#ah-222-10)"/>
+<text x="55" y="66.9" text-anchor="middle" font-size="14" fill="#555555">对话</text>
+<text x="178" y="66.9" text-anchor="middle" font-size="14" fill="#555555">模板与词元化</text>
+<text x="311" y="66.9" text-anchor="middle" font-size="14" fill="#3a5a8c">词元编号</text>
+<text x="454" y="66.9" text-anchor="middle" font-size="14" fill="#3a5a8c">嵌入：按编号取行</text>
+<text x="627" y="66.9" text-anchor="middle" font-size="14" fill="#3a5a8c">各层：写入 KV cache</text>
+<text x="55" y="196.9" text-anchor="middle" font-size="14" fill="#555555">文字</text>
+<text x="178" y="196.9" text-anchor="middle" font-size="14" fill="#555555">流式解码</text>
+<text x="311" y="196.9" text-anchor="middle" font-size="14" fill="#3a5a8c">新词元</text>
+<text x="454" y="196.9" text-anchor="middle" font-size="14" fill="#b45f06">抽样</text>
+<text x="627" y="196.9" text-anchor="middle" font-size="14" fill="#3a5a8c">输出层：logits</text>
+<text x="635" y="131.2" text-anchor="start" font-size="12" fill="#666">只取要抽样的位置</text>
+<text x="319" y="131.2" text-anchor="start" font-size="12" fill="#666">decode 只送入这一个词元</text>
+</svg>

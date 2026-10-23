@@ -135,6 +135,49 @@
 - FlashAttention 的 Blackwell 版本（用 CuTe DSL 写成）的公开代码与介绍，2025–2026.
 - NVIDIA. *NCCL* 与 *NVSHMEM* 文档。
 
+## 大模型推理系统（第 29–33 章）
+
+第六部分的主要实例来自 2026 年 10 月公开的两份一手材料，2026-10-23 核对：
+
+- DeepSeek-AI. [*DeepInfer*](https://github.com/deepseek-ai/DeepInfer): high-performance, large-scale inference framework for DeepSeek models. GitHub，2026 年 10 月 20 日开源，Apache 2.0；其中的部署说明 `doc/inference_deployment_qa.md` 给出了 E/P/D 分离、专家负载均衡、负载均衡器、KV cache 存储、异步调度、结构化输出和投机解码的参数与实测数字。（第 31–33 章）
+- DeepSeek-AI. DeepSeek-V4.1-Flash: pushing the limits of KV cache compression. 技术报告，2026（见上文"近期论文与报告"）；Hugging Face 上的 `config.json`、权重文件头与参考推理代码。（例 29.3、30.5 节、例 30.14、32.5 节、33.5 节）
+- DeepSeek-AI. *deepseek-recipe*：提示编码与输出解析的 Rust 库，GitHub，2026.（29.2 节、31.1 节）
+- DeepSeek-AI. *3FS*（Fire-Flyer File System），GitHub，2025.（32.3 节）
+
+模型与词元：
+
+- Hugging Face. *safetensors* 格式说明。（29.1 节）
+- R. Sennrich, B. Haddow, A. Birch. Neural machine translation of rare words with subword units. *ACL*, 2016.（BPE）
+- A. Radford 等. Language models are unsupervised multitask learners. OpenAI, 2019.（字节级 BPE）
+- J. Su 等. RoFormer: enhanced Transformer with rotary position embedding. arXiv:2104.09864, 2021.
+- B. Peng 等. YaRN: efficient context window extension of large language models. arXiv:2309.00071, 2023.
+- A. Holtzman 等. The curious case of neural text degeneration. *ICLR*, 2020.（top-p）
+- E. J. Gumbel. *Statistical Theory of Extreme Values and Some Practical Applications*. 1954；C. Maddison, D. Tarlow, T. Minka. A* sampling. *NeurIPS*, 2014.（Gumbel-max）
+- B. Willard, R. Louf. Efficient guided generation for large language models. arXiv:2307.09702, 2023；Y. Dong 等. XGrammar: flexible and efficient structured generation engine for large language models. arXiv:2411.15100, 2024.（约束输出）
+
+注意力的变体：
+
+- DeepSeek-AI. DeepSeek LLM: scaling open-source language models with longtermism. arXiv:2401.02954, 2024.（67B 的结构，30.7 节）
+- W. Brandon 等. Reducing Transformer key-value cache size with cross-layer attention. arXiv:2405.12981, 2024.
+- Y. Sun 等. You only cache once: decoder-decoder architectures for language models. arXiv:2405.05254, 2024.（YOCO）
+- G. Xiao 等. Efficient streaming language models with attention sinks. *ICLR*, 2024.
+- Gemma Team. Gemma 3 technical report, 2025；OpenAI. gpt-oss model card, 2025.（30.3 节的现状框）
+- DeepSeek-AI. DeepSeek-V3.2（稀疏注意力与索引器），2025.
+- A. Katharopoulos 等. Transformers are RNNs: fast autoregressive Transformers with linear attention. *ICML*, 2020.
+- T. Dao, A. Gu. Transformers are SSMs: generalized models and efficient algorithms through structured state space duality. *ICML*, 2024.（Mamba-2）
+- S. Yang, J. Kautz, A. Hatamizadeh. Gated delta networks: improving Mamba2 with delta rule. *ICLR*, 2025.
+- Qwen Team. Qwen3-Next, 2025；Kimi Team. Kimi Linear, 2025.（30.6 节的现状框）
+
+引擎、缓存与部署：
+
+- L. Zheng 等. SGLang: efficient execution of structured language model programs. *NeurIPS*, 2024.（RadixAttention，32.2 节）
+- A. Agrawal 等. Taming throughput-latency tradeoff in LLM inference with Sarathi-Serve. *OSDI*, 2024.（分段 prefill）
+- K. Zhu 等. NanoFlow: towards optimal large language model serving throughput. arXiv:2408.12757, 2024.（异步调度，31.5 节）
+- vLLM 项目文档：自动前缀缓存、调度器、CUDA Graph 的批量档位，2026.
+- L. Wang 等. Auxiliary-loss-free load balancing strategy for mixture-of-experts. arXiv:2408.15664, 2024.（33.3 节）
+- R. L. Graham. Bounds on multiprocessing timing anomalies. *SIAM J. Applied Mathematics*, 1969.（定理 33.5 与 LPT 的界）
+- Engram 与 DSpark：Cheng 等（2026），见 DeepSeek-V4.1-Flash 技术报告的参考文献。
+
 ## 本次实例与指令衔接使用的在线资料
 
 以下链接于 **2026-10-07** 核对。型号表给的是特定产品或后端参考参数；论文和 ISA 给的是算法或操作语义；它们都不是本书作者的真机测量。各章的微型算例和推导为本书按这些接口独立构造。

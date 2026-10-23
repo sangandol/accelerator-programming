@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="654" height="207" viewBox="8 28 654 207" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="8" y="28" width="654" height="207" rx="8" fill="#ffffff"/>
+<rect x="20" y="90" width="70" height="40" rx="6" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<rect x="130" y="90" width="90" height="40" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="260" y="90" width="90" height="40" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="390" y="40" width="110" height="40" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="390" y="140" width="110" height="40" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="540" y="40" width="110" height="40" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<polyline points="90,110 130,110" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="220,110 260,110" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="350,93.9 390,79.6" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="350,126.1 390,140.4" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="500,60 540,60" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<text x="55" y="114.9" text-anchor="middle" font-size="14" fill="#555555"><tspan font-style="italic">h</tspan><tspan dy="4.2" font-size="10.1">0</tspan></text>
+<text x="175" y="114.9" text-anchor="middle" font-size="14" fill="#3a5a8c">第 1 页</text>
+<text x="305" y="114.9" text-anchor="middle" font-size="14" fill="#3a5a8c">第 2 页</text>
+<text x="445" y="64.9" text-anchor="middle" font-size="14" fill="#2e7d32">A 的第 3 页</text>
+<text x="445" y="164.9" text-anchor="middle" font-size="14" fill="#b45f06">B 的第 3 页</text>
+<text x="595" y="64.9" text-anchor="middle" font-size="14" fill="#2e7d32">A 的第 4 页</text>
+<text x="175" y="154.2" text-anchor="middle" font-size="12" fill="#666"><tspan font-style="italic">h</tspan><tspan dy="3.6" font-size="8.6">1</tspan></text>
+<text x="305" y="154.2" text-anchor="middle" font-size="12" fill="#666"><tspan font-style="italic">h</tspan><tspan dy="3.6" font-size="8.6">2</tspan></text>
+<text x="20" y="219.2" text-anchor="start" font-size="12" fill="#666">每页的键 <tspan font-style="italic">h</tspan><tspan dy="3.6" font-size="8.6" font-style="italic">j</tspan><tspan dy="-3.6"> 由上一页的键和本页的词元算出；A、B 共用前两页</tspan></text>
+<text x="540" y="114.2" text-anchor="start" font-size="12" fill="#666">末端：可先淘汰</text>
+</svg>

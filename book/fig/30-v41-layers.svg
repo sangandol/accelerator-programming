@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="812" height="205" viewBox="6 23 812 205" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<rect x="6" y="23" width="812" height="205" rx="8" fill="#ffffff"/>
+<rect x="75" y="35" width="30" height="34" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="105" y="35" width="30" height="34" rx="0" fill="#efefef" stroke="#999" stroke-width="0.8"/>
+<rect x="135" y="35" width="30" height="34" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="165" y="35" width="30" height="34" rx="0" fill="#ffffff" stroke="#999" stroke-width="0.8"/>
+<rect x="195" y="35" width="30" height="34" rx="0" fill="#ffffff" stroke="#999" stroke-width="0.8"/>
+<rect x="225" y="35" width="30" height="34" rx="0" fill="#ffffff" stroke="#999" stroke-width="0.8"/>
+<rect x="255" y="35" width="30" height="34" rx="0" fill="#ffffff" stroke="#999" stroke-width="0.8"/>
+<rect x="285" y="35" width="30" height="34" rx="0" fill="#ffffff" stroke="#999" stroke-width="0.8"/>
+<rect x="315" y="35" width="30" height="34" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="345" y="35" width="30" height="34" rx="0" fill="#ffffff" stroke="#999" stroke-width="0.8"/>
+<rect x="375" y="35" width="30" height="34" rx="0" fill="#ffffff" stroke="#999" stroke-width="0.8"/>
+<rect x="405" y="35" width="30" height="34" rx="0" fill="#ffffff" stroke="#999" stroke-width="0.8"/>
+<rect x="435" y="35" width="30" height="34" rx="0" fill="#ffffff" stroke="#999" stroke-width="0.8"/>
+<rect x="465" y="35" width="30" height="34" rx="0" fill="#ffffff" stroke="#999" stroke-width="0.8"/>
+<rect x="495" y="35" width="30" height="34" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="525" y="35" width="30" height="34" rx="0" fill="#ffffff" stroke="#999" stroke-width="0.8"/>
+<rect x="555" y="35" width="30" height="34" rx="0" fill="#ffffff" stroke="#999" stroke-width="0.8"/>
+<rect x="585" y="35" width="30" height="34" rx="0" fill="#ffffff" stroke="#999" stroke-width="0.8"/>
+<rect x="615" y="35" width="30" height="34" rx="0" fill="#ffffff" stroke="#999" stroke-width="0.8"/>
+<rect x="645" y="35" width="30" height="34" rx="0" fill="#ffffff" stroke="#999" stroke-width="0.8"/>
+<rect x="75" y="105" width="30" height="34" rx="0" fill="#e8f0fb" stroke="#999" stroke-width="0.8"/>
+<rect x="105" y="105" width="30" height="34" rx="0" fill="#ffffff" stroke="#999" stroke-width="0.8"/>
+<rect x="135" y="105" width="30" height="34" rx="0" fill="#ffffff" stroke="#999" stroke-width="0.8"/>
+<rect x="165" y="105" width="30" height="34" rx="0" fill="#ffffff" stroke="#999" stroke-width="0.8"/>
+<rect x="195" y="105" width="30" height="34" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="225" y="105" width="30" height="34" rx="0" fill="#ffffff" stroke="#999" stroke-width="0.8"/>
+<rect x="255" y="105" width="30" height="34" rx="0" fill="#ffffff" stroke="#999" stroke-width="0.8"/>
+<rect x="285" y="105" width="30" height="34" rx="0" fill="#ffffff" stroke="#999" stroke-width="0.8"/>
+<rect x="315" y="105" width="30" height="34" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="345" y="105" width="30" height="34" rx="0" fill="#ffffff" stroke="#999" stroke-width="0.8"/>
+<rect x="375" y="105" width="30" height="34" rx="0" fill="#ffffff" stroke="#999" stroke-width="0.8"/>
+<rect x="405" y="105" width="30" height="34" rx="0" fill="#ffffff" stroke="#999" stroke-width="0.8"/>
+<rect x="435" y="105" width="30" height="34" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="465" y="105" width="30" height="34" rx="0" fill="#ffffff" stroke="#999" stroke-width="0.8"/>
+<rect x="495" y="105" width="30" height="34" rx="0" fill="#ffffff" stroke="#999" stroke-width="0.8"/>
+<rect x="525" y="105" width="30" height="34" rx="0" fill="#ffffff" stroke="#999" stroke-width="0.8"/>
+<rect x="555" y="105" width="30" height="34" rx="0" fill="#e3f2e5" stroke="#999" stroke-width="0.8"/>
+<rect x="585" y="105" width="30" height="34" rx="0" fill="#ffffff" stroke="#999" stroke-width="0.8"/>
+<rect x="615" y="105" width="30" height="34" rx="0" fill="#ffffff" stroke="#999" stroke-width="0.8"/>
+<rect x="645" y="105" width="30" height="34" rx="0" fill="#ffffff" stroke="#999" stroke-width="0.8"/>
+<rect x="75" y="190" width="26" height="26" rx="6" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<rect x="245" y="190" width="26" height="26" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="415" y="190" width="26" height="26" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="585" y="190" width="26" height="26" rx="6" fill="#ffffff" stroke="#222222" stroke-width="1.6"/>
+<text x="60" y="56.9" text-anchor="end" font-size="14" fill="#222">编码器</text>
+<text x="90" y="56.2" text-anchor="middle" font-size="12" fill="#555555">S</text>
+<text x="120" y="56.2" text-anchor="middle" font-size="12" fill="#555555">S</text>
+<text x="150" y="56.2" text-anchor="middle" font-size="12" fill="#3a5a8c">F</text>
+<text x="180" y="56.2" text-anchor="middle" font-size="12" fill="#222222">U</text>
+<text x="210" y="56.2" text-anchor="middle" font-size="12" fill="#222222">U</text>
+<text x="240" y="56.2" text-anchor="middle" font-size="12" fill="#222222">U</text>
+<text x="270" y="56.2" text-anchor="middle" font-size="12" fill="#222222">U</text>
+<text x="300" y="56.2" text-anchor="middle" font-size="12" fill="#222222">U</text>
+<text x="330" y="56.2" text-anchor="middle" font-size="12" fill="#3a5a8c">F</text>
+<text x="360" y="56.2" text-anchor="middle" font-size="12" fill="#222222">U</text>
+<text x="390" y="56.2" text-anchor="middle" font-size="12" fill="#222222">U</text>
+<text x="420" y="56.2" text-anchor="middle" font-size="12" fill="#222222">U</text>
+<text x="450" y="56.2" text-anchor="middle" font-size="12" fill="#222222">U</text>
+<text x="480" y="56.2" text-anchor="middle" font-size="12" fill="#222222">U</text>
+<text x="510" y="56.2" text-anchor="middle" font-size="12" fill="#3a5a8c">F</text>
+<text x="540" y="56.2" text-anchor="middle" font-size="12" fill="#222222">U</text>
+<text x="570" y="56.2" text-anchor="middle" font-size="12" fill="#222222">U</text>
+<text x="600" y="56.2" text-anchor="middle" font-size="12" fill="#222222">U</text>
+<text x="630" y="56.2" text-anchor="middle" font-size="12" fill="#222222">U</text>
+<text x="660" y="56.2" text-anchor="middle" font-size="12" fill="#222222">U</text>
+<text x="690" y="56.2" text-anchor="start" font-size="12" fill="#666"><tspan font-style="italic">r</tspan> = 2（第 2–19 层）</text>
+<text x="60" y="126.9" text-anchor="end" font-size="14" fill="#222">解码器</text>
+<text x="90" y="126.2" text-anchor="middle" font-size="12" fill="#3a5a8c">F</text>
+<text x="120" y="126.2" text-anchor="middle" font-size="12" fill="#222222">U</text>
+<text x="150" y="126.2" text-anchor="middle" font-size="12" fill="#222222">U</text>
+<text x="180" y="126.2" text-anchor="middle" font-size="12" fill="#222222">U</text>
+<text x="210" y="126.2" text-anchor="middle" font-size="12" fill="#2e7d32">R</text>
+<text x="240" y="126.2" text-anchor="middle" font-size="12" fill="#222222">U</text>
+<text x="270" y="126.2" text-anchor="middle" font-size="12" fill="#222222">U</text>
+<text x="300" y="126.2" text-anchor="middle" font-size="12" fill="#222222">U</text>
+<text x="330" y="126.2" text-anchor="middle" font-size="12" fill="#2e7d32">R</text>
+<text x="360" y="126.2" text-anchor="middle" font-size="12" fill="#222222">U</text>
+<text x="390" y="126.2" text-anchor="middle" font-size="12" fill="#222222">U</text>
+<text x="420" y="126.2" text-anchor="middle" font-size="12" fill="#222222">U</text>
+<text x="450" y="126.2" text-anchor="middle" font-size="12" fill="#2e7d32">R</text>
+<text x="480" y="126.2" text-anchor="middle" font-size="12" fill="#222222">U</text>
+<text x="510" y="126.2" text-anchor="middle" font-size="12" fill="#222222">U</text>
+<text x="540" y="126.2" text-anchor="middle" font-size="12" fill="#222222">U</text>
+<text x="570" y="126.2" text-anchor="middle" font-size="12" fill="#2e7d32">R</text>
+<text x="600" y="126.2" text-anchor="middle" font-size="12" fill="#222222">U</text>
+<text x="630" y="126.2" text-anchor="middle" font-size="12" fill="#222222">U</text>
+<text x="660" y="126.2" text-anchor="middle" font-size="12" fill="#222222">U</text>
+<text x="690" y="126.2" text-anchor="start" font-size="12" fill="#666"><tspan font-style="italic">r</tspan> = 1</text>
+<text x="88" y="207.9" text-anchor="middle" font-size="14" fill="#555555">S</text>
+<text x="108" y="207.2" text-anchor="start" font-size="12" fill="#666">只有滑动窗口</text>
+<text x="258" y="207.9" text-anchor="middle" font-size="14" fill="#3a5a8c">F</text>
+<text x="278" y="207.2" text-anchor="start" font-size="12" fill="#666">完整：产生缓存项</text>
+<text x="428" y="207.9" text-anchor="middle" font-size="14" fill="#2e7d32">R</text>
+<text x="448" y="207.2" text-anchor="start" font-size="12" fill="#666">重选：重新打分</text>
+<text x="598" y="207.9" text-anchor="middle" font-size="14" fill="#222222">U</text>
+<text x="618" y="207.2" text-anchor="start" font-size="12" fill="#666">复用</text>
+</svg>

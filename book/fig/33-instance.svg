@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="717" height="289" viewBox="27 -4 717 289" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-555555-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#555555"/></marker></defs>
+<rect x="27" y="-4" width="717" height="289" rx="8" fill="#ffffff"/>
+<rect x="110" y="35" width="136" height="46" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="110" y="185" width="136" height="46" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="272" y="35" width="136" height="46" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="272" y="185" width="136" height="46" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="434" y="35" width="136" height="46" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="434" y="185" width="136" height="46" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="596" y="35" width="136" height="46" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="596" y="185" width="136" height="46" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<polyline points="178,81 178,185" fill="none" stroke="#555555" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-555555-10)"/>
+<polyline points="202.8,81 315.2,185" fill="none" stroke="#555555" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-555555-10)"/>
+<polyline points="227.7,81 452.3,185" fill="none" stroke="#555555" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-555555-10)"/>
+<polyline points="246,79 596,187" fill="none" stroke="#555555" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-555555-10)"/>
+<polyline points="315.2,81 202.8,185" fill="none" stroke="#555555" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-555555-10)"/>
+<polyline points="340,81 340,185" fill="none" stroke="#555555" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-555555-10)"/>
+<polyline points="364.8,81 477.2,185" fill="none" stroke="#555555" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-555555-10)"/>
+<polyline points="389.7,81 614.3,185" fill="none" stroke="#555555" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-555555-10)"/>
+<polyline points="452.3,81 227.7,185" fill="none" stroke="#555555" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-555555-10)"/>
+<polyline points="477.2,81 364.8,185" fill="none" stroke="#555555" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-555555-10)"/>
+<polyline points="502,81 502,185" fill="none" stroke="#555555" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-555555-10)"/>
+<polyline points="526.8,81 639.2,185" fill="none" stroke="#555555" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-555555-10)"/>
+<polyline points="596,79 246,187" fill="none" stroke="#555555" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-555555-10)"/>
+<polyline points="614.3,81 389.7,185" fill="none" stroke="#555555" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-555555-10)"/>
+<polyline points="639.2,81 526.8,185" fill="none" stroke="#555555" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-555555-10)"/>
+<polyline points="664,81 664,185" fill="none" stroke="#555555" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-555555-10)"/>
+<text x="178" y="22.9" text-anchor="middle" font-size="14" fill="#222">GPU 0</text>
+<text x="178" y="62.9" text-anchor="middle" font-size="14" fill="#3a5a8c">各自请求的注意力</text>
+<text x="178" y="212.9" text-anchor="middle" font-size="14" fill="#b45f06">专家 0–95</text>
+<text x="340" y="22.9" text-anchor="middle" font-size="14" fill="#222">GPU 1</text>
+<text x="340" y="62.9" text-anchor="middle" font-size="14" fill="#3a5a8c">各自请求的注意力</text>
+<text x="340" y="212.9" text-anchor="middle" font-size="14" fill="#b45f06">专家 96–191</text>
+<text x="502" y="22.9" text-anchor="middle" font-size="14" fill="#222">GPU 2</text>
+<text x="502" y="62.9" text-anchor="middle" font-size="14" fill="#3a5a8c">各自请求的注意力</text>
+<text x="502" y="212.9" text-anchor="middle" font-size="14" fill="#b45f06">专家 192–287</text>
+<text x="664" y="22.9" text-anchor="middle" font-size="14" fill="#222">GPU 3</text>
+<text x="664" y="62.9" text-anchor="middle" font-size="14" fill="#3a5a8c">各自请求的注意力</text>
+<text x="664" y="212.9" text-anchor="middle" font-size="14" fill="#b45f06">专家 288–383</text>
+<text x="95" y="62.9" text-anchor="end" font-size="14" fill="#222">数据并行</text>
+<text x="95" y="212.9" text-anchor="end" font-size="14" fill="#222">专家并行</text>
+<text x="95" y="137.9" text-anchor="end" font-size="14" fill="#222">全交换</text>
+<text x="110" y="269.2" text-anchor="start" font-size="12" fill="#666">每层：各自算注意力 → 全交换分发 → 专家计算 → 全交换回收；最慢的一块决定整层</text>
+</svg>

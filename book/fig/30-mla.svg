@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="754" height="224" viewBox="8 -4 754 224" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="8" y="-4" width="754" height="224" rx="8" fill="#ffffff"/>
+<rect x="20" y="50" width="90" height="40" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="140" y="50" width="100" height="40" rx="6" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<rect x="270" y="50" width="70" height="40" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="270" y="130" width="70" height="40" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="140" y="130" width="100" height="40" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="390" y="50" width="70" height="40" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="490" y="50" width="120" height="40" rx="6" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<rect x="640" y="50" width="110" height="40" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="660" y="130" width="70" height="40" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="490" y="130" width="120" height="40" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<polyline points="110,70 140,70" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="240,70 270,70" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="305,90 305,130" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="240,150 270,150" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="460,70 490,70" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="610,70 640,70" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="695,90 695,130" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="610,150 660,150" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<text x="150" y="22.9" text-anchor="middle" font-size="14" fill="#222">按定义：先还原每个头的键</text>
+<text x="470" y="22.9" text-anchor="middle" font-size="14" fill="#222">吸收之后：把还原矩阵并进查询</text>
+<text x="65" y="74.9" text-anchor="middle" font-size="14" fill="#b45f06">缓存 <tspan font-style="italic">c</tspan><tspan dy="4.2" font-size="10.1" font-style="italic">j</tspan></text>
+<text x="190" y="74.9" text-anchor="middle" font-size="14" fill="#555555">乘 <tspan font-style="italic">W</tspan><tspan dy="-5.9" font-size="10.1" font-style="italic">UK</tspan><tspan dy="10.1" font-size="10.1" font-style="italic">h</tspan></text>
+<text x="305" y="74.9" text-anchor="middle" font-size="14" fill="#3a5a8c"><tspan font-style="italic">k</tspan><tspan dy="4.2" font-size="10.1" font-style="italic">h</tspan><tspan font-size="10.1">,</tspan><tspan font-size="10.1" font-style="italic">j</tspan></text>
+<text x="305" y="154.9" text-anchor="middle" font-size="14" fill="#2e7d32">分数</text>
+<text x="190" y="154.9" text-anchor="middle" font-size="14" fill="#3a5a8c"><tspan font-style="italic">q</tspan><tspan dy="4.2" font-size="10.1" font-style="italic">h</tspan></text>
+<text x="20" y="204.2" text-anchor="start" font-size="12" fill="#666">每步对 <tspan font-style="italic">T</tspan> 项、<tspan font-style="italic">H</tspan> 个头各还原一次</text>
+<text x="425" y="74.9" text-anchor="middle" font-size="14" fill="#3a5a8c"><tspan font-style="italic">q</tspan><tspan dy="4.2" font-size="10.1" font-style="italic">h</tspan></text>
+<text x="550" y="74.9" text-anchor="middle" font-size="14" fill="#555555">乘 <tspan font-style="italic">W</tspan><tspan dy="-5.9" font-size="10.1" font-style="italic">UK</tspan><tspan dy="10.1" font-size="10.1" font-style="italic">h</tspan><tspan dy="-4.2"> 的转置</tspan></text>
+<text x="695" y="74.9" text-anchor="middle" font-size="14" fill="#3a5a8c">吸收后的查询</text>
+<text x="695" y="154.9" text-anchor="middle" font-size="14" fill="#2e7d32">分数</text>
+<text x="550" y="154.9" text-anchor="middle" font-size="14" fill="#b45f06">缓存 <tspan font-style="italic">c</tspan><tspan dy="4.2" font-size="10.1" font-style="italic">j</tspan></text>
+<text x="390" y="204.2" text-anchor="start" font-size="12" fill="#666">每步每个头只变换一次查询</text>
+</svg>

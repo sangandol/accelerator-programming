@@ -94,3 +94,15 @@
 更新数字时要把衍生量一起更新：$P/B$ 决定块强度，$BL$ 决定在途量，$\alpha+S/\beta$ 决定搬运延迟，容量决定缓冲数。每项数字都应保留单位、对象、日期和来源；假设的延迟须标为假设，不能与厂商公开参数混列。
 
 > **现状（2026-10-07）**：第八代 TPU 的系统级参数来自 Google 的 [TPU 8t/8i 技术介绍](https://cloud.google.com/blog/products/compute/tpu-8t-and-tpu-8i-technical-deep-dive/)；Rubin 的 HBM、互联与单元组织来自 NVIDIA 的 [Rubin 架构介绍](https://developer.nvidia.com/blog/inside-nvidia-rubin-gpu-architecture-powering-the-era-of-agentic-ai/)。这里的参数表示公开设计与标称能力，不表示本书做过真机测量。
+
+## A.7 主机链路、网络与存储（第 31–33 章）
+
+| 链路或设备 | 量级（2026-10） | 说明 |
+| --- | --- | --- |
+| PCIe 4.0 / 5.0 / 6.0 x16 | 每方向约 32 / 63 / 126 GB/s | 理论值；主机与加速器之间最常见的链路 |
+| NVLink-C2C（Grace 与 Hopper/Blackwell 之间） | 双向合计 900 GB/s | CPU 与 GPU 同封装的系统 |
+| 数据中心网卡 | 400 Gb/s（50 GB/s），新一代 800 Gb/s | 节点间的 RDMA，也用于缓存的远程读写 |
+| 单块 NVMe SSD（PCIe 5.0 x4） | 顺序读十几 GB/s | 随机小块读写远低于此 |
+| DeepSeek 的 KV cache 存储服务器 | 每台 20 块 30.73 TB 的 SSD，读不低于 40 GB/s、写不低于 5 GB/s | DeepInfer 部署说明（32.3 节） |
+
+主机链路比 HBM 慢约两个数量级（31.2 节）；每块加速器从网络或存储分到的带宽，又要按共享它的设备数再分。代入命题 32.8 时，用的是分到一块设备上的带宽。
