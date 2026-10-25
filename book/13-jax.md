@@ -192,7 +192,7 @@ x = jax.random.normal(k1, (1024,))
 
 - 默认的浮点类型是 f32（64 位类型默认关闭）。`x.astype(jnp.bfloat16)` 转为 bf16。
 - **类型提升**：bf16 与 f32 的数组运算得到 f32；但 Python 的数字字面量是"弱类型"的，不会提升数组的类型：`x_bf16 * 2.0` 仍是 bf16，`x_bf16 * jnp.float32(2)` 是 f32。
-- **矩阵乘法**：两个 bf16 相乘默认得到 bf16。用 `preferred_element_type=jnp.float32` 得到 f32 结果（习题 2.9）。`precision` 参数控制 f32 输入时的计算精度：`lax.Precision.DEFAULT`、`HIGH`、`HIGHEST`（推论 2.31）。
+- **矩阵乘法**：两个 bf16 相乘默认得到 bf16。用 `preferred_element_type=jnp.float32` 得到 f32 结果（习题 2.9）。`precision` 参数控制 f32 输入时的计算精度：`lax.Precision.DEFAULT`、`HIGH`、`HIGHEST`（推论 2.32）。
 
 > **例 13.13（三处精度分别写进规格）** $A, B$ 以 bf16 存储，计算 $C = AB$。规格里要分别写明：输入用 bf16 存储，点积内部用什么精度累加，输出存成 f32 还是 bf16。`preferred_element_type=f32` 明确要求 f32 的结果，但内部具体怎么算还取决于后端和精度参数。
 >

@@ -18,7 +18,7 @@
   const sub = (base, i) => h('span', {}, h('i', {}, base), h('sub', {}, String(i)));
   const pair = (g, p) => `(${g}, ${p})`;
 
-  // ---- carry: a + b bit by bit, with carry functions and prefixes (§1.6) ----------------------
+  // ---- carry: a + b bit by bit, with each bit's behaviour and the prefixes (§1.6–1.7) ---------
   function carry(root) {
     let n = 8;
     let a = 0b01111111;
@@ -38,7 +38,7 @@
     aIn.addEventListener('input', () => set(+aIn.value, b));
     bIn.addEventListener('input', () => set(a, +bIn.value));
     root.append(
-      h('div', { class: 'w-title' }, '逐位计算进位：进位函数与前缀'),
+      h('div', { class: 'w-title' }, '逐位计算进位：产生、传递与前缀'),
       h('div', { class: 'w-controls' },
         bitsSel,
         h('label', {}, h('i', {}, 'a'), ' = ', aIn),
@@ -75,8 +75,8 @@
         if (!best || k - j > best[1] - best[0]) best = [j, k];
       }
       const inChain = (i) => best && i >= best[0] && i <= best[1] + 1 && i < n;
-      const fn = (c) => (c.g ? h('span', { class: 'w-g' }, h('u', {}, '1')) : c.p ? h('span', { class: 'w-p' }, 'id') : h('span', { class: 'w-k' }, h('u', {}, '0')));
       const name = (c) => (c.g ? '产生' : c.p ? '传递' : '吸收');
+      const behaviour = (c) => h('span', { class: c.g ? 'w-g' : c.p ? 'w-p' : 'w-k' }, name(c));
       const head = h('tr', {}, h('th', {}, h('i', {}, 'i')), cols.map((_, i) => h('th', { class: inChain(i) ? 'w-chain' : null }, String(i))));
       const row = (label, cell, attrs) => h('tr', {}, h('td', {}, label), cols.map((c, i) => h('td', { class: [inChain(i) ? 'w-chain' : '', attrs?.(c, i) ?? ''].join(' ').trim() || null }, cell(c, i))));
       const flip = (which, i) => () => (which === 'a' ? set(a ^ (1 << i), b) : set(a, b ^ (1 << i)));
@@ -84,7 +84,7 @@
         row(sub('a', 'i'), (c, i) => h('span', { class: 'w-bit', title: '点击翻转', role: 'button', tabindex: 0, onclick: flip('a', i) }, String(c.ai))),
         row(sub('b', 'i'), (c, i) => h('span', { class: 'w-bit', title: '点击翻转', role: 'button', tabindex: 0, onclick: flip('b', i) }, String(c.bi))),
         row(h('span', {}, '(', sub('g', 'i'), ', ', sub('p', 'i'), ')'), (c) => pair(c.g, c.p)),
-        row(h('span', {}, 'φ', h('sub', {}, h('i', {}, 'i'))), (c) => h('span', { title: name(c) }, fn(c))),
+        row('行为', behaviour),
         row(h('span', {}, '(', sub('G', 'i'), ', ', sub('P', 'i'), ')'), (c) => pair(c.G, c.P)),
         row(h('span', {}, h('i', {}, 'c'), h('sub', {}, h('i', {}, 'i'), '+1'), ' = ', sub('G', 'i')), (c) => String(c.G)),
         row(h('span', {}, sub('s', 'i'), ' = ', sub('p', 'i'), ' ⊕ ', sub('c', 'i')), (c) => h('b', {}, String(c.s))));

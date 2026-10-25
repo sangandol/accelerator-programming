@@ -311,7 +311,7 @@ Hopper：$d = 64$ 时 $256/256 = 1$，$d = 128$ 时 $0.5$。Blackwell：$d = 64$
 </details>
 <details><summary>提示 2</summary>
 
-长行中大部分 $P_{ij}$ 远小于 $2^{-6}$。命题 2.28。
+长行中大部分 $P_{ij}$ 远小于 $2^{-6}$。命题 2.29。
 
 </details>
 <details><summary>答案</summary>

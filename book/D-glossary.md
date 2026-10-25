@@ -15,8 +15,8 @@
 | 行波进位加法器 | ripple-carry adder | 1.4 |
 | 时钟、时钟周期、上升沿 | clock, clock period, rising edge | 1.5 |
 | 寄存器、触发器、同步电路 | register, flip-flop, synchronous circuit | 1.5 |
-| 进位函数 | carry function | 1.6 |
 | 进位产生、传递、吸收 | generate, propagate, kill | 1.6 |
+| 产生信号、传递信号 | generate signal, propagate signal | 1.6 |
 | 前缀问题（扫描）、归约 | prefix problem (scan), reduction | 1.8 |
 | 前缀网络、节点 | prefix network, node | 1.8 |
 | 超前进位加法器 | carry-lookahead adder | 1.10 |
