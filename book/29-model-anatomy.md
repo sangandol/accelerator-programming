@@ -309,7 +309,7 @@ E2M1 每个元素 4 位，两个一字节；MXFP4 每 32 个元素一个 1 字�
 
 <details><summary>提示 1</summary>
 
-命题 11.6：每词元约 $2\Phi$，这里 $\Phi$ 取实际用到的参数。
+命题 11.7：每词元约 $2\Phi$，这里 $\Phi$ 取实际用到的参数。
 
 </details>
 <details><summary>提示 2</summary>

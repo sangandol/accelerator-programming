@@ -114,7 +114,7 @@ jaxpr 的第二个用途是求导。设 $f: \mathbb{R}^n \to \mathbb{R}^m$ 在 $
 
 *证明* $y$ 对 $(x, W)$ 是双线性的。固定 $W$，$x \mapsto xW$ 的转置是 $\bar{y} \mapsto \bar{y} W^{\mathsf T}$；固定 $x$，$W \mapsto xW$ 的转置是 $\bar{y} \mapsto x^{\mathsf T} \bar{y}$（对内积 $\langle \bar{y}, xW \rangle = \operatorname{tr}(\bar{y}^{\mathsf T} x W) = \langle x^{\mathsf T} \bar{y}, W \rangle$ 验证）。∎
 
-这就是命题 11.15 中"反向是前向的两倍"的来源：前向一个矩阵乘法，反向两个同样大小的矩阵乘法。
+这就是命题 11.16 中"反向是前向的两倍"的来源：前向一个矩阵乘法，反向两个同样大小的矩阵乘法。
 
 **重计算与自定义导数。**
 

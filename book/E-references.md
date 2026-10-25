@@ -106,7 +106,7 @@
 以下是 2026 年 10 月补入的论文，内容在正文中有完整的讲解（附录 F.3 有导读）。数字据各论文的 arXiv 版本，2026-10-20 核对。
 
 - H. He, Thinking Machines Lab. Defeating nondeterminism in LLM inference. *Thinking Machines Lab: Connectionism*, 2025 年 9 月. 代码：[batch_invariant_ops](https://github.com/thinking-machines-lab/batch_invariant_ops)。（10.6 节、11.12 节）
-- P. Qi, Z. Liu 等. Defeating the training-inference mismatch via FP16. arXiv:2510.26788, 2025.（注 11.32）
+- P. Qi, Z. Liu 等. Defeating the training-inference mismatch via FP16. arXiv:2510.26788, 2025.（注 11.33）
 - Y. Leviathan, M. Kalman, Y. Matias. Fast inference from Transformers via speculative decoding. *ICML*, 2023（arXiv:2211.17192）.（11.11 节）
 - C. Chen 等. Accelerating large language model decoding with speculative sampling. arXiv:2302.01318, 2023.（11.11 节）
 - Y. Zhong 等. DistServe: disaggregating prefill and decoding for goodput-optimized large language model serving. *OSDI*, 2024（arXiv:2401.09670）.（11.12 节）
