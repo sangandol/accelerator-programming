@@ -198,7 +198,7 @@ $$
 
 **反向传播。** 剩下的问题是梯度 $g$ 怎样算。模型是一长串运算的复合，可以用链式法则从后往前一层一层地求：每往回一步，就乘以这一步的雅可比矩阵的转置（M5.3、M5.4 节）。
 
-> **定义 11.14（前向与反向传播）** 设模型是逐层的复合 $h_k = f_k(h_{k-1}; \theta_k)$（$k = 1, \dots, n$），损失 $\mathcal{L}$ 是 $h_n$ 的函数。**前向传播**依次算出 $h_1, \dots, h_n$，并保存反向时要用的中间结果；**反向传播**（backpropagation）从 $\partial \mathcal{L} / \partial h_n$ 出发，对 $k = n, \dots, 1$，由 $\partial \mathcal{L} / \partial h_k$ 算出本层参数的梯度 $\partial \mathcal{L} / \partial \theta_k$，以及要传给前一层的 $\partial \mathcal{L} / \partial h_{k-1}$。
+> **定义 11.14（前向与反向传播）** 设模型是逐层的复合 $h_k = f_k(h_{k-1}; \theta_k)$（$k = 1, \dots, n$），损失 $\mathcal{L}$ 是 $h_n$ 的函数。**前向传播**依次算出 $h_1, \dots, h_n$，并保存反向时要用的中间结果；**反向传播**（M5.4 节）从 $\partial \mathcal{L} / \partial h_n$ 出发，对 $k = n, \dots, 1$，由 $\partial \mathcal{L} / \partial h_k$ 算出本层参数的梯度 $\partial \mathcal{L} / \partial \theta_k$，以及要传给前一层的 $\partial \mathcal{L} / \partial h_{k-1}$。
 
 每一层只要会做一件事：给定"损失对我的输出的导数"，算出"损失对我的参数的导数"和"损失对我的输入的导数"。最后一层的起点就是命题 11.11。最常见的一层是矩阵乘法：
 

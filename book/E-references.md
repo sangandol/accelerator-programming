@@ -89,7 +89,7 @@
 
 ## 近期论文与报告
 
-这些论文在正文中被详细讲到或引用了其中的数字，按章排列。面试和读论文时，它们是"现在业界在做什么"的好样本；附录 F 给出了阅读顺序和自测题。
+这些论文在正文中被详细讲到或引用了其中的数字，按章排列。面试和读论文时，它们是"现在业界在做什么"的好样本；附录 F 是这些论文的导读，各部分末尾的"回顾与自测"里有对应的自测题。
 
 - M. Zhong. Bitwise-correct and faster top-$k$ on TPU v4. 2026. 代码、原始结果与中文版：[github.com/ayaka14732/tpu-v4-top-k](https://github.com/ayaka14732/tpu-v4-top-k)。（2.11 节、10.4 节、15.3 节、第 20、21 章）
 - A. Chowdhery 等. PaLM: scaling language modeling with Pathways. arXiv:2204.02311, 2022.（MFU 的定义与 TPU v4 上的数字，11.5 节）
@@ -103,7 +103,7 @@
 - Sakana AI. The AI CUDA Engineer（2025 年 2 月）及其后对评测漏洞的更正；EvoEngineer 等后续复现研究，2025.（注 25.9、C.9 节）
 - METR. Recent frontier models are reward hacking. 2025 年 6 月.（C.9 节）
 
-以下是 2026 年 10 月补入的论文，内容在正文中有完整的讲解（附录 F.3 有导读）。数字据各论文的 arXiv 版本，2026-10-20 核对。
+以下是 2026 年 10 月补入的论文，内容在正文中有完整的讲解（附录 F 的 F.1 节有导读）。数字据各论文的 arXiv 版本，2026-10-20 核对。
 
 - H. He, Thinking Machines Lab. Defeating nondeterminism in LLM inference. *Thinking Machines Lab: Connectionism*, 2025 年 9 月. 代码：[batch_invariant_ops](https://github.com/thinking-machines-lab/batch_invariant_ops)。（10.6 节、11.12 节）
 - P. Qi, Z. Liu 等. Defeating the training-inference mismatch via FP16. arXiv:2510.26788, 2025.（注 11.33）

@@ -1,6 +1,29 @@
 # 附录 D　术语对照
 
-按首次详细介绍的章节排列。硬件单元、指令与 API 的名字在正文中保留英文。
+按首次详细介绍的章节排列。硬件单元、指令与 API 的名字在正文中保留英文。间章（数学工具）的术语单列在最前面，"首见"一栏写作 M1.2 这样的形式。
+
+## 间章　数学工具
+
+| 中文 | 英文 | 首见 |
+| --- | --- | --- |
+| 下取整、上取整 | floor, ceiling | M1.2 |
+| 数学归纳法 | mathematical induction | M1.4 |
+| 渐近记号（大 O、$\Omega$、$\Theta$） | asymptotic notation (big O, Omega, Theta) | M1.5 |
+| 均值不等式 | AM–GM inequality | M2.2 |
+| 柯西—施瓦茨不等式 | Cauchy–Schwarz inequality | M2.3 |
+| 单射、满射、双射、置换 | injection, surjection, bijection, permutation | M3.1 |
+| 线性映射、转置 | linear map, transpose | M3.2 |
+| 二元域 $\mathbb{F}_2$、比特向量 | field with two elements, bit vector | M3.3 |
+| 子空间、维数、核、像、秩 | subspace, dimension, kernel, image, rank | M3.4 |
+| 陪集、纤维 | coset, fiber | M3.5 |
+| 分布、事件、抽样 | distribution, event, sampling | M4.1 |
+| 联合分布、条件概率、独立 | joint distribution, conditional probability, independence | M4.2 |
+| 无偏、尾和公式 | unbiased, tail-sum formula | M4.3 |
+| 熵、交叉熵、KL 散度 | entropy, cross-entropy, KL divergence | M4.4 |
+| 总变差距离 | total variation distance | M4.5 |
+| 导数、偏导数、梯度 | derivative, partial derivative, gradient | M5.1 |
+| 链式法则 | chain rule | M5.3 |
+| 雅可比矩阵、反向传播 | Jacobian matrix, backpropagation | M5.4 |
 
 ## 第一部分　硬件
 
@@ -30,6 +53,7 @@
 | 混合精度 | mixed precision | 2.7 |
 | 块缩放 | block scaling (microscaling) | 2.8 |
 | 随机舍入 | stochastic rounding | 2.10 |
+| 随机变量、期望、方差、标准差 | random variable, expectation, variance, standard deviation | 2.10 |
 | 全序、整数键 | total order (totalOrder), integer key | 2.11 |
 | 寄存器堆、端口 | register file, port | 3.1 |
 | 译码器、写使能 | decoder, write enable | 3.1 |
