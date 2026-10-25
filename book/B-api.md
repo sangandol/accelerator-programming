@@ -116,11 +116,11 @@ Pallas GPU：BlockSpec 级的 `pl.pallas_call` 可以经 Triton 后端运行；M
 | 更新既有缓冲的局部窗口 | `jax.new_ref`，把 Ref 传入显式 kernel | 16.9 节；旧状态、写区间及所有权显式给出，与数组的函数式更新分开 |
 | 有状态随机数 | `pltpu.prng_seed`、`pltpu.prng_random_bits`、`stateful_uniform`、`stateful_bernoulli` | 16.10 节；比特、种子混合与分布变换分开计账 |
 | 按块随机数 | Pallas key、`sample_block`；普通 `jax.random` 的 threefry key | 固定全局计数器映射；不同 key 实现不承诺序列相同 |
-| 导出与精确往返 | `executable_programs`、`dump_compiled`、`dump_executable`、`format_assembly(..., encoding='exact')`、`assemble_listing` | 定义 20.8；raw image 需显式 target |
-| 修改机器程序 | `replace_executable_programs`、`insert_executable_bundles`、`BundleInsertion`、`load_executable` | 命题 20.10；保留调用约定、分配与程序身份 |
+| 导出与精确往返 | `executable_programs`、`dump_compiled`、`dump_executable`、`format_assembly(..., encoding='exact')`、`assemble_listing` | 定义 20.9；raw image 需显式 target |
+| 修改机器程序 | `replace_executable_programs`、`insert_executable_bundles`、`BundleInsertion`、`load_executable` | 命题 20.11；保留调用约定、分配与程序身份 |
 | 编译来源 | `compiler_source_mapping`、`executable_source_maps` | 20.6 节；按 (PC, slot) 追溯，未知保持未知 |
-| 局部计时 | `srdreg.lcclo`、`srdreg.lcchi`、`sfence` | 定义 20.11；先等完成，再跨栅栏边界读数 |
-| 全局事件 | `srdreg.gtclo`、`srdreg.gtchi`、`vtrace` | 定义 20.13；不能与 LCC 或原始低位直接混算 |
+| 局部计时 | `srdreg.lcclo`、`srdreg.lcchi`、`sfence` | 定义 20.12；先等完成，再跨栅栏边界读数 |
+| 全局事件 | `srdreg.gtclo`、`srdreg.gtchi`、`vtrace` | 定义 20.14；不能与 LCC 或原始低位直接混算 |
 
 tpuasm 还绑定 Python、libtpu 的 GNU build-id 和原生桥接后端，只有 `.target` 相同不能保证可用。其当前兼容性表列 Linux x86-64、CPython 3.14t 与特定 libtpu 0.0.48/0.0.49 组合；编解码可离线进行，实际装载仍需要相应设备与运行时。具体组合以[兼容性表](https://github.com/ayaka14732/tpuasm/blob/a6e3d927deb1dc5a906574e6b6bbfc8bc175d30d/docs/compatibility.md)为准。
 
