@@ -160,7 +160,7 @@ $$
 $$
 O(I \cup J) = \frac{e^{\operatorname{lse}(I)} O(I) + e^{\operatorname{lse}(J)} O(J)}{e^{\operatorname{lse}(I)} + e^{\operatorname{lse}(J)}}, \qquad \operatorname{lse}(I \cup J) = \log\big(e^{\operatorname{lse}(I)} + e^{\operatorname{lse}(J)}\big).
 $$
-这和命题 10.6 是同一个幺半群，只是换了坐标：$\operatorname{lse} = m + \log \ell$，$O = u / \ell$。实现时同样先减去两个 lse 中较大的那个，再取指数。把合并当作像求和一样的标准操作，split-KV、共享前缀、长短混合的批，就都可以写成"各算一部分状态，再合并"。
+这和命题 10.6 是同一个合并运算，只是换了坐标：$\operatorname{lse} = m + \log \ell$，$O = u / \ell$。实现时同样先减去两个 lse 中较大的那个，再取指数。把合并当作像求和一样的标准操作，split-KV、共享前缀、长短混合的批，就都可以写成"各算一部分状态，再合并"。
 
 > **例 27.9（用 lse 坐标再合并一次）** 沿用例 10.7 的数字：集合 $I$ 的两个分数是 $0$ 与 $\log 2$，值是 10 与 20；集合 $J$ 的分数是 $\log 4$，值是 30。$\operatorname{lse}(I) = \log(1 + 2) = \log 3$，$O(I) = (1 \cdot 10 + 2 \cdot 20)/3 = 50/3$；$\operatorname{lse}(J) = \log 4$，$O(J) = 30$。合并：
 >

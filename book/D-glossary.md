@@ -97,13 +97,14 @@
 | 屏障 | barrier | 9.2 |
 | 软件流水线、序幕、尾声 | software pipelining, prologue, epilogue | 9.4 |
 | 释放、获取、栅栏、作用域 | release, acquire, fence, scope | 9.6 |
-| 幺半群 | monoid | 10.1 |
+| 合并运算 | merge operation | 10.1 |
 | 在线 softmax | online softmax | 10.2 |
 | 名次计数、败者树 | rank counting, loser tree | 10.4 |
 | 可复现 | reproducible | 10.6 |
 | 批不变 | batch-invariant | 10.6 |
 | 语言模型、参数、logits | language model, parameters, logits | 11.1 |
-| 词元、头 | token, head | 11.2 |
+| 词元 | token | 11.1 |
+| 头 | head | 11.2 |
 | 残差、激活函数 | residual connection, activation function | 11.2 |
 | 分组查询注意力、多头潜在注意力 | GQA, MLA | 11.2、11.8 |
 | 损失、交叉熵损失、困惑度 | loss, cross-entropy loss, perplexity | 11.4 |
