@@ -140,7 +140,7 @@
 第六部分的主要实例来自 2026 年 10 月公开的两份一手材料，2026-10-23 核对：
 
 - DeepSeek-AI. [*DeepInfer*](https://github.com/deepseek-ai/DeepInfer): high-performance, large-scale inference framework for DeepSeek models. GitHub，2026 年 10 月 20 日开源，Apache 2.0；其中的部署说明 `doc/inference_deployment_qa.md` 给出了 E/P/D 分离、专家负载均衡、负载均衡器、KV cache 存储、异步调度、结构化输出和投机解码的参数与实测数字。（第 31–33 章）
-- DeepSeek-AI. DeepSeek-V4.1-Flash: pushing the limits of KV cache compression. 技术报告，2026（见上文"近期论文与报告"）；Hugging Face 上的 `config.json`、权重文件头与参考推理代码。（例 29.3、30.5 节、例 30.14、32.5 节、33.5 节）
+- DeepSeek-AI. DeepSeek-V4.1-Flash: pushing the limits of KV cache compression. 技术报告，2026（见上文"近期论文与报告"）；Hugging Face 上的 `config.json`、权重文件头与参考推理代码。（例 29.3、30.5 节、例 30.15、32.5 节、33.5 节）
 - DeepSeek-AI. *deepseek-recipe*：提示编码与输出解析的 Rust 库，GitHub，2026.（29.2 节、31.1 节）
 - DeepSeek-AI. *3FS*（Fire-Flyer File System），GitHub，2025.（32.3 节）
 

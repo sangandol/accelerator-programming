@@ -134,6 +134,14 @@ UTF-8 的规则是：一个字符的首字节以 `0`、`110`、`1110` 或 `11110
 
 所以"狗咬人"和"人咬狗"若只靠词元本身，在注意力看来是同一组东西。必须把位置告诉模型。今天最常用的办法是**旋转位置编码**（rotary position embedding，RoPE）：按位置把查询和键旋转一个角度。
 
+用复数写旋转最方便，先回忆几件事。复数 $z = a + \mathrm{i} b$ 可以看成平面上的点 $(a, b)$。$e^{\mathrm{i}\varphi} = \cos\varphi + \mathrm{i}\sin\varphi$ 是单位圆上角度为 $\varphi$ 的点（欧拉公式）。乘以 $e^{\mathrm{i}\varphi}$ 就是绕原点转过角度 $\varphi$：
+
+$$
+(a + \mathrm{i} b)(\cos\varphi + \mathrm{i}\sin\varphi) = (a\cos\varphi - b\sin\varphi) + \mathrm{i}\,(a\sin\varphi + b\cos\varphi),
+$$
+
+正是旋转矩阵 $\begin{pmatrix}\cos\varphi & -\sin\varphi \\ \sin\varphi & \cos\varphi\end{pmatrix}$ 乘以 $(a, b)$。例如 $1 \cdot e^{\mathrm{i}\pi/2} = \mathrm{i}$：点 $(1, 0)$ 转了 90° 到 $(0, 1)$。**共轭** $\bar z = a - \mathrm{i} b$ 把点关于横轴翻过去；两个复数 $z = a + \mathrm{i} b$、$w = c + \mathrm{i} d$ 当作平面向量时的内积 $ac + bd$ 等于 $\operatorname{Re}(z \bar w)$，因为 $z \bar w = (ac + bd) + \mathrm{i}(bc - ad)$。
+
 > **定义 29.13（RoPE）** 设 $d$ 为偶数，频率 $\theta_i = b^{-2i/d}$（$i \in [d/2]$，底数 $b$ 通常取 10000）。把向量 $x \in \mathbb{R}^d$ 的分量两两配对，看成 $d/2$ 个复数 $z_i = x_{2i} + \mathrm{i}\, x_{2i+1}$。位置 $t$ 的旋转 $R_t x$ 把每个 $z_i$ 换成 $z_i e^{\mathrm{i} t \theta_i}$。位置 $t$ 的查询用 $R_t q_t$，位置 $t'$ 的键用 $R_{t'} k_{t'}$。
 
 每一对分量在平面上转过角度 $t\theta_i$。$\theta_0 = 1$ 转得最快，每个位置转 1 弧度；$\theta_{d/2-1} \approx 1/b$ 转得最慢，转一圈要约 $2\pi b \approx 6.3$ 万个位置。快的分量分辨相邻的位置，慢的分量分辨远近。
