@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="594" height="338" viewBox="8 -97 594 338" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="8" y="-97" width="594" height="338" rx="8" fill="#ffffff"/>
+<rect x="20" y="30" width="150" height="54" rx="6" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<rect x="230" y="30" width="120" height="54" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="410" y="30" width="180" height="54" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="410" y="175" width="180" height="54" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="230" y="175" width="120" height="54" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="20" y="175" width="150" height="54" rx="6" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<rect x="215" y="-85" width="150" height="48" rx="6" fill="#efe6f8" stroke="#6a3d9a" stroke-width="1.6"/>
+<polyline points="170,57 230,57" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="350,57 410,57" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="500,84 500,175" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="410,202 350,202" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="230,202 170,202" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="95,175 95,84" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="290,30 290,-37" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<text x="95" y="61.9" text-anchor="middle" font-size="14" fill="#555555">当前上下文</text>
+<text x="290" y="61.9" text-anchor="middle" font-size="14" fill="#3a5a8c">模型</text>
+<text x="500" y="61.9" text-anchor="middle" font-size="14" fill="#b45f06">提出工具与参数</text>
+<text x="500" y="206.9" text-anchor="middle" font-size="14" fill="#b45f06">参数与权限检查</text>
+<text x="290" y="206.9" text-anchor="middle" font-size="14" fill="#2e7d32">实际工具</text>
+<text x="95" y="206.9" text-anchor="middle" font-size="14" fill="#555555">记录实际返回</text>
+<text x="290" y="-56.1" text-anchor="middle" font-size="14" fill="#6a3d9a">最终答案与验收</text>
+<text x="305" y="132.2" text-anchor="middle" font-size="12" fill="#666">调用提议不等于已经执行</text>
+</svg>

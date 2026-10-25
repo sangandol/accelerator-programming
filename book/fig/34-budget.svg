@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="648" height="283" viewBox="8 4 648 283" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<rect x="8" y="4" width="648" height="283" rx="8" fill="#ffffff"/>
+<rect x="120" y="20" width="260.8" height="30" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="120" y="78" width="130.4" height="30" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="250.4" y="78" width="16" height="30" rx="6" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<rect x="266.4" y="78" width="2.6" height="30" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="120" y="136" width="260.8" height="30" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="380.8" y="136" width="16" height="30" rx="6" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<rect x="396.8" y="136" width="80.8" height="30" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="120" y="194" width="130.4" height="30" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="250.4" y="194" width="16" height="30" rx="6" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<rect x="266.4" y="194" width="211.2" height="30" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="120" y="258" width="16" height="16" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="270" y="258" width="16" height="16" rx="6" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<rect x="420" y="258" width="16" height="16" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<polyline points="269,16 269,54" fill="none" stroke="#c0392b" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="269,74 269,112" fill="none" stroke="#c0392b" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="477.6,132 477.6,170" fill="none" stroke="#c0392b" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="477.6,190 477.6,228" fill="none" stroke="#c0392b" stroke-width="2" stroke-linejoin="round"/>
+<text x="20" y="39.9" text-anchor="start" font-size="14" fill="#222">H100 + bf16</text>
+<text x="390.8" y="39.2" text-anchor="start" font-size="12" fill="#666">权重 130.4 GiB 超过卡容量 74.5 GiB：装不下</text>
+<text x="269" y="68.2" text-anchor="middle" font-size="12" fill="#666">卡容量 74.5 GiB</text>
+<text x="20" y="97.9" text-anchor="start" font-size="14" fill="#222">H100 + fp8</text>
+<text x="279" y="97.2" text-anchor="start" font-size="12" fill="#666">约 4300 个词元</text>
+<text x="269" y="126.2" text-anchor="middle" font-size="12" fill="#666">卡容量 74.5 GiB</text>
+<text x="20" y="155.9" text-anchor="start" font-size="14" fill="#222">B200 + bf16</text>
+<text x="487.6" y="155.2" text-anchor="start" font-size="12" fill="#666">约 132000 个词元</text>
+<text x="477.6" y="184.2" text-anchor="middle" font-size="12" fill="#666">卡容量 178.8 GiB</text>
+<text x="20" y="213.9" text-anchor="start" font-size="14" fill="#222">B200 + fp8</text>
+<text x="487.6" y="213.2" text-anchor="start" font-size="12" fill="#666">约 346000 个词元</text>
+<text x="477.6" y="242.2" text-anchor="middle" font-size="12" fill="#666">卡容量 178.8 GiB</text>
+<text x="144" y="270.6" text-anchor="start" font-size="13" fill="#222">权重</text>
+<text x="294" y="270.6" text-anchor="start" font-size="13" fill="#222">预留 8 GiB</text>
+<text x="444" y="270.6" text-anchor="start" font-size="13" fill="#222">留给 KV cache</text>
+</svg>

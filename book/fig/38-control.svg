@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="624" height="282" viewBox="8 18 624 282" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-222-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
+<rect x="8" y="18" width="624" height="282" rx="8" fill="#ffffff"/>
+<rect x="20" y="30" width="165" height="54" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="245" y="30" width="150" height="54" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="455" y="30" width="165" height="54" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="455" y="180" width="165" height="54" rx="6" fill="#e3f2e5" stroke="#2e7d32" stroke-width="1.6"/>
+<rect x="245" y="180" width="150" height="54" rx="6" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<rect x="20" y="180" width="165" height="54" rx="6" fill="#efe6f8" stroke="#6a3d9a" stroke-width="1.6"/>
+<polyline points="185,57 245,57" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="395,57 455,57" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="537.5,84 537.5,180" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="455,207 395,207" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="245,207 185,207" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<polyline points="102.5,180 102.5,84" fill="none" stroke="#222" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-222-10)"/>
+<text x="102.5" y="61.9" text-anchor="middle" font-size="14" fill="#3a5a8c">规划者：选择方向</text>
+<text x="320" y="61.9" text-anchor="middle" font-size="14" fill="#b45f06">可领取的意图</text>
+<text x="537.5" y="61.9" text-anchor="middle" font-size="14" fill="#2e7d32">工作者：调用工具</text>
+<text x="537.5" y="211.9" text-anchor="middle" font-size="14" fill="#2e7d32">结论与原始证据</text>
+<text x="320" y="211.9" text-anchor="middle" font-size="14" fill="#555555">任务与图存储</text>
+<text x="102.5" y="211.9" text-anchor="middle" font-size="14" fill="#6a3d9a">具体变化的事件</text>
+<text x="320" y="136.2" text-anchor="middle" font-size="12" fill="#666">意图、结论与目标各有编号</text>
+<text x="320" y="284.2" text-anchor="middle" font-size="12" fill="#666">图示为常规控制路径；心跳和用户干预见正文</text>
+</svg>

@@ -216,3 +216,32 @@
 | 编码往返与设备语义是不同证据 | [v6e 执行语义核对](https://github.com/ayaka14732/tpuasm/blob/a6e3d927deb1dc5a906574e6b6bbfc8bc175d30d/docs/design/tpu_v6e_execution.md) | 20.6、20.7 节的证据与计时边界；附录 B |
 
 本书按接口和代价模型重新构造证明、算例与图，没有复制教程文字、代码或图。安装、实验载体、基准输出、工具内部 ABI 偏移和全助记符索引没有逐条搬进正文：它们不参与本书的线性推导，需使用工具时从上述固定来源查阅。接口失败与逆向得到的参数均注明来源环境，不列为跨代保证。
+
+## 模型调用、智能体与 ARTEX（第 34–38 章）
+
+以下在线资料访问核对日期为 2026-10-25。第七部分的容量、工作量、重试与摘要限制由正文中注明前提的模型推导；下面的资料用于术语、既有方法和实现实例，没有把框架的存在当作成功率、隔离或恢复能力的运行证据。
+
+| 来源 | 在书中的用途 |
+| --- | --- |
+| Lewis 等，[Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks](https://arxiv.org/abs/2005.11401)，NeurIPS 2020 | 检索材料与生成结合的来源；35.3 节另外区分原论文的训练方法与应用层资料检索 |
+| Yao 等，[ReAct: Synergizing Reasoning and Acting in Language Models](https://arxiv.org/abs/2210.03629)，2022 / ICLR 2023 | 模型根据外部返回继续选择行动的循环；36.1 节，不引用其实测数字作为本书系统的性能 |
+| Anthropic，[Building effective agents](https://www.anthropic.com/research/building-effective-agents)，2024-12-19 | 工作流、路由、并行、规划者与工作者、生成与审查等组织形状；第 36 章以自己的离线配置例子说明 |
+| Graham，*Bounds for certain multiprocessing anomalies*，Bell System Technical Journal 45(9)，1966 | 贪心（列表）调度的时间上界；命题 36.5 的上界按本书自己的写法证明，并推广了定理 1.59 |
+| LangChain，[LangGraph Persistence](https://docs.langchain.com/oss/python/langgraph/persistence) | 线程检查点与跨线程存储的区别，以及内存存储不保证跨进程恢复；37.2 节 |
+| MCP，[规范 2026-07-28](https://modelcontextprotocol.io/specification/2026-07-28)、[Tools](https://modelcontextprotocol.io/specification/2026-07-28/server/tools) | host/client/server，工具发现与调用、输入及输出模式；35.1 节、附录 B。不把 ARTEX 的旧接口接入直接等同于实现这版完整规范 |
+
+### ARTEX 的固定源码快照
+
+社区备份为 [Hinln/ARTEX](https://github.com/Hinln/ARTEX)，本章固定提交为 `f3e3f54b6c93916388a0a3dc6a439893a9abe37a`。编写时只读本地同一提交的文件，未安装依赖、启动应用或执行测试工具。下列链接都固定到这个提交，后续不得把分支的新代码当成本章已经核对的实现。案例用自己的文字、图与离线例子解释控制机制，没有整段搬运项目提示或领域操作脚本。
+
+| 固定源码 | 阅读时要核对的内容 |
+| --- | --- |
+| [README](https://github.com/Hinln/ARTEX/blob/f3e3f54b6c93916388a0a3dc6a439893a9abe37a/README.md)、[go.mod](https://github.com/Hinln/ARTEX/blob/f3e3f54b6c93916388a0a3dc6a439893a9abe37a/go.mod)、[LICENSE](https://github.com/Hinln/ARTEX/blob/f3e3f54b6c93916388a0a3dc6a439893a9abe37a/LICENSE) | 项目用途、依赖快照与 AGPL-3.0 许可证；第 38 章开头的现状框 |
+| [goals.go](https://github.com/Hinln/ARTEX/blob/f3e3f54b6c93916388a0a3dc6a439893a9abe37a/agent/goals.go)、[mainagent.go](https://github.com/Hinln/ARTEX/blob/f3e3f54b6c93916388a0a3dc6a439893a9abe37a/agent/mainagent.go) | 目标登记与用户会话入口；38.1 节 |
+| [planner.go](https://github.com/Hinln/ARTEX/blob/f3e3f54b6c93916388a0a3dc6a439893a9abe37a/agent/planner.go)、[worker.go](https://github.com/Hinln/ARTEX/blob/f3e3f54b6c93916388a0a3dc6a439893a9abe37a/agent/worker.go)、[engine.go](https://github.com/Hinln/ARTEX/blob/f3e3f54b6c93916388a0a3dc6a439893a9abe37a/server/engine.go) | 规划输入、临时与跨唤醒 Todo、实际 hooks 接线、事件及心跳、工作结束原因；38.1、38.2、38.4–38.6 节 |
+| [constants.go](https://github.com/Hinln/ARTEX/blob/f3e3f54b6c93916388a0a3dc6a439893a9abe37a/db/constants.go)、[exploration.go](https://github.com/Hinln/ARTEX/blob/f3e3f54b6c93916388a0a3dc6a439893a9abe37a/db/exploration.go) | 节点与边的种类，`Frontier`、`ClaimIntent` 的条件更新；38.3、38.5 节 |
+| [tools.go](https://github.com/Hinln/ARTEX/blob/f3e3f54b6c93916388a0a3dc6a439893a9abe37a/agent/tools.go)、[tools_insert.go](https://github.com/Hinln/ARTEX/blob/f3e3f54b6c93916388a0a3dc6a439893a9abe37a/agent/tools_insert.go)、[toolcatalog.go](https://github.com/Hinln/ARTEX/blob/f3e3f54b6c93916388a0a3dc6a439893a9abe37a/agent/toolcatalog.go) | 角色基础工具集及其配置，`addOneIntent`、`proveGoal`、`goalMet`、事实登记与完成标志；38.1、38.3、38.7 节 |
+| [assembly.go](https://github.com/Hinln/ARTEX/blob/f3e3f54b6c93916388a0a3dc6a439893a9abe37a/agent/assembly.go)、[deferred.go](https://github.com/Hinln/ARTEX/blob/f3e3f54b6c93916388a0a3dc6a439893a9abe37a/agent/deferred.go)、[capture.go](https://github.com/Hinln/ARTEX/blob/f3e3f54b6c93916388a0a3dc6a439893a9abe37a/agent/capture.go) | 技能、延迟工具加载、恢复时可用集合的重建，以及公共会话封装；38.4、38.5 节 |
+| [coldgraph.go](https://github.com/Hinln/ARTEX/blob/f3e3f54b6c93916388a0a3dc6a439893a9abe37a/agent/coldgraph.go)、[compaction.go](https://github.com/Hinln/ARTEX/blob/f3e3f54b6c93916388a0a3dc6a439893a9abe37a/agent/compaction.go)、[tools_digest.go](https://github.com/Hinln/ARTEX/blob/f3e3f54b6c93916388a0a3dc6a439893a9abe37a/agent/tools_digest.go)、[digest.go](https://github.com/Hinln/ARTEX/blob/f3e3f54b6c93916388a0a3dc6a439893a9abe37a/db/digest.go) | 活跃与较冷节点、后台摘要、成员保留及按需展开；38.4 节 |
+| [guard.go](https://github.com/Hinln/ARTEX/blob/f3e3f54b6c93916388a0a3dc6a439893a9abe37a/guard/guard.go)、[intercept.go](https://github.com/Hinln/ARTEX/blob/f3e3f54b6c93916388a0a3dc6a439893a9abe37a/intercept/intercept.go) | 拦截器启用、规则匹配、未命中行为与审批路径；不能单凭界面推断所有调用已隔离；38.5 节 |
+| [pool.go](https://github.com/Hinln/ARTEX/blob/f3e3f54b6c93916388a0a3dc6a439893a9abe37a/llmpool/pool.go)、[health.go](https://github.com/Hinln/ARTEX/blob/f3e3f54b6c93916388a0a3dc6a439893a9abe37a/llmpool/health.go) | 模型配置链、窗口检查、流式输出前后的故障转移边界；38.5 节 |

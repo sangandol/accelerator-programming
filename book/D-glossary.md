@@ -218,6 +218,28 @@
 | 冗余专家、列表调度、LPT | redundant experts (EPLB), list scheduling, longest processing time first | 33.3 |
 | 置信头 | confidence head | 33.5 |
 
+## 第七部分　模型调用与智能体编排
+
+| 中文 | 英文 | 首见 |
+| --- | --- | --- |
+| 上下文、调用 | context, call | 34.2 |
+| 上下文预算 | context budget | 34.4 |
+| 提示、任务规格、少样本提示 | prompt, task specification, few-shot prompting | 34.5 |
+| 结构化输出、模式 | structured output, schema | 34.6 |
+| 工具调用 | tool calling | 35.1 |
+| 模型上下文协议 | Model Context Protocol (MCP) | 35.1 |
+| 检索增强生成、向量检索、提示注入 | retrieval-augmented generation (RAG), vector retrieval, prompt injection | 35.3 |
+| 任务状态、长期记忆 | task state, long-term memory | 35.4 |
+| 技能 | skill | 35.5 |
+| 智能体、编排、规划者、工作者、工作流 | agent, orchestration, planner, worker, workflow | 36.1 |
+| 子任务约定、任务依赖图、关键路径 | sub-task contract, task dependency graph, critical path | 36.2 |
+| 任务检查点、事件记录 | task checkpoint, event log | 37.2 |
+| 幂等、去重标识 | idempotent, deduplication key | 37.3 |
+| 带来源的工作结论、黑板式协作 | provenance-carrying conclusion, blackboard architecture | 37.4 |
+| 检查时与使用时不一致 | time-of-check to time-of-use (TOCTOU) | 37.5 |
+| 可验证的任务成功 | verifiable task success | 37.6 |
+| 资产图、探索图 | asset graph, exploration graph | 38.3 |
+
 ## 读代码时要区分的层次
 
 | 对象 | 意义 | 首见或复查位置 |

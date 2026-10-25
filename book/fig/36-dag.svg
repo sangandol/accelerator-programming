@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="564" height="294" viewBox="8 3 564 294" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif" font-size="14">
+<defs><marker id="ah-3a5a8c-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3a5a8c"/></marker><marker id="ah-b45f06-10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b45f06"/></marker></defs>
+<rect x="8" y="3" width="564" height="294" rx="8" fill="#ffffff"/>
+<rect x="20" y="85" width="130" height="48" rx="6" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<rect x="210" y="15" width="150" height="48" rx="6" fill="#e8f0fb" stroke="#3a5a8c" stroke-width="1.6"/>
+<rect x="210" y="155" width="150" height="48" rx="6" fill="#fdebd3" stroke="#b45f06" stroke-width="1.6"/>
+<rect x="430" y="85" width="130" height="48" rx="6" fill="#efefef" stroke="#555555" stroke-width="1.6"/>
+<polyline points="150,86.3 216.4,63" fill="none" stroke="#3a5a8c" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-3a5a8c-10)"/>
+<polyline points="357,63 430,87.3" fill="none" stroke="#3a5a8c" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-3a5a8c-10)"/>
+<polyline points="150,131.8 216.4,155" fill="none" stroke="#b45f06" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-b45f06-10)"/>
+<polyline points="357,155 430,130.7" fill="none" stroke="#b45f06" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#ah-b45f06-10)"/>
+<text x="85" y="113.9" text-anchor="middle" font-size="14" fill="#555555">A 读文件：2 秒</text>
+<text x="285" y="43.9" text-anchor="middle" font-size="14" fill="#3a5a8c">B 抽取字段：6 秒</text>
+<text x="285" y="183.9" text-anchor="middle" font-size="14" fill="#b45f06">C 核对硬件：10 秒</text>
+<text x="495" y="113.9" text-anchor="middle" font-size="14" fill="#555555">D 汇总：3 秒</text>
+<text x="290" y="254.9" text-anchor="middle" font-size="14" fill="#222">关键路径 A → C → D：15 秒</text>
+<text x="290" y="281.2" text-anchor="middle" font-size="12" fill="#666">总工作量 21 秒；两个工作者可达到 15 秒</text>
+</svg>
