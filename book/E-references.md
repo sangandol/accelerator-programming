@@ -92,10 +92,10 @@
 这些论文在正文中被详细讲到或引用了其中的数字，按章排列。面试和读论文时，它们是"现在业界在做什么"的好样本；附录 F 给出了阅读顺序和自测题。
 
 - M. Zhong. Bitwise-correct and faster top-$k$ on TPU v4. 2026. 代码、原始结果与中文版：[github.com/ayaka14732/tpu-v4-top-k](https://github.com/ayaka14732/tpu-v4-top-k)。（2.11 节、10.4 节、15.3 节、第 20、21 章）
-- A. Chowdhery 等. PaLM: scaling language modeling with Pathways. arXiv:2204.02311, 2022.（MFU 的定义与 TPU v4 上的数字，11.3 节）
-- R. Pope 等. Efficiently scaling Transformer inference. *MLSys*, 2023（arXiv:2211.05102）。（prefill 与 decode 的分片，11.4 节）
-- Z. Jiang 等. MegaScale: scaling large language model training to more than 10,000 GPUs. *NSDI*, 2024.（11.3 节）
-- Llama Team, AI @ Meta. The Llama 3 herd of models. arXiv:2407.21783, 2024.（MFU、四维并行与故障统计，11.3 节、第 12 章）
+- A. Chowdhery 等. PaLM: scaling language modeling with Pathways. arXiv:2204.02311, 2022.（MFU 的定义与 TPU v4 上的数字，11.5 节）
+- R. Pope 等. Efficiently scaling Transformer inference. *MLSys*, 2023（arXiv:2211.05102）。（prefill 与 decode 的分片，11.8 节）
+- Z. Jiang 等. MegaScale: scaling large language model training to more than 10,000 GPUs. *NSDI*, 2024.（11.5 节）
+- Llama Team, AI @ Meta. The Llama 3 herd of models. arXiv:2407.21783, 2024.（MFU、四维并行与故障统计，11.5 节、第 12 章）
 - DeepSeek-AI. DeepSeek-V3 technical report. arXiv:2412.19437, 2024.（DualPipe，第 12 章；FP8 训练与累加精度，注 26.3）
 - NVIDIA. Pretraining large language models with NVFP4. arXiv:2509.25149, 2025.（注 26.3）
 - SonicMoE（Guo、Mishra、Cheng、Stoica、Dao，*ICLR*, 2026）：MoE 的高效 GPU 实现，含路由 top-$k$ 的专门 kernel。（例 26.5）
@@ -105,14 +105,14 @@
 
 以下是 2026 年 10 月补入的论文，内容在正文中有完整的讲解（附录 F.3 有导读）。数字据各论文的 arXiv 版本，2026-10-20 核对。
 
-- H. He, Thinking Machines Lab. Defeating nondeterminism in LLM inference. *Thinking Machines Lab: Connectionism*, 2025 年 9 月. 代码：[batch_invariant_ops](https://github.com/thinking-machines-lab/batch_invariant_ops)。（10.6 节、11.8 节）
-- P. Qi, Z. Liu 等. Defeating the training-inference mismatch via FP16. arXiv:2510.26788, 2025.（注 11.18）
-- Y. Leviathan, M. Kalman, Y. Matias. Fast inference from Transformers via speculative decoding. *ICML*, 2023（arXiv:2211.17192）.（11.7 节）
-- C. Chen 等. Accelerating large language model decoding with speculative sampling. arXiv:2302.01318, 2023.（11.7 节）
-- Y. Zhong 等. DistServe: disaggregating prefill and decoding for goodput-optimized large language model serving. *OSDI*, 2024（arXiv:2401.09670）.（11.8 节）
-- R. Qin 等. Mooncake: a KVCache-centric disaggregated architecture for LLM serving. *FAST*, 2025（arXiv:2407.00079）.（11.8 节）
-- C. Zhao 等（DeepSeek-AI）. Insights into DeepSeek-V3: scaling challenges and reflections on hardware for AI architectures. *ISCA*, 2025（arXiv:2505.09343）.（11.4 节现状框、12.7 节、例 12.15）
-- DeepSeek-AI. DeepSeek-V4: towards highly efficient million-token context intelligence. arXiv:2606.19348, 2026；DeepSeek-V4.1-Flash, arXiv:2609.19969, 2026.（11.4、11.7、11.8 节，命题 12.16，24.8、28.4 节，注 27.10）
+- H. He, Thinking Machines Lab. Defeating nondeterminism in LLM inference. *Thinking Machines Lab: Connectionism*, 2025 年 9 月. 代码：[batch_invariant_ops](https://github.com/thinking-machines-lab/batch_invariant_ops)。（10.6 节、11.12 节）
+- P. Qi, Z. Liu 等. Defeating the training-inference mismatch via FP16. arXiv:2510.26788, 2025.（注 11.32）
+- Y. Leviathan, M. Kalman, Y. Matias. Fast inference from Transformers via speculative decoding. *ICML*, 2023（arXiv:2211.17192）.（11.11 节）
+- C. Chen 等. Accelerating large language model decoding with speculative sampling. arXiv:2302.01318, 2023.（11.11 节）
+- Y. Zhong 等. DistServe: disaggregating prefill and decoding for goodput-optimized large language model serving. *OSDI*, 2024（arXiv:2401.09670）.（11.12 节）
+- R. Qin 等. Mooncake: a KVCache-centric disaggregated architecture for LLM serving. *FAST*, 2025（arXiv:2407.00079）.（11.12 节）
+- C. Zhao 等（DeepSeek-AI）. Insights into DeepSeek-V3: scaling challenges and reflections on hardware for AI architectures. *ISCA*, 2025（arXiv:2505.09343）.（11.8 节现状框、12.7 节、例 12.15）
+- DeepSeek-AI. DeepSeek-V4: towards highly efficient million-token context intelligence. arXiv:2606.19348, 2026；DeepSeek-V4.1-Flash, arXiv:2609.19969, 2026.（11.8、11.11、11.12 节，命题 12.16，24.8、28.4 节，注 27.10）
 - J. Jiang, Y. Chen, B. Hechtman, F. Zhang, Y. Mu. Ragged paged attention: a high-performance and flexible LLM inference kernel for TPU. arXiv:2604.15464, 2026. 代码在 vLLM 的 tpu-inference 仓库。（18.6 节）
 - Z. Ye 等. FlashInfer: efficient and customizable attention engine for LLM inference serving. *MLSys*, 2025（arXiv:2501.01005）.（27.7 节）
 - B. Spector, J. Juravsky 等. Look ma, no bubbles! Designing a low-latency megakernel for Llama-1B. Hazy Research 博客, 2025 年 5 月.（24.8 节）

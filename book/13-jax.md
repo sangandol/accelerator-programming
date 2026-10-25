@@ -114,11 +114,11 @@ jaxpr 的第二个用途是求导。设 $f: \mathbb{R}^n \to \mathbb{R}^m$ 在 $
 
 *证明* $y$ 对 $(x, W)$ 是双线性的。固定 $W$，$x \mapsto xW$ 的转置是 $\bar{y} \mapsto \bar{y} W^{\mathsf T}$；固定 $x$，$W \mapsto xW$ 的转置是 $\bar{y} \mapsto x^{\mathsf T} \bar{y}$（对内积 $\langle \bar{y}, xW \rangle = \operatorname{tr}(\bar{y}^{\mathsf T} x W) = \langle x^{\mathsf T} \bar{y}, W \rangle$ 验证）。∎
 
-这就是命题 11.5 中"反向是前向的两倍"的来源：前向一个矩阵乘法，反向两个同样大小的矩阵乘法。
+这就是命题 11.15 中"反向是前向的两倍"的来源：前向一个矩阵乘法，反向两个同样大小的矩阵乘法。
 
 **重计算与自定义导数。**
 
-- `jax.checkpoint`（也称 remat）：被它包装的函数在前向时不保存中间结果，反向时重新计算。可以指定策略，例如只保存矩阵乘法的结果、重算其余部分。这是 11.3 节"以运算换显存"的实现。
+- `jax.checkpoint`（也称 remat）：被它包装的函数在前向时不保存中间结果，反向时重新计算。可以指定策略，例如只保存矩阵乘法的结果、重算其余部分。这是 11.6 节"以运算换显存"的实现。
 - `jax.custom_vjp`：为一个函数手写反向传播。数值上需要特别处理时（例如防止溢出），或者前向是一个手写 kernel、反向也要用手写 kernel 时（例如 FlashAttention），都要用到它。
 
 变换可以任意复合：`jax.grad(jax.grad(f))` 是二阶导数，`jax.jit(jax.vmap(jax.grad(f)))` 是编译后的逐样本梯度。

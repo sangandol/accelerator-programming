@@ -163,11 +163,11 @@ tpuasm 还绑定 Python、libtpu 的 GNU build-id 和原生桥接后端，只有
 | 并发请求上限 | 31.4 节 | `max_num_seqs` | `max_num_seqs` | `max_running_requests` |
 | 页长 | 定义 31.2 | `tokens_per_block` | `block_size` | `page_size` |
 | 显存利用率上限 | 例 31.5 | `gpu_memory_utilization` | `gpu_memory_utilization` | `mem_fraction_static` |
-| 分段 prefill | 11.8、31.4 节 | `chunked_prefill` | `enable_chunked_prefill` | 由 `chunked_prefill_size` 控制 |
+| 分段 prefill | 11.12、31.4 节 | `chunked_prefill` | `enable_chunked_prefill` | 由 `chunked_prefill_size` 控制 |
 | 前缀缓存 | 32.2 节 | 外部的 KV cache 系统（未开源） | `enable_prefix_caching` | RadixAttention（默认开启） |
 | 被抢占的请求 | 31.4 节 | `stop_preempted_request`（默认结束） | 默认放回队列重算 | 默认放回队列重算 |
 | 抽样参数 | 定义 29.16 | `SamplingParams(temperature, top_p, top_k, seq_seed)` | `SamplingParams(temperature, top_p, top_k, seed)` | `sampling_params` 字典 |
 | 格式约束 | 29.4、31.6 节 | `so_args`（regex、JSON schema、EBNF） | structured outputs | `json_schema`、`regex`、`ebnf` |
-| 批不变与确定性抽样 | 11.8 节、命题 29.19 | 环境变量 `DEEPINFER_BATCH_INVARIANT=1` 加固定的 `seq_seed` | 见文档 | `--enable-deterministic-inference` |
+| 批不变与确定性抽样 | 11.12 节、命题 29.19 | 环境变量 `DEEPINFER_BATCH_INVARIANT=1` 加固定的 `seq_seed` | 见文档 | `--enable-deterministic-inference` |
 | 动态验证长度 | 33.5 节 | `DEEPINFER_ENABLE_MTP_VARLEN=1`，`DEEPINFER_USE_NEXTN_DECODE` 为最多草稿数 | `speculative_config` | `speculative_algorithm` 等 |
 | 异步调度 | 定义 31.10 | 默认开启 | `async_scheduling` | 默认开启 |

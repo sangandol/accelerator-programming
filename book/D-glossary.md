@@ -78,16 +78,24 @@
 | 名次计数、败者树 | rank counting, loser tree | 10.4 |
 | 可复现 | reproducible | 10.6 |
 | 批不变 | batch-invariant | 10.6 |
-| 词元、头 | token, head | 11.1 |
-| 分组查询注意力、多头潜在注意力 | GQA, MLA | 11.1、11.4 |
-| 模型 FLOP 利用率 | model FLOPs utilization (MFU) | 11.3 |
-| 重计算 | rematerialization (activation checkpointing) | 11.3 |
-| 预填充、解码 | prefill, decode | 11.4 |
-| 混合专家、路由器、分组矩阵乘法 | mixture of experts, router, grouped matmul | 11.5 |
-| 投机解码、草稿模型、总变差距离 | speculative decoding, draft model, total variation distance | 11.7 |
-| 连续批处理、分段 prefill | continuous batching, chunked prefill | 11.8 |
-| 分页 KV cache、页、页表 | paged KV cache, page, block table | 11.8 |
-| prefill–decode 分离 | prefill–decode disaggregation | 11.8 |
+| 语言模型、参数、logits | language model, parameters, logits | 11.1 |
+| 词元、头 | token, head | 11.2 |
+| 残差、激活函数 | residual connection, activation function | 11.2 |
+| 分组查询注意力、多头潜在注意力 | GQA, MLA | 11.2、11.8 |
+| 损失、交叉熵损失、困惑度 | loss, cross-entropy loss, perplexity | 11.4 |
+| 小批量梯度下降、步、学习率 | minibatch gradient descent, step, learning rate | 11.4 |
+| 前向传播、反向传播、激活 | forward pass, backpropagation, activations | 11.4 |
+| 模型 FLOP 利用率 | model FLOPs utilization (MFU) | 11.5 |
+| 优化器、动量、Adam、主参数 | optimizer, momentum, Adam, master weights | 11.6 |
+| 重计算 | rematerialization (activation checkpointing) | 11.6 |
+| 预训练、监督微调、强化学习、蒸馏 | pretraining, supervised fine-tuning (SFT), reinforcement learning (RL), distillation | 11.7 |
+| 策略梯度、基线、同策略 | policy gradient, baseline, on-policy | 11.7 |
+| 预填充、解码 | prefill, decode | 11.8 |
+| 混合专家、路由器、分组矩阵乘法 | mixture of experts, router, grouped matmul | 11.9 |
+| 投机解码、草稿模型、总变差距离 | speculative decoding, draft model, total variation distance | 11.11 |
+| 连续批处理、分段 prefill | continuous batching, chunked prefill | 11.12 |
+| 分页 KV cache、页、页表 | paged KV cache, page, block table | 11.12 |
+| prefill–decode 分离 | prefill–decode disaggregation | 11.12 |
 | 网格、网格轴、分片、复制 | mesh, mesh axis, sharding, replication | 12.1 |
 | 收缩维 | contracting dimension | 12.2 |
 | 数据并行、张量并行、流水线并行、专家并行、上下文并行 | DP, TP, PP, EP, CP | 12.3–12.7 |
