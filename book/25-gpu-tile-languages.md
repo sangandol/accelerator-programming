@@ -188,7 +188,7 @@ CUTLASS 4 的 **CuTe DSL** 用 Python 提供与 C++ CUTLASS 同样的控制力�
 </details>
 <details><summary>提示 2</summary>
 
-(a) $\lceil 1000 / 128 \rceil = 8$。(c) 命题 6.22。
+(a) $\lceil 1000 / 128 \rceil = 8$。(c) 命题 6.23。
 
 </details>
 <details><summary>答案</summary>

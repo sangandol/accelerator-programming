@@ -295,7 +295,7 @@ $J = \operatorname{diag}(y) - y y^{\mathsf T}$，对称，所以 $\bar{x} = J \b
 </details>
 <details><summary>答案</summary>
 
-第一个变成一次 $B \times D$ 乘 $D \times F$ 的矩阵乘法（`dot_general` 的批量维为空），正是矩阵单元擅长的形式。第二个变成 $B$ 个独立的向量乘矩阵（`dot_general` 带批量维 `([0], [0])`），每个样本只有一行，强度约为 $2/s$（命题 6.20），访存受限。`vmap` 保持语义，但不能把访存受限的计算变成计算受限的计算。
+第一个变成一次 $B \times D$ 乘 $D \times F$ 的矩阵乘法（`dot_general` 的批量维为空），正是矩阵单元擅长的形式。第二个变成 $B$ 个独立的向量乘矩阵（`dot_general` 带批量维 `([0], [0])`），每个样本只有一行，强度约为 $2/s$（命题 6.21），访存受限。`vmap` 保持语义，但不能把访存受限的计算变成计算受限的计算。
 
 </details>
 
