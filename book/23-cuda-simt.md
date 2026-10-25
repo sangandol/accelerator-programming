@@ -276,16 +276,6 @@ __device__ float consume(const float* data, int* flag) {
 
 **习题 23.1** ★ 一个 $M \times N$ 的行优先矩阵，用 $16 \times 16$ 的二维块逐元素处理。写出线程到元素的下标映射与边界检查。若改用 $32 \times 8$ 的块（`blockDim = (32, 8)`），哪种映射使得 warp 的访问合并？
 
-<details><summary>提示 1</summary>
-
-x 维是最快变化的线程坐标；一个 warp 应尽量沿数组连续列移动。
-
-</details>
-<details><summary>提示 2</summary>
-
-`threadIdx.x` 连续的线程属于同一个 warp；它们应当访问同一行中相邻的列。
-
-</details>
 <details><summary>答案</summary>
 
 `row = blockIdx.y * blockDim.y + threadIdx.y`，`col = blockIdx.x * blockDim.x + threadIdx.x`，`if (row < M && col < N)`。$16 \times 16$ 时一个 warp 是两行各 16 个线程，访问两段各 64 字节的连续地址；$32 \times 8$ 时一个 warp 恰是一行中连续的 32 列，访问 128 字节的连续地址，合并得更好。若错把 `threadIdx.x` 映射到行，一个 warp 的 32 个访问会相隔一整行，效率极低（习题 22.3）。
@@ -294,16 +284,6 @@ x 维是最快变化的线程坐标；一个 warp 应尽量沿数组连续列移
 
 **习题 23.2** ★ 用 `__shfl_down_sync` 实现 warp 内归约，使得只有第 0 个线程得到总和。与命题 23.6 的 XOR 写法相比有什么区别？
 
-<details><summary>提示 1</summary>
-
-只要求 lane 0 正确时可构造向下归约树；其他 lane 的输出不用当作总和。
-
-</details>
-<details><summary>提示 2</summary>
-
-`__shfl_down_sync(mask, v, k)` 让线程 $l$ 取得线程 $l + k$ 的值（$l + k \ge 32$ 时取自己的值）。
-
-</details>
 <details><summary>答案</summary>
 
 `for (int k = 16; k > 0; k /= 2) v += __shfl_down_sync(0xffffffff, v, k);` 之后第 0 个线程持有总和，其余线程的值是部分和（编号较大的线程会把自己的值加了不止一次，但它们的结果不使用）。XOR 写法让所有线程都得到总和，适合之后每个线程都要用这个值的情形（例如 softmax 中用行最大值做减法）；down 写法只在需要一个结果时使用，二者的步数相同。
@@ -320,16 +300,6 @@ if (threadIdx.x < 32) {
 }
 ```
 
-<details><summary>提示 1</summary>
-
-先找是否所有块内参与者都能到同一个屏障，再检查边界线程是否提前退出。
-
-</details>
-<details><summary>提示 2</summary>
-
-23.3 节关于 `__syncthreads()` 的要求。
-
-</details>
 <details><summary>答案</summary>
 
 `__syncthreads()` 放在只有前 32 个线程进入的分支中，块内其余线程永远不会到达这个屏障；块大于 32 个线程时行为未定义，通常是挂起。此外 `partial` 的下标用 `blockIdx.x` 也是错的：共享内存是每个块私有的，应当以块内的 warp 编号为下标。正确的写法见 23.4 节。
@@ -338,16 +308,6 @@ if (threadIdx.x < 32) {
 
 **习题 23.4** ★ 对 23.5 节的 kernel（$T = 32$，每线程一个输出），计算每次乘加对应的共享内存读取次数，以及每个块从全局内存读入的字节数与做的乘加次数之比。再按命题 23.9 计算每线程 $8 \times 8$ 的寄存器分块时的这两个量（块仍算 $128 \times 128$ 的输出）。
 
-<details><summary>提示 1</summary>
-
-分别数共享内存读与全局读；寄存器分块只直接减少前者。
-
-</details>
-<details><summary>提示 2</summary>
-
-每线程每步 $k$：读 `As[ty][k]` 与 `Bs[k][tx]` 各一次，做一次乘加。
-
-</details>
 <details><summary>答案</summary>
 
 每线程一个输出：每次乘加读两次共享内存。全局内存：每步 $k_0$ 读 $2 \times 32 \times 32 \times 4 = 8$ KiB，做 $32^3 = 32768$ 次乘加，每字节 4 次乘加（8 FLOP/字节）。$8 \times 8$ 寄存器分块、$128 \times 128$ 的块（256 个线程）：每次共享内存读取对应 4 次乘加；若 $b_K = 32$，每步读 $2 \times 128 \times 32 \times 4 = 32$ KiB，做 $128^2 \times 32 = 524288$ 次乘加，每字节 16 次乘加（32 FLOP/字节）。两级的复用都提高了。
@@ -356,16 +316,6 @@ if (threadIdx.x < 32) {
 
 **习题 23.5** ★ 一个 kernel 每线程 $8 \times 8$ 的寄存器分块，需要约 100 个寄存器。在 65536 个寄存器、最多 64 个 warp 的 SM 上，每块 256 个线程，能驻留几个块？若为了提高占用率强制每线程只用 64 个寄存器，会发生什么？
 
-<details><summary>提示 1</summary>
-
-减少可分配寄存器不等于减少数学状态，可能只是把状态放到更慢存储。
-
-</details>
-<details><summary>提示 2</summary>
-
-命题 22.6；寄存器不够时，编译器把一部分变量溢出到局部内存。
-
-</details>
 <details><summary>答案</summary>
 
 $65536 / (100 \times 256) \approx 2.56$，2 个块（按分配粒度可能是 2），16 个 warp，占用率 25%。强制 64 个寄存器后能驻留 4 个块，但 64 个累加值加上操作数放不进 64 个寄存器，编译器会把一部分溢出到局部内存，每次乘加都要多访问存储，通常更慢。更好的做法是保持寄存器分块、接受较低的占用率，用每个线程内的独立操作提供在途量（23.6 节）。
@@ -374,72 +324,21 @@ $65536 / (100 \times 256) \approx 2.56$，2 个块（按分配粒度可能是 2�
 
 **习题 23.6** ★（审查题）一个求和 kernel 让每个线程对一个全局 f32 变量做 `atomicAdd`。指出它的两个问题，并给出改进。
 
-<details><summary>提示 1</summary>
-
-同时检查同址原子争用和浮点合并次序；先局部归约减少原子次数。
-
-</details>
-<details><summary>提示 2</summary>
-
-性能：数百万次对同一个位置的原子操作。数值：命题 10.24。
-
-</details>
 <details><summary>答案</summary>
 
 一，所有原子操作都落在同一个地址上，被硬件串行化，极慢。二，加法的次序由运行时决定，结果不确定，且是顺序求和，误差界随项数线性增长（命题 2.20）。改进：每个块先用 `block_sum` 求出部分和（树形求和，误差更小），每个块只做一次原子加法（快得多，但仍不确定）；若需要确定的结果，把部分和写到数组中，再用第二个 kernel 以固定的次序归约。
 
 </details>
 
-**习题 23.7** ☆ 若把 23.7 节的 `publish` 中的原子写改为普通写 `*flag = 1`，`consume` 中的循环改为普通读 `while (*flag == 0) {}`，可能出现哪些错误？
+**习题 23.7** ★ 设计一个矩阵转置的 kernel：每个块把 $32 \times 32$ 的子块读入共享内存，再按转置后的次序写出。要求读和写都合并，且共享内存没有存储体冲突。
 
-<details><summary>提示 1</summary>
+<details><summary>提示</summary>
 
-普通变量没有跨线程同步语义；编译器可复用加载结果，硬件也可重排可见次序。
-
-</details>
-<details><summary>提示 2</summary>
-
-9.6 节；编译器也可以对普通读做优化。
-
-</details>
-<details><summary>答案</summary>
-
-一，编译器可能把普通读提到循环外，循环永远不结束。二，即使每次都真正读取，消费者也可能先看到 `flag = 1`、却读到旧的 `data`（没有释放/获取的次序保证）。用 `volatile` 只能解决第一个问题。正确的写法是带内存次序的原子操作，或者在写标志之前、读数据之前分别加上作用域足够的栅栏。
-
-</details>
-
-**习题 23.8** ★ 设计一个矩阵转置的 kernel：每个块把 $32 \times 32$ 的子块读入共享内存，再按转置后的次序写出。要求读和写都合并，且共享内存没有存储体冲突。
-
-<details><summary>提示 1</summary>
-
-读输出时连续和写输出时连续是两个要求，通常借共享内存改变数据归属。
-
-</details>
-<details><summary>提示 2</summary>
-
-读：一个 warp 读一行的 32 个元素，写入共享内存的一行；写：一个 warp 读共享内存的一列，写到输出的一行。共享内存按列读时，用习题 8.7 的填充或交错。
+读入时一个 warp 读输入的一行（合并），写进共享内存的一行；写出时一个 warp 读共享内存的一列，写到输出的一行（合并）。剩下的问题是按列读共享内存时的存储体冲突（命题 3.11）。
 
 </details>
 <details><summary>答案</summary>
 
 `__shared__ float tile[32][33];`（每行补一个元素）。读入：线程 $(ty, tx)$ 读输入的第 $r_0 + ty$ 行、第 $c_0 + tx$ 列，写入 `tile[ty][tx]`（warp 内连续，合并）。`__syncthreads()`。写出：线程 $(ty, tx)$ 把 `tile[tx][ty]` 写到输出的第 $c_0 + ty$ 行、第 $r_0 + tx$ 列（warp 内 `tx` 连续，写合并）；读 `tile[tx][ty]` 时 32 个线程的地址相隔 33 个字，存储体互不相同（命题 3.11，$\gcd(33, 32) = 1$）。不补元素时这一步的冲突度是 32。
-
-</details>
-
-**习题 23.9** ★（综合审查题）一维 CUDA 块有 64 线程，其中 50 个元素有效，全部线程将进入全块屏障和全 warp 掩码归约。无效线程提前 return 是否正确？给出易于证明的求和处理方式。
-
-<details><summary>提示 1</summary>
-
-无效数据不等于无效同步参与者；完整 warp 模板有参与前提。
-
-</details>
-<details><summary>提示 2</summary>
-
-让全部 64 线程进入协议，无效元素贡献 0。
-
-</details>
-<details><summary>答案</summary>
-
-不能用提前退出后的执行套本题要求的全参与模板。令无效线程读取值为 0，全部线程执行相同块屏障，两个完整 warp 使用全掩码归约；各 warp 部分和经共享内存再合并。这样求和数值为 50 个有效元素的和，参与和源 lane 都易于核对。
 
 </details>

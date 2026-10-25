@@ -170,11 +170,6 @@ $O$ 只给上界：$5n = O(n^2)$ 是对的，只是没什么用。要说"恰好�
 
 **习题 M1.1** ★ (a) $\log 2^{17}$、$\log 10^{9}$（近似）各是多少？(b) 给 3000 个存储单元编号至少要几位地址？(c) 用二叉树把 3000 个数加起来，至少要几轮？
 
-<details><summary>提示</summary>
-
-(b)(c) 都是 $\lceil \log 3000 \rceil$：找出夹住 3000 的两个 2 的幂。
-
-</details>
 <details><summary>答案</summary>
 
 (a) 17；$\log 10^9 = 9 \log 10 \approx 29.9$，与 $10^9 \approx 2^{30}$ 一致。(b) $2^{11} = 2048 < 3000 \le 4096 = 2^{12}$，要 12 位。(c) 同样是 12 轮：每轮把个数减半（向上取整），$3000 \to 1500 \to 750 \to 375 \to 188 \to 94 \to 47 \to 24 \to 12 \to 6 \to 3 \to 2 \to 1$。
@@ -183,65 +178,32 @@ $O$ 只给上界：$5n = O(n^2)$ 是对的，只是没什么用。要说"恰好�
 
 **习题 M1.2** ★ 硬件每次处理 128 行。(a) 4100 行要处理几次？补了几行？浪费的比例是多少？(b) 换成 4096 行和 4097 行呢？
 
-<details><summary>提示</summary>
-
-用命题 M1.5：$q = \lceil a / 128 \rceil$，补的行数是 $128q - a$。
-
-</details>
 <details><summary>答案</summary>
 
 (a) $q = \lceil 4100/128 \rceil = 33$（$32 \times 128 = 4096$），补 $33 \times 128 - 4100 = 124$ 行，浪费 $124 / 4224 \approx 2.9\%$。(b) 4096 行恰好 32 次，不浪费；4097 行要 33 次，补 127 行，浪费约 3.0%。多一行就多一整块的工作，但块数多时比例仍然小。
 
 </details>
 
-**习题 M1.3** ★ 用数学归纳法证明 $1 + 3 + 5 + \dots + (2n - 1) = n^2$。
+**习题 M1.3** ★ 判断下列各式是否成立，并说明理由：(a) $3n^2 + 10 n \log n = \Theta(n^2)$；(b) $n \log n = O(n)$；(c) $\log_{10} n = \Theta(\log n)$；(d) $2^{n+1} = O(2^n)$；(e) $2^{2n} = O(2^n)$。
 
-<details><summary>提示</summary>
-
-起点 $n = 1$。归纳步：在 $n - 1$ 的等式两边加上第 $n$ 项 $2n - 1$。
-
-</details>
 <details><summary>答案</summary>
 
-$n = 1$ 时两边都是 1。设 $n \ge 2$ 且 $1 + 3 + \dots + (2n - 3) = (n-1)^2$，两边加 $2n - 1$，右边是 $n^2 - 2n + 1 + 2n - 1 = n^2$。由命题 M1.10，等式对所有 $n \ge 1$ 成立。
+(a) 成立。$n \ge 1$ 时 $\log n \le n$，所以 $3n^2 \le 3n^2 + 10 n \log n \le 13 n^2$，上下都是 $n^2$ 的常数倍（命题 M1.14 第 2 条）。
+
+(b) 不成立。若 $n \log n \le Cn$，两边除以 $n$ 得 $\log n \le C$，$n > 2^C$ 时就不对了。
+
+(c) 成立。$\log_{10} n = \log n / \log 10 \approx 0.30 \log n$，只差一个常数因子。
+
+(d) 成立。$2^{n+1} = 2 \cdot 2^n$，取 $C = 2$。
+
+(e) 不成立。$2^{2n} / 2^n = 2^n$，比值没有上界。系数上的常数可以去掉，指数上的常数不能。
 
 </details>
 
-**习题 M1.4** ★ 判断下列各式是否成立，并说明理由：(a) $3n^2 + 10 n \log n = \Theta(n^2)$；(b) $n \log n = O(n)$；(c) $\log_{10} n = \Theta(\log n)$；(d) $2^{n+1} = O(2^n)$；(e) $2^{2n} = O(2^n)$。
+**习题 M1.4** ★ (a) 一块存储的带宽是 3.35 TB/s，一次读取从发出到返回要 700 ns。为了让带宽一直用满，任何时刻要有多少字节的读取"在路上"？（提示：在路上的量 = 每秒到达的量 × 每个在路上停留的时间。）(b) 一颗芯片每秒做 $10^{15}$ 次运算，做 $6 \times 10^{21}$ 次运算要多少天？
 
-<details><summary>提示</summary>
-
-(d)(e) 写成 $2^{n+1} = 2 \cdot 2^n$ 与 $2^{2n} = 2^n \cdot 2^n$。
-
-</details>
-<details><summary>答案</summary>
-
-(a) 成立，命题 M1.14 第 2 条。(b) 不成立：$n \log n \le Cn$ 即 $\log n \le C$，$n$ 大时不对。(c) 成立，只差常数因子 $1/\log 10$。(d) 成立，常数 $C = 2$。(e) 不成立：比值 $2^n$ 没有上界。指数上的常数因子不能去掉。
-
-</details>
-
-**习题 M1.5** ★ (a) 一块存储的带宽是 3.35 TB/s，一次读取从发出到返回要 700 ns。为了让带宽一直用满，任何时刻要有多少字节的读取"在路上"？（提示：在路上的量 = 每秒到达的量 × 每个在路上停留的时间。）(b) 一颗芯片每秒做 $10^{15}$ 次运算，做 $6 \times 10^{21}$ 次运算要多少天？
-
-<details><summary>提示</summary>
-
-(a) 两个数相乘，注意 $10^{12} \times 10^{-9} = 10^3$。(b) 一天约 $8.64 \times 10^4$ 秒。
-
-</details>
 <details><summary>答案</summary>
 
 (a) $3.35 \times 10^{12} \times 7 \times 10^{-7} \approx 2.3 \times 10^6$ 字节，约 2.3 MB。第 4 章会把括号里的说法证明成一条定律。(b) $6 \times 10^{21} / 10^{15} = 6 \times 10^6$ 秒，约 69 天。
-
-</details>
-
-**习题 M1.6** ☆ 证明对正整数 $a, b, c$，$\lceil \lceil a/b \rceil / c \rceil = \lceil a/(bc) \rceil$。这说明"先按 $b$ 分块、再把块按 $c$ 个一组"与"直接按 $bc$ 分块"得到的组数相同。
-
-<details><summary>提示</summary>
-
-记 $q = \lceil a/b \rceil$。对整数 $t$，证明 $q \le ct$ 当且仅当 $a \le bct$；两边的上取整都是使这件事成立的最小的 $t$。
-
-</details>
-<details><summary>答案</summary>
-
-由上取整的定义，对整数 $m$，$\lceil x \rceil \le m$ 当且仅当 $x \le m$。于是对整数 $t$：$\lceil q / c \rceil \le t$ 当且仅当 $q \le ct$；而 $q = \lceil a/b \rceil \le ct$ 当且仅当 $a/b \le ct$，即 $a \le bct$，即 $\lceil a/(bc) \rceil \le t$。两个整数对所有整数 $t$ 都满足"$\le t$"的同一条件，所以相等。
 
 </details>

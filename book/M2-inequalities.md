@@ -110,11 +110,6 @@ $$
 
 **习题 M2.1** ★ 一个计算有三个阶段，分别要 2 ms、3 ms、5 ms。(a) 三者完全不能重叠、两两可以完全重叠时，总时间各是多少？(b) 只优化最短的那个阶段到 0，两种情形下各能快多少？
 
-<details><summary>提示</summary>
-
-完全重叠时总时间是最大值，不能重叠时是和（命题 M2.1）。
-
-</details>
 <details><summary>答案</summary>
 
 (a) 不能重叠 10 ms，完全重叠 5 ms。(b) 不能重叠时变成 8 ms，快 20%；完全重叠时仍是 5 ms，一点也不快。重叠之后，只有最长的那件事值得优化。
@@ -123,39 +118,10 @@ $$
 
 **习题 M2.2** ★ 片上存储最多放 $2^{18}$ 个累加器，块的面积 $b_M b_N \le 2^{18}$，且 $b_M, b_N$ 都是 128 的倍数。(a) 使 $\frac{1}{b_M} + \frac{1}{b_N}$ 最小的块是什么？(b) 若硬件要求 $b_N = 128$，与 (a) 相比读入量是多少倍？
 
-<details><summary>提示</summary>
-
-$\sqrt{2^{18}} = 512$，是 128 的倍数。(b) 中 $b_M$ 取能取到的最大值。
-
-</details>
 <details><summary>答案</summary>
 
-(a) $512 \times 512$，$\frac{2}{512} \approx 3.9 \times 10^{-3}$。(b) $b_M = 2^{18}/128 = 2048$，$\frac{1}{2048} + \frac{1}{128} \approx 8.3 \times 10^{-3}$，约为正方形的 2.1 倍。
+(a) 由推论 M2.4 第 3 条，$\frac{1}{b_M} + \frac{1}{b_N} \ge \frac{2}{\sqrt{2^{18}}}$，在 $b_M = b_N = \sqrt{2^{18}} = 512$ 时取等号。512 恰是 128 的倍数，所以取 $512 \times 512$，值为 $\frac{2}{512} \approx 3.9 \times 10^{-3}$。
 
-</details>
-
-**习题 M2.3** ★ 用柯西—施瓦茨不等式证明：对正数 $x_1, \dots, x_n$，$(x_1 + \dots + x_n)\left(\frac{1}{x_1} + \dots + \frac{1}{x_n}\right) \ge n^2$。什么时候取等号？
-
-<details><summary>提示</summary>
-
-取 $a_k = \sqrt{x_k}$，$b_k = 1/\sqrt{x_k}$，则 $a_k b_k = 1$。
-
-</details>
-<details><summary>答案</summary>
-
-由命题 M2.6，$n^2 = (\sum_k a_k b_k)^2 \le (\sum_k x_k)(\sum_k 1/x_k)$。等号当且仅当 $\sqrt{x_k}$ 与 $1/\sqrt{x_k}$ 成比例，即所有 $x_k$ 相等。
-
-</details>
-
-**习题 M2.4** ☆ 平面点集 $V = \{(0,0), (0,1), (1,0), (2,2)\}$。求 $\lvert V_x \rvert$、$\lvert V_y \rvert$，验证 $\lvert V \rvert \le \lvert V_x \rvert \lvert V_y \rvert$。怎样添加点，能在不增大两个投影的前提下让 $V$ 达到上界？
-
-<details><summary>提示</summary>
-
-$V_x = \{0, 1, 2\}$。上界是 $V_x \times V_y$ 的大小。
-
-</details>
-<details><summary>答案</summary>
-
-$V_x = V_y = \{0, 1, 2\}$，$4 \le 9$。把 $V_x \times V_y$ 的 9 个点全部加进来（再加 $(0,2), (1,1), (1,2), (2,0), (2,1)$），投影不变，$\lvert V \rvert = 9$，等号成立。
+(b) $b_N = 128$ 时 $b_M$ 取最大的 $2^{18}/128 = 2048$，$\frac{1}{2048} + \frac{1}{128} \approx 8.3 \times 10^{-3}$，约为正方形的 2.1 倍。
 
 </details>

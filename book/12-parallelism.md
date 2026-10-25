@@ -249,16 +249,6 @@ MoE 层（11.9 节）提供了另一个可以切分的维度：专家。
 
 **习题 12.1** ★ 对下列分片矩阵乘法，说明需要什么通信，以及结果的分片：(a) $A[I_x, K] \cdot B[K, J_y]$；(b) $A[I, K_x] \cdot B[K_x, J_y]$；(c) $A[I_y, K_x] \cdot B[K, J]$；(d) $A[I_x, K] \cdot B[K_x, J]$。
 
-<details><summary>提示 1</summary>
-
-逐个检查哪个下标被切分：收缩维产生部分和，输出维产生完整局部结果。
-
-</details>
-<details><summary>提示 2</summary>
-
-逐个对照命题 12.4 的四种情形。
-
-</details>
 <details><summary>答案</summary>
 
 (a) 无需通信，$C[I_x, J_y]$（两个非收缩维用不同的轴，合法）。(b) 本地得到部分和，沿 $x$ 做 all-reduce 得 $C[I, J_y]$，或 reduce-scatter 得 $C[I_x, J_y]$。(c) 对复制的 $B$ 局部切片成 $B[K_x, J]$，本地得部分和，沿 $x$ 归约，结果 $C[I_y, J]$ 或 $C[I_y, J_x]$。(d) $B$ 的收缩维沿 $x$ 分片，而 $A$ 的 $x$ 已用于 $I$：要么对 $B$ 沿 $x$ 做 all-gather 得 $B[K, J]$，结果 $C[I_x, J]$；要么对 $A$ 做 all-to-all 把 $x$ 从 $I$ 移到 $K$，得 $A[I, K_x]$，化为情形 2。
@@ -267,173 +257,106 @@ MoE 层（11.9 节）提供了另一个可以切分的维度：专家。
 
 **习题 12.2** ★ $\Phi = 7 \times 10^{10}$，bf16 参数与梯度，64 颗芯片，每颗的注入带宽 $\beta = 10^{11}$ 字节/秒。分别求 DP 与 FSDP 每步的通信时间（只计带宽项）和每颗芯片存放参数、梯度、优化器状态所需的显存。
 
-<details><summary>提示 1</summary>
-
-分别列两方案每步的 collective 种类与持久状态；通信总量按单设备注入计。
-
-</details>
-<details><summary>提示 2</summary>
-
-DP 约 $2s\Phi/\beta$，FSDP 约 $3s\Phi/\beta$；显存 $16\Phi$ 与 $16\Phi/p$。
-
-</details>
 <details><summary>答案</summary>
 
-DP：$2 \times 2 \times 7 \times 10^{10} / 10^{11} = 2.8$ s，显存 1.12 TB（放不下）。FSDP：4.2 s，显存 17.5 GB。FSDP 多花一半通信，换来能放得下；4.2 s 能否被掩盖取决于每步的计算量（习题 12.3）。
+DP：每步对 $s\Phi$ 字节的梯度做一次 all-reduce，带宽项约 $2s\Phi/\beta = 2 \times 2 \times 7 \times 10^{10} / 10^{11} = 2.8$ s。每颗芯片存全部状态，约 $16\Phi = 1.12$ TB，放不下。
+
+FSDP：前向 all-gather 一遍参数、反向再 all-gather 一遍、梯度 reduce-scatter 一遍，每次约 $s\Phi/\beta$，共 $3s\Phi/\beta = 4.2$ s。状态均分到 64 颗芯片，每颗 $16\Phi/64 = 17.5$ GB。
+
+FSDP 多花一半通信，换来放得下。4.2 s 能否被掩盖，取决于每步的计算量（习题 12.3）。
 
 </details>
 
 **习题 12.3** ★ 接习题 12.2，参考芯片 X（$P = 2.6 \times 10^{14}$），每步全局处理 $N = 4 \times 10^6$ 个词元。(a) 每步的计算时间（MFU 按 100% 计）是多少？(b) FSDP 的通信能否被掩盖？(c) 若芯片数增加到 2048，而全局批量不变呢？
 
-<details><summary>提示 1</summary>
-
-增加设备数不会增加全局词元数，因此每设备工作下降而层权重的通信未同比下降。
-
-</details>
-<details><summary>提示 2</summary>
-
-命题 12.6：需要 $N/p \ge P/\beta = 2600$（$s = 2$）。
-
-</details>
 <details><summary>答案</summary>
 
-(a) $6 \times 7 \times 10^{10} \times 4 \times 10^6 / (64 \times 2.6 \times 10^{14}) \approx 101$ s。(b) $N/p = 62500 \gg 2600$，可以掩盖（4.2 s 远小于 101 s）。(c) $N/p \approx 1950 < 2600$，计算约 3.2 s，通信仍约 4.2 s，不能掩盖。此时应引入张量并行：每 $t$ 颗芯片共享一份 FSDP 分片，FSDP 的轴变小，每颗芯片上的通信与计算之比改变。
+(a) 训练每词元 $6\Phi$ FLOP（命题 11.16），每步 $6 \times 7 \times 10^{10} \times 4 \times 10^6 = 1.68 \times 10^{18}$ FLOP，分到 64 颗芯片上，$1.68 \times 10^{18} / (64 \times 2.6 \times 10^{14}) \approx 101$ s。
+
+(b) 命题 12.6 要求 $N/p \ge \frac{s}{2} \cdot \frac{P}{\beta} = 1 \times 2600 = 2600$。这里 $N/p = 4 \times 10^6 / 64 = 62500$，远大于 2600，可以掩盖：4.2 s 的通信远小于 101 s 的计算。
+
+(c) $N/p = 4 \times 10^6 / 2048 \approx 1950 < 2600$，不满足。计算约 $101 \times 64/2048 \approx 3.2$ s，FSDP 的通信量与芯片数无关，仍约 4.2 s，掩盖不住。这时应引入张量并行：每 $t$ 颗芯片共享一份 FSDP 分片，FSDP 的轴变小，每颗芯片上的通信与计算之比随之改变。
 
 </details>
 
 **习题 12.4** ★ 用命题 12.8 估计：$D = 8192$，bf16，(a) $P/\beta = 2600$；(b) 在一个高带宽交换域内，$P/\beta = 500$。张量并行的规模上限各是多少？
 
-<details><summary>提示 1</summary>
-
-把比较式整理为 t 的上界；注意使用的是该网格轴的有效单向带宽。
-
-</details>
-<details><summary>提示 2</summary>
-
-$t \le 6D\beta/(sP) = 3D / (P/\beta)$。
-
-</details>
 <details><summary>答案</summary>
 
-(a) $3 \times 8192 / 2600 \approx 9.5$，取 8。(b) $3 \times 8192 / 500 \approx 49$，可以到 32 左右。张量并行的规模由最快的那一级互联决定。
+由命题 12.8，$t \le \frac{6D}{s} \cdot \frac{\beta}{P} = \frac{3D}{P/\beta}$（$s = 2$）。
+
+(a) $3 \times 8192 / 2600 \approx 9.5$，取 8。
+
+(b) $3 \times 8192 / 500 \approx 49$，可以到 32 左右。
+
+张量并行能做多大，由最快的那一级互联决定。
 
 </details>
 
 **习题 12.5** ★ 8 段流水线，32 个微批量，空泡比例是多少？要让空泡低于 5%，至少需要多少个微批量？
 
-<details><summary>提示 1</summary>
-
-先求填充排空的空闲段数，再解关于微批量数的不等式。
-
-</details>
-<details><summary>提示 2</summary>
-
-命题 12.11。
-
-</details>
 <details><summary>答案</summary>
 
-$7/39 \approx 18\%$。需要 $7/(m + 7) < 0.05$，即 $m > 133$，至少 134 个。
+由命题 12.11，空泡比例是 $\frac{p_p - 1}{m + p_p - 1}$。$p_p = 8$、$m = 32$ 时为 $7/39 \approx 18\%$。
+
+要 $7/(m + 7) < 0.05$，即 $m + 7 > 140$，$m > 133$，至少 134 个微批量。
 
 </details>
 
 **习题 12.6** ★ 上下文并行，环形注意力：$D = 8192$，$H_{kv} d_h = 1024$，bf16，$P/\beta = 2600$。每颗芯片的序列段 $T_c$ 至少多长，通信才能被掩盖？
 
-<details><summary>提示 1</summary>
-
-每阶段保留本地 Q，传入一块 K/V；比较这一块的计算和传输。
-
-</details>
-<details><summary>提示 2</summary>
-
-12.5 节的不等式。
-
-</details>
 <details><summary>答案</summary>
 
-$T_c \ge 1 \times \frac{1024}{8192} \times 2600 = 325$。这个条件很容易满足；上下文并行的瓶颈通常在因果掩码下的负载不均，而不在通信。
+由 12.5 节的不等式，$T_c \ge \frac{s}{2} \cdot \frac{H_{kv} d_h}{D} \cdot \frac{P}{\beta} = 1 \times \frac{1024}{8192} \times 2600 = 325$。
+
+这个条件很容易满足。上下文并行的麻烦通常在因果掩码下的负载不均，而不在通信。
 
 </details>
 
 **习题 12.7** ★ decode 时用 $t = 8$ 的张量并行，模型 $n_L = 80$ 层，每层两次 all-reduce，每次消息很小，集合通信的 $\alpha = 5$ µs。(a) 用环形 all-reduce，每个词元因此多出多少延迟？(b) 用递归倍增算法呢？
 
-<details><summary>提示 1</summary>
-
-只计启动项时，先求一次 collective 的步数，再乘每层次数和层数。
-
-</details>
-<details><summary>提示 2</summary>
-
-环形 all-reduce 的 $\alpha$ 项为 $2(t-1)\alpha$，递归算法为 $2\alpha \log t$（命题 7.14、7.15）。
-
-</details>
 <details><summary>答案</summary>
 
-(a) 每次 $14 \times 5 = 70$ µs，$160$ 次共 11.2 ms。(b) 每次 $6 \times 5 = 30$ µs，共 4.8 ms。若每个词元的计算本身只要 10–20 ms，这部分开销举足轻重。这就是低延迟集合通信对 decode 的意义。
+每层 2 次、80 层，每个词元共 160 次 all-reduce。消息很小，只计 $\alpha$ 项。
+
+(a) 环形 all-reduce 的 $\alpha$ 项是 $2(t-1)\alpha = 14 \times 5 = 70$ µs（命题 7.14），160 次共 11.2 ms。
+
+(b) 递归倍增是 $2\alpha \log t = 6 \times 5 = 30$ µs（命题 7.15），共 4.8 ms。
+
+若每个词元的计算本身只要 10–20 ms，这部分开销举足轻重。decode 需要低延迟的集合通信，原因就在这里。
 
 </details>
 
 **习题 12.8** ★（审查题）AI 为 MLP 写的张量并行方案是：$W_1[D, F_t]$，$W_2[F, D_t]$（$W_2$ 沿输出维分片）。按命题 12.4 分析第二个矩阵乘法 $H[N, F_t] \cdot W_2[F, D_t]$ 需要什么通信，与 12.4 节的方案比较。
 
-<details><summary>提示 1</summary>
-
-检查隐藏维 F 的两侧分片是否一致；沿同轴切输出维不能代替缺失的隐藏维数据。
-
-</details>
-<details><summary>提示 2</summary>
-
-收缩维 $F$ 在 $H$ 中沿 $t$ 分片，在 $W_2$ 中复制；但 $W_2$ 的 $t$ 已被 $D$ 占用。
-
-</details>
 <details><summary>答案</summary>
 
 $W_2$ 的轴 $t$ 已用于 $D$，不能再对 $F$ 局部切片。只能对 $H$ 做 all-gather 得 $H[N, F]$，再做情形 1 得 $Y[N, D_t]$，之后下一层还需要 all-gather 得 $Y[N, D]$。$H$ 的大小是 $N F$，约为 $Y$ 的 $F/D$ 倍（通常 3.5–4 倍），通信量远大于 12.4 节方案中对 $ND$ 规模的激活做一次 all-reduce。修改：$W_2$ 沿 $F$（行）分片，$W_2[F_t, D]$。
 
 </details>
 
-**习题 12.9** ★（综合审查题）两设备分别持有 $A[4,4]$ 的上、下两行与 $B[4,4]$ 的左、右两列，且沿同一个设备轴。各自计算能覆盖 C 的哪些区域？给出一种无需改变设备数的正确方案。
+**习题 12.9** ★（审查题）两个设备沿同一个设备轴 $x$ 分片：设备 0 持有 $A$（$4 \times 4$）的第 0–1 行和 $B$（$4 \times 4$）的第 0–1 列，设备 1 持有 $A$ 的第 2–3 行和 $B$ 的第 2–3 列，即 $A[I_x, K]$、$B[K, J_x]$。AI 让每个设备直接用手头的数据计算 $C = AB$。各设备能算出 $C$ 的哪些元素？给出一种正确的方案。
 
-<details><summary>提示 1</summary>
-
-某设备只有自己 A 的行和 B 的列；先把能算出的输出坐标画出来。
-
-</details>
-<details><summary>提示 2</summary>
-
-两个设备只能算左上与右下两个 2×2 块，缺另两个块。
-
-</details>
 <details><summary>答案</summary>
 
-设备 0 算 C 的行 0–1、列 0–1，设备 1 算行 2–3、列 2–3，缺两个非对角块。可 all-gather B，使每设备持有完整 B，再用自己的 A 行计算完整本地输出行。也可汇集 A 后按 B 列计算；二者容量与通信需分别计账。
+设备 0 只能算出 $C$ 的行 0–1、列 0–1，设备 1 只能算出行 2–3、列 2–3。两个非对角的 $2 \times 2$ 块（行 0–1 列 2–3、行 2–3 列 0–1）谁也算不出来。按命题 12.4，两个非收缩维不能沿同一个轴分片。
+
+正确的做法之一：沿 $x$ 对 $B$ 做 all-gather，每个设备得到完整的 $B$，再用自己的两行 $A$ 算出 $C$ 的完整两行，结果是 $C[I_x, J]$。也可以对 $A$ 做 all-gather、各自算 $C$ 的两列，结果是 $C[I, J_x]$。两种做法分别要传 $B$ 和 $A$，显存也要多放一份完整的 $B$ 或 $A$，哪个小选哪个。
 
 </details>
 
 **习题 12.10** ★ 一个 MoE 模型有 48 层，隐藏维 $D = 4096$，每个词元送往 8 个路由专家和 1 个共享专家，专家的中间维 $F_e = 1536$。decode 时每台设备放一个专家、每步处理 64 个词元，分发用 fp8、回收用 bf16，全交换走 100 GB/s 的链路，两个微批量交替。(a) 按例 12.15 的办法，每词元至少多少毫秒？每个用户每秒至多多少个词元？(b) 若每颗芯片的 fp8 算力为 $10^{15}$ FLOP/s，按命题 12.16，全交换的带宽至少要多少，专家计算才能藏住通信？100 GB/s 够吗？
 
-<details><summary>提示 1</summary>
-
-每台设备每层收发 $64 \times 9 \times 4096 \times 3$ 字节；两个微批量的通信时间相加是每层的下界。
-
-</details>
-<details><summary>提示 2</summary>
-
-命题 12.16：$\beta \ge P / (2F_e)$。
-
-</details>
 <details><summary>答案</summary>
 
-(a) 每层每台设备约 $7.08 \times 10^6$ 字节，100 GB/s 下约 70.8 µs；两个微批量交替，每层约 142 µs；48 层约 6.8 ms，每秒至多约 147 个词元。(b) $\beta \ge 10^{15} / 3072 \approx 3.3 \times 10^{11}$ 字节/秒，即约 326 GB/s。100 GB/s 不够，通信会露在外面；(a) 中假设"计算足够快、链路一直忙"，正是这种情形下的估算。
+(a) 每个词元去 $8 + 1 = 9$ 个专家，每去一个专家，分发 $D$ 字节（fp8）、回收 $2D$ 字节（bf16）。每台设备每层收发 $64 \times 9 \times 4096 \times 3 \approx 7.08 \times 10^6$ 字节，100 GB/s 下约 70.8 µs。两个微批量交替，每层约 142 µs；48 层约 6.8 ms，每个用户每秒至多约 147 个词元。
+
+(b) 由命题 12.16，需要 $P/\beta \le 2F_e = 3072$，即 $\beta \ge 10^{15} / 3072 \approx 3.3 \times 10^{11}$ 字节/秒，约 326 GB/s。100 GB/s 不够，通信会露在外面。(a) 的估算假设"计算足够快、链路一直忙"，说的正是这种情形。
 
 </details>
 
 **习题 12.11** ★（审查题）有人提议："我们的 MoE 推理受全交换限制，所以把网络带宽再翻一倍，吞吐就能翻倍。"已知专家中间维 $F_e = 2048$，芯片算力 $P = 2 \times 10^{15}$ FLOP/s，现有全交换带宽 $\beta = 800$ GB/s。评价这个提议。
 
-<details><summary>提示</summary>
-
-先算现在的 $P/\beta$，与 $2F_e$ 比较，判断现在到底是谁在限制。
-
-</details>
 <details><summary>答案</summary>
 
 $P/\beta = 2 \times 10^{15} / 8 \times 10^{11} = 2500 \le 2F_e = 4096$，按命题 12.16，专家计算已经能藏住通信，瓶颈不在带宽。再加带宽，带宽模型下不会变快。若实测仍然受通信限制，要找别的原因：负载不均使最忙的设备成为瓶颈（12.7 节）、消息太小而受延迟项 $\alpha$ 限制、计算与通信没有真正重叠，或者全交换占用了计算单元。先测清楚是哪一种，再决定花钱的方向。

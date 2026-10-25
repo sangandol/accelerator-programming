@@ -192,7 +192,7 @@ x = jax.random.normal(k1, (1024,))
 
 - 默认的浮点类型是 f32（64 位类型默认关闭）。`x.astype(jnp.bfloat16)` 转为 bf16。
 - **类型提升**：bf16 与 f32 的数组运算得到 f32；但 Python 的数字字面量是"弱类型"的，不会提升数组的类型：`x_bf16 * 2.0` 仍是 bf16，`x_bf16 * jnp.float32(2)` 是 f32。
-- **矩阵乘法**：两个 bf16 相乘默认得到 bf16。用 `preferred_element_type=jnp.float32` 得到 f32 结果（习题 2.9）。`precision` 参数控制 f32 输入时的计算精度：`lax.Precision.DEFAULT`、`HIGH`、`HIGHEST`（推论 2.32）。
+- **矩阵乘法**：两个 bf16 相乘默认得到 bf16。用 `preferred_element_type=jnp.float32` 得到 f32 结果（习题 2.8）。`precision` 参数控制 f32 输入时的计算精度：`lax.Precision.DEFAULT`、`HIGH`、`HIGHEST`（推论 2.32）。
 
 > **例 13.13（三处精度分别写进规格）** $A, B$ 以 bf16 存储，计算 $C = AB$。规格里要分别写明：输入用 bf16 存储，点积内部用什么精度累加，输出存成 f32 还是 bf16。`preferred_element_type=f32` 明确要求 f32 的结果，但内部具体怎么算还取决于后端和精度参数。
 >
@@ -211,33 +211,7 @@ x = jax.random.normal(k1, (1024,))
 
 ## 习题
 
-**习题 13.1** ★ 不运行代码，写出 `jax.make_jaxpr(lambda x: jnp.exp(x - x.max()))(x)` 的 jaxpr 中依次出现的原语（$x$ 为 `f32[8]`）。
-
-<details><summary>提示 1</summary>
-
-先沿数据依赖写原语序列，每步标输入输出形状，不要求精确打印格式。
-
-</details>
-<details><summary>提示 2</summary>
-
-`x.max()` 是一次归约；`x - (标量)` 需要先把标量广播成 `f32[8]`（或由减法原语直接处理标量）。
-
-</details>
-<details><summary>答案</summary>
-
-`reduce_max`（得到 `f32[]`），`sub`（`f32[8]` 减 `f32[]`，结果 `f32[8]`；标量直接作为操作数，jaxpr 中没有单独的广播），`exp`。实际输出为：
-
-```text
-{ lambda ; a:f32[8]. let
-    b:f32[] = reduce_max[axes=(0,) out_sharding=None] a
-    c:f32[8] = sub a b
-    d:f32[8] = exp c
-  in (d,) }
-```
-
-</details>
-
-**习题 13.2** ★（审查题）下面的代码在 `jit` 下报错。说明原因，给出两种修改，并说明它们在语义和代价上的区别。
+**习题 13.1** ★（审查题）下面的代码在 `jit` 下报错。说明原因，给出两种修改，并说明它们在语义和代价上的区别。
 
 ```python
 @jax.jit
@@ -247,32 +221,17 @@ def clip_or_negate(x):
     return -x
 ```
 
-<details><summary>提示 1</summary>
-
-问题发生在 Python 需要一个实际布尔值时；值在设备执行前尚不存在。
-
-</details>
-<details><summary>提示 2</summary>
-
-规则 1（13.2 节）。`jnp.where` 与 `lax.cond` 各算了几个分支？
-
-</details>
 <details><summary>答案</summary>
 
 追踪时 `x.sum() > 0` 是一个没有值的占位对象，不能转换为 Python 的布尔值。修改一：`return jnp.where(x.sum() > 0, jnp.minimum(x, 1.0), -x)`，两个分支都计算，再选择。修改二：`return lax.cond(x.sum() > 0, lambda x: jnp.minimum(x, 1.0), lambda x: -x, x)`，运行时只执行一个分支。这里两个分支都很便宜，`where` 更简单；分支很贵时用 `cond`。若函数之后被 `vmap` 且条件是批量的，`cond` 也会退化为两边都算。
 
 </details>
 
-**习题 13.3** ★ 设 $y = \operatorname{softmax}(x)$，$x \in \mathbb{R}^n$。求 VJP：给定 $\bar{y}$，求 $\bar{x}$。
+**习题 13.2** ★ 设 $y = \operatorname{softmax}(x)$，$x \in \mathbb{R}^n$。求 VJP：给定 $\bar{y}$，求 $\bar{x}$。
 
-<details><summary>提示 1</summary>
+<details><summary>提示</summary>
 
-写出 softmax 雅可比，然后将上游余切向量乘它，不必逐元素保存雅可比。
-
-</details>
-<details><summary>提示 2</summary>
-
-$\partial y_i / \partial x_j = y_i(\delta_{ij} - y_j)$。
+先写出雅可比：$\partial y_i / \partial x_j = y_i(\delta_{ij} - y_j)$，即 $J = \operatorname{diag}(y) - y y^{\mathsf T}$。它是对称的，VJP 就是 $J\bar{y}$。
 
 </details>
 <details><summary>答案</summary>
@@ -281,48 +240,28 @@ $J = \operatorname{diag}(y) - y y^{\mathsf T}$，对称，所以 $\bar{x} = J \b
 
 </details>
 
-**习题 13.4** ★ 设 `M` 是 `f32[B, D]`，`W` 是 `f32[D, F]`。`jax.vmap(lambda m: m @ W)(M)` 与 `jax.vmap(lambda m, w: m @ w)(M, Ws)`（`Ws` 是 `f32[B, D, F]`）分别会被批处理成什么运算？哪一个能用到矩阵单元的高效形式？
+**习题 13.3** ★ 设 `M` 是 `f32[B, D]`，`W` 是 `f32[D, F]`。`jax.vmap(lambda m: m @ W)(M)` 与 `jax.vmap(lambda m, w: m @ w)(M, Ws)`（`Ws` 是 `f32[B, D, F]`）分别会被批处理成什么运算？哪一个能用到矩阵单元的高效形式？
 
-<details><summary>提示 1</summary>
-
-分别问权重是整批共享还是每样本一份；由此确定收缩与批量维。
-
-</details>
-<details><summary>提示 2</summary>
-
-第一个中 `W` 没有批量维；第二个中每个样本有自己的权重。
-
-</details>
 <details><summary>答案</summary>
 
 第一个变成一次 $B \times D$ 乘 $D \times F$ 的矩阵乘法（`dot_general` 的批量维为空），正是矩阵单元擅长的形式。第二个变成 $B$ 个独立的向量乘矩阵（`dot_general` 带批量维 `([0], [0])`），每个样本只有一行，强度约为 $2/s$（命题 6.21），访存受限。`vmap` 保持语义，但不能把访存受限的计算变成计算受限的计算。
 
 </details>
 
-**习题 13.5** ★ 下面的函数用 `while_loop` 计算 $x^n$（$n = 3$），对它求导时报错。为什么？怎样修改才能求导？
+**习题 13.4** ★ 下面的函数用 `while_loop` 计算 $x^n$（$n = 3$），对它求导时报错。为什么？怎样修改才能求导？
 
 ```python
 def power(x):
     return lax.while_loop(lambda c: c[0] < 3, lambda c: (c[0] + 1, c[1] * x), (0, 1.0))[1]
 ```
 
-<details><summary>提示 1</summary>
-
-反向需要知道残差如何保存；检查循环次数是否静态、携带状态是否固定类型。
-
-</details>
-<details><summary>提示 2</summary>
-
-13.6 节的表。
-
-</details>
 <details><summary>答案</summary>
 
 `while_loop` 的迭代次数在运行时才知道，反向模式无法事先安排保存每一步的残差，所以 JAX 拒绝对它做反向求导。迭代次数实际上是静态的 3，改写为 `lax.fori_loop(0, 3, lambda i, c: c * x, 1.0)` 即可，导数在 $x = 2$ 处为 $3x^2 = 12$。
 
 </details>
 
-**习题 13.6** ★（审查题）下面的代码为两层网络初始化权重。找出问题。
+**习题 13.5** ★（审查题）下面的代码为两层网络初始化权重。找出问题。
 
 ```python
 key = jax.random.key(0)
@@ -330,72 +269,28 @@ w1 = jax.random.normal(key, (D, F))
 w2 = jax.random.normal(key, (F, D))
 ```
 
-<details><summary>提示 1</summary>
-
-两个初始化调用的密钥和形状是否相同？纯函数没有隐藏的"下一次"状态。
-
-</details>
-<details><summary>提示 2</summary>
-
-同一个密钥产生同样的随机数。
-
-</details>
 <details><summary>答案</summary>
 
 两次使用了同一个密钥。若 $D = F$，`w2` 与 `w1` 完全相同；即使形状不同，两者也高度相关（取自同一串随机数）。应当先 `k1, k2 = jax.random.split(key)`，分别用 `k1`、`k2`。
 
 </details>
 
-**习题 13.7** ☆ 一个训练循环每一步的输入序列长度不同，在 1 到 4096 之间任意取值，每一步都调用同一个 `jit` 函数。会发生什么？怎样修改？
+**习题 13.6** ★ 一个训练循环每一步的输入序列长度不同，在 1 到 4096 之间任意取值，每一步都调用同一个 `jit` 函数。会发生什么？怎样修改？修改后要注意什么，才能保证损失的数值不变？
 
-<details><summary>提示 1</summary>
-
-长度是抽象类型的一部分；先估有多少种形状键，再考虑分档。
-
-</details>
-<details><summary>提示 2</summary>
-
-编译缓存的键是抽象类型。
-
-</details>
 <details><summary>答案</summary>
 
-每出现一个新的长度就重新追踪和编译一次，最多可达数千次编译。修改：把长度向上补齐到少数几个档位（例如 2 的幂），用掩码忽略补齐的部分。编译次数降到十几次，代价是补齐部分的无用计算。
+编译缓存按抽象类型（形状和数据类型）查找，每出现一个新的长度，`jit` 就重新追踪、编译一次，最多可达数千次编译，每次可能要几秒到几十秒。
+
+修改：把长度向上补齐到少数几个档位（例如 2 的幂 $1, 2, 4, \dots, 4096$，共 13 档），同时传入一个掩码，标出哪些位置是真实的。编译次数降到十几次，代价是补齐部分的无用计算（不到一半）。
+
+补齐不能改变数学语义：损失只对真实位置求和，求平均时除以真实的词元数，而不是档位长度；注意力要屏蔽补齐的位置。若只补零、却仍除以档位长度，损失就变了。随机密钥是输入的值而不是形状，每步换一个密钥不会触发重新编译。
 
 </details>
 
-**习题 13.8** ★ 设 `x` 是 bf16 数组，`y` 是 f32 数组。下列表达式的结果类型各是什么？`x * 2.0`；`x * jnp.float32(2.0)`；`x + y`；`x @ x.T`；`jnp.dot(x, x.T, preferred_element_type=jnp.float32)`。
+**习题 13.7** ★ 设 `x` 是 bf16 数组，`y` 是 f32 数组。下列表达式的结果类型各是什么？`x * 2.0`；`x * jnp.float32(2.0)`；`x + y`；`x @ x.T`；`jnp.dot(x, x.T, preferred_element_type=jnp.float32)`。
 
-<details><summary>提示 1</summary>
-
-把 Python 弱类型字面量、显式 f32 数组和点积输出精度分别判断。
-
-</details>
-<details><summary>提示 2</summary>
-
-13.8 节。
-
-</details>
 <details><summary>答案</summary>
 
 bf16；f32；f32；bf16；f32。第三、四个最容易出错：前者可能意外地把大数组提升为 f32，使显存和带宽加倍；后者可能意外地在 bf16 中得到矩阵乘法的结果。
-
-</details>
-
-**习题 13.9** ★（综合审查题）一个 `jit` 函数输入都是 `f32[B,8]`，每次 B 从 1 到 1000 任意改变；随机密钥也作为输入。哪些变化通常改变编译缓存键？怎样减少形状版本，同时保持有效样本的数学语义？
-
-<details><summary>提示 1</summary>
-
-区分抽象类型和实际输入值；密钥内容属于值而非静态参数。
-
-</details>
-<details><summary>提示 2</summary>
-
-把 B 补到少数预定档位，额外样本用有效掩码；归约时同时调整个数。
-
-</details>
-<details><summary>答案</summary>
-
-B 改变形状，通常触发新编译；同类型密钥的数值改变不必重新编译。可选择少数批量档位并补齐。损失求和令填充贡献为零，均值分母用真实有效样本数，随机流若需跨档位一致则按原样本编号派生。仅补零而仍除以档位 B 会改变训练语义。
 
 </details>

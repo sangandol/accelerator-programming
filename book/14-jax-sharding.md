@@ -224,34 +224,19 @@ def mlp(x, w1, w2):
 
 **习题 14.1** ★ 写出下列分片的 PartitionSpec，以及在网格 $\{x: 2, y: 4\}$ 上每台设备的局部形状（全局形状 $(64, 128)$）：$A[I_x, J_y]$；$A[I_{xy}, J]$；$A[I, J_x]$；$A[I_y, J_x]$。
 
-<details><summary>提示 1</summary>
-
-先看哪些 mesh 轴被数组使用，未使用的轴代表复制，不会继续缩小本地维。
-
-</details>
-<details><summary>提示 2</summary>
-
-沿大小为 $q$ 的轴（或轴组）分片，那一维除以 $q$。
-
-</details>
 <details><summary>答案</summary>
 
-`P("x", "y")`，$(32, 32)$；`P(("x", "y"), None)`，$(8, 128)$；`P(None, "x")`，$(64, 64)$；`P("y", "x")`，$(16, 64)$。
+沿大小为 $q$ 的轴（或轴组）分片，那一维就除以 $q$；没出现在 PartitionSpec 里的轴表示复制，不缩小任何一维。
+
+- $A[I_x, J_y]$：`P("x", "y")`，$(64/2, 128/4) = (32, 32)$。
+- $A[I_{xy}, J]$：`P(("x", "y"), None)`，第一维除以 $2 \times 4 = 8$，得 $(8, 128)$。
+- $A[I, J_x]$：`P(None, "x")`，$(64, 64)$，在 $y$ 轴上复制。
+- $A[I_y, J_x]$：`P("y", "x")`，$(16, 64)$。
 
 </details>
 
 **习题 14.2** ★ 在 Explicit 模式下，下列运算的结果类型是什么？哪些会报错？(a) `P("x", None)` 的 $(8, 16)$ 数组乘以 `P(None, None)` 的 $(16, 32)$ 数组；(b) `P(None, "y")` 的 $(8, 16)$ 数组乘以 `P("y", None)` 的 $(16, 32)$ 数组，不给 `out_sharding`；(c) 同 (b)，`out_sharding=P(None, "y")`；(d) `P("x", None)` 与 `P("x", None)` 的两个 $(8, 16)$ 数组相加。
 
-<details><summary>提示 1</summary>
-
-先按分片矩阵乘法确定结果是否为部分和；部分和的输出放置有歧义。
-
-</details>
-<details><summary>提示 2</summary>
-
-对照命题 12.4 与 14.2 节的例子。
-
-</details>
 <details><summary>答案</summary>
 
 (a) `float32[8@x,32]`，无通信。(b) `ShardingTypeError`：收缩维被分片，必须指定输出分片。(c) `float32[8,32@y]`：沿 $y$ 做 reduce-scatter，散布到结果的第二维。(d) `float32[8@x,16]`，逐元素相加无通信。
@@ -266,16 +251,6 @@ def total(w):
     return jax.lax.psum(w.sum(), "x")
 ```
 
-<details><summary>提示 1</summary>
-
-每设备收到的是完整数组还是切片？复制输入不能通过 sum 自动变成不同贡献。
-
-</details>
-<details><summary>提示 2</summary>
-
-`in_specs=P()` 意味着每台设备拿到的是完整的 `w`。
-
-</details>
 <details><summary>答案</summary>
 
 每台设备都算出完整的和，`psum` 把 4 个相同的值相加，得到 4 倍。修改：既然每台设备已有完整的 `w`，直接 `return w.sum()`；若想分摊计算，就让输入沿 $x$ 分片（`in_specs=P("x")`），每台设备只求局部和，再 `psum`。
@@ -284,16 +259,6 @@ def total(w):
 
 **习题 14.4** ★ 在 `shard_map` 中用 `psum_scatter` 和 `all_gather` 实现 all-reduce，并说明它与直接用 `psum` 的关系。
 
-<details><summary>提示 1</summary>
-
-分别写两步前后的本地形状与数值含义；第二步必须只是拼接归约后的分片。
-
-</details>
-<details><summary>提示 2</summary>
-
-命题 7.9。
-
-</details>
 <details><summary>答案</summary>
 
 ```python
@@ -308,34 +273,16 @@ def all_reduce(x):                         # x: 本地的完整向量，形状 (
 
 **习题 14.5** ★ 对例 14.5，设 $p = 8$，每台设备上 $X$ 的块为 $1024 \times 8192$（bf16），$W$ 的块为 $8192 \times 1024$，芯片 $P = 2.6 \times 10^{14}$ FLOP/s，链路 $\beta = 10^{11}$ 字节/秒。每一步的计算与通信各要多少时间？通信能被掩盖吗？
 
-<details><summary>提示 1</summary>
-
-每步只处理一块 X 和本地 W，把 FLOP 与发送字节分别除相应资源。
-
-</details>
-<details><summary>提示 2</summary>
-
-每步计算一块 $1024 \times 8192$ 乘 $8192 \times 1024$；每步传递一块 $X$。
-
-</details>
 <details><summary>答案</summary>
 
-计算 $2 \times 1024 \times 8192 \times 1024 \approx 1.7 \times 10^{10}$ FLOP，约 66 µs；通信 $1024 \times 8192 \times 2 = 16$ MiB，约 168 µs。通信比计算慢，不能完全掩盖，总时间约为 $7 \times 168 + 66 \approx 1.24$ ms（命题 7.19），而不重叠时约 $7 \times 168 + 8 \times 66 \approx 1.70$ ms。要完全掩盖，需要每块的计算更多（例如更大的 $F/p$），即张量并行的规模更小（命题 12.8）。
+每一步计算一块 $1024 \times 8192$ 乘 $8192 \times 1024$：$2 \times 1024 \times 8192 \times 1024 \approx 1.7 \times 10^{10}$ FLOP，约 $1.7 \times 10^{10} / 2.6 \times 10^{14} \approx 66$ µs。每一步传一块 $X$：$1024 \times 8192 \times 2 = 16$ MiB，约 $1.68 \times 10^7 / 10^{11} \approx 168$ µs。
+
+通信比计算慢，不能完全掩盖。由命题 7.19，总时间约 $\max\{8 \times 66,\ 7 \times 168 + 66\} \approx 1.24$ ms；不重叠时约 $7 \times 168 + 8 \times 66 \approx 1.70$ ms。要完全掩盖，需要每块的计算更多（例如更大的 $F/p$），也就是张量并行的规模更小（命题 12.8）。
 
 </details>
 
 **习题 14.6** ★（审查题）一个 Auto 模式的训练程序在编译后的 HLO 中出现了对一个 $8192 \times 28672$ 的权重做 all-gather 的操作，而作者原本的意图是张量并行（权重沿 $F$ 分片、不应被收集）。可能的原因是什么？怎样排查和修改？
 
-<details><summary>提示 1</summary>
-
-从输入到下游消费者逐运算标预期分片；意外通信可能是某个中间结果被要求复制。
-
-</details>
-<details><summary>提示 2</summary>
-
-Auto 模式下中间结果的分片由分区器推断。哪一步的分片可能与意图不一致？
-
-</details>
 <details><summary>答案</summary>
 
 很可能某个与该权重相乘的激活被推断成了与意图不同的分片（例如沿 $F$ 而不是沿批量维分片，或者完全复制），使分区器认为收集权重比搬运激活便宜，或者遇到了命题 12.4 情形 4 那样的冲突。排查：在 HLO 中找到这个 all-gather 对应的源代码位置，检查它前后的数组分片。修改：用 `with_sharding_constraint` 固定激活的分片（批量维沿数据轴、隐藏维沿 $t$），或者把这些轴改为 Explicit 模式，让不一致在追踪时就报错。
@@ -344,36 +291,8 @@ Auto 模式下中间结果的分片由分区器推断。哪一步的分片可能
 
 **习题 14.7** ☆ 16 台主机，每台 8 台设备，网格 $\{d: 16, t: 8\}$，$t$ 轴在主机内。全局批量 $N \times D$ 的输入沿 $d$ 分片。每台主机需要装入多大的数据？若某台主机装入了全局批量，会发生什么？
 
-<details><summary>提示 1</summary>
-
-先确定一个主机固定哪些 mesh 坐标，再看同主机的设备在哪些轴上复制。
-
-</details>
-<details><summary>提示 2</summary>
-
-每台主机的 8 台设备在 $d$ 轴上的坐标相同。
-
-</details>
 <details><summary>答案</summary>
 
 每台主机上的设备共享同一个 $d$ 坐标，所以只需要装入 $N/16 \times D$ 的数据（在主机内的 8 台设备上复制）。若每台主机都装入全局批量，数据加载的工作和主机内存都增加 16 倍，而且 `make_array_from_process_local_data` 的形状约定被违反，得到的全局数组会是错的。
-
-</details>
-
-**习题 14.8** ★（综合审查题）mesh $\{x:2,y:2\}$ 上，一个数组只沿 x 切行，每个 y 副本相同。在 manual 局部视角，先算本地行和再沿 x、y 都 psum，结果比真实全局和大几倍？怎样修改？
-
-<details><summary>提示 1</summary>
-
-x 上的设备贡献不同，y 上只是同一数据的复制。
-
-</details>
-<details><summary>提示 2</summary>
-
-先沿 x 得完整和；再沿 y 相加会把完整和重复两次。
-
-</details>
-<details><summary>答案</summary>
-
-结果大两倍。只沿 x psum；该结果本来已在 y 上复制，无须再对 y 求和。除以 2 虽可恢复本次数值，却引入不必要通信并掩盖分片理解错误。
 
 </details>

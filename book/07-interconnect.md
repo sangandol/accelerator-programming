@@ -265,11 +265,6 @@
 
 **习题 7.1** ★ 求下列拓扑的直径和二分带宽（每条链路每方向带宽 $\beta$）：16 颗芯片的环；$4 \times 4$ 环面；$4 \times 4 \times 4$ 环面；64 颗芯片接在一台无阻塞交换机上。
 
-<details><summary>提示</summary>
-
-用 7.2 节的表。环面的二分要切断 $k^{d-1}$ 条链路两次（因为有回绕）。
-
-</details>
 <details><summary>答案</summary>
 
 16 环：直径 8，二分 $2\beta$。$4 \times 4$ 环面：直径 4，二分 $2 \cdot 4\beta = 8\beta$。$4^3$ 环面：直径 6，二分 $2 \cdot 16 \beta = 32\beta$。64 交换机：直径 2，二分 $32\beta$。$4^3$ 环面与 64 交换机的二分带宽相同，但环面每颗芯片要 6 条链路。
@@ -278,11 +273,6 @@
 
 **习题 7.2** ★ 沿用例 7.7 的数据。(a) 若 rank $r$ 只持有第 $r$ 块（rank 0 持有 1，rank 1 持有 20，rank 2 持有 300，rank 3 持有 4000），all-gather 之后每个 rank 持有什么？(b) 对原表做 all-to-all 之后，rank 2 持有什么？(c) 对原表先做 all-to-all，再让每个 rank 把自己持有的 4 个数相加，结果是什么？它与哪个集合操作的结果相同？
 
-<details><summary>提示</summary>
-
-(b) all-to-all 是块矩阵的转置，rank $q$ 得到每个 rank 的第 $q$ 块。
-
-</details>
 <details><summary>答案</summary>
 
 (a) 每个 rank 都持有 $(1, 20, 300, 4000)$。
@@ -295,11 +285,6 @@
 
 **习题 7.3** ★ 3 个 rank 各持有 3 块：rank 0 为 $(1, 2, 3)$，rank 1 为 $(10, 20, 30)$，rank 2 为 $(100, 200, 300)$。照例 7.13 的规则做环形 reduce-scatter，写出每一步每个 rank 得到的部分和。
 
-<details><summary>提示</summary>
-
-第 $t$ 步 rank $r$ 发送第 $(r - t) \bmod 3$ 块给 rank $r + 1$。第 1 步 rank 0 发块 2、rank 1 发块 0、rank 2 发块 1。
-
-</details>
 <details><summary>答案</summary>
 
 第 1 步：rank 1 得块 2：$3 + 30 = 33$；rank 2 得块 0：$10 + 100 = 110$；rank 0 得块 1：$200 + 2 = 202$。第 2 步：rank 1 得块 1：$202 + 20 = 222$；rank 2 得块 2：$33 + 300 = 333$；rank 0 得块 0：$110 + 1 = 111$。结束时 rank $r$ 持有第 $r$ 块的总和 111、222、333。
@@ -308,24 +293,20 @@
 
 **习题 7.4** ★ 8 颗芯片组成环，$\beta = 50$ GB/s，$\alpha = 5$ µs。对 $n = 1$ GB 的数据做 all-reduce。(a) 用环形算法需要多少时间？(b) 若链路双向、分两半各跑一个环呢？(c) 若 $n = 8$ KB 呢？此时 $\alpha$ 项占多少？
 
-<details><summary>提示</summary>
-
-命题 7.14：$2(p-1)(\alpha + n/(p\beta))$。
-
-</details>
 <details><summary>答案</summary>
 
-(a) $n/(p\beta) = 10^9 / (8 \times 5 \times 10^{10}) = 2.5$ ms；$14 \times (5\ \mu\text{s} + 2.5\ \text{ms}) \approx 35.1$ ms。(b) 带宽项减半，约 17.6 ms。(c) $n/(p\beta) = 0.02$ µs，$14 \times 5.02 \approx 70$ µs，几乎全是 $\alpha$。小消息应当改用步数少的算法，或者把多个小的集合操作合并成一个大的。
+由命题 7.14，环形 all-reduce 用时 $2(p-1)\left(\alpha + \frac{n}{p\beta}\right)$，$p = 8$ 时共 14 步。
+
+(a) 每步的传输时间 $n/(p\beta) = 10^9 / (8 \times 5 \times 10^{10}) = 2.5$ ms，总时间 $14 \times (5\ \mu\text{s} + 2.5\ \text{ms}) \approx 35.1$ ms。
+
+(b) 两个方向各跑一个环、各传一半数据，带宽项减半，约 17.6 ms。
+
+(c) $n/(p\beta) = 8 \times 10^3 / (4 \times 10^{11}) = 0.02$ µs，总时间 $14 \times 5.02 \approx 70$ µs，几乎全是 $\alpha$。小消息应当改用步数少的算法，或者把多个小的集合操作合并成一个大的。
 
 </details>
 
 **习题 7.5** ★ 在每对 rank 之间都有直接链路的网络上，比较环形 all-reduce 与递归减半/倍增 all-reduce。当 $p = 64$、$\alpha = 5$ µs、$\beta = 100$ GB/s 时，数据量多大时两者相同？
 
-<details><summary>提示</summary>
-
-两者的带宽项相同（命题 7.14、7.15），只有 $\alpha$ 项不同。
-
-</details>
 <details><summary>答案</summary>
 
 带宽项都是 $2\frac{p-1}{p}\frac{n}{\beta}$，$\alpha$ 项分别是 $2(p-1)\alpha = 126\alpha$ 和 $2\alpha\log p = 12\alpha$。所以在这种网络上递归算法总是不差于环形算法，不存在相同的点（只在 $n \to \infty$ 时比值趋于 1）。环形算法的优势只在于它只需要相邻链路：在环或环面上，递归算法的远距离交换会多跳并争用链路，带宽项变差。
@@ -336,7 +317,7 @@
 
 <details><summary>提示</summary>
 
-(a) 考虑从 rank 0 到 rank $2^t$ 这一段：rank $0, 1, \dots, 2^t - 1$ 中 $i \oplus 2^t = i + 2^t$ 的那些，向右发送的数据都要经过链路 $(2^t - 1, 2^t)$。
+(a) 看从 rank 0 到 rank $2^t$ 这一段：$0 \le i < 2^t$ 时 $i$ 的第 $t$ 位是 0，它的交换对象是 $i + 2^t$，在它右边。这 $2^t$ 个 rank 向右发的数据都要经过哪一条链路？
 
 </details>
 <details><summary>答案</summary>
@@ -349,24 +330,19 @@
 
 **习题 7.7** ★ 64 颗芯片，每颗芯片要向其余每颗芯片各发 1 MB（例如混合专家模型中把词元分发给专家）。$\beta = 100$ GB/s。分别在 64 环和无阻塞交换机上，用命题 7.5 求时间下界。
 
-<details><summary>提示</summary>
-
-$W$ 分别为 $2\beta$ 和 $32\beta$。
-
-</details>
 <details><summary>答案</summary>
 
-$(p/2)^2 m = 1024 \times 1\ \text{MB} \approx 1.07 \times 10^9$ 字节。环：$/ (2 \times 10^{11}) \approx 5.4$ ms。交换机：$/(3.2 \times 10^{12}) \approx 0.34$ ms。相差 16 倍。（交换机上注入下界 $63\ \text{MB} / 100\ \text{GB/s} \approx 0.66$ ms 更大，所以实际约 0.66 ms，仍比环快 8 倍。）大量全交换的工作负载偏好交换机或高维的拓扑。
+命题 7.5 的下界是 $(p/2)^2 m / W$。这里 $(p/2)^2 m = 32^2 \times 1\ \text{MB} \approx 1.07 \times 10^9$ 字节。
+
+- 64 环：二分带宽 $W = 2\beta = 2 \times 10^{11}$ B/s，下界约 5.4 ms。
+- 交换机：$W = 32\beta = 3.2 \times 10^{12}$ B/s，下界约 0.34 ms。
+
+二分下界相差 16 倍。不过在交换机上，每颗芯片自己要发出 $63 \times 1\ \text{MB}$，只有一条 100 GB/s 的链路，至少要 $63\ \text{MB} / (100\ \text{GB/s}) \approx 0.66$ ms，这个下界更大，所以实际约 0.66 ms，仍比环快 8 倍。全交换多的工作负载偏好交换机或高维的拓扑。
 
 </details>
 
 **习题 7.8** ★ 在 $8 \times 8$ 的二维环面上对 $n$ 字节做 all-reduce，用命题 7.18 的算法。(a) 每一阶段每个 rank 持有多少数据？(b) 总步数是多少？与 64 个 rank 的单环比较。
 
-<details><summary>提示</summary>
-
-四个阶段：第一维 reduce-scatter、第二维 reduce-scatter、第二维 all-gather、第一维 all-gather。
-
-</details>
 <details><summary>答案</summary>
 
 (a) 开始 $n$；第一维 reduce-scatter 后 $n/8$；第二维 reduce-scatter 后 $n/64$；第二维 all-gather 后 $n/8$；第一维 all-gather 后 $n$。(b) 每阶段 7 步，共 28 步；单环为 $2 \times 63 = 126$ 步。带宽项约 $2 \cdot \frac{7}{8}(1 + \frac{1}{8}) \frac{n}{\beta} \approx 1.97 \frac{n}{\beta}$，与单环的 $2 \cdot \frac{63}{64}\frac{n}{\beta} \approx 1.97 \frac{n}{\beta}$ 相同。
@@ -375,11 +351,6 @@ $(p/2)^2 m = 1024 \times 1\ \text{MB} \approx 1.07 \times 10^9$ 字节。环：$
 
 **习题 7.9** ★（审查题）AI 为 $p$ 颗芯片的 all-reduce 写了这样的方案："每个 rank 把自己的完整向量发给其余每个 rank，然后各自求和。"在环上和在无阻塞交换机上，分别估算它的时间，与环形算法比较。
 
-<details><summary>提示</summary>
-
-每个 rank 要发出 $(p-1)n$ 字节。在环上，这还是一次全交换（命题 7.5），$m = n$。
-
-</details>
 <details><summary>答案</summary>
 
 交换机上：每个 rank 发出 $(p-1)n$ 字节，至少 $(p-1)n/\beta$，是环形算法 $2\frac{p-1}{p}\frac{n}{\beta}$ 的 $p/2$ 倍。环上：由命题 7.5 至少 $p^2 n / (8\beta)$，是环形算法的约 $p^2/16$ 倍。$p = 64$ 时分别慢 32 倍和 256 倍。正确的做法是 reduce-scatter 加 all-gather。
@@ -388,24 +359,16 @@ $(p/2)^2 m = 1024 \times 1\ \text{MB} \approx 1.07 \times 10^9$ 字节。环：$
 
 **习题 7.10** ☆ 把环形 all-gather 与矩阵乘法重叠（命题 7.19）：$p = 8$，每步通信 $t_c = 1$ ms，每块计算 $t_m = 1.5$ ms。总时间是多少？与不重叠相比节省多少？
 
-<details><summary>提示</summary>
-
-不重叠时是 $(p-1)t_c + p\,t_m$（自己那块也要算）。重叠时用命题 7.19。
-
-</details>
 <details><summary>答案</summary>
 
-不重叠：$7 + 12 = 19$ ms。重叠：$\max\{8 \times 1.5,\ 7 \times 1 + 1.5\} = \max\{12, 8.5\} = 12$ ms，通信完全隐藏，节省约 37%。
+不重叠时先通信 $p - 1 = 7$ 步、再算 $p = 8$ 块（自己那块也要算）：$7 \times 1 + 8 \times 1.5 = 19$ ms。
+
+重叠时由命题 7.19，总时间是"全部计算"与"全部通信加最后一块计算"中的较大者：$\max\{8 \times 1.5,\ 7 \times 1 + 1.5\} = \max\{12, 8.5\} = 12$ ms。通信完全藏在计算后面，节省约 37%。
 
 </details>
 
 **习题 7.11** ☆ 把 $p$ 个 rank 的数据拼成一个大向量。all-gather 的输入是 $y = (y_0, \dots, y_{p-1})$（rank $r$ 持有一块 $y_r$），输出是 $p$ 份完整的 $(y_0, \dots, y_{p-1})$；reduce-scatter 的输入是 $x = (x_0, \dots, x_{p-1})$（rank $r$ 持有完整的 $x_r$），输出是 $(\sum_q x_q^0, \dots, \sum_q x_q^{p-1})$。证明二者对标准内积互为转置：$\langle \mathrm{AG}(y), x \rangle = \langle y, \mathrm{RS}(x) \rangle$。
 
-<details><summary>提示</summary>
-
-左边是 $\sum_r \langle (y_0, \dots, y_{p-1}), x_r \rangle = \sum_r \sum_b \langle y_b, x_r^b \rangle$。交换求和的次序。
-
-</details>
 <details><summary>答案</summary>
 
 $\langle \mathrm{AG}(y), x \rangle = \sum_r \sum_b \langle y_b, x_r^b \rangle = \sum_b \langle y_b, \sum_r x_r^b \rangle = \langle y, \mathrm{RS}(x) \rangle$。所以若前向计算做了 all-gather，求梯度时就要对上游的梯度做 reduce-scatter，反之亦然。

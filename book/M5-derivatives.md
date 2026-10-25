@@ -118,54 +118,22 @@ $$
 
 ## 习题
 
-**习题 M5.1** ★ 用近似式 $f(x + h) \approx f(x) + f'(x) h$ 估计 $\sqrt{4.04}$，并与真值比较。
+**习题 M5.1** ★ 对例 M5.3 的 $f$，从 $w = (1, 1)$ 出发，分别取 $\eta = 0.3$ 与 $\eta = 0.4$ 走一步，$f$ 各变成多少？哪一个出了问题，为什么？
 
-<details><summary>提示</summary>
-
-$f(x) = \sqrt{x}$，$f'(x) = \frac{1}{2\sqrt{x}}$，取 $x = 4$、$h = 0.04$。
-
-</details>
-<details><summary>答案</summary>
-
-$2 + \frac{1}{4} \times 0.04 = 2.01$。真值 $\sqrt{4.04} \approx 2.00998$，误差约 $2 \times 10^{-5}$，比 $h$ 小得多。
-
-</details>
-
-**习题 M5.2** ★ 对例 M5.3 的 $f$，从 $w = (1, 1)$ 出发，分别取 $\eta = 0.3$ 与 $\eta = 0.4$ 走一步，$f$ 各变成多少？哪一个出了问题，为什么？
-
-<details><summary>提示</summary>
-
-一步之后 $w_1 \leftarrow (1 - 2\eta) w_1$，$w_2 \leftarrow (1 - 6\eta) w_2$。
-
-</details>
 <details><summary>答案</summary>
 
 $\eta = 0.3$：$w = (0.4, -0.8)$，$f = 0.16 + 1.92 = 2.08$。$\eta = 0.4$：$w = (0.2, -1.4)$，$f = 0.04 + 5.88 = 5.92$，比出发时的 4 还大。$w_2$ 方向每步乘以 $1 - 6\eta$，$\eta > 1/3$ 时绝对值超过 1，来回跳着越跳越远。步长要服从弯得最厉害的方向（第 11 章的例 11.13 会再遇到这件事）。
 
 </details>
 
-**习题 M5.3** ★ 设 $z = \sigma(u)$，$u = wx + b$，其中 $\sigma(u) = 1/(1 + e^{-u})$，$\sigma'(u) = \sigma(u)(1 - \sigma(u))$。在 $w = 2, x = 1, b = -2$ 处，求 $\partial z / \partial w$ 与 $\partial z / \partial b$。
+**习题 M5.2** ★ 一串计算有 $k = 50$ 段，每段的雅可比矩阵是 $4096 \times 4096$，最后得到一个数。按命题 M5.8，从损失往回乘与从输入往前乘，运算量各约是多少？差几倍？
 
-<details><summary>提示</summary>
-
-先算 $u = 0$，$\sigma(0) = 1/2$，$\sigma'(0) = 1/4$。再用链式法则：$\partial u / \partial w = x$，$\partial u / \partial b = 1$。
-
-</details>
 <details><summary>答案</summary>
 
-$\partial z / \partial w = \sigma'(0) \cdot x = 1/4$，$\partial z / \partial b = \sigma'(0) \cdot 1 = 1/4$。
+从损失往回乘时，手里始终是一个长 $n$ 的向量，每段做一次向量乘矩阵，约 $n^2$ 次乘加：共 $50 \times 4096^2 \approx 8.4 \times 10^8$ 次。
 
-</details>
+从输入往前乘时，手里是一个 $n \times n$ 矩阵，每段做一次矩阵乘矩阵，约 $n^3$ 次：共 $50 \times 4096^3 \approx 3.4 \times 10^{12}$ 次。
 
-**习题 M5.4** ★ 一串计算有 $k = 50$ 段，每段的雅可比矩阵是 $4096 \times 4096$，最后得到一个数。按命题 M5.8，从损失往回乘与从输入往前乘，运算量各约是多少？差几倍？
-
-<details><summary>提示</summary>
-
-$n = 4096 = 2^{12}$。
-
-</details>
-<details><summary>答案</summary>
-
-往回乘约 $50 \times 4096^2 \approx 8.4 \times 10^8$ 次乘加；往前乘约 $50 \times 4096^3 \approx 3.4 \times 10^{12}$ 次，差 $n = 4096$ 倍。
+两者差 $n = 4096$ 倍。所以最后只得到一个数时，梯度总是从损失往回算。
 
 </details>

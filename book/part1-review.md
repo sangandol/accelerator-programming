@@ -30,7 +30,7 @@
 
 <details><summary>答案与出处</summary>
 
-Kogge–Stone 深度最小（$\log n$）但节点多（约 $n \log n$），Brent–Kung 节点少（不到 $2n$）但深度约翻倍。由 Brent 定理，单元少时时间由工作量决定，选 Brent–Kung；单元多到每个节点都有自己的单元时（例如加法器里的门），深度决定时间，选 Kogge–Stone（注 1.49、推论 1.61、习题 1.9）。
+Kogge–Stone 深度最小（$\log n$）但节点多（约 $n \log n$），Brent–Kung 节点少（不到 $2n$）但深度约翻倍。由 Brent 定理，单元少时时间由工作量决定，选 Brent–Kung；单元多到每个节点都有自己的单元时（例如加法器里的门），深度决定时间，选 Kogge–Stone（注 1.49、推论 1.61、习题 1.8）。
 
 </details>
 
