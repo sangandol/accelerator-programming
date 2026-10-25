@@ -123,7 +123,7 @@ def column_sum(x_blk):                                   # x_blk 是本设备的
 
 Manual 模式最常见的用途，是把通信和计算重叠起来。
 
-> **例 14.4（通信与计算重叠的矩阵乘法）** 计算 $Y[N, F_x] = X[N_x, D] \cdot W[D, F_x]$：直接的做法是先 all-gather $X$ 再相乘。按命题 7.18，可以把 all-gather 拆成环形的 $p - 1$ 次置换，每收到一块就先乘这一块：
+> **例 14.4（通信与计算重叠的矩阵乘法）** 计算 $Y[N, F_x] = X[N_x, D] \cdot W[D, F_x]$：直接的做法是先 all-gather $X$ 再相乘。按命题 7.19，可以把 all-gather 拆成环形的 $p - 1$ 次置换，每收到一块就先乘这一块：
 >
 > ```python
 > @jax.jit
@@ -309,7 +309,7 @@ def all_reduce(x):                         # x: 本地的完整向量，形状 (
 </details>
 <details><summary>答案</summary>
 
-计算 $2 \times 1024 \times 8192 \times 1024 \approx 1.7 \times 10^{10}$ FLOP，约 66 µs；通信 $1024 \times 8192 \times 2 = 16$ MiB，约 168 µs。通信比计算慢，不能完全掩盖，总时间约为 $7 \times 168 + 66 \approx 1.24$ ms（命题 7.18），而不重叠时约 $7 \times 168 + 8 \times 66 \approx 1.70$ ms。要完全掩盖，需要每块的计算更多（例如更大的 $F/p$），即张量并行的规模更小（命题 12.8）。
+计算 $2 \times 1024 \times 8192 \times 1024 \approx 1.7 \times 10^{10}$ FLOP，约 66 µs；通信 $1024 \times 8192 \times 2 = 16$ MiB，约 168 µs。通信比计算慢，不能完全掩盖，总时间约为 $7 \times 168 + 66 \approx 1.24$ ms（命题 7.19），而不重叠时约 $7 \times 168 + 8 \times 66 \approx 1.70$ ms。要完全掩盖，需要每块的计算更多（例如更大的 $F/p$），即张量并行的规模更小（命题 12.8）。
 
 </details>
 

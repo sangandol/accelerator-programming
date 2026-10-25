@@ -112,7 +112,7 @@ MFU 是"模型必须做的 FLOP"占峰值算力的比例，不计重计算等额
 
 <details><summary>答案</summary>
 
-$2(p-1)\left(\alpha + \frac{n}{p\beta}\right)$（命题 7.13）。带宽项 $2\frac{p-1}{p}\frac{n}{\beta}$ 等于每个参与者至少要发出和收到的数据量除以带宽，达到命题 7.11 的下界。小消息时 $\alpha$ 项占主导，改用树形或倍增算法（7.6 节）。
+$2(p-1)\left(\alpha + \frac{n}{p\beta}\right)$（命题 7.14）。带宽项 $2\frac{p-1}{p}\frac{n}{\beta}$ 等于每个参与者至少要发出和收到的数据量除以带宽，达到命题 7.11 的下界。小消息时 $\alpha$ 项占主导，改用树形或倍增算法（7.6 节）。
 
 </details>
 
@@ -136,7 +136,7 @@ $\frac{p_p - 1}{m + p_p - 1}$（命题 12.11）。增加微批量数 $m$；交�
 
 <details><summary>答案</summary>
 
-把输出切成 $c$ 块，算完一块就发起它的通信（命题 7.18）。总时间约为 $\max(t_m + t_c/c + \alpha,\ t_c + c\alpha + t_m/c)$：切太粗，首尾露在外面；切太细，固定开销 $c\alpha$ 累积（命题 28.3、例 28.4；TPU 上见 19.5 节）。在 GPU 上还要算通信 kernel 对 SM 的占用（28.1 节）。
+把输出切成 $c$ 块，算完一块就发起它的通信（命题 7.19）。总时间约为 $\max(t_m + t_c/c + \alpha,\ t_c + c\alpha + t_m/c)$：切太粗，首尾露在外面；切太细，固定开销 $c\alpha$ 累积（命题 28.3、例 28.4；TPU 上见 19.5 节）。在 GPU 上还要算通信 kernel 对 SM 的占用（28.1 节）。
 
 </details>
 

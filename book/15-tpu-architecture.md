@@ -331,7 +331,7 @@ $T(S) = 484 + 1.1 K$ 周期。
 </details>
 <details><summary>提示 2</summary>
 
-命题 7.17 推广到三维、双向：逐维做 reduce-scatter 与 all-gather，每一维的环可以双向使用，带宽项约为 $2n / \beta_{\text{inj}}$，$\beta_{\text{inj}}$ 是每颗芯片在一个阶段中实际使用的注入带宽。
+命题 7.18 推广到三维、双向：逐维做 reduce-scatter 与 all-gather，每一维的环可以双向使用，带宽项约为 $2n / \beta_{\text{inj}}$，$\beta_{\text{inj}}$ 是每颗芯片在一个阶段中实际使用的注入带宽。
 
 </details>
 <details><summary>答案</summary>
